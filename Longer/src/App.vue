@@ -17,91 +17,124 @@ export default {
 </script>
 
 <template>
-  <header class="w-[100vw] flex bg-[#ffa] p-0">
-    <RouterLink to="/" class="text-[red]">
-      <img
-        src="@/assets/img/generic/logoTest.png"
-        alt="LOGO"
-        class="w-[200px] inline"
-      />
+  <!-- 公版nav -->
+  <header class="">
+    <!-- LOGO -->
+    <RouterLink to="/">
+      <img src="./assets/img/generic/logoTest.png" alt="LOGO">
     </RouterLink>
-
+    <!-- nav Btn -->
     <nav>
-      <RouterLink to="/about" class="text-[red]"> 關於我們 </RouterLink>
-      <RouterLink to="/teacher" class="text-[red]"> 師資介紹 </RouterLink>
-      <RouterLink to="/courseInformation" class="text-[red]">
+      <RouterLink to="/about" class="navBar">
+        關於我們
+      </RouterLink>
+      <RouterLink to="/teacher" class="navBar">
+        師資介紹
+      </RouterLink>
+      <RouterLink to="/courseInformation" class="navBar">
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" class="text-[red]"> 學生作品 </RouterLink>
-      <RouterLink to="/admissionList" class="text-[red]"> 歷年榜單 </RouterLink>
-      <RouterLink to="/connection" class="text-[red]"> 聯絡資訊 </RouterLink>
+      <RouterLink to="/studentWork" class="navBar">
+        學生作品
+      </RouterLink>
+      <RouterLink to="/admissionList" class="navBar">
+        歷年榜單
+      </RouterLink>
+      <RouterLink to="/connection" class="navBar">
+        聯絡資訊
+      </RouterLink>
     </nav>
   </header>
+  <!-- 分頁內容 -->
   <main>
     <RouterView />
   </main>
-  <footer></footer>
+  <!-- 公版頁尾 -->
+  <footer>
+    <section class="footer-content">
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139%26sk%3Dabout&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+        width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </section>
+    <section class="footer-content">
+      <section class="footer-T-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat voluptatem voluptas a nobis consequuntur quis
+        sint aliquid porro, inventore, quaerat blanditiis id aut. Dolorem dignissimos doloribus, molestias dolor molestiae
+        ducimus.
+        Fugiat nobis dignissimos deleniti voluptas facilis in quasi atque a at quos corporis dicta, eveniet obcaecati quis
+        voluptates exercitationem error natus non! Obcaecati natus quis saepe perferendis, voluptatem totam enim.
+      </section>
+      <section class="footer-B-nav">
+        <ul class="footer-ul">
+          <li>關於我們</li>
+          <li>師資介紹</li>
+          <li>課程資訊</li>
+          <li>學生作品</li>
+          <li>歷年榜單</li>
+          <li>聯絡資訊</li>
+        </ul>
+      </section>
+    </section>
+    <section class="copyRight">
+      <p>Designed by 創室網匠 Copyright &copy; 2024</p>
+    </section>
+  </footer>
 </template>
 
-<!-- <style scoped>
+<style lang="scss" scoped>
+//公版 nav
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+  // @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
+  @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+    @apply flex me-[5px];
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    .navBar {
+      @apply block me-[15px] px-[30px] py-[6px] text-[1.8rem] text-[#fff] bg-[#203922] rounded-t-lg shadow-[2px_0px_5px_#333];
+
+      img {
+        @apply w-[250px];
+      }
+    }
   }
 }
-</style> -->
+
+// 分頁內容
+main {
+  // @apply pt-[250px];
+}
+
+// 公版頁尾
+footer {
+  @apply flex flex-wrap w-[100%] h-[85vh] bg-[#ebe7d5];
+
+  .footer-content {
+    @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
+
+    .footer-T-text{
+      @apply self-end;
+    };
+    .footer-B-nav {
+      @apply self-end;
+
+      .footer-ul {
+        @apply flex gap-[5px] text-[1.5rem];
+
+
+        li:not(:last-child)::after {
+          content: '|';
+          position: relative;
+          top: -5%;
+          left: 2.5%;
+        };
+      };
+    };
+
+  };
+
+  .copyRight {
+    @apply flex-1 self-end flex justify-center items-center h-[10%] border-t-[1px];
+  };
+}</style>
