@@ -1,7 +1,13 @@
 <script>
-export default {};
+export default {
+    props: {
+        studentData: {
+            type: Number,
+        }
+    },
+};
 </script>
 <template>
-    <div>我是StudentWork.vue</div>
+    <div class="w-[180px] h-[180px] bg-[red] border-[2px] text-center ">{{ studentData }}</div>
 </template>
 <style></style>
