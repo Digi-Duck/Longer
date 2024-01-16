@@ -27,7 +27,7 @@ export default {
   .text {
     // 第一行是所有文字外框都共用的樣式
     @apply bg-[url('@/assets/img/homepage/CommonIcon/YLdraw.svg')]  w-[300px] h-[72px]  
-    ml-[138px] text-[3.25rem] ;
+    ml-[138px] text-[3.25rem];
   }
 }
 </style>
