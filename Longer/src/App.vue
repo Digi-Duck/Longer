@@ -1,5 +1,6 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router";
+<<<<<<< Updated upstream
 // import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
@@ -14,17 +15,63 @@ import { RouterLink, RouterView } from "vue-router";
     /> -->
     <!-- <div class="wrapper">
       <HelloWorld msg="You did it!" /> -->
+=======
+import HelloWorld from "./components/HelloWorld.vue";
+
+export default {
+  // 元件宣告
+  components: {
+    RouterLink,
+    RouterView
+  },
+  data(){
+    return{
+      HelloWorld,
+
+    }
+  },
+}
+
+</script>
+
+<template>
+  <header class="w-[100vw] flex bg-[#ffa] p-0">
+    <RouterLink to="/" class="text-[red]">
+      <img src="./assets/img/generic/logoTest.PNG" alt="LOGO" class="w-[200px] inline">
+    </RouterLink>
+
+>>>>>>> Stashed changes
 
     <nav>
-      <RouterLink to="/" class="text-[red]">Home</RouterLink>
+      <RouterLink to="/about" class="text-[red]">
+        關於我們
+      </RouterLink>
+      <RouterLink to="/teacher" class="text-[red]">
+        師資介紹
+      </RouterLink>
+      <RouterLink to="/courseInformation" class="text-[red]">
+        課程資訊
+      </RouterLink>
+      <RouterLink to="/studentWork" class="text-[red]">
+        學生作品
+      </RouterLink>
+      <RouterLink to="/admissionList" class="text-[red]">
+        歷年榜單
+      </RouterLink>
+      <RouterLink to="/connection" class="text-[red]">
+        聯絡資訊
+      </RouterLink>
     </nav>
-    <!-- </div> -->
   </header>
+  <main>
+    <RouterView />
+  </main>
+  <footer>
 
-  <RouterView />
+  </footer>
 </template>
-<!-- 
-<style scoped>
+
+<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -39,7 +86,6 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
