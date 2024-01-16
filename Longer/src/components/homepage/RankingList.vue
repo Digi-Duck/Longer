@@ -1,158 +1,222 @@
 <script>
-export default {};
+
+import BookCover from "@/assets/img/homepage/sign.png"
+export default {
+components:{
+  BookCover
+}
+,data(){
+return{
+  img:BookCover,
+  RankNumber: [
+    {
+        year: 106,
+        details: [
+            { name: "陳O瑩", school: "東海大學美術研究所" },
+            { name: "蘇　O", school: "朝陽科技大學建築研究所" },
+            { name: "林O安", school: "國立台北藝術大學動畫系" },
+            { name: "何O聿", school: "國立台北藝術大學美術系" },
+            { name: "黃O頤", school: "國立台灣藝術大學古蹟維護系" },
+            { name: "劉O妤", school: "國立彰化師範大學美術系" },
+            { name: "陳O禧", school: "國立台北教育大學藝術與造形設計學系" },
+            { name: "趙O萱", school: "國立台北教育大學藝術與造形設計學系" },
+            { name: "林O廷", school: "國立嘉義大學視覺藝術學系" },
+            { name: "楊O慈", school: "國立雲林科技大學創意生活設計系" },
+            { name: "蘇O柔", school: "國立高雄應用科技大學文化創意產業系" },
+            { name: "謝O佑", school: "國立金門大學建築系" },
+            { name: "楊O萱", school: "銘傳大學商品設計系" },
+            { name: "何O萱", school: "銘傳大學數位媒體設計系" },
+            { name: "陳O嘉", school: "實踐大學建築系" },
+            { name: "劉O芳", school: "東海大學景觀系" },
+            { name: "蔡O弘", school: "東海大學工業設計系(轉學)" },
+            { name: "洪O鈞", school: "逢甲大學都市計畫與空間資訊組" },
+            { name: "林O君", school: "亞洲大學視覺傳達設計系企業形象設計組" },
+            { name: "楊O霖", school: "亞洲大學時尚設計學系精品設計組" },
+            { name: "陳O毓", school: "朝陽科技大學景觀及都市設計系" },
+            { name: "林O俞", school: "僑光科技大學電腦輔助工業設計系產品設計" },
+            { name: "詹O茹", school: "崑山科技大學視覺傳達設計系" },
+            { name: "廖O瑋", school: "崑山科技大學視覺傳達設計系" },
+            { name: "蔡O紋", school: "南開科技大學文化創意與設計系" },
+            { name: "賴O禎", school: "豐原高中美術班" },
+            { name: "施O綺", school: "五權國中美術班" },
+            { name: "廖O筑", school: "五權國中美術班" },
+            { name: "王O呈", school: "五權國中美術班" },
+            { name: "黃O靜", school: "五權國中美術班" },
+            { name: "何O芝", school: "五權國中美術班" },
+            { name: "徐O瑩", school: "五權國中美術班" },
+            { name: "魏O涵", school: "五權國中美術班" },
+            { name: "黃O淇", school: "至善國中美術班" },
+            { name: "游O蔚", school: "至善國中美術班" }
+        ]
+    },
+    {
+          year: 105,
+        details: [
+            { name: "廖O輔", school: "國立新竹教育大學藝術與設計系創作組(素描90分彩繪90分)" },
+            { name: "周O恩", school: "國立台南大學視覺藝術與設計系(創意93分)" },
+            { name: "洪O昇", school: "國立嘉義大學視覺藝術系" },
+            { name: "林O熙", school: "國立台科大工商業設計系(術科滿分)" },
+            { name: "望O閔", school: "國立台科大建築系" },
+            { name: "李O芳", school: "國立雲科大數位媒體設計系" },
+            { name: "林O晟", school: "國立台中科大室內設計系" },
+            { name: "廖O敏", school: "大同大學工業設計系" },
+            { name: "楊O樂", school: "銘傳大學商品設計學系" },
+            { name: "楊O綺", school: "亞洲大學時尚設計學系(時尚服裝設計組)" },
+            { name: "廖O媜", school: "亞洲大學時尚設計學系(時尚服裝設計組)" },
+            { name: "游O尹", school: "大葉大學工業設計系" },
+            { name: "柳O宜", school: "大葉大學工業設計系" },
+            { name: "米O蒨", school: "朝陽科大建築系室內設計組" },
+            { name: "江O雄", school: "朝陽科大視覺傳達設計系" },
+            { name: "吳O筳", school: "明志科大視覺傳達系" },
+            { name: "林O穎", school: "嶺東科大視覺傳達系" },
+            { name: "呂O泰", school: "嶺東科大數位媒體設計系" },
+            { name: "劉O伶", school: "嶺東科大創意產品設計系" },
+            { name: "邱O婷", school: "台南應用科大視覺傳達系" },
+            { name: "陳O吟", school: "台南應用科大商品設計系" },
+            { name: "廖O閔", school: "僑光科大多媒體與遊戲設計系" },
+            { name: "賴O湘", school: "僑光科大多媒體與遊戲設計系" },
+            { name: "蔡O穎", school: "東方設計學院遊戲動畫系" },
+            { name: "楊O翔", school: "實踐大學服裝設計與經營學系" },
+            { name: "鄭O晴", school: "國立豐原高中美術班" },
+            { name: "楊O伃", school: "國立竹山高中美術班" },
+            { name: "劉O沛", school: "國立竹山高中美術班" },
+            { name: "郭O嘉", school: "明道中學美工科(特招)" },
+            { name: "萬O孜", school: "僑泰中學多媒體動畫科(特招)" },
+            { name: "廖O汝", school: "五權國中美術班" },
+            { name: "孟O勖", school: "五權國中美術班" },
+            { name: "饒O甄", school: "五權國中美術班" },
+            { name: "余O萱", school: "大華國中美術班" },
+            { name: "羅O文", school: "五權國中美術班" },
+            // ... (other data for year 105)
+        ]
+    }
+    
+],
+
+
+}
+}
+};
 </script>
 <template>
   <div class="RankingBG">
-    <div class="cover">
-      <div class="book">
-        <label for="page-1" class="book__page book__page--1">
-          <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/193203/1111.jpg"
-            alt=""
-          />
-        </label>
-
-        <label for="page-2" class="book__page book__page--4">
-          <div class="page__content">
-            <h1 class="page__content-title">I</h1>
-            <div class="page__content-blockquote">
-              <p class="page__content-blockquote-text">
-                HARI SELDON — . . . born in the 11,988th year of the Galactic
-                Era; died 12,069. The dates are more commonly given in terms of
-                the current Foundational Era as -79 to the year 1 F.E. Born to
-                middle-class parents on Helicon, Arcturus sector (where his
-                father, in a legend of doubtful authenticity, was a tobacco
-                grower in the hydroponic plants of the planet), he early showed
-                amazing ability in mathematics. Anecdotes concerning his ability
-                are innumerable, and some are contradictory. At the age of two,
-                he is said to have. . .
-              </p>
-              <p class="page__content-blockquote-text">
-                . . . Undoubtedly his greatest contributions were in the field
-                of psychohistory. Seldon found the field little more than a set
-                of vague axioms; he left it a profound statistical science. . .
-                .
-              </p>
-              <p class="page__content-blockquote-text">
-                . . . The best existing authority we have for the details of his
-                life is the biography written by Gaal Dornick who, as a young
-                man, met Seldon two years before the great mathematician's
-                death. The story of the meeting . . .
-              </p>
-              <span class="page__content-blockquote-reference"
-                >Encyclopedia Galactica*</span
-              >
-            </div>
-            <div class="page__content-text">
-              <p>
-                His name was Gaal Dornick and he was just a country boy who had
-                never seen Trantor before. That is, not in real life. He had
-                seen it many times on the hyper-video, and occasionally in
-                tremendous three-dimensional newscasts covering an Imperial
-                Coronation or the opening of a Galactic Council. Even though he
-                had lived all his life on the world of Synnax, which circled a
-                star at the edges of the Blue Drift, he was not cut off from
-                civilization, you see. At that time, no place in the Galaxy was.
-              </p>
-
-              <p>
-                There were nearly twenty-five million inhabited planets in the
-                Galaxy then, and not one but owed allegiance to the Empire whose
-                seat was on Trantor. It was the last half-century in which that
-                could be said.
-              </p>
-              <p>
-                To Gaal, this trip was the undoubted climax of his young,
-                scholarly life. He had been in space before so that the trip, as
-                a voyage and nothing more, meant little to him. To be sure, he
-                had traveled previously only as far as Synnax's only satellite
-                in order to get the data on the mechanics of meteor driftage
-                which he needed for his dissertation, but space-travel was all
-                one whether one travelled half a million miles, or as many light
-                years.
-              </p>
-            </div>
-            <div class="page__number">3</div>
-          </div>
-        </label>
-
-        <!-- Resets the page -->
-        <input type="radio" name="page" id="page-1" />
-
-        <!-- Goes to the second page -->
-        <input type="radio" name="page" id="page-2" />
-        <label class="book__page book__page--2">
-          <div class="book__page-front">
-            <div class="page__content">
-              <h1 class="page__content-book-title">Foundation</h1>
-              <h2 class="page__content-author">Isaac Asimov</h2>
-
-              <p class="page__content-credits">
-                Introduction by
-                <span>Paul Krugman</span>
-              </p>
-
-              <p class="page__content-credits">
-                Illustrations by
-                <span>Alex Wells</span>
-              </p>
-
-              <div class="page__content-copyright">
-                <p>The Folio Society</p>
-                <p>London - MMXII</p>
-              </div>
-            </div>
-          </div>
-          <div class="book__page-back">
-            <div class="page__content">
-              <h1 class="page__content-title">Contents</h1>
-              <table class="page__content-table">
-                <tr>
-                  <td align="left">Part I</td>
-                  <td align="left">The Psycohistorians</td>
-                  <td align="right">3</td>
-                </tr>
-                <tr>
-                  <td align="left">Part II</td>
-                  <td align="left">The Encyclopedists</td>
-                  <td align="right">43</td>
-                </tr>
-                <tr>
-                  <td align="left">Part III</td>
-                  <td align="left">The Mayors</td>
-                  <td align="right">87</td>
-                </tr>
-                <tr>
-                  <td align="left">Part IV</td>
-                  <td align="left">The Traders</td>
-                  <td align="right">147</td>
-                </tr>
-                <tr>
-                  <td align="left">Part V</td>
-                  <td align="left">The Merchant Princes</td>
-                  <td align="right">173</td>
-                </tr>
-              </table>
-
-              <div class="page__number">2</div>
-            </div>
-          </div>
-        </label>
+   <div class="cover">
+  <div class="book">
+  <label for="page-1"  class="book__page book__page--1">
+    <img src="@/assets/img/homepage/sign.png" alt="">
+  </label>
+  
+  <label for="page-2" class="book__page book__page--4">
+   
+      <!-- 我是第3頁 -->
+      <div class="page__content truncate">
+        <h1> 104年</h1>
+   <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>學校與系所</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item) in RankNumber[0].details">
+        <td>{{item.name}}</td>
+        <td>{{item.school}} </td>
+      </tr>
+    </tbody>
+    
+   </table>
+  
+      </div>
+      <div class="page__number">3</div>
+    
+  </label>
+    
+  <!-- Resets the page -->
+  <input type="radio" name="page" id="page-1"/>
+    
+  <!-- Goes to the second page -->
+  <input type="radio" name="page" id="page-2"/>
+  <label class="book__page book__page--2">
+    <div class="book__page-front">
+      <!-- 暫時把多的切掉 -->
+      <div class="page__content truncate">
+        <!-- 我是第1頁 -->
+        <h1> 106年</h1>
+   <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>學校與系所</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item) in RankNumber[0].details">
+        <td>{{item.name}}</td>
+        <td>{{item.school}} </td>
+      </tr>
+    </tbody>
+    
+   </table>
+   
+      </div>
+   
+    </div>
+    <div class="book__page-back">
+      <div class="page__content">
+        <!-- 我是第2頁 -->
+        <div class="page__content truncate">
+     
+        <h1> 105年</h1>
+   <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>學校與系所</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item) in RankNumber[0].details">
+        <td>{{item.name}}</td>
+        <td>{{item.school}} </td>
+      </tr>
+    </tbody>
+    
+   </table>
+  
+      </div>
+        
+        <div class="page__number">2</div>
       </div>
     </div>
+  </label>
+</div>
+</div>
   </div>
 </template>
 <style lang="scss" scoped>
+// bg-[MainColorBG] 
 .RankingBG {
-  @apply w-[100%];
+  @apply   w-[100%]  h-[800px] bg-[#fff8dc]  flex items-center justify-center;
+  .cover{@apply  shadow-lg  w-[1445px] h-[647px];}
+  table{
+    font-family: 'Oswald', sans-serif;
+    border-collapse:collapse;
+      th{
+      width:25vw;
+      height:75px;
+    }
+      td{
+      width:25vw;
+      height:50px;
+      text-align:center;
+    }
+  }
 }
-@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
 
 :root {
-  /* colors */
-  --body-bg: #fafafa;
-  --page-bg: #f5f5f5;
-  --dark-text: #2a2935;
+ 
 
   /* spacing */
   /* this is what defines the global scale */
@@ -165,28 +229,28 @@ export default {};
   --base-size: var(--baseline) * 1.2;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  background-color: var(--body-bg);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
+// body {
+//   background-color: var(--body-bg);
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .cover {
-  width: calc(var(--baseline) * 60);
-  height: calc(var(--baseline) * 42.6);
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+  // width: calc(var(--baseline) * 60);
+  // height: calc(var(--baseline) * 42.6);
+  // box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+
 }
 
 .book {
-  width: 100%;
-  height: 100%;
+  // 依設計大小
+  width: 1445px;
+  height: 647px;
   display: flex;
   perspective: 1200px;
 
@@ -202,7 +266,7 @@ body {
     background-image: linear-gradient(
       90deg,
       rgba(227, 227, 227, 1) 0%,
-      rgba(247, 247, 247, 0) 18%
+      rgba(249, 4, 4, 0) 18%
     );
 
     &:nth-of-type(1) {
@@ -213,14 +277,16 @@ body {
       );
     }
 
+// 封面圖片
     &--1 {
       cursor: pointer;
       overflow: hidden;
 
       img {
+        // border-radius: 10%;
         width: 100%;
         max-width: 100%;
-        height: auto;
+        height: 100%;
       }
     }
 
@@ -229,7 +295,8 @@ body {
       right: 0;
       pointer-events: none;
       transform-style: preserve-3d;
-      background-color: var(--page-bg);
+      // background-color: var(--page-bg);
+
       background-image: linear-gradient(
         90deg,
         rgba(227, 227, 227, 1) 0%,
@@ -256,16 +323,18 @@ body {
       padding: 0 calc(var(--baseline) * 1.8);
       transform: rotateY(180deg) translateZ(1px);
     }
-
+// 內文的大小設定
     .page__content {
-      padding: var(--baseline);
+      // 可能要調整   
+      padding: 30px;
       height: 100%;
       position: relative;
+      background-color: #e3e1d9;
       text-align: center;
 
       &-book-title {
         font-family: var(--book-title);
-        font-size: calc(var(--base-size) * 3);
+        // font-size: calc(var(--base-size) * 3);
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -274,41 +343,41 @@ body {
         margin-bottom: calc(var(--baseline) * 2);
       }
 
-      &-author {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 1.2);
-        font-weight: 100;
-        text-transform: uppercase;
-        color: var(--dark-text);
-        border-top: 1px solid var(--dark-text);
-        border-bottom: 1px solid var(--dark-text);
-        display: inline-block;
-        padding: calc(var(--baseline) / 2) calc(var(--baseline) / 5);
-        margin-bottom: calc(var(--baseline) * 6);
-      }
+      // &-author {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 1.2);
+      //   font-weight: 100;
+      //   text-transform: uppercase;
+      //   color: var(--dark-text);
+      //   border-top: 1px solid var(--dark-text);
+      //   border-bottom: 1px solid var(--dark-text);
+      //   display: inline-block;
+      //   padding: calc(var(--baseline) / 2) calc(var(--baseline) / 5);
+      //   margin-bottom: calc(var(--baseline) * 6);
+      // }
 
-      &-credits {
-        font-family: var(--title);
-        text-transform: uppercase;
-        font-size: calc(var(--base-size) * 0.8);
-        margin-bottom: calc(var(--baseline) * 2);
-        letter-spacing: 1px;
+      // &-credits {
+      //   font-family: var(--title);
+      //   text-transform: uppercase;
+      //   font-size: calc(var(--base-size) * 0.8);
+      //   margin-bottom: calc(var(--baseline) * 2);
+      //   letter-spacing: 1px;
 
-        span {
-          display: block;
-          font-size: calc(var(--base-size) * 1.2);
-          letter-spacing: 0;
-        }
-      }
+      //   span {
+      //     display: block;
+      //     font-size: calc(var(--base-size) * 1.2);
+      //     letter-spacing: 0;
+      //   }
+      // }
 
-      &-copyright {
-        position: absolute;
-        width: calc(100% - (var(--baseline) * 2));
-        bottom: calc(var(--baseline) * 2);
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 0.8);
-        text-transform: uppercase;
-      }
+      // &-copyright {
+      //   position: absolute;
+      //   width: calc(100% - (var(--baseline) * 2));
+      //   bottom: calc(var(--baseline) * 2);
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 0.8);
+      //   text-transform: uppercase;
+      // }
 
       &-title {
         font-family: var(--title);
@@ -319,36 +388,36 @@ body {
         margin-bottom: calc(var(--baseline) * 3);
       }
 
-      &-table {
-        width: 100%;
-        margin-top: calc(var(--baseline) * 2);
+      // &-table {
+      //   width: 100%;
+      //   margin-top: calc(var(--baseline) * 2);
 
-        td {
-          font-family: var(--title);
-          font-size: calc(var(--base-size) * 1);
-          padding-bottom: calc(var(--baseline) * 1.5);
-          text-transform: uppercase;
-        }
-      }
+      //   td {
+      //     font-family: var(--title);
+      //     font-size: calc(var(--base-size) * 1);
+      //     padding-bottom: calc(var(--baseline) * 1.5);
+      //     text-transform: uppercase;
+      //   }
+      // }
 
-      &-blockquote {
-        margin-bottom: calc(var(--baseline) * 2);
-      }
+      // &-blockquote {
+      //   margin-bottom: calc(var(--baseline) * 2);
+      // }
 
-      &-blockquote-text {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 0.67);
-        font-style: italic;
-        text-align: justify;
-      }
+      // &-blockquote-text {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 0.67);
+      //   font-style: italic;
+      //   text-align: justify;
+      // }
 
-      &-blockquote-reference {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 0.7);
-        margin-top: calc(var(--baseline) * 0.3);
-        float: right;
-        text-transform: uppercase;
-      }
+      // &-blockquote-reference {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 0.7);
+      //   margin-top: calc(var(--baseline) * 0.3);
+      //   float: right;
+      //   text-transform: uppercase;
+      // }
 
       &-text {
         font-family: var(--title);
