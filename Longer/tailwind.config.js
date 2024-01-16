@@ -3,8 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {},
-    fontFamily: {
-      sans: ["ui-sans-serif", "system-ui"],
+    colors: {
+      MainColorBG: "#fff8dc",
+      // SubColorBG:""
+
     },
   },
   plugins: [],
