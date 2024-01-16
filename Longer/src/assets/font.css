@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "ChenYuluoyan";
+  src: url("@/assets/font/ChenYuluoyan.ttf") format("truetype");
+  /* 添加其他格式和路径，根据需要 */
+}
+
+body {
+  font-family: "ChenYuluoyan", sans-serif;
+}
