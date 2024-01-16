@@ -1,74 +1,46 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
-<<<<<<< Updated upstream
-// import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
-<template>
-  <header>
-    <!-- <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    /> -->
-    <!-- <div class="wrapper">
-      <HelloWorld msg="You did it!" /> -->
-=======
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   // 元件宣告
   components: {
     RouterLink,
-    RouterView
+    RouterView,
   },
-  data(){
-    return{
+  data() {
+    return {
       HelloWorld,
-
-    }
+    };
   },
-}
-
+};
 </script>
 
 <template>
   <header class="w-[100vw] flex bg-[#ffa] p-0">
     <RouterLink to="/" class="text-[red]">
-      <img src="./assets/img/generic/logoTest.PNG" alt="LOGO" class="w-[200px] inline">
+      <img
+        src="@/assets/img/generic/logoTest.png"
+        alt="LOGO"
+        class="w-[200px] inline"
+      />
     </RouterLink>
 
->>>>>>> Stashed changes
-
     <nav>
-      <RouterLink to="/about" class="text-[red]">
-        關於我們
-      </RouterLink>
-      <RouterLink to="/teacher" class="text-[red]">
-        師資介紹
-      </RouterLink>
+      <RouterLink to="/about" class="text-[red]"> 關於我們 </RouterLink>
+      <RouterLink to="/teacher" class="text-[red]"> 師資介紹 </RouterLink>
       <RouterLink to="/courseInformation" class="text-[red]">
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" class="text-[red]">
-        學生作品
-      </RouterLink>
-      <RouterLink to="/admissionList" class="text-[red]">
-        歷年榜單
-      </RouterLink>
-      <RouterLink to="/connection" class="text-[red]">
-        聯絡資訊
-      </RouterLink>
+      <RouterLink to="/studentWork" class="text-[red]"> 學生作品 </RouterLink>
+      <RouterLink to="/admissionList" class="text-[red]"> 歷年榜單 </RouterLink>
+      <RouterLink to="/connection" class="text-[red]"> 聯絡資訊 </RouterLink>
     </nav>
   </header>
   <main>
     <RouterView />
   </main>
-  <footer>
-
-  </footer>
+  <footer></footer>
 </template>
 
 <!-- <style scoped>

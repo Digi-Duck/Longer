@@ -1,9 +1,12 @@
 @font-face {
   font-family: "ChenYuluoyan";
   src: url("@/assets/font/ChenYuluoyan.ttf") format("truetype");
-  /* 添加其他格式和路径，根据需要 */
+}
+@font-face {
+  font-family: "GenWanMin-EL";
+  src: url("@/assets/font/GenWanMin-EL.ttf") format("truetype");
 }
 
-body {
+/* body {
   font-family: "ChenYuluoyan";
-}
+} */
