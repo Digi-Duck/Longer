@@ -17,23 +17,13 @@ export default {
 </script>
 
 <template>
-<<<<<<< HEAD
+  <!-- nav -->
   <header class="">
     <RouterLink to="/" class="navBar">
-      <img src="./assets/img/generic/logoTest.png" alt="LO GO">
-=======
-  <header class="w-[100vw] flex bg-[#ffa] p-0">
-    <RouterLink to="/" class="text-[red]">
-      <img
-        src="@/assets/img/generic/logoTest.png"
-        alt="LOGO"
-        class="w-[200px] inline"
-      />
->>>>>>> b902d5bd558508f287ed277c3856bc28c85badae
+      <img src="./assets/img/generic/logoTest.png" alt="LOGO">
     </RouterLink>
 
     <nav>
-<<<<<<< HEAD
       <RouterLink to="/about" class="navBar">
         關於我們
       </RouterLink>
@@ -52,18 +42,9 @@ export default {
       <RouterLink to="/connection" class="navBar">
         聯絡資訊
       </RouterLink>
-=======
-      <RouterLink to="/about" class="text-[red]"> 關於我們 </RouterLink>
-      <RouterLink to="/teacher" class="text-[red]"> 師資介紹 </RouterLink>
-      <RouterLink to="/courseInformation" class="text-[red]">
-        課程資訊
-      </RouterLink>
-      <RouterLink to="/studentWork" class="text-[red]"> 學生作品 </RouterLink>
-      <RouterLink to="/admissionList" class="text-[red]"> 歷年榜單 </RouterLink>
-      <RouterLink to="/connection" class="text-[red]"> 聯絡資訊 </RouterLink>
->>>>>>> b902d5bd558508f287ed277c3856bc28c85badae
     </nav>
   </header>
+  <!-- 分頁內容 -->
   <main>
     <RouterView />
   </main>
@@ -72,13 +53,21 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  @apply flex justify-between items-end w-[100vw] p-0 bg-[#ffa];
+  @apply flex justify-between items-end w-[100%] h-[15.6rem] fixed z-[1] bg-[#ebe7d5];
 
-  .navBar {
-    @apply  mx-[5px] text-[1.8rem] text-[#fff] bg-[#050];
-    img{
-      @apply w-[300px];
+  nav{
+    @apply flex;
+    .navBar {
+      @apply block me-[15px] px-[30px] py-[6px] rounded-t-lg text-[1.8rem] text-[#fff] bg-[#203922] shadow-[3px_0px_5px_#333];
+  
+      img {
+        @apply w-[15.6rem];
+      }
     }
   }
 }
+main{
+  @apply pt-[15.6rem];
+}
+
 </style>
