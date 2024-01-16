@@ -52,12 +52,29 @@ export default {
   <!-- 公版頁尾 -->
   <footer>
     <section class="footer-content">
-      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139%26sk%3Dabout&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139%26sk%3Dabout&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+        width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </section>
     <section class="footer-content">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo voluptate ab eveniet fugit repudiandae, corporis fugiat consectetur asperiores illum facilis itaque expedita labore id dolor. Ut saepe aperiam fugit veritatis.
-      Porro iusto reiciendis accusamus, nostrum doloremque aspernatur cumque vel placeat. Necessitatibus natus consectetur similique officiis laudantium minus odio ad cumque voluptates pariatur reiciendis culpa, quibusdam, eius est? Sit, quam? Labore.
-      Eum inventore repudiandae nemo maxime reprehenderit commodi laboriosam accusantium pariatur autem quo, quae iusto necessitatibus officia culpa odio illum doloremque iste architecto, ea possimus! Perspiciatis sint deserunt amet ut dolorem!
+      <section class="footer-T-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat voluptatem voluptas a nobis consequuntur quis
+        sint aliquid porro, inventore, quaerat blanditiis id aut. Dolorem dignissimos doloribus, molestias dolor molestiae
+        ducimus.
+        Fugiat nobis dignissimos deleniti voluptas facilis in quasi atque a at quos corporis dicta, eveniet obcaecati quis
+        voluptates exercitationem error natus non! Obcaecati natus quis saepe perferendis, voluptatem totam enim.
+      </section>
+      <section class="footer-B-nav">
+        <ul class="footer-ul">
+          <li>關於我們</li>
+          <li>師資介紹</li>
+          <li>課程資訊</li>
+          <li>學生作品</li>
+          <li>歷年榜單</li>
+          <li>聯絡資訊</li>
+        </ul>
+      </section>
     </section>
     <section class="copyRight">
       <p>Designed by 創室網匠 Copyright &copy; 2024</p>
@@ -67,35 +84,57 @@ export default {
 
 <style lang="scss" scoped>
 //公版 nav
-  header {
-    // @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
-    @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
+header {
+  // @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
+  @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
 
-    nav {
-      @apply flex me-[5px];
+  nav {
+    @apply flex me-[5px];
 
-      .navBar {
-        @apply block me-[15px] px-[30px] py-[6px] text-[1.8rem] text-[#fff] bg-[#203922] rounded-t-lg shadow-[2px_0px_5px_#333];
+    .navBar {
+      @apply block me-[15px] px-[30px] py-[6px] text-[1.8rem] text-[#fff] bg-[#203922] rounded-t-lg shadow-[2px_0px_5px_#333];
 
-        img {
-          @apply w-[250px];
-        }
+      img {
+        @apply w-[250px];
       }
     }
   }
-  // 分頁內容
-  main {
-    // @apply pt-[250px];
-  }
-  // 公版頁尾
-  footer{
-    @apply flex flex-wrap w-[100%] h-[85vh] bg-[#ebe7d5];
+}
 
-    .footer-content{
-      @apply flex justify-center items-center w-[50%] h-[75vh];
-    }
-    .copyRight{
-      @apply flex-1 self-end flex justify-center items-center h-[10vh] border-t-[1px];
-    }
-  }
-</style>
+// 分頁內容
+main {
+  // @apply pt-[250px];
+}
+
+// 公版頁尾
+footer {
+  @apply flex flex-wrap w-[100%] h-[85vh] bg-[#ebe7d5];
+
+  .footer-content {
+    @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
+
+    .footer-T-text{
+      @apply self-end;
+    };
+    .footer-B-nav {
+      @apply self-end;
+
+      .footer-ul {
+        @apply flex gap-[5px] text-[1.5rem];
+
+
+        li:not(:last-child)::after {
+          content: '|';
+          position: relative;
+          top: -5%;
+          left: 2.5%;
+        };
+      };
+    };
+
+  };
+
+  .copyRight {
+    @apply flex-1 self-end flex justify-center items-center h-[10%] border-t-[1px];
+  };
+}</style>
