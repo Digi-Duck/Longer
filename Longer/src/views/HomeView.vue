@@ -2,10 +2,11 @@
 // import MainCSS from "@/assets/main.css";
 import RankingList from "@/components/homepage/RankingList.vue";
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 // import TheWelcome from '../components/TheWelcome.vue'
 export default {
-  components: { RankingList, HomeTitle, AboutTeacher },
+  components: { RankingList, HomeTitle, AboutTeacher, CourseInfo },
 };
 </script>
 
@@ -19,6 +20,10 @@ export default {
   <section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
     <RankingList></RankingList>
+  </section>
+  <section>
+    <HomeTitle class="pl-[138px]">課程資訊</HomeTitle>
+    <CourseInfo></CourseInfo>
   </section>
 </template>
 <style lang="scss" scoped>
