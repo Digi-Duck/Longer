@@ -1,9 +1,6 @@
 <script>
 import BookCover from "@/assets/img/homepage/sign.png";
 export default {
-  components: {
-    BookCover,
-  },
   data() {
     return {
       flag: false,
@@ -96,7 +93,7 @@ export default {
       ],
     };
   },
-  mounted() {},
+  mounted() { },
   methods: {
     // 如果class="PageTurn" 被check，after會消失一段時間
     VanishShadow() {
@@ -141,22 +138,10 @@ export default {
         </label>
 
         <!-- Resets the page -->
-        <input
-          @change="VanishShadow()"
-          class="PageTurn"
-          type="radio"
-          name="page"
-          id="page-1"
-        />
+        <input @change="VanishShadow()" class="PageTurn" type="radio" name="page" id="page-1" />
 
         <!-- Goes to the second page -->
-        <input
-          @change="VanishShadow()"
-          class="PageTurn"
-          type="radio"
-          name="page"
-          id="page-2"
-        />
+        <input @change="VanishShadow()" class="PageTurn" type="radio" name="page" id="page-2" />
         <label class="book__page book__page--2">
           <div class="book__page-front">
             <!-- 暫時把多的切掉 -->
@@ -206,9 +191,7 @@ export default {
         </label>
       </div>
       <transition>
-        <RouterLink to="/admissionList" v-show="flag" class="navBar more"
-          >更多優良榜單 ></RouterLink
-        >
+        <RouterLink to="/admissionList" v-show="flag" class="navBar more">更多優良榜單 ></RouterLink>
       </transition>
     </div>
     <!-- 更多 -->
@@ -224,12 +207,15 @@ export default {
 .v-leave-to {
   opacity: 0;
 }
+
 // bg-[MainColorBG]
 .RankingBG {
-  @apply w-[100%]  h-[800px] bg-[#fff8dc]  flex items-center justify-center;
+  @apply w-[100%] h-[800px] bg-[#fff8dc] flex items-center justify-center;
+
   .cover {
-    @apply relative shadow-lg  w-[1445px] h-[647px];
+    @apply relative shadow-lg w-[1445px] h-[647px];
   }
+
   // img {
   //   @apply border border-[rgba(0,0,0,0.06)] border-l-8;
   // }
@@ -238,22 +224,21 @@ export default {
     display: block;
     width: 150px;
     height: 647px;
-    background: linear-gradient(
-      90deg,
-      rgba(227, 225, 217, 0.02) 0%,
-      rgba(208, 206, 198, 0.05) 10%,
-      rgba(208, 206, 198, 0.08) 15%,
-      rgba(121, 119, 116, 0.1) 25%,
-      rgba(121, 119, 116, 0.25) 50%,
-      rgba(121, 119, 116, 0.1) 75%,
-      rgba(208, 206, 198, 0.08) 85%,
-      rgba(208, 206, 198, 0.05) 90%,
-      rgba(227, 225, 217, 0.02) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(227, 225, 217, 0.02) 0%,
+        rgba(208, 206, 198, 0.05) 10%,
+        rgba(208, 206, 198, 0.08) 15%,
+        rgba(121, 119, 116, 0.1) 25%,
+        rgba(121, 119, 116, 0.25) 50%,
+        rgba(121, 119, 116, 0.1) 75%,
+        rgba(208, 206, 198, 0.08) 85%,
+        rgba(208, 206, 198, 0.05) 90%,
+        rgba(227, 225, 217, 0.02) 100%);
     position: absolute;
     top: 0px;
     left: 660px;
   }
+
   .cover:before {
     content: "";
     display: block;
@@ -266,6 +251,7 @@ export default {
     left: 680px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   }
+
   .book {
     @apply border-8 border-[#56331a] shadow-2xl shadow-[#56331a] rounded-md;
   }
@@ -273,23 +259,28 @@ export default {
   table {
     font-family: "Oswald", sans-serif;
     border-collapse: collapse;
+
     th {
       width: 25vw;
       height: 75px;
     }
+
     td {
       width: 25vw;
       height: 50px;
       text-align: center;
     }
   }
+
   .more {
     @apply block bg-[#8a7c6b] p-6 absolute right-[-55px] top-[600px] rounded-lg text-[#FFFFFF] shadow-lg;
   }
+
   .more:hover {
     @apply bg-[#ffcf25];
   }
 }
+
 // @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
 
 :root {
@@ -329,18 +320,14 @@ export default {
     transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform-origin: 0% 0%;
     background-color: var(--page-bg);
-    background-image: linear-gradient(
-      90deg,
-      rgba(227, 227, 227, 1) 0%,
-      rgba(249, 4, 4, 0) 18%
-    );
+    background-image: linear-gradient(90deg,
+        rgba(227, 227, 227, 1) 0%,
+        rgba(249, 4, 4, 0) 18%);
 
     &:nth-of-type(1) {
-      background-image: linear-gradient(
-        -90deg,
-        rgba(227, 227, 227, 1) 0%,
-        rgba(247, 247, 247, 0) 18%
-      );
+      background-image: linear-gradient(-90deg,
+          rgba(227, 227, 227, 1) 0%,
+          rgba(247, 247, 247, 0) 18%);
     }
 
     // 封面圖片
@@ -363,11 +350,9 @@ export default {
       transform-style: preserve-3d;
       // background-color: var(--page-bg);
 
-      background-image: linear-gradient(
-        90deg,
-        rgba(227, 227, 227, 1) 0%,
-        rgba(247, 247, 247, 0) 18%
-      );
+      background-image: linear-gradient(90deg,
+          rgba(227, 227, 227, 1) 0%,
+          rgba(247, 247, 247, 0) 18%);
     }
 
     &--4 {
@@ -389,6 +374,7 @@ export default {
       padding: 0 calc(var(--baseline) * 1.8);
       transform: rotateY(180deg) translateZ(1px);
     }
+
     // 內文的大小設定
     .page__content {
       // 可能要調整
@@ -397,17 +383,18 @@ export default {
       position: relative;
       background-color: #e3e1d9;
       text-align: center;
+
       // box-shadow: 30px 0px 0px 0px rgba(0, 0, 0, 1);
-      &-book-title {
-        font-family: var(--book-title);
-        // font-size: calc(var(--base-size) * 3);
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--dark-text);
-        margin-top: calc(var(--baseline) * 5);
-        margin-bottom: calc(var(--baseline) * 2);
-      }
+      // &-book-title {
+      //   font-family: var(--book-title);
+      //   // font-size: calc(var(--base-size) * 3);
+      //   font-weight: bold;
+      //   text-transform: uppercase;
+      //   letter-spacing: 3px;
+      //   color: var(--dark-text);
+      //   margin-top: calc(var(--baseline) * 5);
+      //   margin-bottom: calc(var(--baseline) * 2);
+      // }
 
       // &-author {
       //   font-family: var(--title);
@@ -485,13 +472,14 @@ export default {
       //   text-transform: uppercase;
       // }
 
-      &-text {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 0.67);
-        text-align: justify;
-        text-indent: var(--baseline);
-      }
+      // &-text {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 0.67);
+      //   text-align: justify;
+      //   text-indent: var(--baseline);
+      // }
     }
+
     .page__number {
       position: absolute;
       bottom: var(--baseline);
@@ -505,7 +493,7 @@ export default {
   input[type="radio"] {
     display: none;
 
-    &:checked + .book__page {
+    &:checked+.book__page {
       transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
       transform: rotateY(-180deg);
     }
