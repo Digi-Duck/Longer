@@ -31,9 +31,7 @@ export default {
     </RouterLink>
     <!-- nav Btn -->
     <nav>
-      <!-- <RouterLink to="/about" class="navBar">
-        關於我們
-      </RouterLink> -->
+      <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
       <RouterLink to="/about" :class="{ 'navBar': true, 'active': activeLink === 'about' }" @click="setActiveLink('about')">
         關於我們
       </RouterLink>
@@ -61,13 +59,19 @@ export default {
   <!-- 公版頁尾 -->
   <footer>
     <section class="footer-content">
-      <iframe
+      <!-- <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139%26sk%3Dabout&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
         width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
     </section>
     <section class="footer-content">
-      <section class="footer-T-text">
+      <section class="footer-r-top">
+        <img
+          src="./assets/img/generic/logo.svg"
+          class="img-fluid rounded-top"
+          alt="LOGO"
+        />
+        
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat voluptatem voluptas a nobis consequuntur quis
         sint aliquid porro, inventore, quaerat blanditiis id aut. Dolorem dignissimos doloribus, molestias dolor molestiae
         ducimus.
@@ -94,17 +98,17 @@ export default {
 <style lang="scss" scoped>
 //公版 nav
 header {
-  // @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
-  @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
+  @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
+  // @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
 
   nav {
     @apply flex items-end me-[5px];
 
     .navBar {
-      @apply flex items-center h-[60px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_5px_#333];
+      @apply flex items-center h-[50px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_5px_#333];
 
       &.active {
-        @apply h-[80px] bg-[#838666]
+        @apply h-[70px] bg-[#838666]
       }
 
       img {
@@ -116,7 +120,7 @@ header {
 
 // 分頁內容
 main {
-  // @apply pt-[250px];
+  @apply pt-[250px];
 }
 
 // 公版頁尾
@@ -126,7 +130,7 @@ footer {
   .footer-content {
     @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
 
-    .footer-T-text {
+    .footer-r-top {
       @apply self-end;
     }
 

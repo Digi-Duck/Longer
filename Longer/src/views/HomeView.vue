@@ -9,8 +9,8 @@ export default {
 </script>
 
 <template>
-  <!-- <TheWelcome /> -->
   <main>
+    <!-- <TheWelcome /> -->
   </main>
   <section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
