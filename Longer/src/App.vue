@@ -26,8 +26,8 @@ export default {
   <!-- 公版nav -->
   <header class="">
     <!-- LOGO -->
-    <RouterLink to="/" :class="{ 'navBar': true}" @click="setActiveLink('')">
-      <img src="./assets/img/generic/logoTest.png" alt="LOGO">
+    <RouterLink to="/" class="LOGO" :class="{ 'navBar': true}" @click="setActiveLink('')">
+      <img src="./assets/img/generic/logo.svg" alt="LOGO">
     </RouterLink>
     <!-- nav Btn -->
     <nav>
@@ -98,9 +98,11 @@ export default {
 <style lang="scss" scoped>
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[250px] fixed z-[1] bg-[#ebe7d5];
+  @apply flex justify-between items-end w-[100%] h-[210px] fixed z-[1] bg-[#d1cebf];
   // @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
-
+  .LOGO{
+    @apply self-center ms-[30px];
+  }
   nav {
     @apply flex items-end me-[5px];
 
@@ -112,7 +114,7 @@ header {
       }
 
       img {
-        @apply w-[250px];
+        @apply w-[210px];
       }
     }
   }
@@ -125,7 +127,7 @@ main {
 
 // 公版頁尾
 footer {
-  @apply flex flex-wrap w-[100%] h-[85vh] bg-[#ebe7d5];
+  @apply flex flex-wrap w-[100%] h-[85vh] bg-[#d1cebf];
 
   .footer-content {
     @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
