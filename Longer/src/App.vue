@@ -12,42 +12,65 @@ export default {
     return {
       HelloWorld,
       activeLink: null,
+      scrollBottom: false,
     };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollIng)
   },
   methods: {
     setActiveLink(link) {
       this.activeLink = link;
+      console.log(this.scrollHight);
     },
+    scrollIng() {
+      const scrollNow = document.documentElement;
+      const isAtBottom = scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
+
+      if (isAtBottom) {
+        this.scrollBottom = true;
+      } else {
+        this.scrollBottom = false;
+      }
+      // console.log(this.scrollBottom);
+
+    }
   },
 };
 </script>
 
+<!-- 公版nav -->
 <template>
-  <!-- 公版nav -->
-  <header class="">
+  <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
-    <RouterLink to="/" class="LOGO" :class="{ 'navBar': true}" @click="setActiveLink('')">
+    <RouterLink to="/" class="LOGO" :class="{ 'navBar': true }" @click="setActiveLink('')">
       <img src="./assets/img/generic/logo.svg" alt="LOGO">
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink to="/about" :class="{ 'navBar': true, 'active': activeLink === 'about' }" @click="setActiveLink('about')">
+      <RouterLink to="/about" :class="{ 'navBar': true, 'active': activeLink === 'about' }"
+        @click="setActiveLink('about')">
         關於我們
       </RouterLink>
-      <RouterLink to="/teacher" :class="{ 'navBar': true, 'active': activeLink === 'teacher' }" @click="setActiveLink('teacher')">
+      <RouterLink to="/teacher" :class="{ 'navBar': true, 'active': activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')">
         師資介紹
       </RouterLink>
-      <RouterLink to="/courseInformation" :class="{ 'navBar': true, 'active': activeLink === 'courseInformation' }" @click="setActiveLink('courseInformation')">
+      <RouterLink to="/courseInformation" :class="{ 'navBar': true, 'active': activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')">
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" :class="{ 'navBar': true, 'active': activeLink === 'studentWork' }" @click="setActiveLink('studentWork')">
+      <RouterLink to="/studentWork" :class="{ 'navBar': true, 'active': activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')">
         學生作品
       </RouterLink>
-      <RouterLink to="/admissionList" :class="{ 'navBar': true, 'active': activeLink === 'admissionList' }" @click="setActiveLink('admissionList')">
+      <RouterLink to="/admissionList" :class="{ 'navBar': true, 'active': activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')">
         歷年榜單
       </RouterLink>
-      <RouterLink to="/connection" :class="{ 'navBar': true, 'active': activeLink === 'connection' }" @click="setActiveLink('connection')">
+      <RouterLink to="/connection" :class="{ 'navBar': true, 'active': activeLink === 'connection' }"
+        @click="setActiveLink('connection')">
         聯絡資訊
       </RouterLink>
     </nav>
@@ -59,24 +82,29 @@ export default {
   <!-- 公版頁尾 -->
   <footer>
     <section class="footer-content">
-      <!-- <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139%26sk%3Dabout&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+        width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </section>
     <section class="footer-content">
       <section class="footer-r-top">
-        <img
-          src="./assets/img/generic/logo.svg"
-          class="img-fluid rounded-top"
-          alt="LOGO"
-        />
-        
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat voluptatem voluptas a nobis consequuntur quis
-        sint aliquid porro, inventore, quaerat blanditiis id aut. Dolorem dignissimos doloribus, molestias dolor molestiae
-        ducimus.
-        Fugiat nobis dignissimos deleniti voluptas facilis in quasi atque a at quos corporis dicta, eveniet obcaecati quis
-        voluptates exercitationem error natus non! Obcaecati natus quis saepe perferendis, voluptatem totam enim.
+        <img src="./assets/img/generic/logo.svg" class="img-fluid rounded-top" alt="LOGO" />
+        <section class="footer-r-top-text">
+          <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
+          <p>地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓</p>
+          <span>營業時間&emsp;&emsp;</span>
+          <div>
+            週三至週五 15:00 — 21:00
+            <br>
+            週六及週日 09:00 — 17:00
+            <br>
+            每週一和週二公休
+          </div>
+          
+        </section>
+
+
       </section>
       <section class="footer-B-nav">
         <ul class="footer-ul">
@@ -98,11 +126,12 @@ export default {
 <style lang="scss" scoped>
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[210px] fixed z-[1] bg-[#d1cebf];
-  // @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
-  .LOGO{
+  @apply flex justify-between items-end w-[100%] h-[160px] fixed z-[1] bg-[#d1cebf];
+
+  .LOGO {
     @apply self-center ms-[30px];
   }
+
   nav {
     @apply flex items-end me-[5px];
 
@@ -114,7 +143,7 @@ header {
       }
 
       img {
-        @apply w-[210px];
+        @apply w-[160px];
       }
     }
   }
@@ -122,7 +151,7 @@ header {
 
 // 分頁內容
 main {
-  @apply pt-[250px];
+  @apply pt-[160px];
 }
 
 // 公版頁尾
@@ -133,23 +162,35 @@ footer {
     @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
 
     .footer-r-top {
-      @apply self-end;
+      @apply w-[100%];
+
+      img{
+        @apply mb-[30px];
+      }
+
+      .footer-r-top-text{
+        @apply flex flex-wrap text-[1.5rem];
+
+        p{
+          @apply w-[100%] mb-[30px];
+        }
+      }
     }
 
     ;
 
     .footer-B-nav {
-      @apply self-end;
+      @apply w-[100%];
 
       .footer-ul {
-        @apply flex gap-[5px] text-[1.5rem];
+        @apply flex justify-end gap-[20px] pe-[35px] text-[1.5rem];
 
 
         li:not(:last-child)::after {
           content: '|';
           position: relative;
           top: -5%;
-          left: 2.5%;
+          left: 10%;
         }
 
         ;
@@ -169,4 +210,5 @@ footer {
   }
 
   ;
-}</style>
+}
+</style>
