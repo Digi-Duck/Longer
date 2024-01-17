@@ -4,6 +4,7 @@ export default {};
 <template>
   <div class="TitleBG">
     <div class="text">
+      
       <slot></slot>
     </div>
   </div>
