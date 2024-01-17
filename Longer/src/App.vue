@@ -11,7 +11,13 @@ export default {
   data() {
     return {
       HelloWorld,
+      activeLink: null,
     };
+  },
+  methods: {
+    setActiveLink(link) {
+      this.activeLink = link;
+    },
   },
 };
 </script>
@@ -20,27 +26,30 @@ export default {
   <!-- 公版nav -->
   <header class="">
     <!-- LOGO -->
-    <RouterLink to="/">
+    <RouterLink to="/" :class="{ 'navBar': true}" @click="setActiveLink('')">
       <img src="./assets/img/generic/logoTest.png" alt="LOGO">
     </RouterLink>
     <!-- nav Btn -->
     <nav>
-      <RouterLink to="/about" class="navBar">
+      <!-- <RouterLink to="/about" class="navBar">
+        關於我們
+      </RouterLink> -->
+      <RouterLink to="/about" :class="{ 'navBar': true, 'active': activeLink === 'about' }" @click="setActiveLink('about')">
         關於我們
       </RouterLink>
-      <RouterLink to="/teacher" class="navBar">
+      <RouterLink to="/teacher" :class="{ 'navBar': true, 'active': activeLink === 'teacher' }" @click="setActiveLink('teacher')">
         師資介紹
       </RouterLink>
-      <RouterLink to="/courseInformation" class="navBar">
+      <RouterLink to="/courseInformation" :class="{ 'navBar': true, 'active': activeLink === 'courseInformation' }" @click="setActiveLink('courseInformation')">
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" class="navBar">
+      <RouterLink to="/studentWork" :class="{ 'navBar': true, 'active': activeLink === 'studentWork' }" @click="setActiveLink('studentWork')">
         學生作品
       </RouterLink>
-      <RouterLink to="/admissionList" class="navBar">
+      <RouterLink to="/admissionList" :class="{ 'navBar': true, 'active': activeLink === 'admissionList' }" @click="setActiveLink('admissionList')">
         歷年榜單
       </RouterLink>
-      <RouterLink to="/connection" class="navBar">
+      <RouterLink to="/connection" :class="{ 'navBar': true, 'active': activeLink === 'connection' }" @click="setActiveLink('connection')">
         聯絡資訊
       </RouterLink>
     </nav>
@@ -89,10 +98,14 @@ header {
   @apply flex justify-between items-end w-[100%] h-[250px] z-[1] bg-[#ebe7d5];
 
   nav {
-    @apply flex me-[5px];
+    @apply flex items-end me-[5px];
 
     .navBar {
-      @apply block me-[15px] px-[30px] py-[6px] text-[1.8rem] text-[#fff] bg-[#203922] rounded-t-lg shadow-[2px_0px_5px_#333];
+      @apply flex items-center h-[60px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_5px_#333];
+
+      &.active {
+        @apply h-[80px] bg-[#838666]
+      }
 
       img {
         @apply w-[250px];
@@ -113,9 +126,12 @@ footer {
   .footer-content {
     @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
 
-    .footer-T-text{
+    .footer-T-text {
       @apply self-end;
-    };
+    }
+
+    ;
+
     .footer-B-nav {
       @apply self-end;
 
@@ -128,13 +144,23 @@ footer {
           position: relative;
           top: -5%;
           left: 2.5%;
-        };
-      };
-    };
+        }
 
-  };
+        ;
+      }
+
+      ;
+    }
+
+    ;
+
+  }
+
+  ;
 
   .copyRight {
     @apply flex-1 self-end flex justify-center items-center h-[10%] border-t-[1px];
-  };
+  }
+
+  ;
 }</style>
