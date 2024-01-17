@@ -2,16 +2,20 @@
 // import MainCSS from "@/assets/main.css";
 import RankingList from "@/components/homepage/RankingList.vue";
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 // import TheWelcome from '../components/TheWelcome.vue'
 export default {
-  components: { RankingList, HomeTitle },
+  components: { RankingList, HomeTitle, AboutTeacher },
 };
 </script>
 
 <template>
-  <main>
-    <!-- <TheWelcome /> -->
-  </main>
+  <!-- <TheWelcome /> -->
+  <main></main>
+  <section>
+    <HomeTitle class="pl-[1376px]">關於老師</HomeTitle>
+    <!-- <AboutTeacher></AboutTeacher> -->
+  </section>
   <section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
     <RankingList></RankingList>

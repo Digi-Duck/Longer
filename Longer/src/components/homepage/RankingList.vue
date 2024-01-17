@@ -385,16 +385,16 @@ export default {
       text-align: center;
 
       // box-shadow: 30px 0px 0px 0px rgba(0, 0, 0, 1);
-      &-book-title {
-        font-family: var(--book-title);
-        // font-size: calc(var(--base-size) * 3);
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--dark-text);
-        margin-top: calc(var(--baseline) * 5);
-        margin-bottom: calc(var(--baseline) * 2);
-      }
+      // &-book-title {
+      //   font-family: var(--book-title);
+      //   // font-size: calc(var(--base-size) * 3);
+      //   font-weight: bold;
+      //   text-transform: uppercase;
+      //   letter-spacing: 3px;
+      //   color: var(--dark-text);
+      //   margin-top: calc(var(--baseline) * 5);
+      //   margin-bottom: calc(var(--baseline) * 2);
+      // }
 
       // &-author {
       //   font-family: var(--title);
@@ -472,12 +472,12 @@ export default {
       //   text-transform: uppercase;
       // }
 
-      &-text {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 0.67);
-        text-align: justify;
-        text-indent: var(--baseline);
-      }
+      // &-text {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 0.67);
+      //   text-align: justify;
+      //   text-indent: var(--baseline);
+      // }
     }
 
     .page__number {
