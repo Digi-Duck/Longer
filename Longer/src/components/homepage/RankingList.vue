@@ -1,17 +1,17 @@
 <script>
-
-import BookCover from "@/assets/img/homepage/sign.png"
+import BookCover from "@/assets/img/homepage/sign.png";
 export default {
-components:{
-  BookCover
-}
-,data(){
-return{
-  img:BookCover,
-  RankNumber: [
-    {
-        year: 106,
-        details: [
+  components: {
+    BookCover,
+  },
+  data() {
+    return {
+      flag: false,
+      img: BookCover,
+      RankNumber: [
+        {
+          year: 106,
+          details: [
             { name: "陳O瑩", school: "東海大學美術研究所" },
             { name: "蘇　O", school: "朝陽科技大學建築研究所" },
             { name: "林O安", school: "國立台北藝術大學動畫系" },
@@ -46,13 +46,16 @@ return{
             { name: "徐O瑩", school: "五權國中美術班" },
             { name: "魏O涵", school: "五權國中美術班" },
             { name: "黃O淇", school: "至善國中美術班" },
-            { name: "游O蔚", school: "至善國中美術班" }
-        ]
-    },
-    {
+            { name: "游O蔚", school: "至善國中美術班" },
+          ],
+        },
+        {
           year: 105,
-        details: [
-            { name: "廖O輔", school: "國立新竹教育大學藝術與設計系創作組(素描90分彩繪90分)" },
+          details: [
+            {
+              name: "廖O輔",
+              school: "國立新竹教育大學藝術與設計系創作組(素描90分彩繪90分)",
+            },
             { name: "周O恩", school: "國立台南大學視覺藝術與設計系(創意93分)" },
             { name: "洪O昇", school: "國立嘉義大學視覺藝術系" },
             { name: "林O熙", school: "國立台科大工商業設計系(術科滿分)" },
@@ -88,136 +91,208 @@ return{
             { name: "余O萱", school: "大華國中美術班" },
             { name: "羅O文", school: "五權國中美術班" },
             // ... (other data for year 105)
-        ]
-    }
-    
-],
+          ],
+        },
+      ],
+    };
+  },
+  mounted() {},
+  methods: {
+    // 如果class="PageTurn" 被check，after會消失一段時間
+    VanishShadow() {
+      console.log("翻書了");
 
-
-}
-}
+      setTimeout(() => {
+        this.flag = !this.flag;
+      }, "500");
+    },
+  },
+  computed: {},
 };
 </script>
 <template>
   <div class="RankingBG">
-   <div class="cover">
-  <div class="book">
-  <label for="page-1"  class="book__page book__page--1">
-    <img src="@/assets/img/homepage/sign.png" alt="">
-  </label>
-  
-  <label for="page-2" class="book__page book__page--4">
-   
-      <!-- 我是第3頁 -->
-      <div class="page__content truncate">
-        <h1> 104年</h1>
-   <table>
-    <thead>
-      <tr>
-        <th>姓名</th>
-        <th>學校與系所</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(item) in RankNumber[0].details">
-        <td>{{item.name}}</td>
-        <td>{{item.school}} </td>
-      </tr>
-    </tbody>
-    
-   </table>
-  
+    <div class="cover">
+      <div class="book">
+        <label for="page-1" class="book__page book__page--1">
+          <img src="@/assets/img/homepage/sign.png" alt="" />
+        </label>
+
+        <label for="page-2" class="book__page book__page--4">
+          <!-- 我是第3頁 -->
+          <div class="page__content truncate">
+            <h1>104年</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>學校與系所</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in RankNumber[0].details">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.school }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="page__number">3</div>
+        </label>
+
+        <!-- Resets the page -->
+        <input
+          @change="VanishShadow()"
+          class="PageTurn"
+          type="radio"
+          name="page"
+          id="page-1"
+        />
+
+        <!-- Goes to the second page -->
+        <input
+          @change="VanishShadow()"
+          class="PageTurn"
+          type="radio"
+          name="page"
+          id="page-2"
+        />
+        <label class="book__page book__page--2">
+          <div class="book__page-front">
+            <!-- 暫時把多的切掉 -->
+            <div class="page__content truncate">
+              <!-- 我是第1頁 -->
+              <h1>106年</h1>
+              <table>
+                <thead>
+                  <tr>
+                    <th>姓名</th>
+                    <th>學校與系所</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in RankNumber[0].details">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.school }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="book__page-back">
+            <div class="page__content">
+              <!-- 我是第2頁 -->
+              <div class="page__content truncate">
+                <h1>105年</h1>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>姓名</th>
+                      <th>學校與系所</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in RankNumber[0].details">
+                      <td>{{ item.name }}</td>
+                      <td>{{ item.school }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="page__number">2</div>
+            </div>
+          </div>
+        </label>
       </div>
-      <div class="page__number">3</div>
-    
-  </label>
-    
-  <!-- Resets the page -->
-  <input type="radio" name="page" id="page-1"/>
-    
-  <!-- Goes to the second page -->
-  <input type="radio" name="page" id="page-2"/>
-  <label class="book__page book__page--2">
-    <div class="book__page-front">
-      <!-- 暫時把多的切掉 -->
-      <div class="page__content truncate">
-        <!-- 我是第1頁 -->
-        <h1> 106年</h1>
-   <table>
-    <thead>
-      <tr>
-        <th>姓名</th>
-        <th>學校與系所</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(item) in RankNumber[0].details">
-        <td>{{item.name}}</td>
-        <td>{{item.school}} </td>
-      </tr>
-    </tbody>
-    
-   </table>
-   
-      </div>
-   
+      <transition>
+        <RouterLink to="/admissionList" v-show="flag" class="navBar more"
+          >更多優良榜單 ></RouterLink
+        >
+      </transition>
     </div>
-    <div class="book__page-back">
-      <div class="page__content">
-        <!-- 我是第2頁 -->
-        <div class="page__content truncate">
-     
-        <h1> 105年</h1>
-   <table>
-    <thead>
-      <tr>
-        <th>姓名</th>
-        <th>學校與系所</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(item) in RankNumber[0].details">
-        <td>{{item.name}}</td>
-        <td>{{item.school}} </td>
-      </tr>
-    </tbody>
-    
-   </table>
-  
-      </div>
-        
-        <div class="page__number">2</div>
-      </div>
-    </div>
-  </label>
-</div>
-</div>
+    <!-- 更多 -->
   </div>
 </template>
 <style lang="scss" scoped>
-// bg-[MainColorBG] 
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+// bg-[MainColorBG]
 .RankingBG {
-  @apply   w-[100%]  h-[800px] bg-[#fff8dc]  flex items-center justify-center;
-  .cover{@apply  shadow-lg  w-[1445px] h-[647px];}
-  table{
-    font-family: 'Oswald', sans-serif;
-    border-collapse:collapse;
-      th{
-      width:25vw;
-      height:75px;
+  @apply w-[100%]  h-[800px] bg-[#fff8dc]  flex items-center justify-center;
+  .cover {
+    @apply relative shadow-lg  w-[1445px] h-[647px];
+  }
+  // img {
+  //   @apply border border-[rgba(0,0,0,0.06)] border-l-8;
+  // }
+  .cover:after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 647px;
+    background: linear-gradient(
+      90deg,
+      rgba(227, 225, 217, 0.02) 0%,
+      rgba(208, 206, 198, 0.05) 10%,
+      rgba(208, 206, 198, 0.08) 15%,
+      rgba(121, 119, 116, 0.1) 25%,
+      rgba(121, 119, 116, 0.25) 50%,
+      rgba(121, 119, 116, 0.1) 75%,
+      rgba(208, 206, 198, 0.08) 85%,
+      rgba(208, 206, 198, 0.05) 90%,
+      rgba(227, 225, 217, 0.02) 100%
+    );
+    position: absolute;
+    top: 0px;
+    left: 660px;
+  }
+  .cover:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: #372011;
+    position: absolute;
+    border-radius: 50%;
+    top: 560px;
+    left: 680px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+  .book {
+    @apply border-8 border-[#56331a] shadow-2xl shadow-[#56331a] rounded-md;
+  }
+
+  table {
+    font-family: "Oswald", sans-serif;
+    border-collapse: collapse;
+    th {
+      width: 25vw;
+      height: 75px;
     }
-      td{
-      width:25vw;
-      height:50px;
-      text-align:center;
+    td {
+      width: 25vw;
+      height: 50px;
+      text-align: center;
     }
+  }
+  .more {
+    @apply block bg-[#8a7c6b] p-6 absolute right-[-55px] top-[600px] rounded-lg text-[#FFFFFF] shadow-lg;
+  }
+  .more:hover {
+    @apply bg-[#ffcf25];
   }
 }
 // @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
 
 :root {
- 
-
   /* spacing */
   /* this is what defines the global scale */
   --baseline: 12px;
@@ -229,8 +304,6 @@ return{
   --base-size: var(--baseline) * 1.2;
 }
 
-
-
 // body {
 //   background-color: var(--body-bg);
 //   height: 100vh;
@@ -239,13 +312,6 @@ return{
 //   align-items: center;
 //   justify-content: center;
 // }
-
-.cover {
-  // width: calc(var(--baseline) * 60);
-  // height: calc(var(--baseline) * 42.6);
-  // box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
-
-}
 
 .book {
   // 依設計大小
@@ -277,7 +343,7 @@ return{
       );
     }
 
-// 封面圖片
+    // 封面圖片
     &--1 {
       cursor: pointer;
       overflow: hidden;
@@ -285,7 +351,7 @@ return{
       img {
         // border-radius: 10%;
         width: 100%;
-        max-width: 100%;
+        // max-width: 100%;
         height: 100%;
       }
     }
@@ -323,15 +389,15 @@ return{
       padding: 0 calc(var(--baseline) * 1.8);
       transform: rotateY(180deg) translateZ(1px);
     }
-// 內文的大小設定
+    // 內文的大小設定
     .page__content {
-      // 可能要調整   
+      // 可能要調整
       padding: 30px;
       height: 100%;
       position: relative;
       background-color: #e3e1d9;
       text-align: center;
-
+      // box-shadow: 30px 0px 0px 0px rgba(0, 0, 0, 1);
       &-book-title {
         font-family: var(--book-title);
         // font-size: calc(var(--base-size) * 3);
@@ -379,14 +445,14 @@ return{
       //   text-transform: uppercase;
       // }
 
-      &-title {
-        font-family: var(--title);
-        font-size: calc(var(--base-size) * 1);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: calc(var(--baseline) * 5);
-        margin-bottom: calc(var(--baseline) * 3);
-      }
+      // &-title {
+      //   font-family: var(--title);
+      //   font-size: calc(var(--base-size) * 1);
+      //   text-transform: uppercase;
+      //   letter-spacing: 1px;
+      //   margin-top: calc(var(--baseline) * 5);
+      //   margin-bottom: calc(var(--baseline) * 3);
+      // }
 
       // &-table {
       //   width: 100%;
