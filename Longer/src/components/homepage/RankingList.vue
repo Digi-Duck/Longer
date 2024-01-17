@@ -213,7 +213,7 @@ export default {
   @apply w-[100%] h-[800px] bg-[#fff8dc] flex items-center justify-center;
 
   .cover {
-    @apply relative shadow-lg w-[1445px] h-[647px];
+    @apply relative shadow-lg w-[1429px] h-[647px];
   }
 
   // img {
@@ -273,7 +273,7 @@ export default {
   }
 
   .more {
-    @apply block bg-[#8a7c6b] p-6 absolute right-[-55px] top-[600px] rounded-lg text-[#FFFFFF] shadow-lg;
+    @apply block bg-[#8a7c6b] p-6 absolute right-[-55px] top-[280px] rounded-lg text-[#FFFFFF] shadow-lg;
   }
 
   .more:hover {
@@ -306,7 +306,7 @@ export default {
 
 .book {
   // 依設計大小
-  width: 1445px;
+  width: 1429px;
   height: 647px;
   display: flex;
   perspective: 1200px;
