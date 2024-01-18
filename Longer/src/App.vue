@@ -108,12 +108,24 @@ export default {
       </section>
       <section class="footer-B-nav">
         <ul class="footer-ul">
-          <li>關於我們</li>
-          <li>師資介紹</li>
-          <li>課程資訊</li>
-          <li>學生作品</li>
-          <li>歷年榜單</li>
-          <li>聯絡資訊</li>
+          <li>
+            關於我們
+          </li>
+          <li>
+            師資介紹
+          </li>
+          <li>
+            課程資訊
+          </li>
+          <li>
+            學生作品
+          </li>
+          <li>
+            歷年榜單
+          </li>
+          <li>
+            聯絡資訊
+          </li>
         </ul>
       </section>
     </section>
