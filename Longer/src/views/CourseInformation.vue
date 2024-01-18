@@ -39,7 +39,7 @@ export default {
             <HomeTitle class="pl-[13px]">課程資訊</HomeTitle>
             
                 <section class="container" v-for="item in courseContent" :key="item.id">
-                    <section class="img-area" :class=""></section>
+                    <section class="img-area"></section>
                     <section class="text-area">
                         <p class="title">{{ item.title }}</p>
                         <p class="content">{{ item.content }}</p>
