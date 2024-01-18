@@ -16,12 +16,19 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.scrollIng)
+    window.addEventListener('scroll', this.scrollIng);
+
+    if (sessionStorage.getItem('activeLink')) {
+      this.activeLink = JSON.parse(sessionStorage.getItem('activeLink'));
+    } else {
+      sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
+    }
   },
   methods: {
     setActiveLink(link) {
       this.activeLink = link;
-      console.log(this.scrollHight);
+      sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
+      console.log(this.activeLink);
     },
     scrollIng() {
       const scrollNow = document.documentElement;
@@ -148,7 +155,7 @@ header {
     @apply flex items-end me-[5px];
 
     .navBar {
-      @apply flex items-center h-[50px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_5px_#333];
+      @apply flex items-center h-[50px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
 
       &.active {
         @apply h-[70px] bg-[#838666]
