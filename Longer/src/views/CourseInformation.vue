@@ -4,6 +4,9 @@ import introduce01 from "@/assets/img/courseInformation/img01.png";
 import introduce02 from "@/assets/img/courseInformation/img02.png";
 import introduce03 from "@/assets/img/courseInformation/img03.png";
 import introduce04 from "@/assets/img/courseInformation/img04.png";
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
     components: { HomeTitle },
@@ -17,7 +20,8 @@ export default {
                 {
                     imgPath: introduce01,
                     title: '升大學美術班',
-                    content: '以大學術科考試項目：「素描、水彩、油畫、水墨、書法及創意表現」為授課項目，考前密集訓練，透過練習考古題及模擬術科考試，讓學生在短期內掌握考科重點。',
+                    introduce: '以大學術科考試項目：',
+                    content: '「素描、水彩、油畫、水墨、書法及創意表現」為授課項目，考前密集訓練，透過練習考古題及模擬術科考試，讓學生在短期內掌握考科重點。',
                 },
                 {
                     imgPath: introduce02,
@@ -37,6 +41,9 @@ export default {
             ]
         }
     },
+    mounted() {
+        AOS.init();
+    },
 
 }
 </script>
@@ -47,15 +54,20 @@ export default {
             <HomeTitle class="pl-[13px]">課程資訊</HomeTitle>
             
                 <section class="container" v-for="item in courseContent" :key="item.id">
-                    <section class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
-                    <!-- <img src="@/assets/img/courseInformation/img04.png" alt=""> -->
+                    <section data-aos="zoom-in-right" data-aos-duration="1000" class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
                     <section class="text-area">
-                        <p class="title">{{ item.title }}</p>
-                        <p class="content">{{ item.content }}</p>
+                        <section>
+                            <p class="title">{{ item.title }}</p>
+                            <p class="introduce">{{ item.introduce }}</p>
+                            <p class="content">{{ item.content }}</p>
+                        </section>
                     </section>
                 </section>
             
         </section>
+        <!-- <div data-aos="fade-up" data-aos-duration="1000" class="aos">
+            这是一个使用aos.js的动画效果
+        </div> -->
     </main>
 </template>
 <style lang="scss" scoped>
@@ -63,32 +75,44 @@ main {
     @apply w-full pt-0 pb-[50px] bg-MainColorBG;
 
     section {
-        @apply max-w-[1215px] mx-[auto];
+        @apply max-w-[1215px] mx-[auto] pt-[30px];
 
         .container {
-            @apply flex flex-wrap w-full mb-[50px];
+            @apply flex flex-wrap w-full mb-[80px];
 
-            &:nth-child(odd){
+            &:nth-child(odd) {
                 @apply flex-row-reverse;
             }
 
-            .img-area{
+            .img-area {
                 @apply w-[50%] h-[500px] bg-no-repeat bg-cover;
             }
 
             .text-area {
                 @apply flex flex-col justify-center items-center w-[50%];
-                .title {
-                    @apply self-start mb-[20px] text-[1.5rem];
-                }
 
-                .content {
-                    @apply text-[1.2rem];
+                section{
+                    @apply w-[500px] text-justify;
+                    
+                    .title {
+                        @apply self-start mb-[20px] text-[1.5rem];
+                    }
+
+                    .introduce{
+                        @apply text-[1.2rem];
+                    }
+    
+                    .content {
+                        @apply text-[1.2rem];
+                    }
                 }
             }
 
 
         }
+    }
+    .aos{
+        @apply w-[200px] h-[200px];
     }
 }
 </style>
