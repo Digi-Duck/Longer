@@ -5,7 +5,7 @@ export default {
   components: { HomeTitle },
 };
 </script>
-<template lang="">
+<template>
   <!-- <div class="abc h-[1000px]"></div> -->
   <div class="TeacherItroBG">
     <HomeTitle class="pl-[138px]">師資介紹</HomeTitle>

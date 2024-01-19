@@ -93,7 +93,7 @@ export default {
       ],
     };
   },
-  mounted() { },
+  mounted() {},
   methods: {
     // 如果class="PageTurn" 被check，after會消失一段時間
     VanishShadow() {
@@ -138,10 +138,22 @@ export default {
         </label>
 
         <!-- Resets the page -->
-        <input @change="VanishShadow()" class="PageTurn" type="radio" name="page" id="page-1" />
+        <input
+          @change="VanishShadow()"
+          class="PageTurn"
+          type="radio"
+          name="page"
+          id="page-1"
+        />
 
         <!-- Goes to the second page -->
-        <input @change="VanishShadow()" class="PageTurn" type="radio" name="page" id="page-2" />
+        <input
+          @change="VanishShadow()"
+          class="PageTurn"
+          type="radio"
+          name="page"
+          id="page-2"
+        />
         <label class="book__page book__page--2">
           <div class="book__page-front">
             <!-- 暫時把多的切掉 -->
@@ -191,7 +203,9 @@ export default {
         </label>
       </div>
       <transition>
-        <RouterLink to="/admissionList" v-show="flag" class="navBar more">更多優良榜單 ></RouterLink>
+        <RouterLink to="/admissionList" v-show="flag" class="navBar more"
+          >更多優良榜單 ></RouterLink
+        >
       </transition>
     </div>
     <!-- 更多 -->
@@ -210,7 +224,7 @@ export default {
 
 // bg-[MainColorBG]
 .RankingBG {
-  @apply w-[100%] h-[800px] bg-[#fff8dc] flex items-center justify-center;
+  @apply w-[100%] h-[800px] bg-MainColorBG flex items-center justify-center;
 
   .cover {
     @apply relative shadow-lg w-[1429px] h-[647px];
@@ -224,16 +238,18 @@ export default {
     display: block;
     width: 150px;
     height: 647px;
-    background: linear-gradient(90deg,
-        rgba(227, 225, 217, 0.02) 0%,
-        rgba(208, 206, 198, 0.05) 10%,
-        rgba(208, 206, 198, 0.08) 15%,
-        rgba(121, 119, 116, 0.1) 25%,
-        rgba(121, 119, 116, 0.25) 50%,
-        rgba(121, 119, 116, 0.1) 75%,
-        rgba(208, 206, 198, 0.08) 85%,
-        rgba(208, 206, 198, 0.05) 90%,
-        rgba(227, 225, 217, 0.02) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(227, 225, 217, 0.02) 0%,
+      rgba(208, 206, 198, 0.05) 10%,
+      rgba(208, 206, 198, 0.08) 15%,
+      rgba(121, 119, 116, 0.1) 25%,
+      rgba(121, 119, 116, 0.25) 50%,
+      rgba(121, 119, 116, 0.1) 75%,
+      rgba(208, 206, 198, 0.08) 85%,
+      rgba(208, 206, 198, 0.05) 90%,
+      rgba(227, 225, 217, 0.02) 100%
+    );
     position: absolute;
     top: 0px;
     left: 660px;
@@ -277,7 +293,7 @@ export default {
   }
 
   .more:hover {
-    @apply bg-[#ffcf25];
+    @apply bg-MainColorBG;
   }
 }
 
@@ -320,14 +336,18 @@ export default {
     transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform-origin: 0% 0%;
     background-color: var(--page-bg);
-    background-image: linear-gradient(90deg,
-        rgba(227, 227, 227, 1) 0%,
-        rgba(249, 4, 4, 0) 18%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(227, 227, 227, 1) 0%,
+      rgba(249, 4, 4, 0) 18%
+    );
 
     &:nth-of-type(1) {
-      background-image: linear-gradient(-90deg,
-          rgba(227, 227, 227, 1) 0%,
-          rgba(247, 247, 247, 0) 18%);
+      background-image: linear-gradient(
+        -90deg,
+        rgba(227, 227, 227, 1) 0%,
+        rgba(247, 247, 247, 0) 18%
+      );
     }
 
     // 封面圖片
@@ -350,9 +370,11 @@ export default {
       transform-style: preserve-3d;
       // background-color: var(--page-bg);
 
-      background-image: linear-gradient(90deg,
-          rgba(227, 227, 227, 1) 0%,
-          rgba(247, 247, 247, 0) 18%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(227, 227, 227, 1) 0%,
+        rgba(247, 247, 247, 0) 18%
+      );
     }
 
     &--4 {
@@ -493,7 +515,7 @@ export default {
   input[type="radio"] {
     display: none;
 
-    &:checked+.book__page {
+    &:checked + .book__page {
       transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
       transform: rotateY(-180deg);
     }
