@@ -1,6 +1,5 @@
 <script>
 
-
 export default {
   // import TheWelcome from '../components/TheWelcome.vue'
   components: { StudentWork },
