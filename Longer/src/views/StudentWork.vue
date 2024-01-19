@@ -4,13 +4,13 @@ import StudentWork from "@/components/homepage/StudentWork.vue";
 export default {
 
     // import TheWelcome from '../components/TheWelcome.vue'
-    components: { StudentWork, AboutTeacher },
+    components: { StudentWork, AboutTeache },
     data() {
         return {
             studentData: [1, 2, 3, 4, 5],
         }
     },
-    
+
 }
 </script>
 <template lang="">
