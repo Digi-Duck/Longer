@@ -1,6 +1,6 @@
 <script>
 import StudentWork from "@/components/homepage/StudentWork.vue";
-import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
+
 export default {
 
     // import TheWelcome from '../components/TheWelcome.vue'
@@ -19,7 +19,7 @@ export default {
     </div>
     <StudentWork></StudentWork>
     
-    <AboutTeacher></AboutTeacher>
+    <!-- <AboutTeacher></AboutTeacher> -->
     
     
     
