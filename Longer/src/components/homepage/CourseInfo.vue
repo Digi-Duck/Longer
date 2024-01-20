@@ -238,14 +238,14 @@ export default {
 }
 // 課程資訊
 .CourseInfoBG {
-  @apply flex flex-col items-center  justify-center w-[100%] h-[1562px] bg-MainColorBG;
+  @apply flex flex-col items-center  justify-center w-[100%] h-[1562px] bg-MainColor;
   .CourseInfo {
     @apply flex gap-[10px] justify-between w-[1403px] h-[369px];
     .LimitBox {
       @apply w-[100%] h-[100%]  rounded-[10%] truncate;
     }
     .zoom {
-      @apply bg-MainColorBG w-[100%]  h-[100%];
+      @apply bg-MainColor w-[100%]  h-[100%];
       .PicBox {
         @apply flex justify-center pt-[265px]  w-[100%] h-[100%]  bg-[red] rounded-[10%] bg-cover;
       }

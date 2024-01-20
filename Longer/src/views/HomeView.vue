@@ -30,6 +30,20 @@ export default {
     <AboutTeacher></AboutTeacher>
   </section>
   <section>
+    <div class="Block4Top">
+      <div class="Block4TopCurve"></div>
+    </div>
+    <div class="Block4">
+      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }"
+        >課程資訊</HomeTitle
+      >
+      <CourseInfo></CourseInfo>
+    </div>
+    <div class="Block4Down">
+      <div class="Block4DownCurve"></div>
+    </div>
+  </section>
+  <section>
     <HomeTitle class="pl-[calc(50%_-_150px)]">學生作品</HomeTitle>
     <StudentWork></StudentWork>
   </section>
@@ -37,10 +51,7 @@ export default {
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
     <RankingList></RankingList>
   </section>
-  <section>
-    <HomeTitle class="pl-[138px]">課程資訊</HomeTitle>
-    <CourseInfo></CourseInfo>
-  </section>
+  <section></section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -71,4 +82,29 @@ export default {
     }
   }
 }
+
+// 區塊4的css
+.bg-set {
+  background: none; /* Add !important to override scoped styles */
+  height: 0px;
+  margin-left: calc(50% - 300px);
+}
+.Block4Top {
+  @apply w-[100%] h-[289px] bg-MainColorBG;
+  .Block4TopCurve {
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")];
+  }
+}
+.Block4Down {
+  @apply w-[100%] h-[376px] bg-MainColorBG;
+  .Block4DownCurve {
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")];
+  }
+}
+.Block4 {
+  @apply w-[100%] h-[2032px] bg-MainColor;
+}
+// .block4::before {
+//   @apply content-none bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")];
+// }
 </style>

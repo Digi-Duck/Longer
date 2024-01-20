@@ -5,6 +5,8 @@ export default {
     extend: {},
     colors: {
       MainColorBG: "#fff8dc",
+      MainColor: "#024b06",
+      EmphasizeColor: "#ffc700",
       // SubColorBG:""
     },
   },
