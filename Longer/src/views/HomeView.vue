@@ -4,10 +4,11 @@ import RankingList from "@/components/homepage/RankingList.vue";
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
+import StudentWork from "@/components/homepage/StudentWork.vue";
 
 // import TheWelcome from '../components/TheWelcome.vue'
 export default {
-  components: { RankingList, HomeTitle, AboutTeacher, CourseInfo },
+  components: { RankingList, HomeTitle, AboutTeacher, CourseInfo, StudentWork },
 };
 </script>
 
@@ -27,6 +28,10 @@ export default {
   <section>
     <HomeTitle class="pl-[1376px]">關於老師</HomeTitle>
     <AboutTeacher></AboutTeacher>
+  </section>
+  <section>
+    <HomeTitle class="pl-[calc(50%_-_150px)]">學生作品</HomeTitle>
+    <StudentWork></StudentWork>
   </section>
   <section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>

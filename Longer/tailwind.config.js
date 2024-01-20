@@ -6,7 +6,6 @@ export default {
     colors: {
       MainColorBG: "#fff8dc",
       // SubColorBG:""
-
     },
   },
   plugins: [],
