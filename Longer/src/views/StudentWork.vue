@@ -1,19 +1,41 @@
 <script>
 
 export default {
-  // import TheWelcome from '../components/TheWelcome.vue'
-  components: { StudentWork },
+
   data() {
     return {
-      studentData: [1, 2, 3, 4, 5],
+      
     };
   },
 };
 </script>
 <template lang="">
-  <!-- <div class="text-[80px]">學生作品</div>
-  <StudentWork></StudentWork> -->
+  <main>
+    <section>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </section>
 
-  <!-- <AboutTeacher></AboutTeacher> -->
+  </main>
 </template>
-<style lang=""></style>
+<style lang="scss" scoped>
+  main{
+    @apply w-full py-[30px] bg-MainColorBG;
+
+    section{
+      @apply flex flex-wrap gap-[30px] max-w-[810px] mx-[auto];
+
+      .box{
+        @apply w-[220px] h-[220px] bg-[#aaf];
+      }
+    }
+  }
+
+</style>
