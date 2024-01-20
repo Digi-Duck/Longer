@@ -1,4 +1,7 @@
 <script>
+// 導入lightbox
+import lightbox from 'lightbox2';
+// 導入圖片
 import waterColor01 from '@/assets/img/student_work/water_color/S__13918247_0.jpg';
 
 
@@ -75,11 +78,11 @@ export default {
     };
   },
   mounted() {
-  //   lightbox.option({
-  //   'resizeDuration': 200,
-  //   'wrapAround': true
-  // })
-  },
+        lightbox.option({
+            'resizeDuration': 500,
+            'wrapAround': true
+        });
+    }
 };
 </script>
 <template lang="">
@@ -93,8 +96,18 @@ export default {
     </section>
 
 
-
-
+    <!-- lightbox test -->
+    <div>
+        <a class="example-image-link" href="@/assets/img/student_work/water_color/S__13918247_0.jpg" data-lightbox="example-2" data-title="Optional caption.">
+          <img class="example-image" src="@/assets/img/student_work/water_color/S__13918247_0.jpg"  alt="image-1"/>
+        </a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption." hidden>
+          <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/>
+        </a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption." hidden>
+          <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/>
+        </a>
+    </div>
 
   </main>
 </template>
@@ -113,6 +126,10 @@ main {
         
       }
     }
+  }
+
+  .example-image{
+    @apply w-[200px] h-[200px];
   }
 }
 </style>
