@@ -78,11 +78,11 @@ export default {
     };
   },
   mounted() {
-        lightbox.option({
-            'resizeDuration': 500,
-            'wrapAround': true
-        });
-    }
+    lightbox.option({
+      'resizeDuration': 500,
+      'wrapAround': true
+    });
+  }
 };
 </script>
 <template lang="">
@@ -91,13 +91,16 @@ export default {
 
     <section>
       <div class="box" v-for="item in studentWorks" :key="item.id">
-        <div class="mask">{{item.skill}}</div>
+        <a class="example-image-link" href="@/assets/img/student_work/water_color/S__13918247_0.jpg" data-lightbox="example-2" data-title="Optional caption.">
+          <img class="example-image" src="@/assets/img/student_work/water_color/S__13918247_0.jpg"  alt="image-1"/>
+          <div class="mask example-image" >{{item.skill}}</div>
+        </a>
       </div>
     </section>
 
 
     <!-- lightbox test -->
-    <div>
+    <!-- <div>
         <a class="example-image-link" href="@/assets/img/student_work/water_color/S__13918247_0.jpg" data-lightbox="example-2" data-title="Optional caption.">
           <img class="example-image" src="@/assets/img/student_work/water_color/S__13918247_0.jpg"  alt="image-1"/>
         </a>
@@ -107,7 +110,7 @@ export default {
         <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption." hidden>
           <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/>
         </a>
-    </div>
+    </div> -->
 
   </main>
 </template>
@@ -121,15 +124,17 @@ main {
     .box {
       @apply flex items-center w-[260px] h-[260px] bg-[#aaf];
 
-      .mask {
-        @apply w-full py-[5px] text-center text-[#fff] bg-[#000];
-        
-      }
+
+
+        .mask {
+          @apply w-full py-[5px] text-center text-[#fff] bg-[#000];
+
+        }
+
+
     }
   }
 
-  .example-image{
-    @apply w-[200px] h-[200px];
-  }
+
 }
 </style>
