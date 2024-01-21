@@ -53,7 +53,7 @@ export default {
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ 'navBar': true }" @click="setActiveLink('')">
-      <img src="./assets/img/generic/logo.png" alt="LOGO">
+      <img src="./assets/img/generic/logoTop.png" alt="LOGO">
     </RouterLink>
     <!-- nav Btn -->
     <nav>
