@@ -16,7 +16,7 @@ export default {
   <!-- <TheWelcome /> -->
   <main></main>
   <section class="banner"></section>
-  <HomeTitle class="pl-[13px]">畫室介紹</HomeTitle>
+   <HomeTitle class="pl-[13px]">畫室介紹</HomeTitle>
   <section class="introduce">
     <section class="introduce-text">
       <p class="title">龍格畫室</p>
@@ -25,32 +25,35 @@ export default {
       <p>至今已成為在地人口耳相傳的老字號畫室。</p>
     </section>
   </section>
-  <section>
-    <HomeTitle class="pl-[1376px]">關於老師</HomeTitle>
+ <section>
+    <HomeTitle class="pl-[138px]">關於老師</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
+ 
   <section>
     <div class="Block4Top">
       <div class="Block4TopCurve"></div>
     </div>
-    <div class="Block4">
+   <div class="Block4">
       <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }"
         >課程資訊</HomeTitle
       >
-      <CourseInfo></CourseInfo>
-    </div>
-    <div class="Block4Down">
-      <div class="Block4DownCurve"></div>
-    </div>
-  </section>
-  <section>
-    <HomeTitle class="pl-[calc(50%_-_150px)]">學生作品</HomeTitle>
+      
+      <CourseInfo>
+        
+      </CourseInfo>
+      <div class="pen"></div>
+      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }">學生作品</HomeTitle>
     <StudentWork></StudentWork>
+    </div>
+  
+
   </section>
-  <section>
+  
+  <!--<section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
     <RankingList></RankingList>
-  </section>
+  </section> -->
   <section></section>
 </template>
 <style lang="scss" scoped>
@@ -86,13 +89,13 @@ export default {
 // 區塊4的css
 .bg-set {
   background: none; /* Add !important to override scoped styles */
-  height: 0px;
-  margin-left: calc(50% - 300px);
+  height: 72px;
+  padding-left: calc(50% - 150px);
 }
 .Block4Top {
   @apply w-[100%] h-[289px] bg-MainColorBG;
   .Block4TopCurve {
-    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")];
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
   }
 }
 .Block4Down {
@@ -103,6 +106,7 @@ export default {
 }
 .Block4 {
   @apply w-[100%] h-[2032px] bg-MainColor;
+  .pen{@apply w-[100%] h-[460px] mb-[171px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat bg-top}
 }
 // .block4::before {
 //   @apply content-none bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")];

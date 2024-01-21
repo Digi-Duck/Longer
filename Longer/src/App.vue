@@ -23,6 +23,7 @@ export default {
     } else {
       sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
     }
+   
   },
   methods: {
     setActiveLink(link) {
@@ -41,7 +42,8 @@ export default {
       }
       // console.log(this.scrollBottom);
 
-    }
+    },
+
   },
 };
 </script>

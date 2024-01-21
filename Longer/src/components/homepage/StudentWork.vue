@@ -18,9 +18,10 @@ export default {
 };
 </script>
 <template>
-    <h1 class="text-center ">Infinite Scroll Animation</h1>
+    <!-- <h1 class="text-center ">Infinite Scroll Animation</h1> -->
     <div>
-        <div class="  m-auto border overflow-hidden  scroll">
+        <!-- 雅芬0121 補一個pt-[96px]為了排版首頁 -->
+        <div class="  m-auto border overflow-hidden  scroll pt-[96px]">
             <div class="tag-list  pt-[1rem] pb-[1rem] flex flex-nowrap gap-[1rem]">
                 <img v-for="(item, index) in stPiece" :key="item.id" :src="stPiece[index]" />
 
