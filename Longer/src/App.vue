@@ -147,7 +147,7 @@ export default {
 <style lang="scss" scoped>
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[160px] fixed z-[1] bg-EmphasizeColor;
+  @apply flex justify-between items-end w-[100%] h-[160px] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
@@ -170,10 +170,7 @@ header {
   }
 }
 
-// 分頁內容
-main {
-  @apply pt-[160px];
-}
+
 
 // 公版頁尾
 footer {
