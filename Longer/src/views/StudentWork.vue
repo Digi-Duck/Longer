@@ -93,6 +93,7 @@ export default {
 </script>
 <template lang="">
   <main>
+  
     <section>
       <div class="box" v-for="item in studentWorks" :key="item.id">
         <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem" data-lightbox="example-2" data-title="Optional caption.">
