@@ -23,7 +23,7 @@ export default {
     } else {
       sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
     }
-   
+
   },
   methods: {
     setActiveLink(link) {
@@ -110,7 +110,7 @@ export default {
             <br>
             每週一和週二公休
           </div>
-          
+
         </section>
 
 
@@ -178,25 +178,23 @@ footer {
   @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-content {
-    @apply flex flex-wrap justify-center items-end w-[50%] h-[90%] pb-[50px];
+    @apply flex flex-wrap justify-center items-end w-[50%] h-[90%] pb-[20px];
 
     .footer-r-top {
       @apply w-[100%];
 
-      img{
+      img {
         @apply mb-[30px];
       }
 
-      .footer-r-top-text{
+      .footer-r-top-text {
         @apply flex flex-wrap text-[1.5rem];
 
-        p{
+        p {
           @apply w-[100%] mb-[30px];
         }
       }
     }
-
-    ;
 
     .footer-B-nav {
       @apply w-[100%];
@@ -211,23 +209,12 @@ footer {
           top: -5%;
           left: 10%;
         }
-
-        ;
       }
-
-      ;
     }
-
-    ;
-
   }
-
-  ;
 
   .copyRight {
     @apply flex-1 self-end flex justify-center items-center h-[10%] border-t-[1px];
   }
-
-  ;
 }
 </style>
