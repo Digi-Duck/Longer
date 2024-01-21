@@ -35,25 +35,21 @@ export default {
       <div class="Block4TopCurve"></div>
     </div>
    <div class="Block4">
-      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }"
-        >課程資訊</HomeTitle
-      >
-      
-      <CourseInfo>
-        
-      </CourseInfo>
+      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }">課程資訊</HomeTitle>
+      <CourseInfo></CourseInfo>
       <div class="pen"></div>
       <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }">學生作品</HomeTitle>
     <StudentWork></StudentWork>
+    </div> 
+    <div class="Block4Buttom">
+      <div class="Block4ButtomCurve"></div>
     </div>
-  
-
   </section>
   
-  <!--<section>
+  <section>
     <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
     <RankingList></RankingList>
-  </section> -->
+  </section>
   <section></section>
 </template>
 <style lang="scss" scoped>
@@ -98,15 +94,17 @@ export default {
     @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
   }
 }
-.Block4Down {
-  @apply w-[100%] h-[376px] bg-MainColorBG;
-  .Block4DownCurve {
-    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")];
+.Block4Buttom{
+  @apply w-[100%] h-[450px] bg-MainColorBG;
+  .Block4ButtomCurve {
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] bg-no-repeat bg-cover bg-center;
   }
 }
+
+
 .Block4 {
-  @apply w-[100%] h-[2032px] bg-MainColor;
-  .pen{@apply w-[100%] h-[460px] mb-[171px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat bg-top}
+  @apply w-[100%] h-[1900px] bg-MainColor;
+  .pen{@apply w-[100%] h-[460px] mb-[171px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat  bg-left}
 }
 // .block4::before {
 //   @apply content-none bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")];

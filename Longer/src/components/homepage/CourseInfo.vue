@@ -1,4 +1,5 @@
 <script>
+
 import img1 from "@/assets/img/homepage/CSInfo/pg-1.png";
 import img2 from "@/assets/img/homepage/CSInfo/pg-2.png";
 import img3 from "@/assets/img/homepage/CSInfo/pg-3.png";
@@ -24,7 +25,11 @@ export default {
       <!-- <div class="LimitBox" v-for="(item, index) in IMG">
         <div class="zoom"> -->
           <div class="PicBox" v-for="(item, index) in IMG" >
-            <div class="pic" :style="{ backgroundImage: `url(${item.pic})` }"></div>
+            <div class="pic">
+            <div class="container">
+              <img :src="item.pic" alt="">
+            </div>
+            </div>
             <div class="title">{{ item.title }}</div>
           </div>
           <!-- <img :src="item.pic" alt=""/> -->
@@ -43,6 +48,40 @@ export default {
   </div>
 </template>
 <style lang="scss" scoped>
+
+// 課程資訊
+.CourseInfoBG {
+  @apply flex flex-col items-center  w-[100%] h-[615px] ;
+  .CourseInfo {
+    @apply flex gap-[10px] justify-between w-[1403px] h-[369px] pt-[96px];
+    .PicBox{
+      @apply  w-[420px] h-[462px]  ;
+      .title{@apply  flex justify-center items-center h-[calc(462px_-_380px)] w-[337px] text-[1.625rem] text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] }
+      .pic{@apply   h-[380px] ;
+      .container{@apply h-[300px]}
+      }
+    }
+  }
+}
+
+// hover效果
+
+.container:hover {
+	cursor: pointer;
+}
+.container img {
+	filter: grayscale(90%);
+	transition: filter 0.4s ease-in-out;
+}
+
+.container:hover img {
+	filter: none;
+}
+
+.PicBox .container:hover .title {
+	background-color: yellow;
+}
+
 // 搖擺圖
 // .contactIconBtn {
 //   @apply w-[850px] h-[330px] mt-[200px];
@@ -237,19 +276,4 @@ export default {
 //   animation-timing-function: ease-in-out;
 //   animation-iteration-count: infinite;
 // }
-// 課程資訊
-.CourseInfoBG {
-  @apply flex flex-col items-center  w-[100%] h-[615px] ;
-  .CourseInfo {
-    @apply flex gap-[10px] justify-between w-[1403px] h-[369px] pt-[96px];
-    .PicBox{
-      @apply  w-[420px] h-[462px]  ;
-      .title{@apply  flex justify-center items-center h-[calc(462px_-_380px)] w-[337px] text-[1.625rem] text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] }
-      .pic{@apply   h-[380px] bg-contain bg-no-repeat bg-top}
-    }
-  }
-}
-
-
-
 </style>
