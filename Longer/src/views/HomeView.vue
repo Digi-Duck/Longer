@@ -16,15 +16,8 @@ export default {
   <!-- <TheWelcome /> -->
   <main></main>
   <section class="banner"></section>
-   <HomeTitle class="pl-[13px]">畫室介紹</HomeTitle>
-  <section class="introduce">
-    <section class="introduce-text">
-      <p class="title">龍格畫室</p>
-      <p>一間成立於1994年的小畫室</p>
-      <p>位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
-      <p>至今已成為在地人口耳相傳的老字號畫室。</p>
-    </section>
-  </section>
+  <img src="@/assets/img/generic/longer-slogn.png" alt="">
+
  <section>
     <HomeTitle class="pl-[138px]">關於老師</HomeTitle>
     <AboutTeacher></AboutTeacher>
@@ -51,6 +44,7 @@ export default {
     <RankingList></RankingList>
   </section>
   <section></section>
+  
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -65,22 +59,9 @@ export default {
 }
 
 .banner {
-  @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('../assets/img/generic/banner.png')] bg-cover bg-no-repeat;
+  @apply w-full h-[calc(100vh_-_120px)] bg-[url('../assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 }
-.introduce {
-  @apply flex justify-center items-end w-[100%] h-[calc(100vh_-_152px)] pl-[150px] bg-[url('../assets/img/generic/introduce.png')] bg-cover bg-no-repeat;
-  writing-mode: vertical-rl;
-  .title {
-    @apply text-[40px] relative top-[-50px];
-  }
-  .introduce-text {
-    @apply text-[24px];
 
-    p {
-      @apply m-[10px];
-    }
-  }
-}
 
 // 區塊4的css
 .bg-set {
