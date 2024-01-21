@@ -53,7 +53,7 @@ export default {
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ 'navBar': true }" @click="setActiveLink('')">
-      <img src="./assets/img/generic/logo.svg" alt="LOGO">
+      <img src="./assets/img/generic/logo.png" alt="LOGO">
     </RouterLink>
     <!-- nav Btn -->
     <nav>
@@ -147,7 +147,7 @@ export default {
 <style lang="scss" scoped>
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[160px] fixed z-[1] bg-[#d1cebf];
+  @apply flex justify-between items-end w-[100%] h-[160px] fixed z-[1] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
