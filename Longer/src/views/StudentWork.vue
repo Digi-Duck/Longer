@@ -2,7 +2,7 @@
 // 導入lightbox
 import lightbox from 'lightbox2';
 // 導入圖片
-import waterColor01 from '@/assets/img/student_work/water_color/S__13918247_0.jpg';
+// import waterColor01 from '@/assets/img/student_work/water_color/waterColor01';
 
 
 export default {
@@ -13,7 +13,7 @@ export default {
         {
           skill: '素描',
           img: [
-            waterColor01,
+            
 
           ],
 
@@ -88,7 +88,7 @@ export default {
 <template lang="">
   <main>
 
-
+<!-- 
     <section>
       <div class="box" v-for="item in studentWorks" :key="item.id">
         <a class="example-image-link" href="@/assets/img/student_work/water_color/S__13918247_0.jpg" data-lightbox="example-2" data-title="Optional caption.">
@@ -96,25 +96,26 @@ export default {
           <div class="mask example-image" >{{item.skill}}</div>
         </a>
       </div>
-    </section>
+    </section> -->
+    <img src="../assets/img/student_work/water_color/S__13918247_0.jpg" alt="">
 
 
     <!-- lightbox test -->
-    <!-- <div>
-        <a class="example-image-link" href="@/assets/img/student_work/water_color/S__13918247_0.jpg" data-lightbox="example-2" data-title="Optional caption.">
-          <img class="example-image" src="@/assets/img/student_work/water_color/S__13918247_0.jpg"  alt="image-1"/>
+    <div>
+        <a class="example-image-link" :href="waterColor01" data-lightbox="example-2" data-title="Optional caption.">
+          <img class="example-image" :src="waterColor01"  alt="image-1"/>
         </a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption." hidden>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption.">
+          <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-"/>
+        </a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption.">
           <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/>
         </a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption." hidden>
-          <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/>
-        </a>
-    </div> -->
+    </div>
 
   </main>
 </template>
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 main {
   @apply flex justify-center items-center w-full h-[1000px] pt-0 bg-MainColorBG;
 
@@ -136,5 +137,14 @@ main {
   }
 
 
+}
+</style> -->
+
+<style lang="scss" scoped>
+main{
+  @apply flex justify-center items-center h-[500px] pt-0;
+  img{
+    @apply w-[200px] h-[200px] ;
+  }
 }
 </style>
