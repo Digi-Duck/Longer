@@ -143,7 +143,7 @@ export default {
     </section>
   </footer>
 </template>
-<img src="./assets/img/generic/" alt="">
+<!-- <img src="./assets/img/generic/footer-bg.png" alt=""> -->
 
 <style lang="scss" scoped>
 //公版 nav
@@ -175,10 +175,10 @@ header {
 
 // 公版頁尾
 footer {
-  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-[url('')];
+  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-content {
-    @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
+    @apply flex flex-wrap justify-center items-end w-[50%] h-[90%] pb-[50px];
 
     .footer-r-top {
       @apply w-[100%];
