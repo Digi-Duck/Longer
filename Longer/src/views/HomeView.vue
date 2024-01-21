@@ -65,7 +65,7 @@ export default {
 }
 
 .banner {
-  @apply w-[100%] h-[calc(100vh_-_160px)] bg-[url('../assets/img/generic/banner.png')] bg-cover bg-no-repeat;
+  @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('../assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 }
 .introduce {
   @apply flex justify-center items-end w-[100%] h-[calc(100vh_-_152px)] pl-[150px] bg-[url('../assets/img/generic/introduce.png')] bg-cover bg-no-repeat;

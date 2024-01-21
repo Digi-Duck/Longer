@@ -81,9 +81,9 @@ import childArt10 from '@/assets/img/student_work/child_art_img/child_art_10.jpg
 
 export default {
 
+  components: { HomeTitle },
   data() {
     return {
-      components: { HomeTitle },
       studentWorks: [
         {
           skill: '素描',
@@ -228,9 +228,9 @@ export default {
 </script>
 <template lang="">
   <main>
-    <HomeTitle class="pl-[13px]">學生作品</HomeTitle>
     <section>
       <section>
+        <HomeTitle>學生作品</HomeTitle>
         <div class="box" v-for="item in studentWorks" :key="item.id">
           <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem" :data-lightbox="item.dataText" :data-title="item.skill">
             <div class="image"  :style="{ backgroundImage: `url(${imgItem})` }">
@@ -250,7 +250,7 @@ main{
     @apply flex justify-center items-center w-full py-[50px] bg-MainColorBG;
 
     section {
-      @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto];
+      @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto] pt-0;
 
       .box {
         @apply flex items-center w-[260px] h-[260px];

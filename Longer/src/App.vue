@@ -98,7 +98,7 @@ export default {
     </section>
     <section class="footer-content">
       <section class="footer-r-top">
-        <img src="./assets/img/generic/logo.svg" class="img-fluid rounded-top" alt="LOGO" />
+        <img src="./assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
         <section class="footer-r-top-text">
           <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
           <p>地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓</p>
@@ -143,11 +143,12 @@ export default {
     </section>
   </footer>
 </template>
+<img src="./assets/img/generic/" alt="">
 
 <style lang="scss" scoped>
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[160px] bg-EmphasizeColor;
+  @apply flex justify-between items-end w-[100%] h-[120px] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
@@ -174,7 +175,7 @@ header {
 
 // 公版頁尾
 footer {
-  @apply flex flex-wrap w-[100%] h-[85vh] bg-[#d1cebf];
+  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-[url('')];
 
   .footer-content {
     @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
