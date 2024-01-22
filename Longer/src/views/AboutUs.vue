@@ -6,7 +6,14 @@ export default {
   data() {
     return {
       AboutUsPH: [About1],
+      isY:false,
     };
+  },
+  methods: {
+    checkCollision() {
+      console.log(1);
+      this.isY = true;
+    },
   },
 };
 </script>
@@ -19,7 +26,10 @@ export default {
         <img :src="AboutUsPH[0]" alt="" />
       </div>
       <div class="ct-h">
-        <div class="w-[60px] h-[60px] absolute  top-[300px] hover:bg-EmphasizeColor"></div>
+        <div
+          class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasizeColor"
+          @mouseenter="checkCollision"
+        ></div>
         <div class="ct-text-1">
           <h1 class="text-[2rem]">龍格畫室</h1>
           <p>
@@ -52,7 +62,6 @@ export default {
         </ul>
       </div>
     </section>
-
   </div>
 </template>
 <style lang="scss" scoped>
@@ -104,7 +113,9 @@ export default {
 
   .content-1 {
     img {
-      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg) brightness(120%) contrast(118%);
+      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
+        brightness(120%) contrast(118%);
     }
   }
-}</style>
+}
+</style>

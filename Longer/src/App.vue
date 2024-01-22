@@ -14,91 +14,125 @@ export default {
       activeLink: null,
       scrollBottom: false,
       colorBlockStyle: {
-        left:'0',
-        top:'0'
-      }
+        left: "0",
+        top: "0",
+      },
+      isY: false,
     };
   },
   mounted() {
     //mouse-block
-    window.addEventListener('mousemove', this.mouseMove);
-    window.addEventListener('scroll', this.scrollIng);
+    window.addEventListener("mousemove", this.mouseMove);
+    window.addEventListener("scroll", this.scrollIng);
 
-    if (sessionStorage.getItem('activeLink')) {
-      this.activeLink = JSON.parse(sessionStorage.getItem('activeLink'));
+    if (sessionStorage.getItem("activeLink")) {
+      this.activeLink = JSON.parse(sessionStorage.getItem("activeLink"));
     } else {
-      sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
+      sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     }
-
   },
   methods: {
-    
+    checkCollision() {
+      console.log(1);
+      this.isY = true;
+    },
     mouseMove(e) {
-      const x = e.clientX;
-      const y = e.clientY;
+      const x = e.clientX + window.scrollX;
+      const y = e.clientY + window.scrollY;
       // this.$data.colorBlockStyle = {
       //   left: `${x}px`,
       //   top:`${y}px`
       // };
       this.colorBlockStyle.left = x;
       this.colorBlockStyle.top = y;
-      
-      
     },
     setActiveLink(link) {
       this.activeLink = link;
-      sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
+      sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
       console.log(this.activeLink);
     },
     scrollIng() {
       const scrollNow = document.documentElement;
-      const isAtBottom = scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
+      const isAtBottom =
+        scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
       if (isAtBottom) {
         this.scrollBottom = true;
       } else {
         this.scrollBottom = false;
       }
       // console.log(scrollNow.scrollTop);
-
     },
-
   },
 };
 </script>
 
 <!-- 公版nav -->
 <template>
-  <div :style="{left:`${colorBlockStyle.left}px`,top:`${colorBlockStyle.top}px`}"  id="color-block"></div>
+  <div
+    :style="{
+      left: `${colorBlockStyle.left}px`,
+      top: `${colorBlockStyle.top}px`,
+      backgroundColor: isY ? 'yellow': 'red',
+    }"
+    id="color-block"
+  ></div>
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
-    <RouterLink to="/" class="LOGO" :class="{ 'navBar': true }" @click="setActiveLink('')">
-      <img src="./assets/img/generic/logoTop.png" alt="LOGO">
+    <RouterLink
+      to="/"
+      class="LOGO"
+      :class="{ navBar: true }"
+      @click="setActiveLink('')"
+    >
+      <img
+        src="./assets/img/generic/logoTop.png"
+        alt="LOGO"
+        @mouseenter="checkCollision"
+      />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink to="/about" :class="{ 'navBar': true, 'active': activeLink === 'about' }"
-        @click="setActiveLink('about')">
+      <RouterLink
+        to="/about"
+        :class="{ navBar: true, active: activeLink === 'about' }"
+        @click="setActiveLink('about')"
+      >
         關於我們
       </RouterLink>
-      <RouterLink to="/teacher" :class="{ 'navBar': true, 'active': activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')">
+      <RouterLink
+        to="/teacher"
+        :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')"
+      >
         師資介紹
       </RouterLink>
-      <RouterLink to="/courseInformation" :class="{ 'navBar': true, 'active': activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')">
+      <RouterLink
+        to="/courseInformation"
+        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')"
+      >
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" :class="{ 'navBar': true, 'active': activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')">
+      <RouterLink
+        to="/studentWork"
+        :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')"
+      >
         學生作品
       </RouterLink>
-      <RouterLink to="/admissionList" :class="{ 'navBar': true, 'active': activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')">
+      <RouterLink
+        to="/admissionList"
+        :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')"
+      >
         歷年榜單
       </RouterLink>
-      <RouterLink to="/connection" :class="{ 'navBar': true, 'active': activeLink === 'connection' }"
-        @click="setActiveLink('connection')">
+      <RouterLink
+        to="/connection"
+        :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')"
+      >
         聯絡資訊
       </RouterLink>
     </nav>
@@ -112,48 +146,45 @@ export default {
     <section class="footer-content">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        width="500"
+        height="500"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
     </section>
     <section class="footer-content">
       <section class="footer-r-top">
-        <img src="./assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
+        <img
+          src="./assets/img/generic/logo.png"
+          class="img-fluid rounded-top"
+          alt="LOGO"
+        />
         <section class="footer-r-top-text">
           <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
-          <p>地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓</p>
+          <p>
+            地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓
+          </p>
           <span>營業時間&emsp;&emsp;</span>
           <div>
             週三至週五 15:00 — 21:00
-            <br>
+            <br />
             週六及週日 09:00 — 17:00
-            <br>
+            <br />
             每週一和週二公休
           </div>
-
         </section>
-
-
       </section>
       <section class="footer-B-nav">
         <ul class="footer-ul">
-          <li>
-            關於我們
-          </li>
-          <li>
-            師資介紹
-          </li>
-          <li>
-            課程資訊
-          </li>
-          <li>
-            學生作品
-          </li>
-          <li>
-            歷年榜單
-          </li>
-          <li>
-            聯絡資訊
-          </li>
+          <li>關於我們</li>
+          <li>師資介紹</li>
+          <li>課程資訊</li>
+          <li>學生作品</li>
+          <li>歷年榜單</li>
+          <li>聯絡資訊</li>
         </ul>
       </section>
     </section>
@@ -188,7 +219,7 @@ header {
       @apply flex items-center h-[50px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
 
       &.active {
-        @apply h-[70px] bg-[#838666]
+        @apply h-[70px] bg-[#838666];
       }
 
       img {
@@ -197,8 +228,6 @@ header {
     }
   }
 }
-
-
 
 // 公版頁尾
 footer {
@@ -223,17 +252,14 @@ footer {
       }
     }
 
-
-
     .footer-B-nav {
       @apply w-[100%];
 
       .footer-ul {
         @apply flex justify-end gap-[20px] pe-[35px] text-[1.5rem];
 
-
         li:not(:last-child)::after {
-          content: '|';
+          content: "|";
           position: relative;
           top: -5%;
           left: 10%;
