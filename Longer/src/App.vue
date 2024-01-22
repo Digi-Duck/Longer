@@ -53,13 +53,12 @@ export default {
     scrollIng() {
       const scrollNow = document.documentElement;
       const isAtBottom = scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
-
       if (isAtBottom) {
         this.scrollBottom = true;
       } else {
         this.scrollBottom = false;
       }
-      // console.log(this.scrollBottom);
+      // console.log(scrollNow.scrollTop);
 
     },
 
@@ -176,7 +175,7 @@ export default {
 
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[120px] bg-EmphasizeColor;
+  @apply flex justify-between items-end w-[100%] h-[120px] drop-shadow-[0_5px_5px_#222] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
@@ -223,6 +222,8 @@ footer {
         }
       }
     }
+
+
 
     .footer-B-nav {
       @apply w-[100%];
