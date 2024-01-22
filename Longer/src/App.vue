@@ -13,9 +13,15 @@ export default {
       HelloWorld,
       activeLink: null,
       scrollBottom: false,
+      colorBlockStyle: {
+        left:'0',
+        top:'0'
+      }
     };
   },
   mounted() {
+    //mouse-block
+    window.addEventListener('mousemove', this.mouseMove);
     window.addEventListener('scroll', this.scrollIng);
 
     if (sessionStorage.getItem('activeLink')) {
@@ -26,6 +32,19 @@ export default {
 
   },
   methods: {
+    
+    mouseMove(e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      // this.$data.colorBlockStyle = {
+      //   left: `${x}px`,
+      //   top:`${y}px`
+      // };
+      this.colorBlockStyle.left = x;
+      this.colorBlockStyle.top = y;
+      
+      
+    },
     setActiveLink(link) {
       this.activeLink = link;
       sessionStorage.setItem('activeLink', JSON.stringify(this.activeLink));
@@ -50,6 +69,7 @@ export default {
 
 <!-- 公版nav -->
 <template>
+  <div :style="{left:`${colorBlockStyle.left}px`,top:`${colorBlockStyle.top}px`}"  id="color-block"></div>
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ 'navBar': true }" @click="setActiveLink('')">
@@ -146,6 +166,14 @@ export default {
 <!-- <img src="./assets/img/generic/footer-bg.png" alt=""> -->
 
 <style lang="scss" scoped>
+#color-block {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff00ff;
+  pointer-events: none;
+}
+
 //公版 nav
 header {
   @apply flex justify-between items-end w-[100%] h-[120px] bg-EmphasizeColor;

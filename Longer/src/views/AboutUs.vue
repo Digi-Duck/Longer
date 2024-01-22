@@ -19,6 +19,7 @@ export default {
         <img :src="AboutUsPH[0]" alt="" />
       </div>
       <div class="ct-h">
+        <div class="w-[60px] h-[60px] absolute  top-[300px] hover:bg-EmphasizeColor"></div>
         <div class="ct-text-1">
           <h1 class="text-[2rem]">龍格畫室</h1>
           <p>
@@ -51,9 +52,7 @@ export default {
         </ul>
       </div>
     </section>
-    <section class="content-1">
-      <img src="@/assets/img/about_us_ph/pen1.svg" alt="" />
-    </section>
+
   </div>
 </template>
 <style lang="scss" scoped>
@@ -69,6 +68,13 @@ export default {
 
     .ct-h {
       @apply w-[50%] flex flex-col justify-center items-center;
+
+      img {
+        mix-blend-mode: luminosity;
+      }
+      img:hover {
+        mix-blend-mode: normal;
+      }
 
       .ct-text-1 {
         @apply w-[60%] flex flex-col;
@@ -95,11 +101,10 @@ export default {
       height: 100px;
     }
   }
+
   .content-1 {
     img {
-      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
-        brightness(120%) contrast(118%);
+      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg) brightness(120%) contrast(118%);
     }
   }
-}
-</style>
+}</style>
