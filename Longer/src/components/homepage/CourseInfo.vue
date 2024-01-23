@@ -53,7 +53,7 @@ export default {
 .CourseInfoBG {
   @apply flex flex-col items-center  w-[100%] h-[615px] ;
   .CourseInfo {
-    @apply flex gap-[10px] justify-between w-[1403px] h-[369px] pt-[96px];
+    @apply flex gap-[10px] justify-between w-[1403px] h-[369px] pt-[110px];
     .PicBox{
       @apply  w-[420px] h-[462px]  ;
       .title{@apply  flex justify-center items-center h-[calc(462px_-_380px)] w-[337px] text-[1.625rem] text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] }

@@ -177,9 +177,9 @@ export default {
 }
 
 .Block4 {
-  @apply w-[100%] h-[1900px] bg-MainColor overflow-hidden;
+  @apply w-[100%] h-[2227px] bg-MainColor overflow-hidden;
   .pen {
-    @apply w-[100%] h-[480px] mb-[171px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat  bg-left relative;
+    @apply w-[100%] h-[480px] mb-[180px] mt-[180px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat  bg-left relative;
   }
 }
 // GSAP
