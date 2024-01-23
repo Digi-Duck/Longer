@@ -37,19 +37,14 @@ export default {
         .replace("%", "")
     );
     this.WidthControl = maskWidth;
-
-    scrollToLonger(){
-        window.scrollTo({
-            top: 1000,
-            behavior: 'smooth' // 添加平滑滚动效果
-          });
-
-
-
-
-    }
   },
   methods: {
+    scrollToLonger() {
+      window.scrollTo({
+        top: 1000,
+        behavior: "smooth", // 添加平滑滚动效果
+      });
+    },
     MaskMove() {
       //  捲動百分比
       const scrollPercentage = Math.floor(
@@ -75,8 +70,8 @@ export default {
         if (this.WidthControl == 0) return;
       }
     },
-
-}}
+  },
+};
 </script>
 
 <template>
