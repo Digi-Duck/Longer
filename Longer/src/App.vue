@@ -18,6 +18,7 @@ export default {
         top: "0",
       },
       isY: false,
+      isG: false,
     };
   },
   mounted() {
@@ -32,9 +33,13 @@ export default {
     }
   },
   methods: {
-    checkCollision() {
-      console.log(1);
+    changeYellow() {
       this.isY = true;
+    },
+    changeGreen() {
+      this.isG = true;
+      this.isY = false;
+      console.log(1);
     },
     mouseMove(e) {
       const x = e.clientX + window.scrollX;
@@ -72,7 +77,7 @@ export default {
     :style="{
       left: `${colorBlockStyle.left}px`,
       top: `${colorBlockStyle.top}px`,
-      backgroundColor: isY ? 'yellow': 'red',
+      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
     }"
     id="color-block"
   ></div>
@@ -87,7 +92,7 @@ export default {
       <img
         src="./assets/img/generic/logoTop.png"
         alt="LOGO"
-        @mouseenter="checkCollision"
+        @mouseenter="changeYellow"
       />
     </RouterLink>
     <!-- nav Btn -->
@@ -97,6 +102,7 @@ export default {
         to="/about"
         :class="{ navBar: true, active: activeLink === 'about' }"
         @click="setActiveLink('about')"
+        @mouseenter="changeGreen"
       >
         關於我們
       </RouterLink>
@@ -104,6 +110,7 @@ export default {
         to="/teacher"
         :class="{ navBar: true, active: activeLink === 'teacher' }"
         @click="setActiveLink('teacher')"
+        @mouseenter="changeGreen"
       >
         師資介紹
       </RouterLink>
@@ -111,6 +118,7 @@ export default {
         to="/courseInformation"
         :class="{ navBar: true, active: activeLink === 'courseInformation' }"
         @click="setActiveLink('courseInformation')"
+        @mouseenter="changeGreen"
       >
         課程資訊
       </RouterLink>
@@ -118,6 +126,7 @@ export default {
         to="/studentWork"
         :class="{ navBar: true, active: activeLink === 'studentWork' }"
         @click="setActiveLink('studentWork')"
+        @mouseenter="changeGreen"
       >
         學生作品
       </RouterLink>
@@ -125,6 +134,7 @@ export default {
         to="/admissionList"
         :class="{ navBar: true, active: activeLink === 'admissionList' }"
         @click="setActiveLink('admissionList')"
+        @mouseenter="changeGreen"
       >
         歷年榜單
       </RouterLink>
@@ -132,6 +142,7 @@ export default {
         to="/connection"
         :class="{ navBar: true, active: activeLink === 'connection' }"
         @click="setActiveLink('connection')"
+        @mouseenter="changeGreen"
       >
         聯絡資訊
       </RouterLink>
@@ -201,6 +212,7 @@ export default {
   width: 20px;
   height: 20px;
   background-color: #ff00ff;
+  border-radius: 50%;
   pointer-events: none;
 }
 
