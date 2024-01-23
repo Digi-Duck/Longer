@@ -113,10 +113,12 @@ export default {
 
   <section>
     <div class="Block5">
-      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }"
+      <HomeTitle class="pl-[138px] mt-[130px] " :class="{ 'bg-set': true }"
         >歷年榜單</HomeTitle
       >
-      <div class="swing"><img :src="blob1" alt="" /></div>
+      <div class="swing top-[1100px] left-[-30px]"><img :src="blob2" alt="" /></div>
+      <div class="swing right-[-30px]" ><img :src="blob3" alt="" /></div>
+
       <RankingList></RankingList>
     </div>
   </section>
@@ -186,7 +188,7 @@ export default {
   // );
 }
 .Block5 {
-  @apply w-[100%] h-[1480px]  bg-MainColorBG;
+  @apply w-[100%] h-[1480px]  bg-MainColorBG relative overflow-hidden;
 }
 
 // 搖擺

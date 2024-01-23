@@ -1,5 +1,6 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import NavCurve from "@/components/NavCurve.vue"
 
 // 導入lightbox
 import lightbox from 'lightbox2';
@@ -81,7 +82,7 @@ import childArt10 from '@/assets/img/student_work/child_art_img/child_art_10.jpg
 
 export default {
 
-  components: { HomeTitle },
+  components: { HomeTitle,NavCurve },
   data() {
     return {
       studentWorks: [
@@ -226,8 +227,10 @@ export default {
   }
 };
 </script>
-<template lang="">
+<template >
+  
   <main>
+    <NavCurve></NavCurve>
     <section>
       <section>
         <HomeTitle>學生作品</HomeTitle>

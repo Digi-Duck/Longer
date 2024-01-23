@@ -1,7 +1,8 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import NavCurve from "@/components/NavCurve.vue"
 export default {
-  components: { HomeTitle },
+  components: { HomeTitle,NavCurve },
   data() {
     return {
       ContactInfoList: [
@@ -29,6 +30,7 @@ export default {
 };
 </script>
 <template>
+  <NavCurve></NavCurve>
   <div class="ConnectionUsBG">
     <HomeTitle class="pl-[138px]">聯絡資訊</HomeTitle>
     <div class="ConInfo">

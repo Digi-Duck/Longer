@@ -1,5 +1,6 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import NavCurve from "@/components/NavCurve.vue"
 import introduce01 from "@/assets/img/courseInformation/img01.png";
 import introduce02 from "@/assets/img/courseInformation/img02.png";
 import introduce03 from "@/assets/img/courseInformation/img03.png";
@@ -9,7 +10,7 @@ import introduce04 from "@/assets/img/courseInformation/img04.png";
 // import 'aos/dist/aos.css';
 
 export default {
-  components: { HomeTitle },
+  components: { HomeTitle,NavCurve },
   data() {
     return {
       introduce01,
@@ -50,9 +51,11 @@ export default {
   },
 };
 </script>
-<template lang="">
+<template >
   <!-- 課程資訊主要內容 -->
+  
   <main>
+    <NavCurve></NavCurve>
     <section>
       <HomeTitle class="pl-[13px]">課程資訊</HomeTitle>
 
