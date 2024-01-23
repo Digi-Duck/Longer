@@ -12,7 +12,8 @@ export default {
     return {
       HelloWorld,
       activeLink: null,
-      scrollBottom: false,
+      scrollState: false,
+      hamState: false,
       colorBlockStyle: {
         left: "0",
         top: "0",
@@ -52,93 +53,78 @@ export default {
       console.log(this.activeLink);
     },
     scrollIng() {
-      const scrollNow = document.documentElement;
-      const isAtBottom =
-        scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
-      if (isAtBottom) {
-        this.scrollBottom = true;
+      const webContent = this.$refs.webContent;
+      const webContentTop = webContent.getBoundingClientRect().top;
+      // console.log(webContentTop);
+      if (webContentTop < 0) {
+        this.scrollState = true;
       } else {
-        this.scrollBottom = false;
+        this.scrollState = false;
       }
-      // console.log(scrollNow.scrollTop);
+      // console.log(this.scrollState);
     },
+    hamSwitch(){
+      this.hamState = !this.hamState;
+      console.log(this.hamState);
+    }
   },
 };
 </script>
 
 <!-- 公版nav -->
 <template>
-  <div
+  <!-- <div
     :style="{
       left: `${colorBlockStyle.left}px`,
       top: `${colorBlockStyle.top}px`,
       backgroundColor: isY ? 'yellow': 'red',
     }"
     id="color-block"
-  ></div>
-  <header class="" v-if="scrollBottom == false">
+  ></div> -->
+  <header class="">
     <!-- LOGO -->
-    <RouterLink
-      to="/"
-      class="LOGO"
-      :class="{ navBar: true }"
-      @click="setActiveLink('')"
-    >
-      <img
-        src="./assets/img/generic/logoTop.png"
-        alt="LOGO"
-        @mouseenter="checkCollision"
-      />
+    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
+      <img src="@/assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="checkCollision" />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink
-        to="/about"
-        :class="{ navBar: true, active: activeLink === 'about' }"
-        @click="setActiveLink('about')"
-      >
+      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')">
         關於我們
       </RouterLink>
-      <RouterLink
-        to="/teacher"
-        :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')"
-      >
+      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')">
         師資介紹
       </RouterLink>
-      <RouterLink
-        to="/courseInformation"
-        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')"
-      >
+      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')">
         課程資訊
       </RouterLink>
-      <RouterLink
-        to="/studentWork"
-        :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')"
-      >
+      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')">
         學生作品
       </RouterLink>
-      <RouterLink
-        to="/admissionList"
-        :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')"
-      >
+      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')">
         歷年榜單
       </RouterLink>
-      <RouterLink
-        to="/connection"
-        :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')"
-      >
+      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')">
         聯絡資訊
       </RouterLink>
     </nav>
   </header>
+  <nav class="ham-menu-all" ref="hamMenu" v-if="scrollState == true">
+    <input id="ham-menu-switch" type="checkbox" width="300px" @click="hamSwitch" hidden>
+    <label for="ham-menu-switch" class="ham-menu">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </label>
+  </nav>
+  <!-- <nav class="ham-menu" v-if="scrollState == true" ref="hamMenu"></nav> -->
   <!-- 分頁內容 -->
-  <main>
+  <main ref="webContent">
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
@@ -146,22 +132,12 @@ export default {
     <section class="footer-content">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="500"
-        height="500"
-        style="border: none; overflow: hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      ></iframe>
+        width="500" height="500" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
+        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </section>
     <section class="footer-content">
       <section class="footer-r-top">
-        <img
-          src="./assets/img/generic/logo.png"
-          class="img-fluid rounded-top"
-          alt="LOGO"
-        />
+        <img src="./assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
         <section class="footer-r-top-text">
           <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
           <p>
@@ -193,7 +169,6 @@ export default {
     </section>
   </footer>
 </template>
-<!-- <img src="./assets/img/generic/footer-bg.png" alt=""> -->
 
 <style lang="scss" scoped>
 #color-block {
@@ -227,6 +202,67 @@ header {
       }
     }
   }
+}
+
+// 漢堡條動畫
+.ham-menu-all {
+  @apply w-[120px] h-[120px] rounded-full fixed top-[20px] left-[20px] z-[2] bg-[#cca600] hover:opacity-[0.7];
+
+  .ham-menu {
+    @apply inline-block w-full h-full relative;
+
+    &:after{
+      content: 'MENU';
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+
+
+    }
+
+    .line {
+      @apply w-[50%] h-[6px] absolute left-[50%] translate-x-[-50%] -translate-y-[-50%] duration-[0.7s] bg-[#000]
+    }
+
+    .line-1 {
+      @apply w-[20%] absolute top-[20%];
+    }
+
+    .line-2 {
+      @apply w-[40%] absolute top-[30%];
+    }
+
+    .line-3 {
+      @apply absolute top-[40%];
+    }
+  }
+
+  
+
+    #ham-menu-switch {
+    display: none;
+  }
+
+  // #ham-menu-switch:checked .ham-menu:after{
+  //   content: 'close';
+  // }
+  #ham-menu-switch:checked+.ham-menu .line-1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 50%;
+    top: 50%;
+  }
+
+  #ham-menu-switch:checked+.ham-menu .line-2 {
+    display: none;
+  }
+
+  #ham-menu-switch:checked+.ham-menu .line-3 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+  }
+
+
 }
 
 // 公版頁尾
