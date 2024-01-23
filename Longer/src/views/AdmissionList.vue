@@ -1,8 +1,10 @@
 <script>
+import NavCurve from "@/components/NavCurve.vue"
 export default {
   data() {
     return {};
   },
+  omponents: { HomeTitle,NavCurve },
   mounted() {
     document.addEventListener("DOMContentLoaded", function () {});
   },
@@ -28,7 +30,8 @@ export default {
   },
 };
 </script>
-<template lang="">
+<template >
+  <NavCurve></NavCurve>
   <div class="text-[80px]">歷年榜單</div>
   <div class="s-1">
     <svg

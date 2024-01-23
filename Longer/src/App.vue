@@ -19,6 +19,7 @@ export default {
         top: "0",
       },
       isY: false,
+      isG: false,
     };
   },
   mounted() {
@@ -33,9 +34,13 @@ export default {
     }
   },
   methods: {
-    checkCollision() {
-      console.log(1);
+    changeYellow() {
       this.isY = true;
+    },
+    changeGreen() {
+      this.isG = true;
+      this.isY = false;
+      console.log(1);
     },
     mouseMove(e) {
       const x = e.clientX + window.scrollX;
@@ -77,39 +82,73 @@ export default {
     :style="{
       left: `${colorBlockStyle.left}px`,
       top: `${colorBlockStyle.top}px`,
-      backgroundColor: isY ? 'yellow': 'red',
+      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
     }"
     id="color-block"
   ></div> -->
   <header class="">
     <!-- LOGO -->
-    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
-      <img src="@/assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="checkCollision" />
+    <RouterLink
+      to="/"
+      class="LOGO"
+      :class="{ navBar: true }"
+      @click="setActiveLink('')"
+    >
+      <img
+        src="./assets/img/generic/logoTop.png"
+        alt="LOGO"
+        @mouseenter="changeYellow"
+      />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')">
+      <RouterLink
+        to="/about"
+        :class="{ navBar: true, active: activeLink === 'about' }"
+        @click="setActiveLink('about')"
+        @mouseenter="changeGreen"
+      >
         關於我們
       </RouterLink>
-      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')">
+      <RouterLink
+        to="/teacher"
+        :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')"
+        @mouseenter="changeGreen"
+      >
         師資介紹
       </RouterLink>
-      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')">
+      <RouterLink
+        to="/courseInformation"
+        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')"
+        @mouseenter="changeGreen"
+      >
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')">
+      <RouterLink
+        to="/studentWork"
+        :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')"
+        @mouseenter="changeGreen"
+      >
         學生作品
       </RouterLink>
-      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')">
+      <RouterLink
+        to="/admissionList"
+        :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')"
+        @mouseenter="changeGreen"
+      >
         歷年榜單
       </RouterLink>
-      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')">
+      <RouterLink
+        to="/connection"
+        :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')"
+        @mouseenter="changeGreen"
+      >
         聯絡資訊
       </RouterLink>
     </nav>
@@ -176,6 +215,7 @@ export default {
   width: 20px;
   height: 20px;
   background-color: #ff00ff;
+  border-radius: 50%;
   pointer-events: none;
 }
 

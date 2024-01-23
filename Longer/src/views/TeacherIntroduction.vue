@@ -1,11 +1,13 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
+import NavCurve from "@/components/NavCurve.vue"
 
 export default {
-  components: { HomeTitle },
+  components: { HomeTitle,NavCurve },
 };
 </script>
 <template>
+   <NavCurve></NavCurve>
   <!-- <div class="abc h-[1000px]"></div> -->
   <div class="TeacherItroBG">
     <HomeTitle class="pl-[138px]">師資介紹</HomeTitle>

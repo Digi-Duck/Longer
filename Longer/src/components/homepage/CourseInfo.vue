@@ -78,9 +78,7 @@ export default {
 	filter: none;
 }
 
-.PicBox .container:hover .title {
-	background-color: yellow;
-}
+
 
 // 搖擺圖
 // .contactIconBtn {
