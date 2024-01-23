@@ -224,7 +224,7 @@ export default {
 
 // bg-[MainColorBG]
 .RankingBG {
-  @apply w-[100%] h-[800px] bg-MainColorBG flex items-center justify-center;
+  @apply w-[100%] h-[800px] bg-MainColorBG flex items-center justify-center pt-[20%];
 
   .cover {
     @apply relative shadow-lg w-[1429px] h-[647px];
