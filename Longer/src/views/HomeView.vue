@@ -5,9 +5,12 @@ import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 import StudentWork from "@/components/homepage/StudentWork.vue";
-import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
-import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
-import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";
+// import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
+// import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
+// import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";
+import blob1 from "@/components/blob/blob1.vue";
+import blob2 from "@/components/blob/blob2.vue";
+import blob3 from "@/components/blob/blob3.vue";
 
 // import TheWelcome from '../components/TheWelcome.vue'
 export default {
@@ -17,13 +20,14 @@ export default {
     AboutTeacher,
     CourseInfo,
     StudentWork,
+    blob1,
+    blob2,
+    blob3,
   },
   data() {
     return {
       WidthControl: "",
-      blob1: blob1,
-      blob2: blob2,
-      blob3: blob3,
+   
     };
   },
   mounted() {
@@ -116,8 +120,9 @@ export default {
       <HomeTitle class="pl-[138px] mt-[130px] " :class="{ 'bg-set': true }"
         >歷年榜單</HomeTitle
       >
-      <div class="swing top-[1100px] left-[-30px]"><img :src="blob2" alt="" /></div>
-      <div class="swing right-[-30px]" ><img :src="blob3" alt="" /></div>
+      <blob2 class="top-[1100px] left-[-30px]"></blob2>
+      <blob3 class="right-[-30px]"></blob3>
+
 
       <RankingList></RankingList>
     </div>
@@ -191,26 +196,5 @@ export default {
   @apply w-[100%] h-[1480px]  bg-MainColorBG relative overflow-hidden;
 }
 
-// 搖擺
-.swing {
-  animation: swing ease-in-out 1s infinite alternate;
-  transform-origin: center -20px;
-  position: absolute;
-  z-index: 1;
-}
-.swing img {
-  width: 300px;
-  height: 300px;
-  // border: 5px solid #f8f8f8;
-  display: block;
-}
 
-@keyframes swing {
-  0% {
-    transform: rotate(3deg);
-  }
-  100% {
-    transform: rotate(-3deg);
-  }
-}
 </style>
