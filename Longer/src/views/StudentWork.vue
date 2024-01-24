@@ -268,7 +268,7 @@ main{
             @apply w-[260px] h-[260px] bg-no-repeat bg-cover opacity-[0.8];
 
             .mask {
-              @apply w-full py-[10px] text-[1.1rem] text-center text-[#fff] bg-[#000] relative top-[65%];
+              @apply w-full py-[10px] text-[1.1rem] text-center text-[#fff] bg-[#000] opacity-[0.8] relative top-[82%] ;
             }
           }
         }
