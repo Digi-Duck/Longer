@@ -162,7 +162,7 @@ export default {
   z-index: 2;
   width: 60px;
   height: 60px;
-  background-color: red;
+  background-color: yellow;
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: exclusion;
