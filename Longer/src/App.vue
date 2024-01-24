@@ -221,6 +221,10 @@ header {
   }
 }
 
+main{
+  @apply pt-[120px];
+}
+
 // 漢堡條動畫
 // .ham-menu-all {
 //   @apply w-[120px] h-[120px] rounded-full fixed top-[20px] left-[20px] z-[2] bg-[#cca600] hover:opacity-[0.7];

@@ -216,9 +216,19 @@ export default {
           ],
 
         },
+        {
+          skill: '粉彩',
+          dataText: 'pastel',
+          img: [
+            childArt01,
+            childArt02,
+          ],
+
+        },
       ],
     };
   },
+  
   mounted() {
     lightbox.option({
       'resizeDuration': 500,
@@ -235,10 +245,11 @@ export default {
       <section>
         <HomeTitle>學生作品</HomeTitle>
         <div class="box" v-for="item in studentWorks" :key="item.id">
+          <!-- <div class="">{{ item.skill }}</div> -->
           <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem" :data-lightbox="item.dataText" :data-title="item.skill">
             <div class="image"  :style="{ backgroundImage: `url(${imgItem})` }">
-              <div class="mask">{{item.skill}}</div>
             </div>
+            <div class="mask">{{item.skill}}</div>
           </a>
         </div>
       </section>
@@ -250,13 +261,13 @@ export default {
 main{
   @apply pt-0;
     section {
-    @apply flex justify-center items-center w-full py-[50px] bg-MainColorBG;
+    @apply flex justify-center items-center w-full py-[50px] bg-MainColorBG ;
 
     section {
-      @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto] pt-0;
+      @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto] pt-0 ;
 
       .box {
-        @apply flex items-center w-[260px] h-[260px];
+        @apply flex items-center w-[260px] h-[260px] relative overflow-hidden ;
 
         .image-link {
 
@@ -265,12 +276,12 @@ main{
           }
 
           .image {
-            @apply w-[260px] h-[260px] bg-no-repeat bg-cover opacity-[0.8];
+            @apply w-[260px] h-[260px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
 
-            .mask {
-              @apply w-full py-[10px] text-[1.1rem] text-center text-[#fff] bg-[#000] opacity-[0.8] relative top-[82%] ;
-            }
           }
+        }
+        .mask {
+          @apply w-[260px] py-[10px] text-[1.1rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute top-[82%];
         }
 
 
