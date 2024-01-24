@@ -1,12 +1,19 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import About1 from "@/assets/img/about_us_ph/About1.png";
+import NavCurve from "@/components/NavCurve.vue";
+import BlobG from "@/assets/img/about_us_ph/blob-1.svg";
+import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
+import Crayo from "@/assets/img/about_us_ph/crayo.svg";
 export default {
-  components: { HomeTitle },
+  components: { HomeTitle, NavCurve },
   data() {
     return {
       AboutUsPH: [About1],
-      isY:false,
+      isY: false,
+      BlobG: BlobG,
+      BlobY: BlobY,
+      Crayo: Crayo,
     };
   },
   methods: {
@@ -18,36 +25,40 @@ export default {
 };
 </script>
 <template>
-  <div class="AboutUsBg">
-    <HomeTitle class="pl-[138px]">關於我們</HomeTitle>
-
-    <section class="content">
+  <NavCurve></NavCurve>
+  <div class="AboutUsBg overflow-hidden">
+    <HomeTitle class="pl-[1317px]">關於龍格</HomeTitle>
+    <div class="bg-1 z-[1]"></div>
+    <section class="content z-[2]">
       <div class="ct-h">
-        <img :src="AboutUsPH[0]" alt="" />
+        <img :src="AboutUsPH[0]" class="rounded-[30px]" alt="" />
       </div>
       <div class="ct-h">
         <div
-          class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasizeColor"
+          class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasettingColor"
           @mouseenter="checkCollision"
         ></div>
         <div class="ct-text-1">
-          <h1 class="text-[2rem]">龍格畫室</h1>
-          <p>
+          <p class="content-font-setting">
             一間成立於1994年的小畫室，位在三民路的小巷裡，由丁建中老師從零開始緩緩耕耘，至今已成為在地人口耳相傳的老字號畫室。
           </p>
-          <p>
+          <p class="content-font-setting">
             沒有多餘的廣告宣傳畫室，老師透過實力及教學熱忱，打動每位前來學習的學生，也為龍格畫室建立了最佳的口碑。
           </p>
-          <p>
+          <p class="content-font-setting">
             老師期盼能幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一盞指引前方的燈塔。
           </p>
         </div>
+        <div class="swing right-[-10%] bottom-[40%]">
+          <img :src="BlobG" alt="" />
+        </div>
       </div>
     </section>
-    <HomeTitle class="pl-[138px]">教學特色</HomeTitle>
-    <section class="content">
+    <HomeTitle class="pl-[138px] pt-[448px]">教學特色</HomeTitle>
+    <div class="bg-2 z-[1]"></div>
+    <section class="content z-[2]">
       <div class="ct-a">
-        <ul class="ct-text-2">
+        <ul class="ct-text-2 content-font-setting">
           <li>一、程度鑑定．甫報名課程皆會做程度鑑定，以利課程規劃</li>
           <li>
             二、專屬課表．老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
@@ -62,18 +73,25 @@ export default {
         </ul>
       </div>
     </section>
+    <div class="swing left-[-10%] bottom-[0%]">
+      <img :src="BlobY" alt="" />
+    </div>
+    <img class="crayo" :src="Crayo" alt="" />
   </div>
 </template>
 <style lang="scss" scoped>
 * {
   @apply box-border;
 }
+.content-font-setting {
+  @apply text-[1.75rem] text-[GenWanMin-L];
+}
 
 .AboutUsBg {
-  @apply flex flex-col items-center h-[1240px] w-[100%] bg-MainColorBG;
+  @apply flex flex-col items-center h-[2400px] w-[100%] relative bg-MainColorBG;
 
   .content {
-    @apply flex justify-center;
+    @apply flex justify-center mt-[90px];
 
     .ct-h {
       @apply w-[50%] flex flex-col justify-center items-center;
@@ -96,7 +114,7 @@ export default {
 
     .ct-a {
       .ct-text-2 {
-        @apply tracking-[.4rem];
+        @apply tracking-[.4rem] mt-[72px];
 
         li {
           @apply mt-[24px];
@@ -115,7 +133,41 @@ export default {
     img {
       filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
         brightness(120%) contrast(118%);
+      // z-index: 2;
     }
   }
 }
+.bg-1 {
+  @apply w-[100%] h-[1080px] bg-[url('@/assets/img/about_us_ph/bg-1.svg')] bg-contain bg-no-repeat  absolute left-[-100px];
+}
+.bg-2 {
+  @apply w-[100%] h-[974px] bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat  absolute  top-[1200px] left-[100px];
+}
+// .Rotate {
+//   transform: rotate(-90deg) !important;
+// }
+.swing {
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  position: absolute;
+  z-index: 1;
+}
+.swing img {
+  width: 600px;
+  height: 600px;
+  display: block;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+.crayo {
+  @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%];
+}
+
 </style>

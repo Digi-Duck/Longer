@@ -1,20 +1,28 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue"
+import NavCurve from "@/components/NavCurve.vue";
+import Img1 from "@/assets/img/teacher_introduction/pic-1.svg";
+import Img2 from "@/assets/img/teacher_introduction/pic-2.svg";
 
 export default {
-  components: { HomeTitle,NavCurve },
+  components: { HomeTitle, NavCurve },
+  data() {
+    return {
+      Img1: Img1,
+      Img2: Img2,
+    };
+  },
 };
 </script>
 <template>
-   <NavCurve></NavCurve>
+  <NavCurve></NavCurve>
   <!-- <div class="abc h-[1000px]"></div> -->
   <div class="TeacherItroBG">
     <HomeTitle class="pl-[138px]">師資介紹</HomeTitle>
     <div class="TeacherItro">
       <div class="singleblock">
         <div data-aos="zoom-in-right">
-          <div class="pic"></div>
+          <img class="pic" :src="Img1" />
         </div>
 
         <div class="text">
@@ -39,7 +47,7 @@ export default {
             </p>
           </div>
         </div>
-        <div data-aos="zoom-in-left"><div class="pic"></div></div>
+        <div data-aos="zoom-in-left"><img class="pic" :src="Img2" /></div>
       </div>
     </div>
 
