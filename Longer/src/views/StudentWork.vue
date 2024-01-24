@@ -88,11 +88,14 @@ import pastel02 from '@/assets/img/student_work/pastel_img/pastel_02.jpg';
 import bg01 from '@/assets/img/student_work/bg-1.png';
 import bg02 from '@/assets/img/student_work/bg-2.png';
 import bg03 from '@/assets/img/student_work/bg-3.png';
+// blob 動圖
+import blob2 from "@/components/blob/blob2.vue";
+import blob3 from "@/components/blob/blob3.vue";
 
 
 export default {
 
-  components: { HomeTitle, NavCurve },
+  components: { HomeTitle, NavCurve, blob2, blob3 },
   data() {
     return {
       bg01,
@@ -258,9 +261,11 @@ export default {
     <!-- <img src="../assets/img/student_work/water_color_img/water_color_11.jpg" alt=""> -->
     <NavCurve></NavCurve>
     <HomeTitle class="HomeTitle">學生作品</HomeTitle>
+    <blob2 class="top-[-5%] right-[-5%]"></blob2>
+    <blob3 class="bottom-[0%] left-[-5%]"></blob3>
     <img :src="bg01" alt="background01" class="bg bg01">
-    <img :src="bg02" alt="background02" class="bg bg02">
-    <img :src="bg03" alt="background03" class="bg bg03">
+    <!-- <img :src="bg02" alt="background02" class="bg bg02"> -->
+    <!-- <img :src="bg03" alt="background03" class="bg bg03"> -->
     <section>
       <section>
         <div class="box" v-for="item in studentWorks" :key="item.id">
