@@ -92,7 +92,18 @@ export default {
   <section class="position-container">
     <div class="since1994" @click="scrollToLonger">since 1994</div>
   </section>
-  <img src="@/assets/img/generic/longer-slogn.png" alt="" />
+  <section class="longer-introduce">
+    <div class="longer-position">
+      <p class="title">龍格畫室</p>
+      <p class="content">一間成立於1994年的小畫室</p>
+      <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
+      <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
+    </div>
+    <blob2 class="top-[100%] left-[-10%]"></blob2>
+  </section>
+  <section class="longer-bgc">
+    <div class="longer-bg-area"></div>
+  </section>
 
   <section>
     <HomeTitle class="pl-[138px]">關於老師</HomeTitle>
@@ -144,14 +155,39 @@ export default {
 }
 
 .banner {
-  @apply w-full h-[calc(100vh_-_120px)] bg-[url('../assets/img/generic/banner.png')] bg-cover bg-no-repeat;
+  @apply w-full h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 }
 
+// since-1994黃色小圓
 .position-container {
   @apply relative;
 
   .since1994 {
-    @apply flex justify-center items-center w-[170px] h-[170px] text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] rounded-full absolute top-[-85px] left-[50%] translate-x-[-50%];
+    @apply flex justify-center items-center w-[170px] h-[170px] z-[2] text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] rounded-full absolute top-[-85px] left-[50%] translate-x-[-50%];
+  }
+}
+
+// 龍格畫室直式文字
+.longer-introduce{
+  @apply w-full h-[100vh] relative  text-[#fff] bg-MainColor;
+  .longer-position{
+    @apply h-[150vh] absolute top-[100%] left-[60%] translate-x-[-50%] translate-y-[-50%];
+    writing-mode: vertical-rl;
+
+    .title{
+      @apply text-[5rem] leading-[5];
+    }
+    .content{
+      @apply text-[3rem] leading-[2];
+    }
+  }
+  
+}
+// 直式文字底部圓弧背景
+.longer-bgc{
+  @apply bg-MainColorBG;
+  .longer-bg-area{
+    @apply w-full h-[60vh] bg-[url('../assets/img/generic/longer-slogn-bg.svg')] bg-bottom;
   }
 }
 
