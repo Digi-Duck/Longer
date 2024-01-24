@@ -10,7 +10,29 @@ export default {
 </script>
 <template>
   
-        <div class="swing"><img :src="blob2" alt="" /></div>    
+    <div class="swing"><img :src="blob2" alt="" /></div>    
   
 </template>
-<style></style>
+<style>
+
+.swing {
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  position: absolute;
+  z-index: 1;
+}
+.swing img {
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+</style>

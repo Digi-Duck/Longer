@@ -21,7 +21,7 @@ export default {
     <!-- <h1 class="text-center ">Infinite Scroll Animation</h1> -->
     <div>
         <!-- 雅芬0121 補一個pt-[96px]為了排版首頁 -->
-        <div class="  m-auto  overflow-hidden  scroll pt-[96px]">
+        <div class="  m-auto  overflow-hidden  scroll pt-[110px]">
             <div class="tag-list  pt-[1rem] pb-[1rem] flex flex-nowrap gap-[1rem]">
                 <img v-for="(item, index) in stPiece" :key="item.id" :src="stPiece[index]" />
 

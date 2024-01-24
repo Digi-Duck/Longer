@@ -18,6 +18,8 @@ export default {
         left: "0",
         top: "0",
       },
+      x: 0,
+      y: 0,
       isY: false,
       isG: false,
     };
@@ -26,9 +28,8 @@ export default {
     window.scrollTo(0, 0);
     console.log(document.documentElement.scrollTop);
     //mouse-block
-    window.addEventListener("mousemove", this.mouseMove);
+    window.addEventListener("mousemove", this.mouseMoveCursor);
     window.addEventListener("scroll", this.scrollIng);
-
     if (sessionStorage.getItem("activeLink")) {
       this.activeLink = JSON.parse(sessionStorage.getItem("activeLink"));
     } else {
@@ -42,61 +43,55 @@ export default {
     changeGreen() {
       this.isG = true;
       this.isY = false;
-      console.log(1);
     },
-    mouseMove(e) {
-      const x = e.clientX + window.scrollX;
-      const y = e.clientY + window.scrollY;
-      // this.$data.colorBlockStyle = {
-      //   left: `${x}px`,
-      //   top:`${y}px`
-      // };
-      this.colorBlockStyle.left = x;
-      this.colorBlockStyle.top = y;
+    mouseMoveCursor(e) {
+      this.x = e.clientX;
+      this.y = e.clientY;
+      this.colorBlockStyle.left = this.x + window.scrollX - 25;
+      this.colorBlockStyle.top = this.y + window.scrollY - 25;
     },
     setActiveLink(link) {
       this.activeLink = link;
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
-      console.log(this.activeLink);
     },
     scrollIng() {
-      const webContent = this.$refs.webContent;
-      const webContentTop = webContent.getBoundingClientRect().top;
-      if (webContentTop < 0) {
-        this.scrollState = true;
+      this.colorBlockStyle.top = window.scrollY + this.y;
+      console.log(window.scrollY);
+      const scrollNow = document.documentElement;
+      const isAtBottom =
+        scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
+      if (isAtBottom) {
+        this.scrollBottom = true;
       } else {
         this.scrollState = false;
       }
     },
-    hamSwitch() {
-      const webHeader = this.$refs.webHeader;
-      const webFooter = this.$refs.webFooter;
-      this.hamState = !this.hamState;
-      console.log(this.hamState);
-      if (this.hamState == true) {
-        webHeader.style.display = "none";
-        webFooter.style.display = "none";
-      }else{
-        webHeader.style.display = "flex";
-        webFooter.style.display = "flex";
-      }
+    // hamSwitch() {
+    //   const webHeader = this.$refs.webHeader;
+    //   const webFooter = this.$refs.webFooter;
+    //   this.hamState = !this.hamState;
+    //   console.log(this.hamState);
+    //   if (this.hamState == true) {
+    //     webHeader.style.display = "none";
+    //     webFooter.style.display = "none";
+    //   }else{
+    //     webHeader.style.display = "flex";
+    //     webFooter.style.display = "flex";
+    //   }
 
-    }
+    // }
   },
 };
 </script>
 
 <!-- 公版nav -->
 <template>
-  <!-- <div
-    :style="{
-      left: `${colorBlockStyle.left}px`,
-      top: `${colorBlockStyle.top}px`,
-      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-    }"
-    id="color-block"
-  ></div> -->
-  <header ref="webHeader">
+  <div :style="{
+    left: `${colorBlockStyle.left}px`,
+    top: `${colorBlockStyle.top}px`,
+    backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
+  }" id="color-block"></div>
+  <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
       <img src="./assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="changeYellow" />
@@ -130,17 +125,17 @@ export default {
       </RouterLink>
     </nav>
   </header>
-  <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
+  <!-- <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
     <input id="ham-menu-switch" type="checkbox" width="300px" @click="hamSwitch" hidden>
     <label for="ham-menu-switch" class="ham-menu">
       <div class="line line-1"></div>
       <div class="line line-2"></div>
       <div class="line line-3"></div>
     </label>
-  </nav>
-  <div class="ham-content" v-if="hamState"></div>
+  </nav> -->
+  <!-- <div class="ham-content" v-if="hamState"></div> -->
   <!-- 分頁內容 -->
-  <main ref="webContent" v-else>
+  <main ref="webContent">
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
@@ -189,9 +184,10 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #ff00ff;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  background-color: red;
   border-radius: 50%;
   pointer-events: none;
 }
