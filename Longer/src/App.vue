@@ -17,6 +17,8 @@ export default {
         left: "0",
         top: "0",
       },
+      x: 0,
+      y: 0,
       isY: false,
       isG: false,
     };
@@ -40,16 +42,18 @@ export default {
       this.isY = false;
     },
     mouseMoveCursor(e) {
-      const x = e.clientX + window.scrollX;
-      const y = e.clientY + window.scrollY;
-      this.colorBlockStyle.left = x - 25;
-      this.colorBlockStyle.top = y -25;
+      this.x = e.clientX;
+      this.y = e.clientY;
+      this.colorBlockStyle.left = this.x + window.scrollX - 25;
+      this.colorBlockStyle.top = this.y + window.scrollY - 25;
     },
     setActiveLink(link) {
       this.activeLink = link;
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
     scrollIng() {
+      this.colorBlockStyle.top = window.scrollY + this.y;
+      console.log(window.scrollY);
       const scrollNow = document.documentElement;
       const isAtBottom =
         scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
@@ -65,77 +69,41 @@ export default {
 
 <!-- 公版nav -->
 <template>
-  <div
-    :style="{
-      left: `${colorBlockStyle.left}px`,
-      top: `${colorBlockStyle.top}px`,
-      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-    }"
-    id="color-block"
-  ></div>
+  <div :style="{
+    left: `${colorBlockStyle.left}px`,
+    top: `${colorBlockStyle.top}px`,
+    backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
+  }" id="color-block"></div>
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
-    <RouterLink
-      to="/"
-      class="LOGO"
-      :class="{ navBar: true }"
-      @click="setActiveLink('')"
-    >
-      <img
-        src="./assets/img/generic/logoTop.png"
-        alt="LOGO"
-        @mouseenter="changeYellow"
-      />
+    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
+      <img src="./assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="changeYellow" />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink
-        to="/about"
-        :class="{ navBar: true, active: activeLink === 'about' }"
-        @click="setActiveLink('about')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')"
+        @mouseenter="changeGreen">
         關於我們
       </RouterLink>
-      <RouterLink
-        to="/teacher"
-        :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')" @mouseenter="changeGreen">
         師資介紹
       </RouterLink>
-      <RouterLink
-        to="/courseInformation"
-        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
         課程資訊
       </RouterLink>
-      <RouterLink
-        to="/studentWork"
-        :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
         學生作品
       </RouterLink>
-      <RouterLink
-        to="/admissionList"
-        :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
         歷年榜單
       </RouterLink>
-      <RouterLink
-        to="/connection"
-        :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')" @mouseenter="changeGreen">
         聯絡資訊
       </RouterLink>
     </nav>
@@ -149,22 +117,12 @@ export default {
     <section class="footer-content">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="500"
-        height="500"
-        style="border: none; overflow: hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      ></iframe>
+        width="500" height="500" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
+        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </section>
     <section class="footer-content">
       <section class="footer-r-top">
-        <img
-          src="./assets/img/generic/logo.png"
-          class="img-fluid rounded-top"
-          alt="LOGO"
-        />
+        <img src="./assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
         <section class="footer-r-top-text">
           <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
           <p>
@@ -207,7 +165,6 @@ export default {
   background-color: red;
   border-radius: 50%;
   pointer-events: none;
-  transition: 0.1s;
 }
 
 //公版 nav
