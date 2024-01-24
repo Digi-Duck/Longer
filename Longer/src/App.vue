@@ -23,9 +23,8 @@ export default {
   },
   mounted() {
     //mouse-block
-    window.addEventListener("mousemove", this.mouseMove);
+    window.addEventListener("mousemove", this.mouseMoveCursor);
     window.addEventListener("scroll", this.scrollIng);
-
     if (sessionStorage.getItem("activeLink")) {
       this.activeLink = JSON.parse(sessionStorage.getItem("activeLink"));
     } else {
@@ -39,22 +38,16 @@ export default {
     changeGreen() {
       this.isG = true;
       this.isY = false;
-      console.log(1);
     },
-    mouseMove(e) {
+    mouseMoveCursor(e) {
       const x = e.clientX + window.scrollX;
       const y = e.clientY + window.scrollY;
-      // this.$data.colorBlockStyle = {
-      //   left: `${x}px`,
-      //   top:`${y}px`
-      // };
-      this.colorBlockStyle.left = x;
-      this.colorBlockStyle.top = y;
+      this.colorBlockStyle.left = x - 25;
+      this.colorBlockStyle.top = y -25;
     },
     setActiveLink(link) {
       this.activeLink = link;
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
-      console.log(this.activeLink);
     },
     scrollIng() {
       const scrollNow = document.documentElement;
@@ -65,7 +58,6 @@ export default {
       } else {
         this.scrollBottom = false;
       }
-      // console.log(scrollNow.scrollTop);
     },
   },
 };
@@ -210,11 +202,12 @@ export default {
 #color-block {
   position: absolute;
   z-index: 1;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-color: red;
   border-radius: 50%;
   pointer-events: none;
+  transition: 0.1s;
 }
 
 //公版 nav
