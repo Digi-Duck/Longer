@@ -23,6 +23,8 @@ export default {
     };
   },
   mounted() {
+    window.scrollTo(0, 0);
+    console.log(document.documentElement.scrollTop);
     //mouse-block
     window.addEventListener("mousemove", this.mouseMove);
     window.addEventListener("scroll", this.scrollIng);
@@ -60,17 +62,25 @@ export default {
     scrollIng() {
       const webContent = this.$refs.webContent;
       const webContentTop = webContent.getBoundingClientRect().top;
-      // console.log(webContentTop);
       if (webContentTop < 0) {
         this.scrollState = true;
       } else {
         this.scrollState = false;
       }
-      // console.log(this.scrollState);
     },
-    hamSwitch(){
+    hamSwitch() {
+      const webHeader = this.$refs.webHeader;
+      const webFooter = this.$refs.webFooter;
       this.hamState = !this.hamState;
       console.log(this.hamState);
+      if (this.hamState == true) {
+        webHeader.style.display = "none";
+        webFooter.style.display = "none";
+      }else{
+        webHeader.style.display = "flex";
+        webFooter.style.display = "flex";
+      }
+
     }
   },
 };
@@ -86,74 +96,41 @@ export default {
     }"
     id="color-block"
   ></div> -->
-  <header class="">
+  <header ref="webHeader">
     <!-- LOGO -->
-    <RouterLink
-      to="/"
-      class="LOGO"
-      :class="{ navBar: true }"
-      @click="setActiveLink('')"
-    >
-      <img
-        src="./assets/img/generic/logoTop.png"
-        alt="LOGO"
-        @mouseenter="changeYellow"
-      />
+    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
+      <img src="./assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="changeYellow" />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink
-        to="/about"
-        :class="{ navBar: true, active: activeLink === 'about' }"
-        @click="setActiveLink('about')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')"
+        @mouseenter="changeGreen">
         關於我們
       </RouterLink>
-      <RouterLink
-        to="/teacher"
-        :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')" @mouseenter="changeGreen">
         師資介紹
       </RouterLink>
-      <RouterLink
-        to="/courseInformation"
-        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
         課程資訊
       </RouterLink>
-      <RouterLink
-        to="/studentWork"
-        :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
         學生作品
       </RouterLink>
-      <RouterLink
-        to="/admissionList"
-        :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
         歷年榜單
       </RouterLink>
-      <RouterLink
-        to="/connection"
-        :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')"
-        @mouseenter="changeGreen"
-      >
+      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')" @mouseenter="changeGreen">
         聯絡資訊
       </RouterLink>
     </nav>
   </header>
-  <nav class="ham-menu-all" ref="hamMenu" v-if="scrollState == true">
+  <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
     <input id="ham-menu-switch" type="checkbox" width="300px" @click="hamSwitch" hidden>
     <label for="ham-menu-switch" class="ham-menu">
       <div class="line line-1"></div>
@@ -161,13 +138,13 @@ export default {
       <div class="line line-3"></div>
     </label>
   </nav>
-  <!-- <nav class="ham-menu" v-if="scrollState == true" ref="hamMenu"></nav> -->
+  <div class="ham-content" v-if="hamState"></div>
   <!-- 分頁內容 -->
-  <main ref="webContent">
+  <main ref="webContent" v-else>
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
-  <footer>
+  <footer ref="webFooter">
     <section class="footer-content">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
@@ -251,18 +228,18 @@ header {
   .ham-menu {
     @apply inline-block w-full h-full relative;
 
-    &:after{
+    &:after {
       content: 'MENU';
+      font-weight: bold;
       position: absolute;
       top: 70%;
       left: 50%;
-      transform: translate(-50%,-50%)
-
-
+      transform: translate(-50%, -50%)
     }
 
+
     .line {
-      @apply w-[50%] h-[6px] absolute left-[50%] translate-x-[-50%] -translate-y-[-50%] duration-[0.7s] bg-[#000]
+      @apply w-[50%] h-[3px] rounded-xl bg-[#000] absolute left-[50%] translate-x-[-50%] -translate-y-[-50%] duration-[0.7s];
     }
 
     .line-1 {
@@ -278,19 +255,18 @@ header {
     }
   }
 
-  
-
-    #ham-menu-switch {
+  #ham-menu-switch {
     display: none;
   }
 
-  // #ham-menu-switch:checked .ham-menu:after{
-  //   content: 'close';
-  // }
+  #ham-menu-switch:checked+.ham-menu:after {
+    content: 'CLOSE';
+  }
+
   #ham-menu-switch:checked+.ham-menu .line-1 {
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(30deg);
     width: 50%;
-    top: 50%;
+    top: 40%;
   }
 
   #ham-menu-switch:checked+.ham-menu .line-2 {
@@ -298,11 +274,21 @@ header {
   }
 
   #ham-menu-switch:checked+.ham-menu .line-3 {
-    transform: translate(-50%, -50%) rotate(-45deg);
-    top: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    top: 40%;
   }
+}
 
+// 添加動畫
+.add-ham-ani {
+  animation: hamShake 0.2s 2;
+}
+.remove-ham-ani {
+  animation: hamHide 0.8s 1 ease-in-out forwards;
+}
 
+.ham-content{
+  @apply w-[100%] h-[100vh] bg-MainColorBG;
 }
 
 // 公版頁尾
@@ -346,6 +332,31 @@ footer {
 
   .copyRight {
     @apply flex-1 self-end flex justify-center items-center h-[10%] border-t-[1px];
+  }
+}
+
+// animation
+@keyframes hamShake {
+  0% {
+   height: 120px;
+  }
+
+  50% {
+   height: 100px;
+  }
+
+  100% {
+   height: 120px;
+  }
+}
+
+@keyframes hamHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+
   }
 }
 </style>
