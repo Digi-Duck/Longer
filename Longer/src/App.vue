@@ -12,7 +12,7 @@ export default {
     return {
       HelloWorld,
       activeLink: null,
-      scrollState: false,
+      scrollBottom: false,
       hamState: false,
       colorBlockStyle: {
         left: "0",
@@ -63,7 +63,7 @@ export default {
       if (isAtBottom) {
         this.scrollBottom = true;
       } else {
-        this.scrollState = false;
+        this.scrollBottom = false;
       }
     },
     // hamSwitch() {
