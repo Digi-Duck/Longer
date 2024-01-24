@@ -10,6 +10,9 @@ import pen1 from "@/assets/img/teacher_introduction/pen-1.svg";
 import pen2 from "@/assets/img/teacher_introduction/pen-2.svg";
 import pen3 from "@/assets/img/teacher_introduction/pen-3.svg";
 import easel from "@/assets/img/teacher_introduction/easel.svg";
+import palette from "@/assets/img/teacher_introduction/palette.svg";
+import pigment from "@/assets/img/teacher_introduction/pigment.svg";
+import watercolor_pen from "@/assets/img/teacher_introduction/watercolor_pen.svg";
 export default {
   components: { HomeTitle, NavCurve },
   data() {
@@ -23,6 +26,9 @@ export default {
       pen2: pen2,
       pen3: pen3,
       easel: easel,
+      palette:palette,
+      pigment:pigment,
+      watercolor_pen:watercolor_pen,
     };
   },
 
@@ -31,15 +37,16 @@ export default {
 <template>
   <div class="overflow-hidden">
     <NavCurve></NavCurve>
+ 
     <div class="swing right-[0%] top-[-10%]">
       <img :src="Blob1" alt="" />
     </div>
     <!-- <div class="abc h-[1000px]"></div> -->
 
     <div class="TeacherItroBG text-[GenWanMin-L] overflow-hidden">
-      <HomeTitle class="pl-[138px] pb-[203px]">師資介紹</HomeTitle>
+      <HomeTitle class="sm:pl-[calc(50%_-_150px)] lg:pl-[138px] ">師資介紹</HomeTitle>
 
-      <img :src="Blob2" class="absolute left-[-40%]" alt="" />
+      <!-- <img :src="Blob2" class="absolute left-[-40%] " alt="" /> -->
       <!-- <div class="swing left-[-5%] bottom-[40%]">
       <img :src="Blob2" alt="" />
     </div> -->
@@ -47,7 +54,7 @@ export default {
       <img class="pen left-[0%] top-[40%]" :src="pen2" alt="" />
       <img class="pen right-[0%] top-[50%] w-[400px]" :src="pen3" alt="" />
       <div class="TeacherItro">
-        <div class="singleblock">
+        <div class="singleblock pt-[203px]">
           <div data-aos="zoom-in-right">
             <img class="pic" :src="Img1" />
           </div>
@@ -63,8 +70,8 @@ export default {
             </div>
           </div>
         </div>
-        <div class="singleblock pt-[115px]">
-          <div class="text pl-[80px]">
+        <div class="singleblock pt-[115px] sm:flex-row-reverse">
+          <div class="text lg:pl-[80px] sm:pl-[0px]">
             <h1>張桂苓 老師</h1>
             <div class="textblock">
               <p class="title">國立藝術專科 美工科</p>
@@ -79,7 +86,10 @@ export default {
       </div>
 
       <div class="ClassInfo"></div>
-      <HomeTitle class="pl-[138px] pt-[376px] pb-[62px]">課堂資訊</HomeTitle>
+      <HomeTitle class="pt-[376px] pb-[62px] sm:pl-[calc(50%_-_150px)] lg:pl-[138px]">課堂資訊</HomeTitle>
+      <img :src="palette" class="absolute top-[88%] right-[4%]" alt="">
+    <img :src="pigment" class="absolute top-[85%] left-[10%]" alt="">
+    <!-- <img :src="watercolor_pen" class="absolute top-[76%] right-[15%]" alt=""> -->
       <div class="frame">
         <div class="FBvideo">
           <iframe
@@ -109,7 +119,7 @@ export default {
 .TeacherItro {
   @apply flex flex-col h-[935px] w-[1290px]  bg-MainColorBG;
   .singleblock {
-    @apply flex flex-row justify-between items-center h-[45%] w-[100%];
+    @apply flex lg:flex-row justify-between items-center h-[45%] w-[100%] ;
     .textblock {
       @apply text-[1.5rem];
       .title {

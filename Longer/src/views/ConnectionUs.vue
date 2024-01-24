@@ -37,7 +37,7 @@ export default {
 </script>
 <template>
 
-  <div >
+  <div class="overflow-hidden" >
     <section class="Block1">
       <HomeTitle class="pl-[138px]">聯絡資訊</HomeTitle>
       <div class="ConInfo">
