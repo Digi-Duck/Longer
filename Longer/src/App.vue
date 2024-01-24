@@ -209,9 +209,10 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #ff00ff;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  background-color: red;
   border-radius: 50%;
   pointer-events: none;
 }
