@@ -16,6 +16,7 @@ export default {
       // hookpic:hookpic,
     };
   },
+
 };
 </script>
 <template>

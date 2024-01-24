@@ -25,8 +25,6 @@ export default {
     };
   },
   mounted() {
-    window.scrollTo(0, 0);
-    console.log(document.documentElement.scrollTop);
     //mouse-block
     window.addEventListener("mousemove", this.mouseMoveCursor);
     window.addEventListener("scroll", this.scrollIng);
@@ -142,6 +140,9 @@ export default {
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
+  <div class="bg-MainColorBG">
+    <img src="./assets/img/generic/footer-bg-top.svg" alt=""> 
+  </div>
   <footer ref="webFooter">
     <section class="footer-content">
       <iframe
@@ -296,10 +297,10 @@ main{
 
 // 公版頁尾
 footer {
-  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
+  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-MainColor;
 
   .footer-content {
-    @apply flex flex-wrap justify-center items-end w-[50%] h-[90%] pb-[20px];
+    @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
 
     .footer-r-top {
       @apply w-[100%];

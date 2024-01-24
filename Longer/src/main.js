@@ -20,6 +20,11 @@ window.jQuery = $;
 
 AOS.init();
 
+window.scrollTo({
+    top: 0,
+});
+console.log(document.documentElement.scrollTop);
+
 app.use(router);
 
 app.mount("#app");

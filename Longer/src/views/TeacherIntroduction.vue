@@ -25,6 +25,7 @@ export default {
       easel: easel,
     };
   },
+
 };
 </script>
 <template>

@@ -1,13 +1,16 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import NavCurve from "@/components/NavCurve.vue"
+// 課程介紹圖檔
 import introduce01 from "@/assets/img/courseInformation/img01.png";
 import introduce02 from "@/assets/img/courseInformation/img02.png";
 import introduce03 from "@/assets/img/courseInformation/img03.png";
 import introduce04 from "@/assets/img/courseInformation/img04.png";
-// AOS
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+// 背景圖檔
+import bg01 from "@/assets/img/courseInformation/blob_bg_01.png";
+import bg02 from "@/assets/img/courseInformation/blob_bg_02.png";
+import bg03 from "@/assets/img/courseInformation/blob_bg_03.png";
+
 
 export default {
   components: { HomeTitle, NavCurve },
@@ -17,6 +20,9 @@ export default {
       introduce02,
       introduce03,
       introduce04,
+      bg01,
+      bg02,
+      bg03,
       courseContent: [
         {
           imgPath: introduce01,
@@ -46,9 +52,7 @@ export default {
       ],
     };
   },
-  mounted() {
-    // AOS.init();
-  },
+
 };
 </script>
 <template >
@@ -56,15 +60,16 @@ export default {
 
   <main>
     <NavCurve></NavCurve>
+    <img :src="bg01" alt="background01" class="bg bg01">
+    <img :src="bg02" alt="background02" class="bg bg02">
+    <img :src="bg03" alt="background03" class="bg bg03">
     <section>
-      <HomeTitle class="pl-[13px]">課程資訊</HomeTitle>
-
+      <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
+      <div class="bg-1"></div>
       <section class="container" v-for="item in courseContent" :key="item.id">
         <section class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
         <section class="text-area">
-          <section data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" class="text-content">
+          <section data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="text-content">
             <p class="title">{{ item.title }}</p>
             <p class="introduce">{{ item.introduce }}</p>
             <p class="content">{{ item.content }}</p>
@@ -79,30 +84,51 @@ export default {
 </template>
 <style lang="scss" scoped>
 main {
-  @apply w-full pt-0 pb-[50px] bg-MainColorBG;
+  @apply w-full h-[3870px] pt-0 bg-MainColorBG relative;
+
+  // 背景圖定位
+  .bg{
+    @apply absolute ;
+  }
+  .bg01{
+    @apply top-[11%] right-0;
+  }
+
+  .bg02{
+    @apply top-[40%] left-0;
+  }
+
+  .bg03{
+    @apply bottom-[-6%] left-0;
+  }
 
   section {
-    @apply max-w-[1215px] mx-[auto] pt-[30px];
+    @apply max-w-[1215px] mx-[auto];
 
+    .HomeTitle{
+      @apply pt-[93px] pb-[168px] relative left-[-131px];
+    }
+
+    
     .container {
-      @apply flex flex-wrap w-full mb-[80px];
+      @apply flex flex-wrap gap-[20px] w-full mb-[168px];
 
-      &:nth-child(odd) {
+      &:nth-child(even) {
         @apply flex-row-reverse;
       }
 
       .img-area {
-        @apply w-[50%] h-[500px] bg-no-repeat bg-cover;
+        @apply w-[571px] h-[608px] bg-no-repeat bg-cover;
       }
 
       .text-area {
-        @apply flex flex-col justify-center items-center w-[50%];
+        @apply flex justify-center items-center w-[50%];
 
         .text-content {
-          @apply w-[500px] h-[390px] px-[30px] text-justify bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
+          @apply flex flex-col justify-center items-center flex-wrap w-[570px] h-[390px] px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
           .title {
-            @apply self-start mb-[20px] text-[1.5rem];
+            @apply w-full mb-[20px] text-[1.5rem];
           }
 
           .introduce {

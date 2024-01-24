@@ -22,6 +22,8 @@ import waterColor07 from '@/assets/img/student_work/water_color_img/water_color_
 import waterColor08 from '@/assets/img/student_work/water_color_img/water_color_08.jpg';
 import waterColor09 from '@/assets/img/student_work/water_color_img/water_color_09.jpg';
 import waterColor10 from '@/assets/img/student_work/water_color_img/water_color_10.jpg';
+import waterColor11 from '@/assets/img/student_work/water_color_img/water_color_11.jpg';
+import waterColor12 from '@/assets/img/student_work/water_color_img/water_color_12.jpg';
 // 導入圖片-水墨
 import ink01 from '@/assets/img/student_work/ink_img/ink_01.jpg';
 import ink02 from '@/assets/img/student_work/ink_img/ink_02.jpg';
@@ -40,11 +42,11 @@ import coloredPencil06 from '@/assets/img/student_work/colored_pencils_img/color
 import coloredPencil07 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_07.jpg';
 import coloredPencil08 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_08.jpg';
 // 導入圖片-麥克筆
-import marker01 from '@/assets/img/student_work/marker_img/marker_01.jpg';
-import marker02 from '@/assets/img/student_work/marker_img/marker_02.jpg';
+import marker01 from '@/assets/img/student_work/marker_img/marker_01.png';
+import marker02 from '@/assets/img/student_work/marker_img/marker_02.png';
 import marker03 from '@/assets/img/student_work/marker_img/marker_03.jpg';
 import marker04 from '@/assets/img/student_work/marker_img/marker_04.jpg';
-import marker05 from '@/assets/img/student_work/marker_img/marker_05.jpg';
+import marker05 from '@/assets/img/student_work/marker_img/marker_05.png';
 import marker06 from '@/assets/img/student_work/marker_img/marker_06.jpg';
 import marker07 from '@/assets/img/student_work/marker_img/marker_07.jpg';
 import marker08 from '@/assets/img/student_work/marker_img/marker_08.jpg';
@@ -79,12 +81,24 @@ import childArt07 from '@/assets/img/student_work/child_art_img/child_art_07.jpg
 import childArt08 from '@/assets/img/student_work/child_art_img/child_art_08.jpg';
 import childArt09 from '@/assets/img/student_work/child_art_img/child_art_09.jpg';
 import childArt10 from '@/assets/img/student_work/child_art_img/child_art_10.jpg';
+// 粉彩
+import pastel01 from '@/assets/img/student_work/pastel_img/pastel_01.jpg';
+import pastel02 from '@/assets/img/student_work/pastel_img/pastel_02.jpg';
+// 背景圖
+import bg01 from '@/assets/img/student_work/bg-1.png';
+import bg02 from '@/assets/img/student_work/bg-2.png';
+import bg03 from '@/assets/img/student_work/bg-3.png';
+
 
 export default {
 
-  components: { HomeTitle,NavCurve },
+  components: { HomeTitle, NavCurve },
   data() {
     return {
+      bg01,
+      bg02,
+      bg03,
+
       studentWorks: [
         {
           skill: '素描',
@@ -113,6 +127,8 @@ export default {
             waterColor08,
             waterColor09,
             waterColor10,
+            waterColor11,
+            waterColor12,
 
           ],
 
@@ -220,15 +236,15 @@ export default {
           skill: '粉彩',
           dataText: 'pastel',
           img: [
-            childArt01,
-            childArt02,
+            pastel01,
+            pastel02,
           ],
 
         },
       ],
     };
   },
-  
+
   mounted() {
     lightbox.option({
       'resizeDuration': 500,
@@ -238,18 +254,21 @@ export default {
 };
 </script>
 <template >
-  
   <main>
+    <!-- <img src="../assets/img/student_work/water_color_img/water_color_11.jpg" alt=""> -->
     <NavCurve></NavCurve>
+    <HomeTitle class="HomeTitle">學生作品</HomeTitle>
+    <img :src="bg01" alt="background01" class="bg bg01">
+    <img :src="bg02" alt="background02" class="bg bg02">
+    <img :src="bg03" alt="background03" class="bg bg03">
     <section>
       <section>
-        <HomeTitle class="relative left-[-90px] pb-[50px]">學生作品</HomeTitle>
         <div class="box" v-for="item in studentWorks" :key="item.id">
-          <!-- <div class="">{{ item.skill }}</div> -->
-          <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem" :data-lightbox="item.dataText" :data-title="item.skill">
-            <div class="image"  :style="{ backgroundImage: `url(${imgItem})` }">
+          <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem"
+            :data-lightbox="item.dataText" :data-title="item.skill">
+            <div class="image" :style="{ backgroundImage: `url(${imgItem})` }">
             </div>
-            <div class="mask">{{item.skill}}</div>
+            <div class="mask">{{ item.skill }}</div>
           </a>
         </div>
       </section>
@@ -258,16 +277,38 @@ export default {
   </main>
 </template>
 <style lang="scss" scoped>
-main{
-  @apply pt-0;
-    section {
-    @apply flex justify-center items-center w-full pt-[50px] bg-MainColorBG ;
+main {
+  @apply pt-0 relative bg-MainColorBG overflow-hidden;
+
+  .HomeTitle {
+    @apply pt-[93px] pb-[168px] relative left-[213px];
+  }
+
+  .bg {
+    @apply absolute;
+  }
+
+  .bg01 {
+    @apply bottom-[-20%] right-0;
+  }
+
+  .bg02 {
+    @apply top-0 right-0 z-0;
+  }
+
+  .bg03 {
+    @apply bottom-[-40px] left-0;
+  }
+
+  section {
+    @apply flex justify-center items-start w-full h-[2250px];
 
     section {
-      @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto] pt-0 ;
+      @apply flex flex-wrap gap-[60px] max-w-[1270px] h-[1780px] mx-[auto] pt-0;
+
 
       .box {
-        @apply flex items-center w-[260px] h-[260px] relative overflow-hidden ;
+        @apply flex items-center w-[380px] h-[380px] relative overflow-hidden;
 
         .image-link {
 
@@ -276,12 +317,13 @@ main{
           }
 
           .image {
-            @apply w-[260px] h-[260px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
+            @apply w-[380px] h-[380px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
 
           }
         }
+
         .mask {
-          @apply w-[260px] py-[10px] text-[1.1rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute top-[82%];
+          @apply w-[380px] py-[10px] text-[1.75rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute top-[84%];
         }
 
 
@@ -289,6 +331,4 @@ main{
     }
 
   }
-}
-
-</style>
+}</style>
