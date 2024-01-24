@@ -4,17 +4,14 @@ export default {
   data() {
     return {
       blob1: blob1,
-
     };
-  }}
+  },
+};
 </script>
 <template>
-  
-<div class="swing"><img :src="blob1" alt="" /></div>
-  
+  <div class="swing"><img :src="blob1" alt="" /></div>
 </template>
 <style>
-
 .swing {
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -20px;
@@ -22,8 +19,8 @@ export default {
   z-index: 1;
 }
 .swing img {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   display: block;
 }
 

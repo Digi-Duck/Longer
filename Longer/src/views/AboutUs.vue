@@ -49,7 +49,7 @@ export default {
             老師期盼能幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一盞指引前方的燈塔。
           </p>
         </div>
-        <div class="swing right-[-10%] bottom-[40%]">
+        <div class="swing right-[0%] bottom-[40%]">
           <img :src="BlobG" alt="" />
         </div>
       </div>
@@ -141,7 +141,7 @@ export default {
   @apply w-[100%] h-[1080px] bg-[url('@/assets/img/about_us_ph/bg-1.svg')] bg-contain bg-no-repeat  absolute left-[-100px];
 }
 .bg-2 {
-  @apply w-[100%] h-[974px] bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat  absolute  top-[1200px] left-[100px];
+  @apply w-[100%] h-[974px] bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat  absolute  top-[1200px] left-[140px];
 }
 // .Rotate {
 //   transform: rotate(-90deg) !important;
@@ -169,5 +169,4 @@ export default {
 .crayo {
   @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%];
 }
-
 </style>
