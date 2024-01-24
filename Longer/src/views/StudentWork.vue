@@ -243,7 +243,7 @@ export default {
     <NavCurve></NavCurve>
     <section>
       <section>
-        <HomeTitle>學生作品</HomeTitle>
+        <HomeTitle class="relative left-[-90px] pb-[50px]">學生作品</HomeTitle>
         <div class="box" v-for="item in studentWorks" :key="item.id">
           <!-- <div class="">{{ item.skill }}</div> -->
           <a class="image-link" v-for="imgItem in item.img" :key="imgItem.id" :href="imgItem" :data-lightbox="item.dataText" :data-title="item.skill">
@@ -261,7 +261,7 @@ export default {
 main{
   @apply pt-0;
     section {
-    @apply flex justify-center items-center w-full py-[50px] bg-MainColorBG ;
+    @apply flex justify-center items-center w-full pt-[50px] bg-MainColorBG ;
 
     section {
       @apply flex flex-wrap gap-[15px] max-w-[810px] mx-[auto] pt-0 ;
