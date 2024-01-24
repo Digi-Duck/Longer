@@ -3,8 +3,8 @@
   src: url("@/assets/font/ChenYuluoyan.ttf") format("truetype");
 }
 @font-face {
-  font-family: "GenWanMin-EL";
-  src: url("@/assets/font/GenWanMin-EL.ttf") format("truetype");
+  font-family: "GenWanMin-L";
+  src: url("@/assets/font/GenWanMin-L.ttf") format("truetype");
 }
 
 /* body {
