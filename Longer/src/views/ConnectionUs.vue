@@ -36,9 +36,8 @@ export default {
 };
 </script>
 <template>
-   
+
   <div >
-   
     <section class="Block1">
       <HomeTitle class="pl-[138px]">聯絡資訊</HomeTitle>
       <div class="ConInfo">
@@ -79,7 +78,9 @@ export default {
     
     <section class="Block3">
       <div class="curve rotate-180 scale-x-[-1]"></div>
-      <div class="bus"></div>
+      <div class="bus">
+        123
+      </div>
     </section>
  
   </div>
