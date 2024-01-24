@@ -55,8 +55,8 @@ export default {
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
     scrollIng() {
+      this.colorBlockStyle.left = window.scrollX + this.x;
       this.colorBlockStyle.top = window.scrollY + this.y;
-      console.log(window.scrollY);
       const scrollNow = document.documentElement;
       const isAtBottom =
         scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
@@ -184,12 +184,13 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   position: absolute;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
   background-color: red;
   border-radius: 50%;
   pointer-events: none;
+  mix-blend-mode: exclusion;
 }
 
 //公版 nav
