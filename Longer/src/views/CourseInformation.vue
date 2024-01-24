@@ -10,7 +10,7 @@ import introduce04 from "@/assets/img/courseInformation/img04.png";
 // import 'aos/dist/aos.css';
 
 export default {
-  components: { HomeTitle,NavCurve },
+  components: { HomeTitle, NavCurve },
   data() {
     return {
       introduce01,
@@ -53,21 +53,18 @@ export default {
 </script>
 <template >
   <!-- 課程資訊主要內容 -->
-  
+
   <main>
     <NavCurve></NavCurve>
     <section>
       <HomeTitle class="pl-[13px]">課程資訊</HomeTitle>
 
       <section class="container" v-for="item in courseContent" :key="item.id">
-        <section
-          data-aos="zoom-in-right"
-          data-aos-duration="1000"
-          class="img-area"
-          :style="{ backgroundImage: `url(${item.imgPath})` }"
-        ></section>
+        <section class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
         <section class="text-area">
-          <section>
+          <section data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="text-content">
             <p class="title">{{ item.title }}</p>
             <p class="introduce">{{ item.introduce }}</p>
             <p class="content">{{ item.content }}</p>
@@ -101,8 +98,8 @@ main {
       .text-area {
         @apply flex flex-col justify-center items-center w-[50%];
 
-        section {
-          @apply w-[500px] text-justify;
+        .text-content {
+          @apply w-[500px] h-[390px] px-[30px] text-justify bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
           .title {
             @apply self-start mb-[20px] text-[1.5rem];
@@ -113,12 +110,13 @@ main {
           }
 
           .content {
-            @apply text-[1.2rem];
+            @apply text-[1.2rem] indent-8;
           }
         }
       }
     }
   }
+
   .aos {
     @apply w-[200px] h-[200px];
   }

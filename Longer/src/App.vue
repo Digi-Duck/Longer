@@ -198,7 +198,7 @@ export default {
 
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[120px] fixed z-[3] drop-shadow-[0_5px_5px_#222] bg-EmphasizeColor;
+  @apply flex justify-between items-end w-[100%] h-[120px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
