@@ -5,7 +5,7 @@ export default {
     extend: {},
     screens: {
       // sm: "375px", 要另外做，但不用設定
-      md: "768 px",
+      md: "768px",
       lg: "1200px",
       xl: "1800px",
     },
