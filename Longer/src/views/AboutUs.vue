@@ -29,12 +29,11 @@ export default {
   <div class="AboutUsBg overflow-hidden">
     <HomeTitle class="title ">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
-    <section class="content z-[2]">
-      <div class="ct-h ">
+    <section class="content z-[2] lg:gap-32 md:gap-10">
+      <div class="ct-h lg:items-end items-center">
         <img :src="AboutUsPH[0]" class="rounded-[30px] " alt="" />
       </div>
-      <div class="ct-h">
-        <div class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasettingColor" @mouseenter="checkCollision"></div>
+      <div class="ct-h lg:items-start items-center">
         <div class="ct-text-1">
           <p class="content-font-setting">
             一間成立於1994年的小畫室，位在三民路的小巷裡，由丁建中老師從零開始緩緩耕耘，至今已成為在地人口耳相傳的老字號畫室。
@@ -92,11 +91,11 @@ export default {
     @apply mt-[90px] flex flex-col items-center justify-center lg:flex-row;
 
     .ct-h {
-      @apply w-[50%] flex flex-col justify-center items-center md:w-[80%];
+      @apply w-[50%] flex flex-col md:w-[80%];
 
       img {
         // mix-blend-mode: luminosity;
-        @apply xl:w-[518px] lg:w-[430px] md:w-[640px] w-[253px];
+        @apply xl:w-[518px] xl:h-[601px]  lg:w-[430px] lg:h-[500px] md:w-[640px] md:h-[436px] w-[253px] ;
       }
 
       img:hover {
@@ -104,7 +103,7 @@ export default {
       }
 
       .ct-text-1 {
-        @apply w-[60%] flex flex-col;
+        @apply lg:w-[60%] w-[70%] flex flex-col;
 
         p {
           @apply tracking-widest mt-5;
@@ -113,8 +112,9 @@ export default {
     }
 
     .ct-a {
+      @apply flex justify-center;
       .ct-text-2 {
-        @apply tracking-[.4rem] mt-[72px];
+        @apply tracking-[.4rem] mt-[72px] lg:w-[60%] w-[70%] ;
 
         li {
           @apply mt-[24px];

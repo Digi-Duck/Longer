@@ -41,17 +41,16 @@ export default {
 <template>
   <div class="AboutTeacherBG">
     <div class="about">
-      <div class="th th-ph">
+      <div class="th th-ph ">
         <img class="align-left slide-in" :src="teacherAbout[0]" alt="" />
       </div>
-      <div class="th th-text">
+      <div class="th th-text  pr-[255px]">
         富有教學熱忱的丁老師，創立畫室的初衷，是希望幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一座座指引前方的燈塔。
       </div>
     </div>
     <div class="about">
-      <div class="th th-text">
-        丁老師熟悉各個領域的技法，從素描到水彩、油畫到水墨。
-        自細節出發，將每個技法的重點傳授的淋漓盡致。
+      <div class="th th-text  pl-[255px]">
+        升學集訓班將會集中編排程度相近的學生，課堂中親自示範與解題，使學生共同練習，透過同儕良性切磋相互學習。
       </div>
       <div class="th th-ph">
         <img class="align-right slide-in" :src="teacherAbout[1]" alt="" />
@@ -61,8 +60,8 @@ export default {
       <div class="th th-ph">
         <img class="align-left slide-in" :src="teacherAbout[2]" alt="" />
       </div>
-      <div class="th th-text">
-        一對一的教學方式，讓每個孩子都能自行安排學習時間，把控同一時段授課學生人數，顧及每位學生的學習進度和教學品質，讓所有來到龍格的學生，繪製的作品都能顯著的進步。
+      <div class="th th-text  pr-[255px]">
+        掌控同一時段的授課人數，顧及每位學生的進度，讓來到龍格的學生，都能擁有良好的教學品質。　
       </div>
     </div>
   </div>
@@ -76,14 +75,15 @@ export default {
     @apply flex;
 
     .th {
-      @apply w-[50%] flex justify-center items-center;
+      @apply  flex justify-center items-center;
     }
 
     .th-text {
-      @apply px-[300px];
+      @apply w-[40%] xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.2em];
     }
 
     .th-ph {
+      @apply w-[60%];
       .slide-in {
         @apply opacity-0 duration-700 ease-in;
       }
