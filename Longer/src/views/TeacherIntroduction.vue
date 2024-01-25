@@ -1,6 +1,7 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue";
+import NavCurve from "@/components/NavCurve.vue"
+import NavMobile from "@/components/NavMobile.vue";
 import Img1 from "@/assets/img/teacher_introduction/pic-1.svg";
 import Img2 from "@/assets/img/teacher_introduction/pic-2.svg";
 import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
@@ -17,7 +18,7 @@ import BG from "@/assets/img/teacher_introduction/bg.svg";
 import MobileImg1 from "@/assets/img/teacher_introduction/mobile_pic1.svg";
 import MobileImg2 from "@/assets/img/teacher_introduction/mobile_pic2.svg";
 export default {
-  components: { HomeTitle, NavCurve },
+  components: { HomeTitle, NavCurve:NavCurve, NavMobile:NavMobile },
   data() {
     return {
       Img1: Img1,
@@ -41,7 +42,8 @@ export default {
 </script>
 <template>
   <div class="overflow-hidden">
-    <NavCurve></NavCurve>
+    <!-- <NavCurve></NavCurve> -->
+    <NavMobile></NavMobile>
 
     <div
       class="swing lg:right-[0%] lg:top-[-10%] md:left-[-40%] md:top-[90%] md:block hidden"
@@ -50,8 +52,8 @@ export default {
     </div>
     <!-- <div class="abc h-[1000px]"></div> -->
 
-    <div class="TeacherItroBG text-[GenWanMin-L] overflow-hidden">
-      <HomeTitle class="xl:pl-[138px] pl-[calc(50%_-_150px)]"
+    <div class="TeacherItroBG  overflow-hidden">
+      <HomeTitle class="xl:pl-[138px] pl-[calc(50%_-_150px)] lg:mt-[180px]"
         >師資介紹</HomeTitle
       >
 
@@ -181,12 +183,13 @@ export default {
     .textblock {
       @apply text-[1.5rem] xl:w-[100%] lg:w-[478px];
       .title {
-        @apply pt-[32px] pb-[32px] md:flex-none flex justify-center  font-[GenWanMin-L];
+        @apply pt-[32px] pb-[32px] md:flex-none flex justify-center 
+        md:font-sans  font-[GenWanMin-L];
       }
     }
     h1 {
       @apply md:text-[1.5rem] text-[2rem] 
-      font-[ChenYuluoyan] font-semibold
+      md:font-sans font-[ChenYuluoyan] font-semibold
        md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")] bg-no-repeat bg-bottom;
     }
   }
