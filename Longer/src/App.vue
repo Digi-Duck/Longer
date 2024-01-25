@@ -140,25 +140,31 @@ export default {
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
-  <div class="bg-MainColorBG">
-    <img src="./assets/img/generic/footer-bg-top.svg" alt=""> 
-  </div>
+  <!-- <div class="bg-MainColorBG">
+    <img src="./assets/img/generic/footer-bg-top.svg" alt="">
+  </div> -->
   <footer ref="webFooter">
-    <section class="footer-content">
+    <section class="footer-content footer-content-l">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="500" height="500" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
+        class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
         allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </section>
-    <section class="footer-content">
+    <section class="footer-content footer-content-r">
       <section class="footer-r-top">
-        <img src="./assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
+        <div class="footer-longer-slogn">
+          <img src="@/assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
+          <p>在龍格為你的每個夢想填上顏色</p>
+        </div>
         <section class="footer-r-top-text">
-          <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
+          <p>電話&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
           <p>
-            地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓
+            地址&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓
           </p>
-          <span>營業時間&emsp;&emsp;</span>
+          <p>
+            電子信箱 &emsp;&emsp;&emsp;&emsp;longer959@gmail.com
+          </p>
+          <span>營業時間&emsp;&emsp;&emsp;&emsp;</span>
           <div>
             週三至週五 15:00 — 21:00
             <br />
@@ -168,14 +174,38 @@ export default {
           </div>
         </section>
       </section>
-      <section class="footer-B-nav">
+      <section class="footer-b-nav">
         <ul class="footer-ul">
-          <li>關於我們</li>
-          <li>師資介紹</li>
-          <li>課程資訊</li>
-          <li>學生作品</li>
-          <li>歷年榜單</li>
-          <li>聯絡資訊</li>
+          <li>
+            <a href="/about" @click="setActiveLink('about')" @mouseenter="changeGreen">
+              關於我們
+            </a>
+          </li>
+          <li>
+            <a href="/teacher" @click="setActiveLink('teacher')" @mouseenter="changeGreen">
+              師資介紹
+            </a>
+          </li>
+          <li>
+            <a href="/courseInformation" @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
+              課程資訊
+            </a>
+          </li>
+          <li>
+            <a href="/studentWork" @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
+              學生作品
+            </a>
+          </li>
+          <li>
+            <a href="/admissionList" @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
+              歷年榜單
+            </a>
+          </li>
+          <li>
+            <a href="/connection" @click="setActiveLink('connection')" @mouseenter="changeGreen">
+              聯絡資訊
+            </a>
+          </li>
         </ul>
       </section>
     </section>
@@ -184,6 +214,8 @@ export default {
     </section>
   </footer>
 </template>
+<!-- <img src="" alt=""> -->
+
 
 <style lang="scss" scoped>
 #color-block {
@@ -218,11 +250,12 @@ header {
       img {
         @apply w-[160px];
       }
+
     }
   }
 }
 
-main{
+main {
   @apply pt-[120px];
 }
 
@@ -297,20 +330,32 @@ main{
 
 // 公版頁尾
 footer {
-  @apply flex flex-wrap w-[100%] h-[85vh] text-[#fff] bg-MainColor;
+  @apply flex flex-wrap w-[100%] h-[95vh] z-[1] text-[#fff] xl:text-[1.5rem] lg:text-[1.2rem] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-content {
-    @apply flex flex-wrap justify-center items-center w-[50%] h-[90%];
+    @apply flex flex-wrap justify-center items-end w-[50%] h-[90%];
 
+    // footer-contentl
+    .iframe-area{
+      @apply xl:w-[500px] xl:h-[500px] lg:w-[360px] lg:h-[360px];
+    }
+
+
+    // footer-content-r
     .footer-r-top {
       @apply w-[100%];
 
-      img {
-        @apply mb-[30px];
+      .footer-longer-slogn {
+        @apply flex justify-start items-end mb-[20px];
+
+        p {
+          @apply pb-[10px];
+        }
       }
 
+
       .footer-r-top-text {
-        @apply flex flex-wrap text-[1.5rem];
+        @apply flex flex-wrap;
 
         p {
           @apply w-[100%] mb-[30px];
@@ -318,20 +363,27 @@ footer {
       }
     }
 
-    .footer-B-nav {
+    .footer-b-nav {
       @apply w-[100%];
 
       .footer-ul {
-        @apply flex justify-end gap-[20px] pe-[35px] text-[1.5rem];
+        @apply flex justify-end gap-[20px] xl:pe-[48px] lg:pe-[30px];
+
 
         li:not(:last-child)::after {
-          content: "|";
-          position: relative;
-          top: -5%;
-          left: 10%;
+          @apply content-['|'] relative xl:top-[-5%] left-[5%];
         }
       }
     }
+  }
+
+  // 個別調整footer-content padding-bottom
+  .footer-content-l {
+    @apply xl:pb-[80px] lg:pb-[160px];
+  }
+
+  .footer-content-r {
+    @apply pb-[30px]
   }
 
   .copyRight {
@@ -340,27 +392,27 @@ footer {
 }
 
 // animation
-@keyframes hamShake {
-  0% {
-   height: 120px;
-  }
+// @keyframes hamShake {
+//   0% {
+//    height: 120px;
+//   }
 
-  50% {
-   height: 100px;
-  }
+//   50% {
+//    height: 100px;
+//   }
 
-  100% {
-   height: 120px;
-  }
-}
+//   100% {
+//    height: 120px;
+//   }
+// }
 
-@keyframes hamHide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+// @keyframes hamHide {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
 
-  }
-}
+//   }
+// }
 </style>

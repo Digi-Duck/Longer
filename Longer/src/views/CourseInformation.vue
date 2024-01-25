@@ -99,7 +99,7 @@ main {
   }
 
   .bg03{
-    @apply bottom-[-6%] left-0;
+    @apply bottom-[-5%] left-0;
   }
 
   section {

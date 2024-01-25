@@ -161,6 +161,9 @@ export default {
 // since-1994黃色小圓
 .position-container {
   @apply relative;
+  .since1994 {
+    @apply flex justify-center items-center w-[170px] h-[170px] rounded-full text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] absolute top-[-85px] left-[50%] translate-x-[-50%];
+  }
 
   .since1994 {
     @apply flex justify-center items-center w-[170px] h-[170px] z-[2] text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] rounded-full absolute top-[-85px] left-[50%] translate-x-[-50%];
