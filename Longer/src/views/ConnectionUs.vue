@@ -79,7 +79,7 @@ export default {
     <section class="Block3">
       <div class="curve rotate-180 scale-x-[-1]"></div>
       <div class="bus">
-        123
+        
       </div>
     </section>
  
@@ -122,7 +122,7 @@ export default {
 .Block3{
   @apply w-[100%] h-[538px] bg-MainColorBG;
   .bus{
-  // @apply w-[100%] h-[229px] bg-[#FFFFFF] mt-[85px] ;
+  @apply w-[100px] h-[100px] bg-[black] mt-[85px] ;
 }
 }
 .TitleBG2 {
