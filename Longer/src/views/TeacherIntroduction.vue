@@ -26,30 +26,31 @@ export default {
       pen2: pen2,
       pen3: pen3,
       easel: easel,
-      palette:palette,
-      pigment:pigment,
-      watercolor_pen:watercolor_pen,
+      palette: palette,
+      pigment: pigment,
+      watercolor_pen: watercolor_pen,
     };
   },
-
 };
 </script>
 <template>
   <div class="overflow-hidden">
     <NavCurve></NavCurve>
- 
+
     <div class="swing right-[0%] top-[-10%]">
       <img :src="Blob1" alt="" />
     </div>
     <!-- <div class="abc h-[1000px]"></div> -->
 
     <div class="TeacherItroBG text-[GenWanMin-L] overflow-hidden">
-      <HomeTitle class="sm:pl-[calc(50%_-_150px)] lg:pl-[138px] ">師資介紹</HomeTitle>
+      <HomeTitle class="sm:pl-[calc(50%_-_150px)] lg:pl-[138px]"
+        >師資介紹</HomeTitle
+      >
 
-      <!-- <img :src="Blob2" class="absolute left-[-40%] " alt="" /> -->
-      <!-- <div class="swing left-[-5%] bottom-[40%]">
-      <img :src="Blob2" alt="" />
-    </div> -->
+      <img :src="Blob2" class="absolute left-[-40%]" alt="" />
+      <div class="swing left-[-5%] bottom-[40%]">
+        <img :src="Blob2" alt="" />
+      </div>
       <img class="pen right-[0%] top-[5%]" :src="pen1" alt="" />
       <img class="pen left-[0%] top-[40%]" :src="pen2" alt="" />
       <img class="pen right-[0%] top-[50%] w-[400px]" :src="pen3" alt="" />
@@ -86,10 +87,17 @@ export default {
       </div>
 
       <div class="ClassInfo"></div>
-      <HomeTitle class="pt-[376px] pb-[62px] sm:pl-[calc(50%_-_150px)] lg:pl-[138px]">課堂資訊</HomeTitle>
-      <img :src="palette" class="absolute top-[88%] right-[4%]" alt="">
-    <img :src="pigment" class="absolute top-[85%] left-[10%]" alt="">
-    <!-- <img :src="watercolor_pen" class="absolute top-[76%] right-[15%]" alt=""> -->
+      <HomeTitle
+        class="pt-[376px] pb-[62px] lg:pl-[calc(50%_-_150px)] xl:pl-[138px]"
+        >課堂資訊</HomeTitle
+      >
+      <img :src="palette" class="absolute top-[88%] right-[4%]" alt="" />
+      <img :src="pigment" class="absolute top-[85%] left-[10%]" alt="" />
+      <img
+        :src="watercolor_pen"
+        class="absolute top-[76%] right-[15%]"
+        alt=""
+      />
       <div class="frame">
         <div class="FBvideo">
           <iframe
@@ -117,9 +125,9 @@ export default {
 }
 // 師資介紹內容
 .TeacherItro {
-  @apply flex flex-col h-[935px] w-[1290px]  bg-MainColorBG;
+  @apply flex flex-col h-[1400px] w-[1290px]  bg-MainColorBG;
   .singleblock {
-    @apply flex lg:flex-row justify-between items-center h-[45%] w-[100%] ;
+    @apply flex lg:flex-row justify-between items-center h-[45%] w-[100%];
     .textblock {
       @apply text-[1.5rem];
       .title {
@@ -128,7 +136,7 @@ export default {
     }
   }
   .pic {
-    @apply w-[600px] h-[415px] rounded-[20px];
+    @apply w-[600px] h-[400px] rounded-[20px];
   }
   .text {
     @apply w-[600px];
