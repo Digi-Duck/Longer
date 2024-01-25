@@ -127,7 +127,7 @@ export default {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in RankNumber[0].details">
+                <tr v-for="item in RankNumber[0].details" :key="item.id">
                   <td>{{ item.name }}</td>
                   <td>{{ item.school }}</td>
                 </tr>
@@ -168,7 +168,7 @@ export default {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="item in RankNumber[0].details">
+                  <tr v-for="item in RankNumber[0].details" :key="item.id">
                     <td>{{ item.name }}</td>
                     <td>{{ item.school }}</td>
                   </tr>
@@ -189,7 +189,7 @@ export default {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in RankNumber[0].details">
+                    <tr v-for="item in RankNumber[0].details" :key="item.id">
                       <td>{{ item.name }}</td>
                       <td>{{ item.school }}</td>
                     </tr>

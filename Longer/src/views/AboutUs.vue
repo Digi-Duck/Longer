@@ -27,17 +27,14 @@ export default {
 <template>
   <NavCurve></NavCurve>
   <div class="AboutUsBg overflow-hidden">
-    <HomeTitle class="pl-[1317px]">關於龍格</HomeTitle>
+    <HomeTitle class="title ">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2]">
-      <div class="ct-h">
-        <img :src="AboutUsPH[0]" class="rounded-[30px]" alt="" />
+      <div class="ct-h ">
+        <img :src="AboutUsPH[0]" class="rounded-[30px] " alt="" />
       </div>
       <div class="ct-h">
-        <div
-          class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasettingColor"
-          @mouseenter="checkCollision"
-        ></div>
+        <div class="w-[60px] h-[60px] absolute top-[300px] hover:bg-EmphasettingColor" @mouseenter="checkCollision"></div>
         <div class="ct-text-1">
           <p class="content-font-setting">
             一間成立於1994年的小畫室，位在三民路的小巷裡，由丁建中老師從零開始緩緩耕耘，至今已成為在地人口耳相傳的老字號畫室。
@@ -54,7 +51,7 @@ export default {
         </div>
       </div>
     </section>
-    <HomeTitle class="pl-[138px] pt-[448px]">教學特色</HomeTitle>
+    <HomeTitle class="pt-[448px] pl-[calc(50%_-_150px)]">教學特色</HomeTitle>
     <div class="bg-2 z-[1]"></div>
     <section class="content z-[2]">
       <div class="ct-a">
@@ -83,22 +80,25 @@ export default {
 * {
   @apply box-border;
 }
+
 .content-font-setting {
-  @apply text-[1.75rem] text-[GenWanMin-L];
+  @apply xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L];
 }
 
 .AboutUsBg {
   @apply flex flex-col items-center h-[2400px] w-[100%] relative bg-MainColorBG;
 
   .content {
-    @apply flex justify-center mt-[90px];
+    @apply mt-[90px] flex flex-col items-center justify-center lg:flex-row;
 
     .ct-h {
-      @apply w-[50%] flex flex-col justify-center items-center;
+      @apply w-[50%] flex flex-col justify-center items-center md:w-[80%];
 
       img {
-        mix-blend-mode: luminosity;
+        // mix-blend-mode: luminosity;
+        @apply xl:w-[518px] lg:w-[430px] md:w-[640px] w-[253px];
       }
+
       img:hover {
         mix-blend-mode: normal;
       }
@@ -131,18 +131,20 @@ export default {
 
   .content-1 {
     img {
-      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
-        brightness(120%) contrast(118%);
+      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg) brightness(120%) contrast(118%);
       // z-index: 2;
     }
   }
 }
+
 .bg-1 {
-  @apply w-[100%] h-[1080px] bg-[url('@/assets/img/about_us_ph/bg-1.svg')] bg-contain bg-no-repeat  absolute left-[-100px];
+  @apply w-[100%] h-[1080px] bg-[url('@/assets/img/about_us_ph/bg-1.svg')] bg-contain bg-no-repeat absolute left-[-100px];
 }
+
 .bg-2 {
-  @apply w-[100%] h-[974px] bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat  absolute  top-[1200px] left-[140px];
+  @apply w-[100%] h-[974px] bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat absolute top-[1200px] left-[140px];
 }
+
 // .Rotate {
 //   transform: rotate(-90deg) !important;
 // }
@@ -152,6 +154,7 @@ export default {
   position: absolute;
   z-index: 1;
 }
+
 .swing img {
   width: 600px;
   height: 600px;
@@ -162,10 +165,12 @@ export default {
   0% {
     transform: rotate(3deg);
   }
+
   100% {
     transform: rotate(-3deg);
   }
 }
+
 .crayo {
   @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%];
 }

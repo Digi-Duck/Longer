@@ -15,6 +15,9 @@ export default {
             stPiece: [piece1, piece2, piece3, piece4, piece5, piece6, piece7, piece8, piece9, piece10, piece1, piece2, piece3, piece4],
         }
     },
+    mounted() {
+        console.log(this.stPiece);
+    },
 };
 </script>
 <template>
