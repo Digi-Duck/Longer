@@ -38,8 +38,9 @@ export default {
 <template>
 
   <div class="overflow-hidden" >
+    <NavCurve></NavCurve>
     <section class="Block1">
-      <HomeTitle class="pl-[138px]">聯絡資訊</HomeTitle>
+      <HomeTitle class="xl:pl-[138px] lg:mt-[180px] pl-[calc(50%_-_150px)]">聯絡資訊</HomeTitle>
       <div class="ConInfo">
       <div class="TextBox">
         <p class="Text" v-for="(item,index) in ContactInfoList">
