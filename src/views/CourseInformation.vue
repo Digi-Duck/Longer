@@ -213,7 +213,7 @@ main {
 
 
     .container {
-      @apply xl:gap-[20px] flex flex-wrap gap-0 w-full;
+      @apply xl:gap-[20px] xl:max-w-[1800px] lg:max-w-[910px] flex flex-wrap gap-0 w-full;
 
       &:nth-child(odd) {
         @apply flex-row-reverse;
@@ -237,10 +237,10 @@ main {
       }
 
       .text-area {
-        @apply xl:w-[570px] lg:w-[400px] lg:justify-start lg:mt-0 md:justify-center md:mt-[78px] md:px-0 mt-[51px] w-full flex items-center mx-0;
+        @apply xl:w-[570px] lg:w-[50%] lg:justify-start lg:mt-0 md:justify-center md:mt-[78px] md:px-0 mt-[51px] w-full flex items-center mx-0;
 
         .text-content {
-          @apply xl:h-[390px] lg:w-full lg:ms-[50px] md:w-[400px] md:h-[322px] w-[290px] flex flex-col justify-center items-start flex-wrap m-0 px-[30px] pb-[13px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
+          @apply xl:w-full xl:h-[390px] lg:w-[400px] lg:ms-[50px] md:w-[400px] md:h-[322px] w-[290px] flex flex-col justify-center items-start flex-wrap m-0 px-[30px] pb-[13px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
           .title {
             @apply md:text-[1.5rem] text-[1.25rem] mb-[20px] w-full;
