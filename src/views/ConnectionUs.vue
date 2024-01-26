@@ -8,7 +8,7 @@ import blob1 from "@/components/blob/blob1.vue";
 import blob2 from "@/components/blob/blob2.vue";
 import blob3 from "@/components/blob/blob3.vue";
 export default {
-  components: { HomeTitle,NavCurve,blob1,blob2,blob3},
+  components: { HomeTitle,blob1,blob2,blob3},
   data() {
     return {
       ContactInfoList: [
@@ -36,10 +36,10 @@ export default {
 };
 </script>
 <template>
-
+  <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <div class="overflow-hidden" >
-    <!-- <NavCurve></NavCurve> -->
-    <HomeTitle class="HomeTitle  bg-MainColorBG">聯絡資訊</HomeTitle>
+    <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:pb-[134px] md:pb-[96px] pb-[25px] bg-MainColorBG">聯絡資訊</HomeTitle>
     <section class="Block1">
       <!-- 文字 + 圖片 -->
       <div class="ConInfo">

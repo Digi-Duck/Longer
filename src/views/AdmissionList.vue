@@ -1,5 +1,4 @@
 <script>
-import NavCurve from "@/components/NavCurve.vue";
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import pic1 from "@/assets/img/admission_list/pic-1.svg";
 import pic2 from "@/assets/img/admission_list/pic-2.svg";
@@ -7,7 +6,7 @@ import pic3 from "@/assets/img/admission_list/pic-3.svg";
 // import hookpic from "@/assets/img/admission_list/hook.svg"
 
 export default {
-  components: { NavCurve, HomeTitle },
+  components: { HomeTitle },
   data() {
     return {
       pic1: pic1,
@@ -20,10 +19,12 @@ export default {
 };
 </script>
 <template>
+    <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <div>
     <!-- <NavCurve></NavCurve> -->
     <div class="All">
-      <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
+      <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">歷年榜單</HomeTitle>
       <div class="block">
         <div class="ImgBox">
           <div class="hook"></div>

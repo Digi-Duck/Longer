@@ -1,6 +1,5 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue"
 
 // 導入lightbox
 import lightbox from 'lightbox2';
@@ -95,7 +94,7 @@ import blob3 from "@/components/blob/blob3.vue";
 
 export default {
 
-  components: { HomeTitle, NavCurve, blob2, blob3 },
+  components: { HomeTitle, blob2, blob3 },
   data() {
     return {
       bg01,
@@ -257,10 +256,11 @@ export default {
 };
 </script>
 <template >
+  <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <main>
     <!-- <img src="../assets/img/student_work/water_color_img/water_color_11.jpg" alt=""> -->
-    <!-- <NavCurve></NavCurve> -->
-    <HomeTitle class="HomeTitle">學生作品</HomeTitle>
+    <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">學生作品</HomeTitle>
     <blob2 class="top-[-5%] right-[-5%]"></blob2>
     <blob3 class="bottom-[0%] left-[-5%]"></blob3>
     <img :src="bg01" alt="background01" class="bg bg01">

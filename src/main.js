@@ -1,6 +1,10 @@
 // import "./assets/main.css";
 import "@/assets/style.css";
 import "@/assets/fonts.css";
+import NavCurve from "@/components/NavCurve.vue";
+import NavMobile from "@/components/NavMobile.vue";
+
+
 
 import { createApp } from "vue";
 import App from "./App.vue";
@@ -19,6 +23,9 @@ window.$ = $;
 window.jQuery = $;
 
 AOS.init();
+
+app.component('NavCurve', NavCurve);
+app.component('NavMobile', NavMobile);
 
 window.scrollTo({
     top: 0,

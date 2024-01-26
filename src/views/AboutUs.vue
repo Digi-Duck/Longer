@@ -1,12 +1,12 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import About1 from "@/assets/img/about_us_ph/About1.png";
-import NavCurve from "@/components/NavCurve.vue";
 import BlobG from "@/assets/img/about_us_ph/blob-1.svg";
 import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
 import Crayo from "@/assets/img/about_us_ph/crayo.svg";
+
 export default {
-  components: { HomeTitle, NavCurve },
+  components: { HomeTitle },
   data() {
     return {
       AboutUsPH: [About1],
@@ -25,8 +25,10 @@ export default {
 };
 </script>
 <template>
-  <!-- <NavCurve></NavCurve> -->
+  <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <div class="AboutUsBg overflow-hidden">
+
     <HomeTitle class="xl:pl-[1317px]">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">

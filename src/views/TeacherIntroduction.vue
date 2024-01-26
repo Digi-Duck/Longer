@@ -1,7 +1,5 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue";
-import NavMobile from "@/components/NavMobile.vue";
 import Img1 from "@/assets/img/teacher_introduction/pic-1.svg";
 import Img2 from "@/assets/img/teacher_introduction/pic-2.svg";
 import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
@@ -18,7 +16,7 @@ import BG from "@/assets/img/teacher_introduction/bg.svg";
 import MobileImg1 from "@/assets/img/teacher_introduction/mobile_pic1.svg";
 import MobileImg2 from "@/assets/img/teacher_introduction/mobile_pic2.svg";
 export default {
-  components: { HomeTitle, NavCurve, NavMobile },
+  components: { HomeTitle},
   data() {
     return {
       Img1: Img1,
@@ -41,10 +39,9 @@ export default {
 };
 </script>
 <template>
+  <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <div class="overflow-hidden">
-    <!-- <NavCurve></NavCurve> -->
-    
-
     <div
       class="swing lg:right-[0%] lg:top-[-10%] md:left-[-40%] md:top-[90%] md:block hidden"
     >
@@ -53,11 +50,11 @@ export default {
     <!-- <div class="abc h-[1000px]"></div> -->
 
     <div class="TeacherItroBG overflow-hidden">
-      <HomeTitle class="xl:!justify-start xl:pl-[138px]">師資介紹</HomeTitle>
+      <HomeTitle class="xl:!justify-start xl:pl-[138px] md:pb-[0px] pb-[28px]">師資介紹</HomeTitle>
 
       <img
         :src="Blob2"
-        class="absolute xl:left-[-40%] lg:left-[-60%] lg:top-[30%] lg:block md:hidden hidden"
+        class="absolute xl:left-[-40%] lg:left-[-60%] lg:top-[10%] lg:block md:hidden hidden"
         alt=""
       />
       <div
@@ -124,7 +121,7 @@ export default {
       <HomeTitle class="xl:!justify-start xl:pl-[138px]">課堂實況</HomeTitle>
       <img
         :src="palette"
-        class="absolute top-[88%] right-[4%] md:w-[250px] md:pt-[150px] md:block hidden"
+        class="absolute top-[88%] right-[4%] md:w-[250px] md:pt-[100px] md:block hidden"
         alt=""
       />
       <img
@@ -134,7 +131,7 @@ export default {
       />
       <img
         :src="watercolor_pen"
-        class="absolute top-[68%] right-[20%] lg:block md:hidden hidden"
+        class="xl:absolute top-[68%] right-[20%]   hidden"
         alt=""
       />
       <div class="frame">

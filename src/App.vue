@@ -1,16 +1,13 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
-import NavCurve from "@/components/NavCurve.vue";
-import NavMobile from "@/components/NavMobile.vue";
+
 
 export default {
   // 元件宣告
   components: {
     RouterLink,
     RouterView,
-    NavCurve,
-    NavMobile
   },
   data() {
     return {
@@ -143,8 +140,7 @@ export default {
 
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <NavCurve class="md:block hidden"></NavCurve>
-    <NavMobile class="md:hidden block"></NavMobile>
+
     <RouterView />
   </main>
   <!-- 公版頁尾 -->

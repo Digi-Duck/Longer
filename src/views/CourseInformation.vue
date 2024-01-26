@@ -1,6 +1,5 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue"
 // 課程介紹圖檔
 import introduce01 from "@/assets/img/courseInformation/img01.png";
 import introduce02 from "@/assets/img/courseInformation/img02.png";
@@ -13,7 +12,7 @@ import bg03 from "@/assets/img/courseInformation/blob_bg_03.png";
 
 
 export default {
-  components: { HomeTitle, NavCurve },
+  components: { HomeTitle },
   data() {
     return {
       introduce01,
@@ -56,14 +55,14 @@ export default {
 };
 </script>
 <template >
+  <NavCurve class="md:block hidden"></NavCurve>
+  <NavMobile class="md:hidden block"></NavMobile>
   <!-- 課程資訊主要內容 -->
-
   <main>
-    <!-- <NavCurve></NavCurve> -->
     <img :src="bg01" alt="background01" class="bg bg01">
     <img :src="bg02" alt="background02" class="bg bg02">
     <img :src="bg03" alt="background03" class="bg bg03">
-    <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
+    <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">課程資訊</HomeTitle>
     <section>
       <div class="bg-1"></div>
       <section class="container" v-for="item in courseContent" :key="item.id">
