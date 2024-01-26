@@ -105,7 +105,7 @@ export default {
       }
 
       .ct-text-1 {
-        @apply lg:w-[60%] w-[80%] flex flex-col lg:text-start text-center; 
+        @apply lg:w-[60%] md:w-[80%] flex flex-col lg:text-start text-center; 
 
         p {
           @apply tracking-widest mt-5;
