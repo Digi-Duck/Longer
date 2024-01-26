@@ -27,7 +27,7 @@ export default {
 <template>
   <NavCurve></NavCurve>
   <div class="AboutUsBg overflow-hidden">
-    <HomeTitle class="title pl-[200px]">關於龍格</HomeTitle>
+    <HomeTitle class="title">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">
       <div class="ct-h lg:items-end items-center">
@@ -50,7 +50,7 @@ export default {
         </div>
       </div>
     </section>
-    <HomeTitle class="lg:pt-[350px] pt-[300px] pl-[200px]">教學特色</HomeTitle>
+    <HomeTitle class="xl:pt-[350px] lg:pt-[500px] pt-[100px]">教學特色</HomeTitle>
     <div class="bg-2 z-[1]"></div>
     <section class="content z-[2]">
       <div class="ct-a">
@@ -85,10 +85,12 @@ export default {
 }
 
 .AboutUsBg {
-  @apply flex flex-col items-center h-[2400px] w-[100%] relative bg-MainColorBG;
-
+  @apply flex flex-col items-center lg:h-[2400px] md:h-[2000px] w-[100%] relative bg-MainColorBG;
+  .title{
+    @apply mt-[60px] w-[80%] flex justify-center;
+  }
   .content {
-    @apply  lg:mt-[140px] flex flex-col items-center justify-center lg:flex-row;
+    @apply  xl:mt-[100px] lg:mt-[60px] flex flex-col items-center justify-center lg:flex-row;
 
     .ct-h {
       @apply w-[50%] flex flex-col md:w-[80%];
@@ -103,7 +105,7 @@ export default {
       }
 
       .ct-text-1 {
-        @apply lg:w-[60%] w-[80%] flex flex-col;
+        @apply lg:w-[60%] w-[80%] flex flex-col lg:text-start text-center; 
 
         p {
           @apply tracking-widest mt-5;
@@ -156,9 +158,7 @@ export default {
 }
 
 .swing img {
-  width: 600px;
-  height: 600px;
-  display: block;
+  @apply w-[600px] h-[600px] lg:block hidden;
 }
 
 @keyframes swing {
@@ -172,6 +172,6 @@ export default {
 }
 
 .crayo {
-  @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%];
+  @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%] md:block hidden;
 }
 </style>
