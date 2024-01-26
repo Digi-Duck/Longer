@@ -44,7 +44,7 @@ export default {
       <!-- 文字 + 圖片 -->
       <div class="ConInfo">
         <div class="TextBox">
-          <p class="Text" v-for="(item,index) in ContactInfoList">
+          <p class="Text" v-for="(item,index) in ContactInfoList ">
           <h6 class="title">{{item.name}}</h6>
           <h6 class="content" v-html="formatDetail(item.detail)"></h6>
           </p>
@@ -91,7 +91,9 @@ export default {
 </template>
 <style lang="scss" scoped>
 .HomeTitle{
-  @apply xl:pl-[138px] lg:pt-[calc(57px+34px)] flex justify-center pb-[34px];
+  @apply xl:pl-[138px]
+  xl:flex-none lg:pt-[calc(57px+34px)] 
+  md:flex md:justify-center ;
 }
 .Block1{
    @apply flex flex-col items-center bg-MainColorBG;
