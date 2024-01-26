@@ -140,7 +140,7 @@ export default {
     <RouterView />
   </main>
   <!-- 公版頁尾 -->
-  <footer>
+  <footer class="">
     <section class="footer-l">
       <!-- iframe -->
       <iframe
@@ -215,81 +215,6 @@ export default {
       <p>Designed by 創室網匠 Copyright &copy; 2024</p>
     </section>
   </footer>
-
-  <!-- <footer ref="webFooter">
-    <section class="footer-content footer-content-l">
-      <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
-    </section>
-    <section class="footer-content footer-content-r">
-      <section class="footer-r-top">
-        <div class="footer-longer-slogn">
-          <img src="@/assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
-          <p>在龍格為你的每個夢想填上顏色</p>
-        </div>
-        <section class="footer-r-top-text">
-          <p>電話&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
-          <p>
-            地址&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓
-          </p>
-          <p>
-            電子信箱 &emsp;&emsp;&emsp;&emsp;longer959@gmail.com
-          </p>
-          <div class="business-hours">
-            <span>營業時間&emsp;&emsp;&emsp;&emsp;</span>
-            <div>
-              週三至週五 15:00 — 21:00
-              <br />
-              週六及週日 09:00 — 17:00
-              <br />
-              每週一和週二公休
-            </div>
-          </div>
-
-        </section>
-      </section>
-      <section class="footer-b-nav">
-        <ul class="footer-ul">
-          <li>
-            <a href="/about" @click="setActiveLink('about')" @mouseenter="changeGreen">
-              關於我們
-            </a>
-          </li>
-          <li>
-            <a href="/teacher" @click="setActiveLink('teacher')" @mouseenter="changeGreen">
-              師資介紹
-            </a>
-          </li>
-          <li>
-            <a href="/courseInformation" @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
-              課程資訊
-            </a>
-          </li>
-          <li>
-            <a href="/studentWork" @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
-              學生作品
-            </a>
-          </li>
-          <li>
-            <a href="/admissionList" @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
-              歷年榜單
-            </a>
-          </li>
-          <li>
-            <a href="/connection" @click="setActiveLink('connection')" @mouseenter="changeGreen">
-              聯絡資訊
-            </a>
-          </li>
-        </ul>
-      </section>
-    </section>
-    <section class="copyRight">
-      <p>Designed by 創室網匠 Copyright &copy; 2024</p>
-    </section>
-  </footer> -->
 </template>
 <!-- <img src="" alt=""> -->
 
@@ -343,20 +268,24 @@ footer {
   @apply  xl:text-[1.5rem] lg:text-[1.2rem] flex flex-wrap w-full h-[95vh] z-[1] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
-    @apply lg:w-[40%] md:pb-[50px] md:w-[30%] md:flex justify-end items-end h-[80%] hidden;
+    @apply md:pb-[50px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
 
     iframe {
-      @apply lg:w-[450px] lg:h-[450px] md:w-[200px] md:h-[240px];
+      @apply lg:w-[450px] lg:h-[450px] md:w-[300px] md:h-[300px];
     }
   }
 
   .footer-r {
-    @apply lg:w-[60%] md:pb-[50px] md:w-[70%] flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
+    @apply md:pb-[50px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
 
     .all {
-      @apply  md:relative md:flex-col md:gap-0 flex flex-col-reverse gap-[50px] static tracking-[3px];
+      @apply  md:flex-col md:gap-0 flex flex-col-reverse gap-[50px] lg:tracking-[3px] md:tracking-[1px];
       .logo {
-        @apply lg:w-full lg:static md:absolute md:top-[-250px] md:left-[-200px] md:w-[600px] static flex items-end md:mb-[50px] w-full;
+        @apply lg:w-full flex items-end md:mb-[50px] w-full;
+      
+        img{
+          @apply xl:w-[327px] lg:w-[220px] w-[143px];
+        }
       }
 
       .content {
