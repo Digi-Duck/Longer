@@ -134,7 +134,7 @@ main {
       }
 
       .text-area {
-        @apply lg:w-[50%] lg:justify-start md:justify-center md:w-full lg:mt-0 md:mt-[78px] flex items-center mx-0;
+        @apply lg:w-[40%] lg:justify-start md:justify-center md:w-full lg:mt-0 md:mt-[78px] flex items-center mx-0;
 
         .text-content {
           @apply xl:w-[570px] xl:h-[390px] lg:ms-[50px] w-[400px] h-[322px] flex flex-col justify-center items-center flex-wrap m-0 px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
