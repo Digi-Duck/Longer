@@ -39,15 +39,16 @@ export default {
 
   <div class="overflow-hidden" >
     <NavCurve></NavCurve>
+    <HomeTitle class="xl:pl-[138px] lg:pt-[calc(57px+34px)] pl-[calc(50%_-_150px)] pb-[34px] bg-MainColorBG">聯絡資訊</HomeTitle>
     <section class="Block1">
-      <HomeTitle class="xl:pl-[138px] lg:mt-[180px] pl-[calc(50%_-_150px)]">聯絡資訊</HomeTitle>
+      <!-- 文字 + 圖片 -->
       <div class="ConInfo">
-      <div class="TextBox">
-        <p class="Text" v-for="(item,index) in ContactInfoList">
-        <h6 class="title">{{item.name}}</h6>
-        <h6 class="content" v-html="formatDetail(item.detail)"></h6>
-      </p>
-      </div>
+        <div class="TextBox">
+          <p class="Text" v-for="(item,index) in ContactInfoList">
+          <h6 class="title">{{item.name}}</h6>
+          <h6 class="content" v-html="formatDetail(item.detail)"></h6>
+          </p>
+        </div>
       <div class="bcgImg"></div>
       </div>
       <div class="curve"></div>
@@ -90,24 +91,25 @@ export default {
 <style lang="scss" scoped>
 
 .Block1{
-   @apply flex flex-col items-center bg-MainColorBG ;
+   @apply flex flex-col items-center h-[837px] w-[100%]  bg-MainColorBG;
     .ConInfo {
+      @apply flex justify-center;
     .TextBox{
-      @apply pt-[80px] ;
+      @apply  w-[721px] h-[308px] mt-[59px];
     };
-    @apply h-[920px] w-[1400px] flex  ;
+    @apply h-[920px] w-[100%] flex  ;
     .Text{
-      @apply flex pb-[60px] flex-1 text-[1.5rem]; 
+      @apply flex pb-[30px]  text-[1.5rem]; 
     .title{
       @apply pr-[80px] font-bold};};
   
-  .bcgImg{
-    @apply bg-[url('@/assets/img/courseinfo/easel.png')] bg-no-repeat bg-MainColorBG flex-1  mt-[-2px]
+  .bcgImg{        
+    @apply bg-[url('@/assets/img/courseinfo/easel.png')] bg-no-repeat bg-contain bg-right w-[800px] h-[920px]  mt-[-60px] 
           
   }}
 }
 .Block2{
-    @apply flex flex-col items-center relative bg-MainColor ;
+    @apply flex flex-col items-center relative ;
     .TrafficWay{
       @apply bg-MainColor ;
   

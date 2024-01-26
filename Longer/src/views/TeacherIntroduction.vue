@@ -1,6 +1,6 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue"
+import NavCurve from "@/components/NavCurve.vue";
 import NavMobile from "@/components/NavMobile.vue";
 import Img1 from "@/assets/img/teacher_introduction/pic-1.svg";
 import Img2 from "@/assets/img/teacher_introduction/pic-2.svg";
@@ -18,7 +18,7 @@ import BG from "@/assets/img/teacher_introduction/bg.svg";
 import MobileImg1 from "@/assets/img/teacher_introduction/mobile_pic1.svg";
 import MobileImg2 from "@/assets/img/teacher_introduction/mobile_pic2.svg";
 export default {
-  components: { HomeTitle, NavCurve:NavCurve, NavMobile:NavMobile },
+  components: { HomeTitle, NavCurve: NavCurve, NavMobile: NavMobile },
   data() {
     return {
       Img1: Img1,
@@ -52,7 +52,7 @@ export default {
     </div>
     <!-- <div class="abc h-[1000px]"></div> -->
 
-    <div class="TeacherItroBG  overflow-hidden">
+    <div class="TeacherItroBG overflow-hidden">
       <HomeTitle class="xl:pl-[138px] pl-[calc(50%_-_150px)] lg:mt-[180px]"
         >師資介紹</HomeTitle
       >
@@ -124,7 +124,7 @@ export default {
 
       <div class="ClassInfo"></div>
       <HomeTitle
-        class="md:pt-[376px] pt-[73px] pb-[62px] xl:pl-[138px] pl-[calc(50%_-_150px)]"
+        class="md:pt-[376px] mt-[73px] pb-[62px] xl:pl-[138px] pl-[calc(50%_-_150px)]"
         >課堂實況</HomeTitle
       >
       <img
