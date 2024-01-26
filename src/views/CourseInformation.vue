@@ -118,7 +118,7 @@ main {
 
 
         .text-area{
-          // @apply lg:justify-center;
+          @apply lg:justify-end;
 
           .text-content{
             @apply  lg:me-[50px];
