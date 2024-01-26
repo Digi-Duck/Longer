@@ -53,9 +53,7 @@ export default {
     <!-- <div class="abc h-[1000px]"></div> -->
 
     <div class="TeacherItroBG overflow-hidden">
-      <HomeTitle class="xl:pl-[138px] pl-[calc(50%_-_150px)] lg:mt-[180px]"
-        >師資介紹</HomeTitle
-      >
+      <HomeTitle class="HomeTitle md:mt-[0px] mt-[10px]">師資介紹</HomeTitle>
 
       <img
         :src="Blob2"
@@ -123,10 +121,7 @@ export default {
       </div>
 
       <div class="ClassInfo"></div>
-      <HomeTitle
-        class="md:pt-[376px] mt-[73px] pb-[62px] xl:pl-[138px] pl-[calc(50%_-_150px)]"
-        >課堂實況</HomeTitle
-      >
+      <HomeTitle class="HomeTitle md:mt-[0px] mt-[73px]">課堂實況</HomeTitle>
       <img
         :src="palette"
         class="absolute top-[88%] right-[4%] md:w-[250px] md:pt-[150px] md:block hidden"
@@ -165,6 +160,9 @@ export default {
   </div>
 </template>
 <style lang="scss" scoped>
+.HomeTitle {
+  @apply xl:pl-[138px] flex justify-center pb-[34px];
+}
 // 一整個頁面
 .TeacherItroBG {
   @apply flex flex-col items-center xl:h-[3600px]  w-[100%] bg-MainColorBG relative;
@@ -212,7 +210,7 @@ export default {
 .frame {
   @apply flex justify-center items-center 
   xl:w-[1176px] lg:w-[976px] md:w-[659px] w-[307px] 
-  lg:h-[862px] md:h-[500px] h-[200px]
+  lg:h-[862px] md:h-[500px] h-[311px]
   md:mb-[310px]
 
      md:bg-[url('@/assets/img/teacher_introduction/easel.svg')] bg-contain bg-center bg-no-repeat;

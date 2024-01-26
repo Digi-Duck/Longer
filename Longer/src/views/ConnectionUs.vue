@@ -19,7 +19,7 @@ export default {
           detail:
             "週三至週五 15:00 — 21:00\n週六及週日 09:00 — 17:00\n每週一和週二公休",
         },
-        { name: "畫室地址", detail: "台中市北區三民路三段54巷19號之3號4樓" },
+        { name: "畫室地址", detail: "台中市北區三民路三段54巷\n19號之3號4樓" },
       ],
       TraffInfoList:[
         {name:"公車資訊",detail:"至台中火車站搭乘5、12、21、25、35、58、131號公車\n乘至 國立臺中科技大學 或 中興堂\n步行約5分鐘即可抵達龍格畫室"},
@@ -39,7 +39,7 @@ export default {
 
   <div class="overflow-hidden" >
     <NavCurve></NavCurve>
-    <HomeTitle class="xl:pl-[138px] lg:pt-[calc(57px+34px)] pl-[calc(50%_-_150px)] pb-[34px] bg-MainColorBG">聯絡資訊</HomeTitle>
+    <HomeTitle class="HomeTitle  bg-MainColorBG">聯絡資訊</HomeTitle>
     <section class="Block1">
       <!-- 文字 + 圖片 -->
       <div class="ConInfo">
@@ -51,18 +51,19 @@ export default {
         </div>
       <div class="bcgImg"></div>
       </div>
-      <div class="curve"></div>
+      
     </section>
+    <div class="curve  bg-MainColorBG  md:block hidden"></div>
     
     <section class="Block2">
-     <HomeTitle class="pl-[138px]" :class="{'bg-set':true}">交通資訊</HomeTitle> 
-     <blob2 class="right-[-30px]"></blob2>
-     <blob3 class="bottom-[0px] left-[-30px] "></blob3>
+     <HomeTitle class="HomeTitle">交通資訊</HomeTitle> 
+     <!-- <blob2 class="right-[-30px]"></blob2>
+     <blob3 class="bottom-[0px] left-[-30px] "></blob3> -->
       <div class="TrafficWay">
         
         <div class="TraffInfo">
           <div class="TraffBox"> 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7281.374658267901!2d120.68340395005671!3d24.147632202326992!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d694e74e9c3%3A0x927ec8b9a195fcd!2z6b6N5qC855Wr5a6k!5e0!3m2!1szh-TW!2stw!4v1705722612413!5m2!1szh-TW!2stw" width="1100px" height="600px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+            <iframe class="GoogleMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7281.374658267901!2d120.68340395005671!3d24.147632202326992!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d694e74e9c3%3A0x927ec8b9a195fcd!2z6b6N5qC855Wr5a6k!5e0!3m2!1szh-TW!2stw!4v1705722612413!5m2!1szh-TW!2stw"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
             <div class="TraffContentBox">
               <div class="TraffContent" v-for="(item,index) in TraffInfoList">
                 <div class="TitleBG2">
@@ -89,63 +90,110 @@ export default {
 
 </template>
 <style lang="scss" scoped>
-
+.HomeTitle{
+  @apply xl:pl-[138px] lg:pt-[calc(57px+34px)] flex justify-center pb-[34px];
+}
 .Block1{
-   @apply flex flex-col items-center h-[837px] w-[100%]  bg-MainColorBG;
+   @apply flex flex-col items-center bg-MainColorBG;
     .ConInfo {
-      @apply flex justify-center;
+      @apply flex 
+             lg:justify-center md:justify-start justify-center 
+             lg:items-start md:items-center 
+             lg:flex-row md:flex-col-reverse
+
+             xl:h-[837px] lg:h-[615px] md:h-[100%] h-[373px] 
+             xl:w-[100%] lg:w-[1058px] md:w-[100%] w-[342px]
+             xl:mt-[0px] lg:mt-[100px] md:mt-[0px] 
+             md:bg-none bg-[url("@/assets/img/connection_us/NotePaper.svg")] ;
     .TextBox{
-      @apply  w-[721px] h-[308px] mt-[59px];
+      @apply  md:font-[GenWanMin-L] font-[ChenYuluoyan]  
+              md:mt-[59px]  mt-[50px]
+              xl:w-[721px] lg:w-[582px] md:w-[400px] w-[318px]
+              xl:h-[308px] lg:h-[231px] md:h-[265px] h-[255px]
+
+              ;
     };
-    @apply h-[920px] w-[100%] flex  ;
+   
     .Text{
-      @apply flex pb-[30px]  text-[1.5rem]; 
+      @apply flex  
+            xl:pb-[30px] lg:pb-[20px] md:pt-[30px]  pt-[3px] 
+            xl:text-[1.5rem] md:text-[1.25rem] text-[1.5rem] 
+            ; 
     .title{
-      @apply pr-[80px] font-bold};};
+      @apply xl:pr-[80px] lg:pr-[60px] md:pr-[30px] pr-[24px]
+             md:bg-none bg-[url("@/assets/img/connection_us/TextDecMobile.svg")] bg-no-repeat bg-contain bg-left bg-top
+    }};
   
   .bcgImg{        
-    @apply bg-[url('@/assets/img/courseinfo/easel.png')] bg-no-repeat bg-contain bg-right w-[800px] h-[920px]  mt-[-60px] 
+    @apply bg-[url('@/assets/img/courseinfo/easel.png')] bg-no-repeat bg-contain 
+    xl:bg-right lg:bg-right md:bg-center
+    xl:w-[800px] lg:w-[475px] md:w-[430px] w-[0px]
+    xl:h-[920px] lg:h-[615px] md:h-[448px] h-[0px]  
+    xl:mt-[-60px] lg:mt-[0px] md:mt-[54px] mt-[0px]  
           
   }}
 }
 .Block2{
-    @apply flex flex-col items-center relative ;
+    @apply flex flex-col items-center relative md:bg-MainColor bg-MainColorBG;
     .TrafficWay{
-      @apply bg-MainColor ;
+      @apply md:bg-MainColor bg-MainColorBG  ;
   
     .TraffBox{
-      @apply flex flex-col w-[1260px]  bg-[#ebe7d5] rounded-lg pt-[84px] items-center pb-[84px] mb-[84px];
+      @apply flex flex-col md:bg-[#ebe7d5] bg-none  rounded-[30px]  
+             xl:w-[1260px] lg:w-[848px] md:w-[600px]
+             xl:h-[1528px] lg:h-[1028px] md:h-[730px] 
+             md:mt-[103px] 
+             md:pt-[84px] items-center pb-[84px] mb-[84px];
     .TraffContentBox{
-      @apply flex flex-col w-[100%];
+      @apply flex flex-col 
+             xl:w-[849px] lg:w-[571px] md:w-[470px] w-[312px]
+             xl:h-[542px] lg:h-[364px] md:h-[313px] h-[323px]
+             md:pt-[0px] pt-[46px];
+            //  單一區塊文字
+          .TitleBG2 {
+                @apply flex w-[100%] flex-col  
+                xl:pt-[71px] lg:pt-[47px] md:pt-[16px] pt-[6px] ;
+                .text {
+                  // 第一行是所有文字外框都共用的樣式
+                  @apply  pl-[71px]
+                  md:bg-[url("@/assets/img/connection_us/Star.svg")] bg-contain bg-left bg-no-repeat
+                  bg-[url("@/assets/img/connection_us/StarMobile.svg")]
+                  font-[ChenYuluoyan] font-semibold  
+                  w-[300px]
+                  xl:text-[3.25rem] lg:text-[2.12rem] text-[1.5rem]; 
+                  
+                }
+                p{@apply pl-[46px] font-[GenWanMin-L] 
+                         xl:pt-[30px] lg:pt-[20px] md:pt-[14px] pt-[15px] 
+                         xl:text-[1.56rem] lg:text-[1rem] md:text-[0.875rem] text-[0.813rem];
+                        }
+                
+}
+  }
+  .GoogleMap{
+    @apply xl:w-[1100px] lg:w-[739px] md:w-[480px] w-[297px]
+           xl:h-[600px]  lg:h-[403px] md:h-[260px] h-[317px]
   }
 };
 }
   }
 
 .Block3{
-  @apply w-[100%] h-[538px] bg-MainColorBG;
+  @apply w-[100%]  bg-MainColorBG;
   .bus{
   @apply w-[100px] h-[100px] bg-[black] mt-[85px] ;
 }
 }
-.TitleBG2 {
-  @apply flex w-[100%] flex-col pt-[85px] pl-[45px] ;
-  .text {
-    // 第一行是所有文字外框都共用的樣式
-    @apply flex items-center justify-center w-[300px] h-[72px] text-[3.25rem] font-[ChenYuluoyan]  bg-[url("@/assets/img/connection_us/Star.svg")] bg-[contain] bg-no-repeat ;
-  }
-  p{@apply pl-[46px] pt-[4px] text-[24px]}
-}
+
 
 // 曲線
 .curve{
-  @apply w-[100%] h-[288px] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-cover bg-no-repeat 
+  @apply md:w-[100%] md:h-[288px] 
+  md:bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-cover bg-no-repeat 
+  bg-none 
 }
 
-.bg-set {
-  @apply bg-MainColor;
-  /* Add !important to override scoped styles */
-}
+
 
 
 </style>
