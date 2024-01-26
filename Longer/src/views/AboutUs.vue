@@ -27,7 +27,7 @@ export default {
 <template>
   <NavCurve></NavCurve>
   <div class="AboutUsBg overflow-hidden">
-    <HomeTitle class="title ">關於龍格</HomeTitle>
+    <HomeTitle class="title pl-[200px]">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">
       <div class="ct-h lg:items-end items-center">
@@ -50,7 +50,7 @@ export default {
         </div>
       </div>
     </section>
-    <HomeTitle class="pt-[448px] pl-[calc(50%_-_150px)]">教學特色</HomeTitle>
+    <HomeTitle class="lg:pt-[350px] pt-[300px] pl-[200px]">教學特色</HomeTitle>
     <div class="bg-2 z-[1]"></div>
     <section class="content z-[2]">
       <div class="ct-a">
@@ -88,14 +88,14 @@ export default {
   @apply flex flex-col items-center h-[2400px] w-[100%] relative bg-MainColorBG;
 
   .content {
-    @apply mt-[90px] flex flex-col items-center justify-center lg:flex-row;
+    @apply  lg:mt-[140px] flex flex-col items-center justify-center lg:flex-row;
 
     .ct-h {
       @apply w-[50%] flex flex-col md:w-[80%];
 
       img {
         // mix-blend-mode: luminosity;
-        @apply xl:w-[518px] xl:h-[601px]  lg:w-[430px] lg:h-[500px] md:w-[640px] md:h-[436px] w-[253px] ;
+        @apply xl:w-[518px] xl:h-[601px]  lg:w-[430px] lg:h-[500px] md:w-[640px] md:h-[470px] w-[253px] object-cover object-center;
       }
 
       img:hover {
@@ -103,7 +103,7 @@ export default {
       }
 
       .ct-text-1 {
-        @apply lg:w-[60%] w-[70%] flex flex-col;
+        @apply lg:w-[60%] w-[80%] flex flex-col;
 
         p {
           @apply tracking-widest mt-5;

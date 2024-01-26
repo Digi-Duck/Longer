@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      objectPosition: {
+        'center-top': 'center top',
+      }
+    },
     screens: {
       // sm: "375px", 要另外做，但不用設定
       md: "768px",
