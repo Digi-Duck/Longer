@@ -85,11 +85,11 @@ export default {
 
 <!-- 公版nav -->
 <template>
-  <div :style="{
+  <!-- <div :style="{
     left: `${colorBlockStyle.left}px`,
     top: `${colorBlockStyle.top}px`,
     backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-  }" id="color-block"></div>
+  }" id="color-block"></div> -->
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
@@ -268,7 +268,7 @@ footer {
   @apply  xl:text-[1.5rem] lg:text-[1.2rem] flex flex-wrap w-full h-[95vh] z-[1] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
-    @apply md:pb-[50px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
+    @apply lg:pb-[10px] md:pb-[50px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
 
     iframe {
       @apply lg:w-[450px] lg:h-[450px] md:w-[300px] md:h-[300px];
