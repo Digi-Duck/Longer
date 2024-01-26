@@ -27,7 +27,6 @@ export default {
       <div class="block">
         <div class="ImgBox">
           <div class="hook"></div>
-
           <div class="content">
             <img :src="pic1" alt="" />
             <div class="title">升大學優良榜單</div>
@@ -55,15 +54,14 @@ export default {
 .All {
   @apply flex flex-col  items-center bg-MainColorBG;
   .block {
-    @apply flex flex-col items-center justify-between  w-[1080px] h-[2083px] pt-[34px];
+    @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[2460px] md:h-[1800px] h-[95%] ;
     .ImgBox {
-      @apply flex flex-col items-center w-[1000px] h-[616px];
+      @apply flex flex-col items-center xl:w-[60%] lg:w-[70%] md:w-[85%] w-[95%] ;
       .hook {
         @apply w-[500px] h-[114px] bg-[url('@/assets/img/admission_list/hook.svg')];
       }
-
       .content {
-        @apply w-[100%] h-[470px] relative rounded-[24px] border-[30px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
+        @apply w-[100%] relative rounded-[24px] border-[30px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
       }
       img {
         @apply w-[100%];
