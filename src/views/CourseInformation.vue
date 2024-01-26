@@ -127,17 +127,10 @@ export default {
   <NavMobile class="md:hidden block"></NavMobile>
   <!-- 課程資訊主要內容 -->
   <main>
-<<<<<<< Updated upstream
-    <img :src="bg01" alt="background01" class="bg bg01">
-    <img :src="bg02" alt="background02" class="bg bg02">
-    <img :src="bg03" alt="background03" class="bg bg03">
-    <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">課程資訊</HomeTitle>
-=======
     <NavCurve></NavCurve>
     <!-- 背景圖片 -->
     <img v-for="item in bgImg" :key="item.id" :src="item.imgSrc" :alt="item.imgAlt" :class="item.imgclass">
     <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
->>>>>>> Stashed changes
     <section>
       <div class="bg-1"></div>
       <section class="container" v-for="item in courseContent" :key="item.id">
