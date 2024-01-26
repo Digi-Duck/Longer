@@ -38,7 +38,7 @@ export default {
 <template>
 
   <div class="overflow-hidden" >
-    <NavCurve></NavCurve>
+    <!-- <NavCurve></NavCurve> -->
     <HomeTitle class="HomeTitle  bg-MainColorBG">聯絡資訊</HomeTitle>
     <section class="Block1">
       <!-- 文字 + 圖片 -->

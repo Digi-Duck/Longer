@@ -59,7 +59,7 @@ export default {
   <!-- 課程資訊主要內容 -->
 
   <main>
-    <NavCurve></NavCurve>
+    <!-- <NavCurve></NavCurve> -->
     <img :src="bg01" alt="background01" class="bg bg01">
     <img :src="bg02" alt="background02" class="bg bg02">
     <img :src="bg03" alt="background03" class="bg bg03">

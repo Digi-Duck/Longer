@@ -1,12 +1,12 @@
-/* @font-face {
+@font-face {
   font-family: "ChenYuluoyan";
   src: url("@/assets/font/ChenYuluoyan.ttf") format("truetype");
-} */
+} 
 
-/* @font-face {
-  font-family: "GenWanMinL";
-  src: url("@/assets/font/GenWanMinL.ttf") format("truetype");
-} */
+@font-face {
+  font-family: "GenWanMin-L";
+  src: url("@/assets/font/GenWanMin-L.ttf") format("truetype");
+}
 
 /* body {
   font-family: "ChenYuluoyan";

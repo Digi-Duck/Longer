@@ -25,9 +25,9 @@ export default {
 };
 </script>
 <template>
-  <NavCurve></NavCurve>
+  <!-- <NavCurve></NavCurve> -->
   <div class="AboutUsBg overflow-hidden">
-    <HomeTitle class="title">關於龍格</HomeTitle>
+    <HomeTitle class="xl:pl-[1317px]">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">
       <div class="ct-h lg:items-end items-center">
@@ -50,7 +50,7 @@ export default {
         </div>
       </div>
     </section>
-    <HomeTitle class="xl:pt-[350px] lg:pt-[500px] pt-[100px]">教學特色</HomeTitle>
+    <HomeTitle class="xl:!justify-start xl:pl-[138px]">教學特色</HomeTitle>
     <div class="bg-2 z-[1]"></div>
     <section class="content z-[2]">
       <div class="ct-a">
@@ -86,9 +86,7 @@ export default {
 
 .AboutUsBg {
   @apply flex flex-col items-center lg:h-[2400px] md:h-[2000px] w-[100%] relative bg-MainColorBG;
-  .title{
-    @apply mt-[60px] w-[80%] flex justify-center;
-  }
+ 
   .content {
     @apply  xl:mt-[100px] lg:mt-[60px] flex flex-col items-center justify-center lg:flex-row;
 

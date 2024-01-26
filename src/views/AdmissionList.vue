@@ -21,7 +21,7 @@ export default {
 </script>
 <template>
   <div>
-    <NavCurve></NavCurve>
+    <!-- <NavCurve></NavCurve> -->
     <div class="All">
       <HomeTitle class="pl-[138px]">歷年榜單</HomeTitle>
       <div class="block">

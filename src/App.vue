@@ -1,12 +1,16 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import NavCurve from "@/components/NavCurve.vue";
+import NavMobile from "@/components/NavMobile.vue";
 
 export default {
   // 元件宣告
   components: {
     RouterLink,
     RouterView,
+    NavCurve,
+    NavMobile
   },
   data() {
     return {
@@ -84,6 +88,7 @@ export default {
 
 <!-- 公版nav -->
 <template>
+
   <div :style="{
     left: `${colorBlockStyle.left}px`,
     top: `${colorBlockStyle.top}px`,
@@ -121,7 +126,9 @@ export default {
         @click="setActiveLink('connection')" @mouseenter="changeGreen">
         聯絡資訊
       </RouterLink>
+      
     </nav>
+
   </header>
   <!-- 漢堡條 -->
   <!-- <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
@@ -136,6 +143,8 @@ export default {
 
   <!-- 分頁內容 -->
   <main ref="webContent">
+    <NavCurve class="md:block hidden"></NavCurve>
+    <NavMobile class="md:hidden block"></NavMobile>
     <RouterView />
   </main>
   <!-- 公版頁尾 -->

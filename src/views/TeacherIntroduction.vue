@@ -18,7 +18,7 @@ import BG from "@/assets/img/teacher_introduction/bg.svg";
 import MobileImg1 from "@/assets/img/teacher_introduction/mobile_pic1.svg";
 import MobileImg2 from "@/assets/img/teacher_introduction/mobile_pic2.svg";
 export default {
-  components: { HomeTitle, NavCurve: NavCurve, NavMobile: NavMobile },
+  components: { HomeTitle, NavCurve, NavMobile },
   data() {
     return {
       Img1: Img1,
@@ -43,7 +43,7 @@ export default {
 <template>
   <div class="overflow-hidden">
     <!-- <NavCurve></NavCurve> -->
-    <NavMobile></NavMobile>
+    
 
     <div
       class="swing lg:right-[0%] lg:top-[-10%] md:left-[-40%] md:top-[90%] md:block hidden"
@@ -53,7 +53,7 @@ export default {
     <!-- <div class="abc h-[1000px]"></div> -->
 
     <div class="TeacherItroBG overflow-hidden">
-      <HomeTitle class="HomeTitle md:mt-[0px] mt-[10px]">師資介紹</HomeTitle>
+      <HomeTitle class="xl:!justify-start xl:pl-[138px]">師資介紹</HomeTitle>
 
       <img
         :src="Blob2"
@@ -121,7 +121,7 @@ export default {
       </div>
 
       <div class="ClassInfo"></div>
-      <HomeTitle class="HomeTitle md:mt-[0px] mt-[73px]">課堂實況</HomeTitle>
+      <HomeTitle class="xl:!justify-start xl:pl-[138px]">課堂實況</HomeTitle>
       <img
         :src="palette"
         class="absolute top-[88%] right-[4%] md:w-[250px] md:pt-[150px] md:block hidden"
@@ -160,9 +160,6 @@ export default {
   </div>
 </template>
 <style lang="scss" scoped>
-.HomeTitle {
-  @apply xl:pl-[138px] flex justify-center pb-[34px];
-}
 // 一整個頁面
 .TeacherItroBG {
   @apply flex flex-col items-center xl:h-[3600px]  w-[100%] bg-MainColorBG relative;
