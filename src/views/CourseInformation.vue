@@ -130,14 +130,14 @@ main {
       }
 
       .img-area {
-        @apply xl:w-[521px] xl:h-[597px] w-[405px] h-[426px] mx-0 bg-no-repeat bg-cover;
+        @apply xl:w-[521px] xl:h-[597px] md:w-[405px] md:h-[426px] w-[340px] h-[358px] mx-0 bg-no-repeat bg-cover;
       }
 
       .text-area {
         @apply lg:w-[40%] lg:justify-start md:justify-center md:w-full lg:mt-0 md:mt-[78px] flex items-center mx-0;
 
         .text-content {
-          @apply xl:w-[570px] xl:h-[390px] lg:ms-[50px] w-[400px] h-[322px] flex flex-col justify-center items-center flex-wrap m-0 px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
+          @apply xl:w-[570px] xl:h-[390px] lg:ms-[50px] md:w-[400px] md:h-[322px] w-[290px] h-[210px] flex flex-col justify-center items-center flex-wrap m-0 px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
           .title {
             @apply w-full mb-[20px] text-[1.5rem];
