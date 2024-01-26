@@ -63,8 +63,8 @@ export default {
     <img :src="bg01" alt="background01" class="bg bg01">
     <img :src="bg02" alt="background02" class="bg bg02">
     <img :src="bg03" alt="background03" class="bg bg03">
+    <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
     <section>
-      <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
       <div class="bg-1"></div>
       <section class="container" v-for="item in courseContent" :key="item.id">
         <section class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
@@ -84,7 +84,7 @@ export default {
 </template>
 <style lang="scss" scoped>
 main {
-  @apply w-full h-[3870px] pt-0 bg-MainColorBG relative;
+  @apply xl:pb-[387px] w-full pt-0 pb-[168px] bg-MainColorBG relative;
 
   // 背景圖定位
   .bg{
@@ -99,33 +99,45 @@ main {
   }
 
   .bg03{
-    @apply bottom-[-5%] left-0;
+    @apply xl:bottom-[-5%] bottom-[-7%] left-0;
   }
 
-  section {
-    @apply max-w-[1215px] mx-[auto];
-
-    .HomeTitle{
-      @apply pt-[93px] pb-[168px] relative left-[-131px];
+  .HomeTitle{
+      @apply xl:justify-start justify-center flex w-full my-[50px];
     }
+
+  section {
+    @apply flex justify-center flex-wrap max-w-[1215px] mx-[auto] z-[1];
 
     
     .container {
-      @apply flex flex-wrap gap-[20px] w-full mb-[168px];
+      @apply  xl:gap-[20px] flex flex-wrap gap-0 w-full;
 
-      &:nth-child(even) {
+      &:nth-child(odd) {
         @apply flex-row-reverse;
+
+
+        .text-area{
+          // @apply lg:justify-center;
+
+          .text-content{
+            @apply  lg:me-[50px];
+          }
+        }
+      }
+      &:not(:last-child){
+        @apply  mb-[168px];
       }
 
       .img-area {
-        @apply w-[571px] h-[608px] bg-no-repeat bg-cover;
+        @apply xl:w-[521px] xl:h-[597px] w-[405px] h-[426px] mx-0 bg-no-repeat bg-cover;
       }
 
       .text-area {
-        @apply flex justify-center items-center w-[50%];
+        @apply lg:w-[50%] lg:justify-start md:justify-center md:w-full lg:mt-0 md:mt-[78px] flex items-center mx-0;
 
         .text-content {
-          @apply flex flex-col justify-center items-center flex-wrap w-[570px] h-[390px] px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
+          @apply xl:w-[570px] xl:h-[390px] lg:ms-[50px] w-[400px] h-[322px] flex flex-col justify-center items-center flex-wrap m-0 px-[30px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
           .title {
             @apply w-full mb-[20px] text-[1.5rem];
@@ -136,7 +148,7 @@ main {
           }
 
           .content {
-            @apply text-[1.2rem] indent-8;
+            @apply xl:text-[1.2rem] text-[0.9rem] indent-8;
           }
         }
       }

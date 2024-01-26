@@ -56,8 +56,7 @@ export default {
       this.colorBlockStyle.left = window.scrollX + this.x;
       this.colorBlockStyle.top = window.scrollY + this.y;
       const scrollNow = document.documentElement;
-      const isAtBottom =
-        scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
+      const isAtBottom = scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
       if (isAtBottom) {
         this.scrollBottom = true;
       } else {
@@ -265,13 +264,13 @@ main {
 
 // 公版頁尾
 footer {
-  @apply  xl:text-[1.5rem] lg:text-[1.2rem] flex flex-wrap w-full h-[95vh] z-[1] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
+  @apply  xl:text-[1.5rem] lg:text-[1.2rem] flex flex-wrap w-full md:h-[95vh] h-[50vh] z-[1] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
     @apply lg:pb-[10px] md:pb-[50px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
 
     iframe {
-      @apply lg:w-[450px] lg:h-[450px] md:w-[300px] md:h-[300px];
+      @apply xl:w-[500px] xl:h-[500px] lg:w-[450px] lg:h-[450px] md:w-[300px] md:h-[300px];
     }
   }
 
