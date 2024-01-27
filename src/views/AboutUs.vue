@@ -4,12 +4,12 @@ import About1 from "@/assets/img/about_us_ph/About1.png";
 import BlobG from "@/assets/img/about_us_ph/blob-1.svg";
 import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
 import Crayo from "@/assets/img/about_us_ph/crayo.svg";
-
+import About2 from "@/assets/img/about_us_ph/About2.png";
 export default {
   components: { HomeTitle },
   data() {
     return {
-      AboutUsPH: [About1],
+      AboutUsPH: [About1, About2],
       isY: false,
       BlobG: BlobG,
       BlobY: BlobY,
@@ -28,17 +28,24 @@ export default {
   <NavCurve class="md:block hidden"></NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
   <div class="AboutUsBg overflow-hidden">
-
     <HomeTitle class="xl:pl-[1317px]">關於龍格</HomeTitle>
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">
       <div class="ct-h lg:items-end items-center">
-        <img :src="AboutUsPH[0]" class="rounded-[30px] " alt="" />
+        <img
+          :src="AboutUsPH[0]"
+          class="rounded-[30px] md:block hidden"
+          alt=""
+        />
+        <img :src="AboutUsPH[1]" class="md:hidden" alt="" />
       </div>
       <div class="ct-h lg:items-start items-center">
         <div class="ct-text-1">
           <p class="content-font-setting">
-            一間成立於1994年的小畫室，位在三民路的小巷裡，由丁建中老師從零開始緩緩耕耘，至今已成為在地人口耳相傳的老字號畫室。
+            <span>一間成立於1994年的小畫室，</span
+            ><span>位在三民路的小巷裡，</span
+            ><span>由丁建中老師從零開始緩緩耕耘，</span
+            ><span>至今已成為在地人口耳相傳的老字號畫室。</span>
           </p>
           <p class="content-font-setting">
             沒有多餘的廣告宣傳畫室，老師透過實力及教學熱忱，打動每位前來學習的學生，也為龍格畫室建立了最佳的口碑。
@@ -52,12 +59,12 @@ export default {
         </div>
       </div>
     </section>
-    <HomeTitle class="xl:!justify-start xl:pl-[138px]">教學特色</HomeTitle>
+    <HomeTitle class="xl:justify-start xl:mt-[300px]">教學特色</HomeTitle>
     <div class="bg-2 z-[1]"></div>
     <section class="content z-[2]">
       <div class="ct-a">
         <ul class="ct-text-2 content-font-setting">
-          <li>一、程度鑑定．甫報名課程皆會做程度鑑定，以利課程規劃</li>
+          <li><span>一、程度鑑定</span>．甫報名課程皆會做程度鑑定，以利課程規劃</li>
           <li>
             二、專屬課表．老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
           </li>
@@ -82,22 +89,18 @@ export default {
   @apply box-border;
 }
 
-.content-font-setting {
-  @apply xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L];
-}
-
 .AboutUsBg {
   @apply flex flex-col items-center lg:h-[2400px] md:h-[2000px] w-[100%] relative bg-MainColorBG;
- 
+
   .content {
-    @apply  xl:mt-[100px] lg:mt-[60px] flex flex-col items-center justify-center lg:flex-row;
+    @apply xl:mt-[100px] md:mt-[60px] mt-[30px] flex flex-col items-center justify-center lg:flex-row;
 
     .ct-h {
-      @apply w-[50%] flex flex-col md:w-[80%];
+      @apply w-[50%] flex flex-col md:w-[80%] w-[78%];
 
       img {
         // mix-blend-mode: luminosity;
-        @apply xl:w-[518px] xl:h-[601px]  lg:w-[430px] lg:h-[500px] md:w-[640px] md:h-[470px] w-[253px] object-cover object-center;
+        @apply xl:w-[518px] xl:h-[601px]  lg:w-[430px] lg:h-[500px] md:w-[640px] md:h-[470px] w-[300px] object-cover object-center;
       }
 
       img:hover {
@@ -105,10 +108,12 @@ export default {
       }
 
       .ct-text-1 {
-        @apply lg:w-[60%] md:w-[80%] flex flex-col lg:text-start text-center; 
-
-        p {
-          @apply tracking-widest mt-5;
+        @apply lg:w-[60%] md:w-[80%] w-[100%] flex flex-col md:text-start text-center;
+        .content-font-setting {
+          @apply xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.25rem] mt-5;
+          span {
+            @apply md:inline block;
+          }
         }
       }
     }
@@ -116,10 +121,13 @@ export default {
     .ct-a {
       @apply flex justify-center;
       .ct-text-2 {
-        @apply tracking-[.4rem] mt-[72px] lg:w-[60%] w-[70%] ;
+        @apply tracking-[.25rem] lg:w-[60%] w-[70%] xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] mt-5;
 
         li {
           @apply mt-[24px];
+          span{
+            @apply  md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")]  bg-no-repeat bg-left-bottom block;
+          }
         }
       }
     }
@@ -133,7 +141,8 @@ export default {
 
   .content-1 {
     img {
-      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg) brightness(120%) contrast(118%);
+      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
+        brightness(120%) contrast(118%);
       // z-index: 2;
     }
   }
