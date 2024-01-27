@@ -127,7 +127,6 @@ export default {
   <NavMobile class="md:hidden block"></NavMobile>
   <!-- 課程資訊主要內容 -->
   <main>
-    <NavCurve></NavCurve>
     <!-- 背景圖片 -->
     <img v-for="item in bgImg" :key="item.id" :src="item.imgSrc" :alt="item.imgAlt" :class="item.imgclass">
     <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
