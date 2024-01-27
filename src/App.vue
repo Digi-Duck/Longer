@@ -143,6 +143,14 @@ export default {
 
     <RouterView />
   </main>
+  <section class="sm-iframe md:hidden flex justify-center bg-MainColorBG">
+    <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+        class="iframe-area" width="242" height="242" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+      </iframe>
+  </section>
+
   <!-- 公版頁尾 -->
   <footer class="">
     <section class="footer-l">
@@ -185,29 +193,7 @@ export default {
             </p>
           </div>
         </div>
-        <!-- <div class="logo">
-          <img src="@/assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
-          <p>在龍格&ensp; 為你的每個夢想填上顏色</p>
-        </div>
-        <div class="content">
-          <p>電話&emsp;&emsp;&emsp;&emsp;(04)2225-8657</p>
-          <p>
-            地址&emsp;&emsp;&emsp;&emsp;台中市北區三民路三段54巷19號之3號4樓
-          </p>
-          <p>
-            電子信箱 &emsp;&emsp;longer959@gmail.com
-          </p>
-          <div class="business-hours">
-            <div>營業時間&emsp;&emsp;</div>
-            <div>
-              週三至週五 15:00 — 21:00
-              <br />
-              週六及週日 09:00 — 17:00
-              <br />
-              每週一和週二公休
-            </div>
-          </div>
-        </div> -->
+
       </div>
 
 
@@ -331,7 +317,7 @@ footer {
     //   }
     // }
     .all {
-      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[150px] md:pl-[50px] flex flex-col-reverse gap-[20px] w-[330px];
+      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[100px] md:pl-[50px] flex flex-col-reverse gap-[20px] w-[330px];
       // logoarea
       .logo{
         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
