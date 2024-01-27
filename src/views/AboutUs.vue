@@ -5,11 +5,13 @@ import BlobG from "@/assets/img/about_us_ph/blob-1.svg";
 import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
 import Crayo from "@/assets/img/about_us_ph/crayo.svg";
 import About2 from "@/assets/img/about_us_ph/About2.png";
+import underLine from "@/assets/img/about_us_ph/underLine.png";
 export default {
   components: { HomeTitle },
   data() {
     return {
       AboutUsPH: [About1, About2],
+      underLine,
       isY: false,
       BlobG: BlobG,
       BlobY: BlobY,
@@ -42,16 +44,21 @@ export default {
       <div class="ct-h lg:items-start items-center">
         <div class="ct-text-1">
           <p class="content-font-setting">
-            <span>一間成立於1994年的小畫室，</span
-            ><span>位在三民路的小巷裡，</span
-            ><span>由丁建中老師從零開始緩緩耕耘，</span
-            ><span>至今已成為在地人口耳相傳的老字號畫室。</span>
+            <span class="text">一間成立於1994年的小畫室<span class="symbol">，</span></span
+            ><span class="text">位在三民路的小巷裡<span class="symbol">，</span></span
+            ><span class="text">由丁建中老師從零開始緩緩耕耘<span class="symbol">，</span></span
+            ><span class="text">至今已成為在地人口耳相傳的老字號畫室。</span>
           </p>
           <p class="content-font-setting">
-            沒有多餘的廣告宣傳畫室，老師透過實力及教學熱忱，打動每位前來學習的學生，也為龍格畫室建立了最佳的口碑。
+            <span class="text">沒有多餘的廣告宣傳畫室，</span>
+            <span class="text">老師透過實力及教學熱忱，</span>
+            <span class="text">打動每位前來學習的學生，也為</span>
+            <span class="text">龍格畫室建立了最佳的口碑。</span>
           </p>
           <p class="content-font-setting">
-            老師期盼能幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一盞指引前方的燈塔。
+            <span class="text">老師期盼能幫助每個對夢想懷抱憧憬的孩子，</span>
+            <span class="text">成為他們在追尋理想的人生道路上，</span>
+            <span class="text">一盞指引前方的燈塔。</span>
           </p>
         </div>
         <div class="swing right-[0%] bottom-[40%]">
@@ -64,16 +71,21 @@ export default {
     <section class="content z-[2]">
       <div class="ct-a">
         <ul class="ct-text-2 content-font-setting">
-          <li><span>一、程度鑑定</span>．甫報名課程皆會做程度鑑定，以利課程規劃</li>
           <li>
-            二、專屬課表．老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
+            <span>一、程度鑑定</span>．甫報名課程皆會做程度鑑定，以利課程規劃
           </li>
           <li>
-            三、升學集訓班．從國中美術班至升大學術科考試，皆有開設升學考試集中訓練班
+            <span>二、專屬課表</span
+            >．老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
           </li>
-          <li>四、彈性課表．自選上課時段</li>
           <li>
-            五、小班制教學．同一時段授課學生不超過15位，顧及每位學生的學習進度和教學品質
+            <span>三、升學集訓班</span
+            >．從國中美術班至升大學術科考試，皆有開設升學考試集中訓練班
+          </li>
+          <li><span>四、彈性課表</span>．自選上課時段</li>
+          <li>
+            <span>五、小班制教學</span
+            >．同一時段授課學生不超過15位，顧及每位學生的學習進度和教學品質
           </li>
         </ul>
       </div>
@@ -110,9 +122,12 @@ export default {
       .ct-text-1 {
         @apply lg:w-[60%] md:w-[80%] w-[100%] flex flex-col md:text-start text-center;
         .content-font-setting {
-          @apply xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.25rem] mt-5;
-          span {
+          @apply xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.2rem] mt-5;
+          .text {
             @apply md:inline block;
+            .symbol{
+              @apply md:inline hidden;
+            }
           }
         }
       }
@@ -125,8 +140,8 @@ export default {
 
         li {
           @apply mt-[24px];
-          span{
-            @apply  md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")]  bg-no-repeat bg-left-bottom block;
+          span {
+            @apply md:bg-none md:inline bg-[url("@/assets/img//about_us_ph/underLine.png")]  bg-no-repeat block;
           }
         }
       }
