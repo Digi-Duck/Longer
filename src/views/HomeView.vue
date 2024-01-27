@@ -88,7 +88,14 @@ export default {
 <template>
   <!-- <TheWelcome /> -->
   <main></main>
-  <section class="banner"></section>
+  <!-- banner -->
+  <picture class="banner">
+    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png">
+    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png">
+    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png">
+    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png">
+    <img src="@/assets/img/generic/banner-sm.png" alt="Weather">
+  </picture>
   <section class="position-container">
     <div class="since1994" @click="scrollToLonger">since 1994</div>
   </section>
@@ -154,16 +161,19 @@ export default {
   }
 }
 
-.banner {
-  @apply w-full h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
+// .banner {
+//   @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
+// }
+.banner{
+  
+  img{
+    @apply lg:h-[calc(100vh_-_120px)] w-full;
+  }
 }
 
 // since-1994黃色小圓
 .position-container {
   @apply relative;
-  .since1994 {
-    @apply flex justify-center items-center w-[170px] h-[170px] rounded-full text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] absolute top-[-85px] left-[50%] translate-x-[-50%];
-  }
 
   .since1994 {
     @apply flex justify-center items-center w-[170px] h-[170px] z-[2] text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] rounded-full absolute top-[-85px] left-[50%] translate-x-[-50%];
@@ -171,25 +181,29 @@ export default {
 }
 
 // 龍格畫室直式文字
-.longer-introduce{
-  @apply w-full h-[100vh] relative  text-[#fff] bg-MainColor;
-  .longer-position{
+.longer-introduce {
+  @apply w-full h-[100vh] relative text-[#fff] bg-MainColor;
+
+  .longer-position {
     @apply h-[150vh] absolute top-[100%] left-[60%] translate-x-[-50%] translate-y-[-50%];
     writing-mode: vertical-rl;
 
-    .title{
+    .title {
       @apply text-[5rem] leading-[5];
     }
-    .content{
+
+    .content {
       @apply text-[3rem] leading-[2];
     }
   }
-  
+
 }
+
 // 直式文字底部圓弧背景
-.longer-bgc{
+.longer-bgc {
   @apply bg-MainColorBG;
-  .longer-bg-area{
+
+  .longer-bg-area {
     @apply w-full h-[60vh] bg-[url('../assets/img/generic/longer-slogn-bg.svg')] bg-bottom;
   }
 }
@@ -235,5 +249,4 @@ export default {
 
 .Block5 {
   @apply w-[100%] h-[1480px] bg-MainColorBG relative overflow-hidden;
-}
-</style>
+}</style>

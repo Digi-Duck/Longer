@@ -299,7 +299,7 @@ footer {
     @apply lg:pb-0 md:pb-[30px] md:w-[60%]  flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
 
     .all {
-      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[100px] md:pl-[50px] flex flex-col-reverse gap-[20px] w-[330px];
+      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[100px] md:pl-[30px] flex flex-col-reverse gap-[20px] w-[330px];
       // logoarea
       .logo{
         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
@@ -333,7 +333,7 @@ footer {
   }
 
   .footer-nav {
-    @apply xl:pt-[30px] lg:flex lg:justify-end lg:gap-[30px] lg:items-center w-full h-[10%] pe-[48px] hidden;
+    @apply xl:pt-[30px] lg:justify-end md:flex md:justify-center md:gap-[30px] md:items-center w-full h-[10%] pe-[48px] hidden;
 
     li{
       @apply relative;
