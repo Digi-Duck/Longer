@@ -298,24 +298,6 @@ footer {
   .footer-r {
     @apply lg:pb-0 md:pb-[30px] md:w-[60%]  flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
 
-    // .all {
-    //   @apply  md:flex-col md:gap-0 flex flex-col-reverse gap-[50px];
-    //   .logo {
-    //     @apply lg:w-full flex items-end md:mb-[50px] w-full;
-      
-    //     img{
-    //       @apply xl:w-[327px] lg:w-[220px] w-[143px];
-    //     }
-    //   }
-
-    //   .content {
-    //     @apply md:w-full w-[80%] self-center leading-[2];
-    //   }
-    //   // **結構錯誤**
-    //   .business-hours{
-    //     @apply flex;
-    //   }
-    // }
     .all {
       @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[100px] md:pl-[50px] flex flex-col-reverse gap-[20px] w-[330px];
       // logoarea
@@ -347,20 +329,17 @@ footer {
 
         }
       }
-
-
-
     }
   }
 
   .footer-nav {
-    @apply xl:py-[20px] lg:justify-end md:flex md:gap-[20px] md:justify-center md:items-center md:w-full md:h-[10%] md:pe-[48px] hidden;
+    @apply xl:pt-[30px] lg:flex lg:justify-end lg:gap-[30px] lg:items-center w-full h-[10%] pe-[48px] hidden;
 
     li{
       @apply relative;
     }
     li:not(:last-child):after{
-      @apply content-['|'] absolute top-[-5%] right-[-12%];
+      @apply content-['|'] absolute top-[-5%] right-[-18%];
     }
 
   }
