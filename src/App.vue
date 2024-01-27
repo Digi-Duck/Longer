@@ -86,11 +86,11 @@ export default {
 <!-- 公版nav -->
 <template>
 
-  <div :style="{
+  <!-- <div :style="{
     left: `${colorBlockStyle.left}px`,
     top: `${colorBlockStyle.top}px`,
     backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-  }" id="color-block"></div>
+  }" id="color-block"></div> -->
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
@@ -146,7 +146,6 @@ export default {
   <!-- 公版頁尾 -->
   <footer class="">
     <section class="footer-l">
-      <!-- iframe -->
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
         class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
@@ -156,6 +155,37 @@ export default {
     <section class="footer-r">
       <div class="all">
         <div class="logo">
+          <img src="@/assets/img/generic/logo.png" class="logo-img" alt="LOGO" />
+          <div class="logo-slogn">
+            <p class="slogn-text">在龍格，</p>
+            <p class="slogn-text">為你的每個夢想填上顏色</p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="content-wrap">
+            <p class="item">電話</p>
+            <p class="content">(04)2225-8657</p>
+          </div>
+          <div class="content-wrap">
+            <p class="item">地址</p>
+            <p class="content">台中市北區三民路三段54巷19號之3號4樓</p>
+          </div>
+          <div class="content-wrap">
+            <p class="item">電子信箱</p>
+            <p class="content">longer959@gmail.com</p>
+          </div>
+          <div class="content-wrap">
+            <p class="item">營業時間</p>
+            <p class="content">
+              週三至週五 15:00 — 21:00
+              <br />
+              週六及週日 09:00 — 17:00
+              <br />
+              每週一和週二公休
+            </p>
+          </div>
+        </div>
+        <!-- <div class="logo">
           <img src="@/assets/img/generic/logo.png" class="img-fluid rounded-top" alt="LOGO" />
           <p>在龍格&ensp; 為你的每個夢想填上顏色</p>
         </div>
@@ -177,7 +207,7 @@ export default {
               每週一和週二公休
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
 
@@ -269,41 +299,76 @@ main {
 
 // 公版頁尾
 footer {
-  @apply  xl:text-[1.5rem] lg:text-[1.2rem] flex flex-wrap w-full md:h-[95vh] h-[50vh] z-[1] text-[#fff] bg-[url('./assets/img/generic/footer-bg.png')] bg-cover bg-no-repeat;
+  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[65vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
-    @apply lg:pb-[10px] md:pb-[50px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
+    @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
 
     iframe {
-      @apply xl:w-[500px] xl:h-[500px] lg:w-[450px] lg:h-[450px] md:w-[300px] md:h-[300px];
+      @apply xl:w-[500px] xl:h-[500px] lg:w-[336px] lg:h-[336px] md:w-[300px] md:h-[300px];
     }
   }
 
   .footer-r {
-    @apply md:pb-[50px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
+    @apply lg:pb-0 md:pb-[30px] md:w-[60%]  flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
 
-    .all {
-      @apply  md:flex-col md:gap-0 flex flex-col-reverse gap-[50px] lg:tracking-[3px] md:tracking-[1px];
-      .logo {
-        @apply lg:w-full flex items-end md:mb-[50px] w-full;
+    // .all {
+    //   @apply  md:flex-col md:gap-0 flex flex-col-reverse gap-[50px];
+    //   .logo {
+    //     @apply lg:w-full flex items-end md:mb-[50px] w-full;
       
-        img{
+    //     img{
+    //       @apply xl:w-[327px] lg:w-[220px] w-[143px];
+    //     }
+    //   }
+
+    //   .content {
+    //     @apply md:w-full w-[80%] self-center leading-[2];
+    //   }
+    //   // **結構錯誤**
+    //   .business-hours{
+    //     @apply flex;
+    //   }
+    // }
+    .all {
+      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[150px] md:pl-[50px] flex flex-col-reverse gap-[20px] w-[330px];
+      // logoarea
+      .logo{
+        @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
+
+        .logo-img{
           @apply xl:w-[327px] lg:w-[220px] w-[143px];
+        }
+
+        .logo-slogn{
+          .slogn-text{
+            @apply md:inline-block md:ms-0 ms-[8px] block tracking-[1.2px];
+          }
+        }
+      }
+      // content area
+      .container{
+        @apply flex flex-wrap justify-center items-center;
+        .content-wrap{
+          @apply w-full flex flex-wrap justify-start mb-[10px] lg:tracking-[6px] tracking-[2px];
+
+          .item{
+            @apply w-[28%];
+          }
+          .content{
+            @apply flex-1 text-justify;
+          }
+
         }
       }
 
-      .content {
-        @apply md:w-full w-[80%] self-center leading-[2];
-      }
-      // **結構錯誤**
-      .business-hours{
-        @apply flex;
-      }
+
+
     }
   }
 
   .footer-nav {
-    @apply  lg:justify-end md:flex md:gap-[20px] md:justify-center md:items-center md:w-full md:h-[10%] md:pe-[48px] hidden;
+    @apply xl:py-[20px] lg:justify-end md:flex md:gap-[20px] md:justify-center md:items-center md:w-full md:h-[10%] md:pe-[48px] hidden;
 
     li{
       @apply relative;
@@ -315,7 +380,7 @@ footer {
   }
 
   .copy-right {
-    @apply flex justify-center items-center w-full h-[10%] border-t-[1px];
+    @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255,255,255,0.5)];
   }
 
 }

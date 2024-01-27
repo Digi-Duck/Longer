@@ -65,10 +65,10 @@ import plaster04 from '@/assets/img/student_work/plaster_img/plaster_04.jpg';
 import plaster05 from '@/assets/img/student_work/plaster_img/plaster_05.jpg';
 
 // 導入圖片-建築模型
-import architectural01 from '@/assets/img/student_work/architectural_img/architectural_01.jpg';
-import architectural02 from '@/assets/img/student_work/architectural_img/architectural_02.jpg';
-import architectural03 from '@/assets/img/student_work/architectural_img/architectural_03.jpg';
-import architectural04 from '@/assets/img/student_work/architectural_img/architectural_04.jpg';
+// import architectural01 from '@/assets/img/student_work/architectural_img/architectural_01.jpg';
+// import architectural02 from '@/assets/img/student_work/architectural_img/architectural_02.jpg';
+// import architectural03 from '@/assets/img/student_work/architectural_img/architectural_03.jpg';
+// import architectural04 from '@/assets/img/student_work/architectural_img/architectural_04.jpg';
 // 導入圖片-兒童美術
 import childArt01 from '@/assets/img/student_work/child_art_img/child_art_01.jpg';
 import childArt02 from '@/assets/img/student_work/child_art_img/child_art_02.jpg';
@@ -84,17 +84,18 @@ import childArt10 from '@/assets/img/student_work/child_art_img/child_art_10.jpg
 import pastel01 from '@/assets/img/student_work/pastel_img/pastel_01.jpg';
 import pastel02 from '@/assets/img/student_work/pastel_img/pastel_02.jpg';
 // 背景圖
-import bg01 from '@/assets/img/student_work/bg-1.png';
+import bg01 from '@/assets/img/student_work/bg-1.svg';
 import bg02 from '@/assets/img/student_work/bg-2.png';
 import bg03 from '@/assets/img/student_work/bg-3.png';
 // blob 動圖
-import blob2 from "@/components/blob/blob2.vue";
-import blob3 from "@/components/blob/blob3.vue";
+// import blob2 from "@/components/blob/blob2.vue";
+// import blob3 from "@/components/blob/blob3.vue";
 
 
 export default {
 
-  components: { HomeTitle, blob2, blob3 },
+  // components: { HomeTitle, blob2, blob3 },
+  components: { HomeTitle},
   data() {
     return {
       bg01,
@@ -206,17 +207,17 @@ export default {
           ],
 
         },
-        {
-          skill: '建築模型',
-          dataText: 'architectural',
-          img: [
-            architectural01,
-            architectural02,
-            architectural03,
-            architectural04,
-          ],
+        // {
+        //   skill: '建築模型',
+        //   dataText: 'architectural',
+        //   img: [
+        //     architectural01,
+        //     architectural02,
+        //     architectural03,
+        //     architectural04,
+        //   ],
 
-        },
+        // },
         {
           skill: '兒童美術創意',
           dataText: 'childArt',
@@ -256,16 +257,16 @@ export default {
 };
 </script>
 <template >
-  <NavCurve class="md:block hidden"></NavCurve>
+  <NavCurve class="md:block hidden">
+    
+  </NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
   <main>
     <!-- <img src="../assets/img/student_work/water_color_img/water_color_11.jpg" alt=""> -->
     <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">學生作品</HomeTitle>
-    <blob2 class="top-[-5%] right-[-5%]"></blob2>
-    <blob3 class="bottom-[0%] left-[-5%]"></blob3>
+    <!-- <blob2 class="top-[-5%] right-[-5%]"></blob2>
+    <blob3 class="bottom-[0%] left-[-5%]"></blob3> -->
     <img :src="bg01" alt="background01" class="bg bg01">
-    <!-- <img :src="bg02" alt="background02" class="bg bg02"> -->
-    <!-- <img :src="bg03" alt="background03" class="bg bg03"> -->
     <section>
       <section>
         <div class="box" v-for="item in studentWorks" :key="item.id">
@@ -294,7 +295,7 @@ main {
   }
 
   .bg01 {
-    @apply bottom-[-20%] right-0;
+    @apply bottom-[0%] right-0;
   }
 
   .bg02 {
@@ -306,14 +307,14 @@ main {
   }
 
   section {
-    @apply flex justify-center items-start w-full h-[2250px];
+    @apply flex lg:justify-center md:justify-start justify-center items-start w-full xl:pt-[127px] pt-0 pb-[282px];
 
     section {
-      @apply flex flex-wrap gap-[60px] max-w-[1270px] h-[1780px] mx-[auto] pt-0;
+      @apply flex flex-wrap xl:gap-[60px] gap-[47px] xl:max-w-[1270px] lg:max-w-[913px] max-w-[593px] mx-[auto] pt-0 pb-0;
 
 
       .box {
-        @apply flex items-center w-[380px] h-[380px] relative overflow-hidden;
+        @apply flex items-center xl:w-[380px] xl:h-[380px] w-[273px] h-[273px] relative overflow-hidden;
 
         .image-link {
 
@@ -321,14 +322,16 @@ main {
             @apply hidden;
           }
 
-          .image {
-            @apply w-[380px] h-[380px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
 
+
+          .image {
+            @apply xl:translate-x-0 translate-x-[-60px] w-[380px] h-[380px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
+            
           }
         }
 
         .mask {
-          @apply w-[380px] py-[10px] text-[1.75rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute top-[84%];
+          @apply w-full py-[10px] xl:text-[1.75rem] text-[1.25rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute xl:top-[84%] top-[82%];
         }
 
 
