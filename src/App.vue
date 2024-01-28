@@ -1,5 +1,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import ShakeBox from "@/components/ShakeBox.vue"
 import HelloWorld from "./components/HelloWorld.vue";
 
 
@@ -8,6 +9,7 @@ export default {
   components: {
     RouterLink,
     RouterView,
+    ShakeBox,
   },
   data() {
     return {
@@ -143,7 +145,10 @@ export default {
 
     <RouterView />
   </main>
-  <section class="sm-iframe md:hidden flex justify-center bg-MainColorBG">
+  <section class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG">
+    <!-- 動來動去盒子 -->
+    <ShakeBox></ShakeBox>
+   
     <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
         class="iframe-area" width="242" height="242" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
@@ -152,8 +157,13 @@ export default {
   </section>
 
   <!-- 公版頁尾 -->
+  <div class="ShakeMoreThanMobile"> 
+    <ShakeBox ></ShakeBox>
+  </div>
+ 
   <footer class="">
     <section class="footer-l">
+      
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
         class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
@@ -349,6 +359,11 @@ footer {
   }
 
 }
+
+// 動來動去的盒子
+.ShakeMoreThanMobile{@apply 
+   bg-MainColorBG  bg-center hidden md:block  
+   md:pl-[calc(50%-208px)] lg:pl-[calc(50%-323px)] xl:pl-[calc(50%-425px)]}
 
 
 // animation

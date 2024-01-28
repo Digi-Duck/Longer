@@ -457,7 +457,7 @@ export default {
   }
 
   .more:hover {
-    @apply bg-MainColorBG;
+    @apply bg-EmphasizeColor;
   }
 }
 

@@ -33,15 +33,15 @@ export default {
   },
   mounted() {
     // 在組件掛載後添加 scroll 事件監聽
-    window.addEventListener("scroll", this.MaskMove);
-    const maskElement = document.querySelector(".mask");
-    const maskWidth = Number(
-      getComputedStyle(maskElement)
-        .getPropertyValue("--mask-width")
-        .trim()
-        .replace("%", "")
-    );
-    this.WidthControl = maskWidth;
+    // window.addEventListener("scroll", this.MaskMove);
+    // const maskElement = document.querySelector(".mask");
+    // const maskWidth = Number(
+    //   getComputedStyle(maskElement)
+    //     .getPropertyValue("--mask-width")
+    //     .trim()
+    //     .replace("%", "")
+    // );
+    // this.WidthControl = maskWidth;
   },
   methods: {
     scrollToLonger() {
@@ -71,17 +71,17 @@ export default {
       );
       // console.log(scrollPercentage);
       // 获取 .mask 元素的当前位置
-      const maskOffsetTop = this.$refs.Mask.offsetTop;
+      // const maskOffsetTop = this.$refs.Mask.offsetTop;
       // 计算相对于整个文档高度的百分比
-      const relativeHeightPercentage = Math.floor(
-        (maskOffsetTop / document.documentElement.scrollHeight) * 100 - 20
-        // 再剪掉一些百分比
-      );
-      // console.log(relativeHeightPercentage);
-      if (scrollPercentage > relativeHeightPercentage) {
-        // 減少百分比
-        this.WidthControl--;
-      }
+      // const relativeHeightPercentage = Math.floor(
+      //   (maskOffsetTop / document.documentElement.scrollHeight) * 100 - 20
+      //   // 再剪掉一些百分比
+      // );
+      // // console.log(relativeHeightPercentage);
+      // if (scrollPercentage > relativeHeightPercentage) {
+      //   // 減少百分比
+      //   this.WidthControl--;
+      // }
     },
   },
 };
@@ -99,7 +99,7 @@ export default {
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather">
   </picture>
   <section class="position-container">
-    <div class="since1994" @click="scrollToLonger">since 1994</div>
+    <div class="since1994 breathing"  @click="scrollToLonger">since 1994</div>
   </section>
   <section class="longer-introduce">
     <div class="longer-position">
@@ -115,7 +115,7 @@ export default {
   </section>
 
   <section>
-    <HomeTitle class="pl-[138px]">關於老師</HomeTitle>
+    <HomeTitle class="bg-MainColorBG">關於老師</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
 
@@ -127,7 +127,7 @@ export default {
       <HomeTitle>課程資訊</HomeTitle>
       <CourseInfo></CourseInfo>
       <div ref="Mask" class="pen">
-        <div class="mask" :style="{ width: `${WidthControl}% ` }"></div>
+        <!-- <div class="mask" :style="{ width: `${WidthControl}% ` }"></div> -->
       </div>
 
       <HomeTitle>學生作品</HomeTitle>
@@ -171,7 +171,8 @@ export default {
 .banner{
   
   img{
-    @apply lg:h-[calc(100vh_-_120px)] w-full;
+    @apply lg:h-[calc(100vh_-_120px)] w-full
+    ;
   }
 }
 
@@ -256,4 +257,36 @@ export default {
 
 .Block5 {
   @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
-}</style>
+}
+.breathing {
+    animation: breathing 3s ease-in-out infinite normal;
+    border-radius: 2px;
+    text-align: center;    
+    }
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+</style>
