@@ -5,7 +5,7 @@ import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 import StudentWork from "@/components/homepage/StudentWork.vue";
-import RankingListTablet from "@/components/homepage/RankingListTablet.vue";
+// import RankingListTablet from "@/components/homepage/RankingListTablet.vue";
 // import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
 // import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
 // import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";
@@ -24,7 +24,7 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet,
+    // RankingListTablet,
   },
   data() {
     return {
