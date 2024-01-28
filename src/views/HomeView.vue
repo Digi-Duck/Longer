@@ -101,18 +101,19 @@ export default {
   <section class="position-container">
     <div class="since1994 breathing"  @click="scrollToLonger">since 1994</div>
   </section>
-  <section class="longer-introduce">
-    <div class="longer-position">
-      <p class="title">龍格畫室</p>
-      <p class="content">一間成立於1994年的小畫室</p>
-      <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
-      <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
-    </div>
-    <blob2 class="top-[100%] left-[-10%]"></blob2>
+  <section class="longer-bg bg-MainColorBG">
+    <section class="longer-introduce">
+      <div class="longer-position">
+        <p class="title">龍格畫室</p>
+        <p class="content">一間成立於1994年的小畫室</p>
+        <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
+        <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
+      </div>
+      <!-- <blob2 class="top-[100%] left-[-10%]"></blob2> -->
+    </section>
   </section>
-  <section class="longer-bgc">
-    <div class="longer-bg-area"></div>
-  </section>
+
+  <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
     <HomeTitle class="bg-MainColorBG">關於老師</HomeTitle>
@@ -149,7 +150,7 @@ export default {
     </div>
   </section>
   <section>
-   
+
   </section>
 </template>
 <style lang="scss" scoped>
@@ -168,11 +169,18 @@ export default {
 // .banner {
 //   @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 // }
+<<<<<<< Updated upstream
 .banner{
   
   img{
     @apply lg:h-[calc(100vh_-_120px)] w-full
     ;
+=======
+.banner {
+
+  img {
+    @apply lg:h-[calc(100vh_-_120px)] w-full;
+>>>>>>> Stashed changes
   }
 }
 
@@ -181,37 +189,30 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply flex justify-center items-center w-[170px] h-[170px] z-[2] text-[#fff] text-[24px] bg-EmphasizeColor opacity-[0.7] rounded-full absolute top-[-85px] left-[50%] translate-x-[-50%];
+    @apply  xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] lg:text-[1.25rem] flex justify-center items-center w-[100px] h-[100px] z-[2] text-[#fff] xl:text-[1.5rem] text-[1rem] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:top-[-85px] lg:top-[-57px] top-[-50px] left-[50%] translate-x-[-50%];
   }
 }
 
 // 龍格畫室直式文字
 .longer-introduce {
-  @apply w-full h-[100vh] relative text-[#fff] bg-MainColor;
+  @apply xl:h-[150vh] lg:h-[100vh] md:h-[60vh] h-[65vh] w-full flex justify-center text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-SM.svg")] xl:bg-cover md:bg-bottom bg-cover bg-no-repeat;
 
   .longer-position {
-    @apply h-[150vh] absolute top-[100%] left-[60%] translate-x-[-50%] translate-y-[-50%];
+    // @apply absolute top-[0%] left-[60%];
+    @apply  items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
     writing-mode: vertical-rl;
 
     .title {
-      @apply text-[5rem] leading-[5];
+      @apply xl:text-[5rem] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[2];
     }
 
     .content {
-      @apply text-[3rem] leading-[2];
+      @apply xl:text-[3rem] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
     }
   }
 
 }
 
-// 直式文字底部圓弧背景
-.longer-bgc {
-  @apply bg-MainColorBG;
-
-  .longer-bg-area {
-    @apply w-full h-[60vh] bg-[url('../assets/img/generic/longer-slogn-bg.svg')] bg-bottom;
-  }
-}
 
 // 區塊4的css
 .bg-set {
@@ -238,8 +239,7 @@ export default {
 }
 
 .Block4 {
-  @apply w-[100%] bg-MainColor overflow-hidden
-         xl:h-[1600px] lg:h-[1438px] md:h-[1600px] h-[2096px];
+  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1600px] lg:h-[1438px] md:h-[1600px] h-[2096px];
 
   // .pen {
   //   @apply  bg-[url("@/assets/img/homepage/pen.png")] bg-contain  bg-no-repeat bg-center relative
@@ -258,6 +258,7 @@ export default {
 .Block5 {
   @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
+<<<<<<< Updated upstream
 .breathing {
     animation: breathing 3s ease-in-out infinite normal;
     border-radius: 2px;
@@ -289,4 +290,6 @@ export default {
   }
 }
 
+=======
+>>>>>>> Stashed changes
 </style>
