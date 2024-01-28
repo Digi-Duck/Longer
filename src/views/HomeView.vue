@@ -169,18 +169,10 @@ export default {
 // .banner {
 //   @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 // }
-<<<<<<< Updated upstream
-.banner{
-  
-  img{
-    @apply lg:h-[calc(100vh_-_120px)] w-full
-    ;
-=======
 .banner {
 
   img {
     @apply lg:h-[calc(100vh_-_120px)] w-full;
->>>>>>> Stashed changes
   }
 }
 
@@ -258,7 +250,6 @@ export default {
 .Block5 {
   @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
-<<<<<<< Updated upstream
 .breathing {
     animation: breathing 3s ease-in-out infinite normal;
     border-radius: 2px;
@@ -290,6 +281,4 @@ export default {
   }
 }
 
-=======
->>>>>>> Stashed changes
 </style>

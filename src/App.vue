@@ -88,11 +88,11 @@ export default {
 <!-- 公版nav -->
 <template>
 
-  <!-- <div :style="{
+  <div :style="{
     left: `${colorBlockStyle.left}px`,
     top: `${colorBlockStyle.top}px`,
     backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-  }" id="color-block"></div> -->
+  }" id="color-block"></div>
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
