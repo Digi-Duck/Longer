@@ -18,6 +18,7 @@ import 'lightbox2/dist/css/lightbox.css';
 import 'lightbox2/dist/js/lightbox.js';
 const app = createApp(App);
 
+
 // jquery初始化
 window.$ = $;
 window.jQuery = $;

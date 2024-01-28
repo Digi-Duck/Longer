@@ -32,34 +32,39 @@ export default {
             </div>
             <div class="title">{{ item.title }}</div>
           </div>
-          <!-- <img :src="item.pic" alt=""/> -->
-        <!-- </div>
-      </div> -->
+        
     </div>
-    <!-- <div class="shake-slow shake-constant contact">
-      <RouterLink
-        to="/connection"
-        :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')"
-      >
-        <img :src="contactIcon" alt="" class="contactIconBtn" />
-      </RouterLink>
-    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
 
 // 課程資訊
 .CourseInfoBG {
-  @apply flex flex-col items-center  w-[100%] h-[615px] ;
+  @apply flex flex-col items-center  w-[100%] 
+          xl:h-[615px] lg:h-[400px] ;
+  // 大盒子
   .CourseInfo {
-    @apply flex gap-[10px] justify-between w-[1403px] h-[369px] pt-[110px];
+    @apply flex lg:flex-nowrap flex-wrap  md:justify-between justify-center 
+    xl:w-[1774px] lg:w-[1173px] md:w-[669px] w-[360px]
+    xl:h-[462px]  lg:h-[311px] md:h-[748px] h-[1402px] 
+    xl:pt-[110px] lg:pt-[70px] md:pt-[49px] pt-[60px];
+    // 一張圖片+文字
     .PicBox{
-      @apply  w-[420px] h-[462px]  ;
-      .title{@apply  flex justify-center items-center h-[calc(462px_-_380px)] w-[337px] text-[1.625rem] text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] }
-      .pic{@apply   h-[380px] ;
-      .container{@apply h-[300px]}
-      }
+      @apply  flex flex-col justify-between items-center
+              xl:w-[420px] lg:w-[282px] md:w-[290px] w-[290px] 
+              xl:h-[502px] lg:h-[340px] md:h-[334px] h-[338px];
+              // 圖片大小
+              .container{
+            @apply xl:h-[367px] lg:h-[247px] h-[268px]
+                   xl:w-[421px] lg:w-[283px] w-[290px]
+                  
+                   
+          }
+      .title{@apply  flex justify-center items-center text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] mb-[20px]
+        xl:w-[337px] lg:w-[226px] w-[160px]
+        xl:h-[66px] lg:h-[44px] h-[40px] 
+        xl:text-[1.625rem] text-[1rem];}
+     
     }
   }
 }

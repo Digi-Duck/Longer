@@ -5,6 +5,7 @@ import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 import StudentWork from "@/components/homepage/StudentWork.vue";
+import RankingListTablet from "@/components/homepage/RankingListTablet.vue";
 // import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
 // import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
 // import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";
@@ -23,6 +24,7 @@ export default {
     blob1,
     blob2,
     blob3,
+    RankingListTablet,
   },
   data() {
     return {
@@ -122,13 +124,13 @@ export default {
       <div class="Block4TopCurve"></div>
     </div>
     <div class="Block4">
-      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }">課程資訊</HomeTitle>
+      <HomeTitle>課程資訊</HomeTitle>
       <CourseInfo></CourseInfo>
       <div ref="Mask" class="pen">
         <div class="mask" :style="{ width: `${WidthControl}% ` }"></div>
       </div>
 
-      <HomeTitle class="pl-[138px]" :class="{ 'bg-set': true }">學生作品</HomeTitle>
+      <HomeTitle>學生作品</HomeTitle>
       <StudentWork></StudentWork>
     </div>
     <div class="Block4Buttom">
@@ -138,15 +140,17 @@ export default {
 
   <section>
     <div class="Block5">
-      <HomeTitle class="pl-[138px] mt-[130px] " :class="{ 'bg-set': true }">歷年榜單</HomeTitle>
-      <blob2 class="top-[1100px] left-[-30px]"></blob2>
-      <blob3 class="right-[-30px]"></blob3>
+      <HomeTitle>歷年榜單</HomeTitle>
+      <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
+      <blob3 class="lg:top-[0px] lg:right-[-30px] md:hidden"></blob3>
 
-
+      <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
     </div>
   </section>
-  <section></section>
+  <section>
+   
+  </section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -233,11 +237,14 @@ export default {
 }
 
 .Block4 {
-  @apply w-[100%] h-[2227px] bg-MainColor overflow-hidden;
+  @apply w-[100%] bg-MainColor overflow-hidden
+         xl:h-[1600px] lg:h-[1438px] md:h-[1600px] h-[2096px];
 
-  .pen {
-    @apply w-[100%] h-[480px] mb-[180px] mt-[180px] bg-[url("@/assets/img/homepage/pen.png")] bg-contain bg-no-repeat bg-left relative;
-  }
+  // .pen {
+  //   @apply  bg-[url("@/assets/img/homepage/pen.png")] bg-contain  bg-no-repeat bg-center relative
+  //   xl:h-[527px] lg:h-[291px]
+  //   mb-[100px] mt-[100px] ;
+  // }
 }
 
 // GSAP
@@ -248,5 +255,5 @@ export default {
 }
 
 .Block5 {
-  @apply w-[100%] h-[1480px] bg-MainColorBG relative overflow-hidden;
+  @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }</style>

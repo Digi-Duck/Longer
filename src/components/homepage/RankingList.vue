@@ -90,6 +90,155 @@ export default {
             // ... (other data for year 105)
           ],
         },
+        {
+          year: 104,
+          details: [
+          {
+    "name": "林O珍",
+    "school": "台中教育大學美術系研究所"
+  },
+  {
+    "name": "劉O皓",
+    "school": "亞洲大學創意商品設計學系"
+  },
+  {
+    "name": "林O蓉",
+    "school": "台灣藝術大學美術系西畫組(素描90分)"
+  },
+  {
+    "name": "林O柔",
+    "school": "亞洲大學時尚設計學系 時尚精品設計組"
+  },
+  {
+    "name": "梁O韻",
+    "school": "國立台東大學美術產業學系(素描93分)"
+  },
+  {
+    "name": "王O程",
+    "school": "亞洲大學行動商務與多媒體應用學系多媒體應用組"
+  },
+  {
+    "name": "黃O賢",
+    "school": "國立台南藝術大學材質創作與設計學系"
+  },
+  {
+    "name": "張O堯",
+    "school": "亞洲大學 室內設計學系 住宅空間組"
+  },
+  {
+    "name": "吳O蓁",
+    "school": "台北醫學大學牙體技術學系"
+  },
+  {
+    "name": "葉O鈴",
+    "school": "朝陽科技大學 視覺傳達設計系"
+  },
+  {
+    "name": "邱O竣",
+    "school": "台中教育大學美術系(轉學考)"
+  },
+  {
+    "name": "許O慧",
+    "school": "朝陽科技大學 工業設計系"
+  },
+  {
+    "name": "賴O育",
+    "school": "新竹教育大學藝術與設計系(轉學考)素描96分"
+  },
+  {
+    "name": "林O筠",
+    "school": "朝陽科技大學 景觀及都市設計系(插大)"
+  },
+  {
+    "name": "宋O淇",
+    "school": "台科大工商業設計系商業設計組(607分)"
+  },
+  {
+    "name": "吳O昇",
+    "school": "嶺東科技大學 數位媒體設計系"
+  },
+  {
+    "name": "宋O瑄",
+    "school": "北科大建築系"
+  },
+  {
+    "name": "黃O晨",
+    "school": "嶺東科技大學 時尚造形系"
+  },
+  {
+    "name": "陳O勳",
+    "school": "北科大互動設計系視覺傳達設計組"
+  },
+  {
+    "name": "陳O芸",
+    "school": "台南應用科技大學 時尚設計系"
+  },
+  {
+    "name": "呂O翰",
+    "school": "北科大互動設計系視覺傳達設計組"
+  },
+  {
+    "name": "楊O涵",
+    "school": "台南應用科技大學 商品設計系"
+  },
+  {
+    "name": "廖O瑄",
+    "school": "北科大文化事業發展系"
+  },
+  {
+    "name": "陳O仁",
+    "school": "台南應用科技大學 室內設計系"
+  },
+  {
+    "name": "陳O昀",
+    "school": "高雄第一科技大學創新設計工程系"
+  },
+  {
+    "name": "張O輔",
+    "school": "元智大學資訊傳播學系設計組"
+  },
+  {
+    "name": "魏O儀",
+    "school": "雲科大創意生活設計系"
+  },
+  {
+    "name": "張O甄",
+    "school": "南台科大創新產品設計系"
+  },
+  {
+    "name": "葉O廷",
+    "school": "虎尾科技大學多媒體互動系"
+  },
+  {
+    "name": "石O雲",
+    "school": "大葉大學工業設計系"
+  },
+  {
+    "name": "林O希",
+    "school": "實踐大學 服裝設計系"
+  },
+  {
+    "name": "顧O維",
+    "school": "大葉大學造型藝術學系 工藝文創組"
+  },
+  {
+    "name": "陳O瑜",
+    "school": "實踐大學 服裝設計系"
+  },
+  {
+    "name": "陳O瑋",
+    "school": "大葉大學視覺傳達設計學系"
+  },
+  {
+    "name": "鍾O華",
+    "school": "實踐大學 服裝設計與經營學系"
+  },
+  {
+    "name": "朱O瑩",
+    "school": "國立員林高中美術"},
+            // ... (other data for year 105)
+          ],
+        },
       ],
     };
   },
@@ -108,11 +257,14 @@ export default {
 };
 </script>
 <template>
+
+
+
   <div class="RankingBG">
     <div class="cover">
       <div class="book">
         <label for="page-1" class="book__page book__page--1">
-          <img src="@/assets/img/homepage/sign.png" alt="" />
+          <img class="" src="@/assets/img/homepage/cover.png" alt="" />
         </label>
 
         <label for="page-2" class="book__page book__page--4">
@@ -127,7 +279,7 @@ export default {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in RankNumber[0].details" :key="item.id">
+                <tr v-for="item in RankNumber[2].details" :key="item.id">
                   <td>{{ item.name }}</td>
                   <td>{{ item.school }}</td>
                 </tr>
@@ -224,19 +376,27 @@ export default {
 
 // bg-[MainColorBG]
 .RankingBG {
-  @apply w-[100%] h-[800px] bg-MainColorBG flex items-center justify-center pt-[20%];
+  @apply w-[100%] h-[800px] bg-MainColorBG flex items-center justify-center pt-[20%]
+          ;
 
   .cover {
-    @apply relative shadow-lg w-[1429px] h-[647px];
+    @apply  
+    relative shadow-lg h-[647px] md:block hidden;
   }
+  // relative shadow-lg w-[1429px] h-[647px]
 
   // img {
   //   @apply border border-[rgba(0,0,0,0.06)] border-l-8;
   // }
   .cover:after {
+    @apply 
+    xl:w-[150px] lg:w-[130px] md:w-[100px] w-[80px]
+    top-[0px]
+    xl:left-[660px] lg:left-[520px] md:left-[320px] left-[80px]
+    ;
     content: "";
     display: block;
-    width: 150px;
+    
     height: 647px;
     background: linear-gradient(
       90deg,
@@ -251,11 +411,16 @@ export default {
       rgba(227, 225, 217, 0.02) 100%
     );
     position: absolute;
-    top: 0px;
-    left: 660px;
+ 
   }
 
   .cover:before {
+    @apply 
+    xl:left-[660px] lg:left-[520px] md:left-[320px] left-[80px]
+    xl:top-[580px] lg:top-[570px] md:top-[560px] top-[550px]
+    xl:w-[100] lg:w-[80px] md:w-[60px] w-[50px]
+    xl:h-[100] lg:h-[80px] md:h-[60px] h-[50px]
+    ;
     content: "";
     display: block;
     width: 100px;
@@ -263,13 +428,12 @@ export default {
     background: #372011;
     position: absolute;
     border-radius: 50%;
-    top: 560px;
-    left: 680px;
+
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   }
 
   .book {
-    @apply border-8 border-[#56331a] shadow-2xl shadow-[#56331a] rounded-md;
+    @apply border-8 border-[#56311a] shadow-2xl shadow-[#56331a] rounded-md;
   }
 
   table {
@@ -321,8 +485,8 @@ export default {
 // }
 
 .book {
+  @apply xl:w-[1429px] lg:w-[1150px] md:w-[700px];
   // 依設計大小
-  width: 1429px;
   height: 647px;
   display: flex;
   perspective: 1200px;
@@ -403,7 +567,7 @@ export default {
       padding: 30px;
       height: 100%;
       position: relative;
-      background-color: #e3e1d9;
+      background-color: #f6f6f6;
       text-align: center;
 
       // box-shadow: 30px 0px 0px 0px rgba(0, 0, 0, 1);
