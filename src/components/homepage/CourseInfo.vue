@@ -24,15 +24,20 @@ export default {
     <div class="CourseInfo">
       <!-- <div class="LimitBox" v-for="(item, index) in IMG">
         <div class="zoom"> -->
+          
           <div class="PicBox" v-for="(item, index) in IMG" >
+            <RouterLink to="/courseInformation">
+           
             <div class="pic">
             <div class="container">
               <img :src="item.pic" alt="">
+             
             </div>
             </div>
+         </RouterLink>
             <div class="title">{{ item.title }}</div>
           </div>
-        
+       
     </div>
   </div>
 </template>
