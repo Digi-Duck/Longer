@@ -165,7 +165,7 @@ export default {
         <div class="logo">
           <img src="@/assets/img/generic/logo.png" class="logo-img" alt="LOGO" />
           <div class="logo-slogn">
-            <p class="slogn-text">在龍格，</p>
+            <p class="slogn-text">在龍格&emsp;</p>
             <p class="slogn-text">為你的每個夢想填上顏色</p>
           </div>
         </div>
@@ -285,10 +285,10 @@ main {
 
 // 公版頁尾
 footer {
-  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[65vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
+  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[55vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
-    @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex justify-end items-end h-[80%] hidden;
+    @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
 
     iframe {
       @apply xl:w-[500px] xl:h-[500px] lg:w-[336px] lg:h-[336px] md:w-[300px] md:h-[300px];
@@ -296,10 +296,10 @@ footer {
   }
 
   .footer-r {
-    @apply lg:pb-0 md:pb-[30px] md:w-[60%]  flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
+    @apply lg:max-w-full md:max-w-[400px] lg:pb-0 md:pb-[30px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
 
     .all {
-      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:pl-[100px] md:pl-[30px] flex flex-col-reverse gap-[20px] w-[330px];
+      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:px-[40px] md:pl-[80px] flex flex-col-reverse gap-[20px] w-[330px];
       // logoarea
       .logo{
         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
