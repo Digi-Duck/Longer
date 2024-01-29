@@ -124,7 +124,7 @@ export default {
   <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
-    <HomeTitle class="bg-MainColorBG">關於老師</HomeTitle>
+    <HomeTitle class="bg-MainColorBG ">關於龍格</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
 

@@ -13,7 +13,7 @@ export default {};
   @apply flex items-center justify-center  w-[100%];
   .text {
     // 第一行是所有文字外框都共用的樣式
-    @apply  flex items-center justify-center font-[ChenYuluoyan] stroke-[black] font-medium  
+    @apply flex items-center justify-center font-[ChenYuluoyan] stroke-[black] font-medium  
     lg:h-[72px] md:h-[48px] h-[36px]  
     lg:w-[300px] md:w-[203px] w-[146px]
     xl:mt-[61px] lg:mt-[207px] md:mt-[54px] mt-[0px]
@@ -23,7 +23,8 @@ export default {};
     bg-contain bg-no-repeat bg-center 
     lg:text-[3.25rem]
     md:text-[1.875rem]
-    text-[1.5rem];
+    text-[1.5rem]
+
   }
 }
 </style>

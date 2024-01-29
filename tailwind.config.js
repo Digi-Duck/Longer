@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       objectPosition: {
-        'center-top': 'center top',
-      }
+        "center-top": "center top",
+      },
     },
     screens: {
       // sm: "375px", 要另外做，但不用設定

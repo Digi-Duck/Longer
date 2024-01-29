@@ -40,7 +40,7 @@ export default {
 </script>
 <template>
   <div class="AboutTeacherBG">
-    <div class="about-l ">
+    <div class="about-l">
       <div class="th-ph th-r">
         <img class="align-left slide-in" :src="teacherAbout[0]" alt="" />
       </div>
@@ -50,9 +50,9 @@ export default {
         </div>
       </div>
     </div>
-    <div class="about-r ">
+    <div class="about-r">
       <div class="th-text th-r lg:mb-0 mb-[40px]">
-        <div class="lg:w-[70%] w-[90%] ">
+        <div class="lg:w-[70%] w-[90%]">
           升學集訓班將會集中編排程度相近的學生，課堂中親自示範與解題，使學生共同練習，透過同儕良性切磋相互學習。
         </div>
       </div>
@@ -75,18 +75,18 @@ export default {
 <style lang="scss" scoped>
 // h1919
 .AboutTeacherBG {
-  @apply w-[100%] h-[1919px] bg-MainColorBG;
+  @apply w-[100%] h-[1683px] bg-MainColorBG;
 
-  .about-r{
+  .about-r {
     @apply flex lg:flex-row lg:gap-32 flex-col-reverse gap-6 items-center;
     .th-text {
-      @apply w-[45%] leading-10 flex  items-center xl:text-[1.75rem] lg:text-[1.5rem]  md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.2em];
+      @apply md:w-[45%] w-[70%] md:leading-10  leading-8 flex  items-center xl:text-[1.75rem] lg:text-[1.5rem]  md:text-[1.125rem] text-[.875rem] text-[GenWanMin-L] tracking-[.2em];
     }
-    .th-r{
+    .th-r {
       @apply flex lg:justify-end  justify-center;
     }
     .th-ph {
-      @apply w-[55%];
+      @apply md:w-[55%] w-[70%];
       .slide-in {
         @apply opacity-0 duration-700 ease-in;
       }
@@ -100,13 +100,13 @@ export default {
   .about-l {
     @apply flex lg:flex-row lg:gap-32 flex-col gap-6 items-center;
     .th-text {
-      @apply w-[45%] leading-10 flex  items-center xl:text-[1.75rem] lg:text-[1.5rem] lg:justify-start md:text-[1.125rem] justify-center text-[.875rem] text-[GenWanMin-L] tracking-[.2em];
+      @apply w-[70%] md:w-[55%] md:leading-10 leading-8 flex  items-center xl:text-[1.75rem] lg:text-[1.5rem] lg:justify-start md:text-[1.125rem] justify-center text-[.875rem] text-[GenWanMin-L] tracking-[.2em];
     }
-    .th-r{
+    .th-r {
       @apply flex lg:justify-end  justify-center;
     }
     .th-ph {
-      @apply w-[55%];
+      @apply w-[70%] md:w-[55%];
       .slide-in {
         @apply opacity-0 duration-700 ease-in;
       }

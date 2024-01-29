@@ -39,41 +39,67 @@ export default {
     <div class="bg-1 z-[1]"></div>
     <section class="content z-[2] lg:gap-32 md:gap-10">
       <div class="ct-h lg:items-end items-center">
-        <img :src="AboutUsPH[0]" class="bigImg rounded-[30px] md:block hidden" alt="" />
+        <img
+          :src="AboutUsPH[0]"
+          class="bigImg rounded-[30px] md:block hidden"
+          alt=""
+        />
         <img :src="AboutUsPH[1]" class="md:hidden w-[255px]" alt="" />
       </div>
       <div class="ct-h lg:items-start items-center">
         <div class="ct-text-1">
           <p class="content-font-setting">
-            <span class="text">一間成立於1994年的小畫室<span class="symbol">，</span></span><span class="text">位在三民路的小巷裡<span
-                class="symbol">，</span></span><span class="text">由丁建中老師從零開始緩緩耕耘<span class="symbol">，</span></span><span
-              class="text">至今已成為在地人口耳相傳的老字號畫室。</span>
+            <span class="text"
+              >一間成立於1994年的小畫室<span class="symbol">，</span></span
+            ><span class="text"
+              >位在三民路的小巷裡<span class="symbol">，</span></span
+            ><span class="text"
+              >由丁建中老師從零開始緩緩耕耘<span class="symbol">，</span></span
+            ><span class="text">至今已成為在地人口耳相傳的老字號畫室。</span>
           </p>
           <p class="content-font-setting">
-            <span class="text">沒有多餘的廣告宣傳畫室<span class="symbol">，</span></span>
-            <span class="text">老師透過實力及教學熱忱<span class="symbol">，</span></span>
-            <span class="text">打動每位前來學習的學生<span class="symbol">，</span></span>
+            <span class="text"
+              >沒有多餘的廣告宣傳畫室<span class="symbol">，</span></span
+            >
+            <span class="text"
+              >老師透過實力及教學熱忱<span class="symbol">，</span></span
+            >
+            <span class="text"
+              >打動每位前來學習的學生<span class="symbol">，</span></span
+            >
             <span class="text">也為龍格畫室建立了最佳的口碑。</span>
           </p>
           <p class="content-font-setting">
-            <span class="text">老師期盼能幫助每個<span class="symbol">，</span></span>
-            <span class="text">對夢想懷抱憧憬的孩子<span class="symbol">，</span></span>
-            <span class="text">成為他們追尋理想的人生道路上<span class="symbol">，</span></span>
+            <span class="text"
+              >老師期盼能幫助每個<span class="symbol">，</span></span
+            >
+            <span class="text"
+              >對夢想懷抱憧憬的孩子<span class="symbol">，</span></span
+            >
+            <span class="text"
+              >成為他們追尋理想的人生道路上<span class="symbol">，</span></span
+            >
             <span class="text">一盞指引前方的燈塔。</span>
           </p>
         </div>
       </div>
     </section>
-    <div class="swing BlobG ">
+    <div class="swing BlobG">
       <img :src="BlobG" alt="" />
     </div>
     <div class="flower">
       <img :src="Flower" alt="" />
     </div>
-    <HomeTitle class="xl:mt-[300px] xl:pr-[1317px] md:mt-[110px] mt-[20px]">教學特色</HomeTitle>
-    <img :src="AboutUsPH[2]" class="md:hidden mt-[20px] w-[255px] relative z-[2]" alt="" />
+    <HomeTitle class="xl:mt-[300px] xl:pr-[1317px] md:mt-[110px] mt-[20px]"
+      >教學特色</HomeTitle
+    >
+    <img
+      :src="AboutUsPH[2]"
+      class="md:hidden mt-[20px] w-[255px] relative z-[2]"
+      alt=""
+    />
     <div class="bg-2 z-[1]"></div>
-    <div class="bg-2-1 z-[1] "></div>
+    <div class="bg-2-1 z-[1]"></div>
     <div class="sun absolute top-[1030px] left-[66%] z-[1] md:hidden">
       <img :src="Sun" alt="" />
     </div>
@@ -81,19 +107,28 @@ export default {
       <div class="ct-a">
         <ul class="ct-text-2 content-font-setting">
           <li>
-            <span class="changeLine">一、程度鑑定</span><span class="symbol">．</span>甫報名課程皆會做程度鑑定，以利課程規劃
+            <span class="changeLine">一、程度鑑定</span
+            ><span class="symbol">．</span
+            >甫報名課程皆會做程度鑑定，以利課程規劃
           </li>
           <li>
-            <span class="changeLine">二、專屬課表</span><span class="symbol">．</span>老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
+            <span class="changeLine">二、專屬課表</span
+            ><span class="symbol">．</span
+            >老師依照程度與學習目標的不同，為每位學生設計專屬的課程表
           </li>
           <li>
-            <span class="changeLine">三、升學集訓班</span><span class="symbol">．</span>從國中美術班至升大學術科考試，皆有開設升學考試集中訓練班
+            <span class="changeLine">三、升學集訓班</span
+            ><span class="symbol">．</span
+            >從國中美術班至升大學術科考試，皆有開設升學考試集中訓練班
           </li>
           <li>
-            <span class="changeLine">四、彈性課表</span><span class="symbol">．</span>自選上課時段
+            <span class="changeLine">四、彈性課表</span
+            ><span class="symbol">．</span>自選上課時段
           </li>
           <li>
-            <span class="changeLine">五、小班制教學</span><span class="symbol">．</span>同一時段授課學生不超過15位，顧及每位學生的學習進度和教學品質
+            <span class="changeLine">五、小班制教學</span
+            ><span class="symbol">．</span
+            >同一時段授課學生不超過15位，顧及每位學生的學習進度和教學品質
           </li>
         </ul>
       </div>
@@ -167,7 +202,8 @@ export default {
 
   .content-1 {
     img {
-      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg) brightness(120%) contrast(118%);
+      filter: invert(63%) sepia(64%) saturate(5792%) hue-rotate(88deg)
+        brightness(120%) contrast(118%);
       // z-index: 2;
     }
   }
@@ -175,11 +211,6 @@ export default {
   .BlobY {
     @apply xl:left-[-10%] xl:bottom-[0%] lg:left-[-12%] lg:bottom-[6%] md:left-[-30%] md:bottom-[0%];
   }
-
-  .flower {
-    @apply md:hidden mt-[8px] mb-[24px];
-  }
-
   .BlobG {
     @apply xl:right-[-5%] xl:bottom-[40%] lg:right-[-10%] lg:bottom-[48%] md:right-[-26%] md:bottom-[38%];
   }
@@ -190,11 +221,11 @@ export default {
 }
 
 .bg-2 {
-  @apply w-[100%] xl:left-[140px] xl:top-[1350px] lg:h-[974px] lg:left-[20px] lg:top-[1440px] lg:block hidden bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat absolute;
+  @apply w-[100%] xl:left-[140px] xl:top-[1350px] lg:h-[974px] lg:left-[20px] lg:top-[1440px] lg:block hidden  bg-[url('@/assets/img/about_us_ph/bg-2.svg')] bg-contain bg-no-repeat absolute;
 }
 
 .bg-2-1 {
-  @apply w-[100%] lg:hidden top-[1200px] left-[-5%] md:h-[955px] bg-[url('@/assets/img/about_us_ph/bg-2-1.svg')] bg-contain bg-no-repeat absolute;
+  @apply w-[100%] lg:hidden top-[1288px] left-[-5%] md:h-[955px] bg-[url('@/assets/img/about_us_ph/bg-2-1.svg')] bg-contain bg-no-repeat absolute;
 }
 
 // .Rotate {

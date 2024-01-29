@@ -1,8 +1,7 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import ShakeBox from "@/components/ShakeBox.vue"
+import ShakeBox from "@/components/ShakeBox.vue";
 import HelloWorld from "./components/HelloWorld.vue";
-
 
 export default {
   // 元件宣告
@@ -59,7 +58,8 @@ export default {
       this.colorBlockStyle.left = window.scrollX + this.x;
       this.colorBlockStyle.top = window.scrollY + this.y;
       const scrollNow = document.documentElement;
-      const isAtBottom = scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
+      const isAtBottom =
+        scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
       if (isAtBottom) {
         this.scrollBottom = true;
       } else {
@@ -87,47 +87,80 @@ export default {
 
 <!-- 公版nav -->
 <template>
-
-  <!-- <div :style="{
-    left: `${colorBlockStyle.left}px`,
-    top: `${colorBlockStyle.top}px`,
-    backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-  }" id="color-block"></div> -->
+  <div
+    :style="{
+      left: `${colorBlockStyle.left}px`,
+      top: `${colorBlockStyle.top}px`,
+      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
+    }"
+    id="color-block"
+  ></div>
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
-    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
-      <img src="./assets/img/generic/logoTop.png" alt="LOGO" @mouseenter="changeYellow" />
+    <RouterLink
+      to="/"
+      class="LOGO"
+      :class="{ navBar: true }"
+      @click="setActiveLink('')"
+    >
+      <img
+        src="./assets/img/generic/logoTop.png"
+        alt="LOGO"
+        @mouseenter="changeYellow"
+      />
     </RouterLink>
     <!-- nav Btn -->
     <nav>
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')"
-        @mouseenter="changeGreen">
+      <RouterLink
+        to="/about"
+        :class="{ navBar: true, active: activeLink === 'about' }"
+        @click="setActiveLink('about')"
+        @mouseenter="changeGreen"
+      >
         關於我們
       </RouterLink>
-      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')" @mouseenter="changeGreen">
+      <RouterLink
+        to="/teacher"
+        :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')"
+        @mouseenter="changeGreen"
+      >
         師資介紹
       </RouterLink>
-      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
+      <RouterLink
+        to="/courseInformation"
+        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')"
+        @mouseenter="changeGreen"
+      >
         課程資訊
       </RouterLink>
-      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
+      <RouterLink
+        to="/studentWork"
+        :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')"
+        @mouseenter="changeGreen"
+      >
         學生作品
       </RouterLink>
-      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
+      <RouterLink
+        to="/admissionList"
+        :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')"
+        @mouseenter="changeGreen"
+      >
         歷年榜單
       </RouterLink>
-      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')" @mouseenter="changeGreen">
+      <RouterLink
+        to="/connection"
+        :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')"
+        @mouseenter="changeGreen"
+      >
         聯絡資訊
       </RouterLink>
-      
     </nav>
-
   </header>
   <!-- 漢堡條 -->
   <!-- <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
@@ -142,38 +175,54 @@ export default {
 
   <!-- 分頁內容 -->
   <main ref="webContent">
-
     <RouterView />
   </main>
-  <section class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG">
+  <section
+    class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
+  >
     <!-- 動來動去盒子 -->
     <ShakeBox></ShakeBox>
-   
+
     <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        class="iframe-area" width="242" height="242" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+      class="iframe-area"
+      width="242"
+      height="242"
+      style="border: none; overflow: hidden"
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+    >
+    </iframe>
   </section>
 
   <!-- 公版頁尾 -->
-  <div class="ShakeMoreThanMobile"> 
-    <ShakeBox ></ShakeBox>
+  <div class="ShakeMoreThanMobile">
+    <ShakeBox></ShakeBox>
   </div>
- 
+
   <footer class="">
     <section class="footer-l">
-      
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        class="iframe-area"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      >
       </iframe>
     </section>
     <section class="footer-r">
       <div class="all">
         <div class="logo">
-          <img src="@/assets/img/generic/logo.png" class="logo-img" alt="LOGO" />
+          <img
+            src="@/assets/img/generic/logo.png"
+            class="logo-img"
+            alt="LOGO"
+          />
           <div class="logo-slogn">
             <p class="slogn-text">在龍格&emsp;</p>
             <p class="slogn-text">為你的每個夢想填上顏色</p>
@@ -203,40 +252,61 @@ export default {
             </p>
           </div>
         </div>
-
       </div>
-
-
     </section>
 
     <ul class="footer-nav">
       <li>
-        <a href="/about" @click="setActiveLink('about')" @mouseenter="changeGreen">
+        <a
+          href="/about"
+          @click="setActiveLink('about')"
+          @mouseenter="changeGreen"
+        >
           關於我們
         </a>
       </li>
       <li>
-        <a href="/teacher" @click="setActiveLink('teacher')" @mouseenter="changeGreen">
+        <a
+          href="/teacher"
+          @click="setActiveLink('teacher')"
+          @mouseenter="changeGreen"
+        >
           師資介紹
         </a>
       </li>
       <li>
-        <a href="/courseInformation" @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
+        <a
+          href="/courseInformation"
+          @click="setActiveLink('courseInformation')"
+          @mouseenter="changeGreen"
+        >
           課程資訊
         </a>
       </li>
       <li>
-        <a href="/studentWork" @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
+        <a
+          href="/studentWork"
+          @click="setActiveLink('studentWork')"
+          @mouseenter="changeGreen"
+        >
           學生作品
         </a>
       </li>
       <li>
-        <a href="/admissionList" @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
+        <a
+          href="/admissionList"
+          @click="setActiveLink('admissionList')"
+          @mouseenter="changeGreen"
+        >
           歷年榜單
         </a>
       </li>
       <li>
-        <a href="/connection" @click="setActiveLink('connection')" @mouseenter="changeGreen">
+        <a
+          href="/connection"
+          @click="setActiveLink('connection')"
+          @mouseenter="changeGreen"
+        >
           聯絡資訊
         </a>
       </li>
@@ -247,7 +317,6 @@ export default {
   </footer>
 </template>
 <!-- <img src="" alt=""> -->
-
 
 <style lang="scss" scoped>
 #color-block {
@@ -282,7 +351,6 @@ header {
       // img {
       //   @apply w-[160px];
       // }
-
     }
   }
 }
@@ -291,11 +359,10 @@ main {
   @apply md:pt-[120px] pt-[60px];
 }
 
-
-
 // 公版頁尾
+// 雅芬有改 h-[60vh] --> h-[70vh]
 footer {
-  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[60vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
+  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[70vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
     @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
@@ -306,37 +373,36 @@ footer {
   }
 
   .footer-r {
-    @apply lg:max-w-full md:max-w-[400px] lg:pb-0 md:pb-[30px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%] ;
+    @apply lg:max-w-full md:max-w-[400px] lg:pb-0 md:pb-[30px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%];
 
     .all {
-      @apply  md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:px-[40px] md:pl-[80px] flex flex-col-reverse gap-[20px] w-[330px];
+      @apply md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:px-[40px] md:pl-[80px] flex flex-col-reverse gap-[20px] w-[330px];
       // logoarea
-      .logo{
+      .logo {
         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
 
-        .logo-img{
+        .logo-img {
           @apply xl:w-[327px] lg:w-[220px] w-[143px];
         }
 
-        .logo-slogn{
-          .slogn-text{
+        .logo-slogn {
+          .slogn-text {
             @apply md:inline-block md:ms-0 ms-[8px] block tracking-[1.2px];
           }
         }
       }
       // content area
-      .container{
+      .container {
         @apply flex flex-wrap justify-center items-center;
-        .content-wrap{
+        .content-wrap {
           @apply w-full flex flex-wrap justify-start mb-[10px] lg:tracking-[6px] tracking-[2px];
 
-          .item{
+          .item {
             @apply w-[28%];
           }
-          .content{
+          .content {
             @apply flex-1 text-justify;
           }
-
         }
       }
     }
@@ -345,26 +411,24 @@ footer {
   .footer-nav {
     @apply xl:pt-[30px] lg:justify-end md:flex md:justify-center md:gap-[30px] md:items-center w-full h-[10%] pe-[48px] hidden;
 
-    li{
+    li {
       @apply relative;
     }
-    li:not(:last-child):after{
+    li:not(:last-child):after {
       @apply content-['|'] absolute top-[-5%] right-[-18%];
     }
-
   }
 
   .copy-right {
     @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255,255,255,0.5)];
   }
-
 }
 
 // 動來動去的盒子
-.ShakeMoreThanMobile{@apply 
-   bg-MainColorBG  bg-center hidden md:block  
-   md:pl-[calc(50%-208px)] lg:pl-[calc(50%-323px)] xl:pl-[calc(50%-425px)]}
-
+.ShakeMoreThanMobile {
+  @apply bg-MainColorBG  bg-center hidden md:block  
+   md:pl-[calc(50%-208px)] lg:pl-[calc(50%-323px)] xl:pl-[calc(50%-425px)];
+}
 
 // animation
 // @keyframes hamShake {
@@ -406,7 +470,6 @@ footer {
 //       left: 50%;
 //       transform: translate(-50%, -50%)
 //     }
-
 
 //     .line {
 //       @apply w-[50%] h-[3px] rounded-xl bg-[#000] absolute left-[50%] translate-x-[-50%] -translate-y-[-50%] duration-[0.7s];
