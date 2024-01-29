@@ -88,11 +88,11 @@ export default {
 <!-- 公版nav -->
 <template>
 
-  <div :style="{
+  <!-- <div :style="{
     left: `${colorBlockStyle.left}px`,
     top: `${colorBlockStyle.top}px`,
     backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-  }" id="color-block"></div>
+  }" id="color-block"></div> -->
   <header class="" v-if="scrollBottom == false">
     <!-- LOGO -->
     <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
@@ -263,7 +263,7 @@ export default {
 
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] h-[120px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
+  @apply flex justify-between items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
 
   .LOGO {
     @apply self-center ms-[30px];
@@ -273,29 +273,29 @@ header {
     @apply flex items-end me-[5px];
 
     .navBar {
-      @apply flex items-center h-[50px] me-[15px] px-[30px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
+      @apply flex items-center h-[50px] me-[15px] xl:px-[30px] px-[20px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
 
       &.active {
         @apply h-[70px] bg-[#838666];
       }
 
-      img {
-        @apply w-[160px];
-      }
+      // img {
+      //   @apply w-[160px];
+      // }
 
     }
   }
 }
 
 main {
-  @apply pt-[120px];
+  @apply md:pt-[120px] pt-[60px];
 }
 
 
 
 // 公版頁尾
 footer {
-  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[55vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
+  @apply  xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[60vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
 
   .footer-l {
     @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
