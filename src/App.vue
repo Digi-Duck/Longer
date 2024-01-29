@@ -93,7 +93,9 @@ export default {
         <input type="checkbox" id="ham" hidden>
         <label for="ham" class="ham-menu-all" @click="closeMenu">
           <div class="menu">
-            選單
+           <div class="link link-1"></div>
+           <div class="link link-2"></div>
+           <div class="link link-3"></div>
           </div>
         </label>
     <!-- LOGO -->
@@ -309,16 +311,38 @@ header {
   @apply lg:flex lg:justify-between lg:items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] lg:drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
 
   .ham-menu-all{
-    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute bg-[#ccc];
+    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
 
     .menu{
-      @apply text-[25px];
+      @apply w-full h-full text-[25px] relative;
+
+      .link{
+        @apply w-[55%] md:h-[5px] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
+      }
+      .link-1{
+        @apply top-[35%];
+      }
+      .link-2{
+        @apply top-[50%];
+      }
+      .link-3{
+        @apply top-[65%];
+      }
     }
     
   }
 
   #ham:checked ~nav{
     @apply h-[561px];
+  }
+  #ham:checked +.ham-menu-all .link-1{
+    @apply top-[50%] rotate-[30deg];
+  }
+  #ham:checked +.ham-menu-all .link-2{
+    @apply hidden;
+  }
+  #ham:checked +.ham-menu-all .link-3{
+    @apply top-[50%] rotate-[-30deg];
   }
 
 
