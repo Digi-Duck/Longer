@@ -1,5 +1,5 @@
 <script>
-import teacher1 from "@/assets/img/homepage/THabout/blob_1.svg";
+import teacher1 from "@/assets/img/homepage/THabout/Blob_1.svg";
 import teather2 from "@/assets/img/homepage/THabout/blob_2.svg";
 import teacher3 from "@/assets/img/homepage/THabout/blob_3.svg";
 export default {
