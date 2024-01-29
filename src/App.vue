@@ -95,14 +95,12 @@ export default {
     id="color-block"
   ></div>
   <header class="" v-if="scrollBottom == false">
-      <div class="ham-menu-all">
-        <input type="checkbox" id="ham">
-        <label for="ham">
+        <input type="checkbox" id="ham" hidden>
+        <label for="ham" class="ham-menu-all">
           <div class="menu">
             選單
           </div>
         </label>
-      </div>
     <!-- LOGO -->
     <RouterLink
       to="/"
@@ -329,18 +327,24 @@ export default {
 
 //公版 nav
 header {
-  @apply lg:flex lg:justify-between lg:items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
+  @apply lg:flex lg:justify-between lg:items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] lg:drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
 
   .ham-menu-all{
-    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
+    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute bg-[#ccc];
 
     .menu{
       @apply text-[25px];
     }
     
   }
+
+  #ham:checked ~nav{
+    @apply h-[561px];
+  }
+
+
   .LOGO {
-    @apply lg:ms-[30px] block;
+    @apply lg:ms-[30px] h-full block;
 
     img{
       @apply md:w-[263px] w-[130px] mx-[auto];
@@ -348,13 +352,13 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:w-full lg:items-end lg:me-[5px] lg:w-[auto] w-[50vh] h-0 duration-[2s];
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[50vh] h-0 bg-[#faa] duration-[2s] truncate;
 
     .navBar {
-      @apply flex items-center h-[50px] me-[15px] xl:px-[30px] px-[20px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
+      @apply flex items-center h-[50px] me-[15px] xl:px-[30px] px-[20px] text-[1.2rem] text-[#fff] lg:bg-[#024b06] rounded-t-lg lg:shadow-[2px_0px_3px_#333];
 
       &.active {
-        @apply h-[70px] bg-[#838666];
+        @apply lg:h-[70px] lg:bg-[#838666];
       }
     }
   }
