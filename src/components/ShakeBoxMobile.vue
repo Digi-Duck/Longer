@@ -1,17 +1,7 @@
 <script>
-export default {
-    data(){
-        return {
-            // 如果是HomeView.vue就更改這邊為false
-            // 如果不是就為True
-            ShakeBoxMobileFlag:true,
-        }
-
-},}
-
 </script>
 <template>
-    <div v-show=ShakeBoxMobileFlag id="ShakeBoxId"  class="md:hidden block shake-slow  w-[240px] h-[120px]">
+    <div  id="ShakeBoxId"  class="md:hidden block shake-slow  w-[240px] h-[120px]">
         <img src="@/assets/img/ShakeMobile.svg" alt="">
     </div>
 </template>

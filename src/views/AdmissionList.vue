@@ -17,6 +17,8 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
+    const ShakeBoxId = document.querySelector('#ShakeBoxId')
+    ShakeBoxId.style.display="block"
   },
 
 };

@@ -35,11 +35,7 @@ export default {
   mounted() {
     const ShakeBoxId = document.querySelector('#ShakeBoxId')
     ShakeBoxId.style.display="none"
-   
-    
     // 發送hakeBoxMobileFlag:false,
-
-    
     window.scrollTo(0, 0);
   
     // 在組件掛載後添加 scroll 事件監聽
