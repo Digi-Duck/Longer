@@ -55,14 +55,14 @@ export default {
 .All {
   @apply flex flex-col  items-center bg-MainColorBG;
   .block {
-    @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[2460px] md:h-[1800px] h-[95%] ;
+    @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[2060px] md:h-[1700px] h-[1000px] ;
     .ImgBox {
       @apply flex flex-col items-center xl:w-[60%] lg:w-[70%] md:w-[85%] w-[95%] ;
       .hook {
-        @apply w-[500px] h-[114px] bg-[url('@/assets/img/admission_list/hook.svg')];
+        @apply md:w-[500px] md:h-[114px] w-[500px] h-[70px] bg-[url('@/assets/img/admission_list/hook.svg')];
       }
       .content {
-        @apply w-[100%] relative rounded-[24px] border-[30px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
+        @apply w-[100%] relative rounded-[24px] xl:border-[30px] lg:border-[24px] md:border-[16px] border-[10px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
       }
       img {
         @apply w-[100%];
