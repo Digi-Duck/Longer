@@ -59,10 +59,6 @@ export default {
       // if(windowBottom > startPosition){
       //   this.WidthControl--;
       // }
-
-
-
-
       //  捲動百分比
       // const scrollPercentage = Math.floor(
       //   (window.scrollY /
@@ -92,14 +88,26 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png">
-    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png">
-    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png">
-    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png">
-    <img src="@/assets/img/generic/banner-sm.png" alt="Weather">
+    <source
+      media="(min-width:1800px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:1200px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:768px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:0px)"
+      srcset="@/assets/img/generic/banner-sm.png"
+    />
+    <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container">
-    <div class="since1994 breathing"  @click="scrollToLonger">since 1994</div>
+    <div class="since1994 breathing" @click="scrollToLonger">since 1994</div>
   </section>
   <section class="longer-bg bg-MainColorBG">
     <section class="longer-introduce">
@@ -149,9 +157,7 @@ export default {
       <RankingList></RankingList>
     </div>
   </section>
-  <section>
-
-  </section>
+  <section></section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -170,7 +176,6 @@ export default {
 //   @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
 // }
 .banner {
-
   img {
     @apply lg:h-[calc(100vh_-_120px)] w-full;
   }
@@ -181,17 +186,25 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply  xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] lg:text-[1.25rem] flex justify-center items-center w-[100px] h-[100px] z-[2] text-[#fff] xl:text-[1.5rem] text-[1rem] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:top-[-85px] lg:top-[-57px] top-[-50px] left-[50%] translate-x-[-50%];
+    @apply z-[2] text-[#fff]
+    bg-EmphasizeColor opacity-[0.7] rounded-full absolute 
+    xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px]  w-[100px] h-[100px]
+    flex justify-center items-center 
+    lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem]
+    xl:top-[-85px] lg:top-[-57px] 
+    top-[-50px] 
+    xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)];
+    // translate-x-[-50%]
   }
 }
 
 // 龍格畫室直式文字
 .longer-introduce {
-  @apply xl:h-[150vh] lg:h-[100vh] md:h-[60vh] h-[65vh] w-full flex justify-center text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-SM.svg")] xl:bg-cover md:bg-bottom bg-cover bg-no-repeat;
+  @apply xl:h-[150vh] lg:h-[100vh] md:h-[60vh] h-[65vh] w-full flex justify-center text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
 
   .longer-position {
     // @apply absolute top-[0%] left-[60%];
-    @apply  items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
+    @apply items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
     writing-mode: vertical-rl;
 
     .title {
@@ -202,9 +215,7 @@ export default {
       @apply xl:text-[3rem] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
     }
   }
-
 }
-
 
 // 區塊4的css
 .bg-set {
@@ -244,17 +255,17 @@ export default {
 .mask {
   @apply w-[120%] h-[480px] absolute bottom-0 right-[0px] rounded-l-[50%] bg-MainColor;
   --mask-width: 120%;
-
 }
 
 .Block5 {
   @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
+// 呼吸since1994
 .breathing {
-    animation: breathing 3s ease-in-out infinite normal;
-    border-radius: 2px;
-    text-align: center;    
-    }
+  animation: breathing 3s ease-in-out infinite normal;
+  border-radius: 2px;
+  text-align: center;
+}
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -280,5 +291,4 @@ export default {
     transform: scale(0.9);
   }
 }
-
 </style>
