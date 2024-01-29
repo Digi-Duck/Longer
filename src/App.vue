@@ -79,7 +79,6 @@ export default {
     //     webHeader.style.display = "flex";
     //     webFooter.style.display = "flex";
     //   }
-
     // }
   },
 };
@@ -96,6 +95,14 @@ export default {
     id="color-block"
   ></div>
   <header class="" v-if="scrollBottom == false">
+      <div class="ham-menu-all">
+        <input type="checkbox" id="ham">
+        <label for="ham">
+          <div class="menu">
+            選單
+          </div>
+        </label>
+      </div>
     <!-- LOGO -->
     <RouterLink
       to="/"
@@ -162,16 +169,6 @@ export default {
       </RouterLink>
     </nav>
   </header>
-  <!-- 漢堡條 -->
-  <!-- <nav class="ham-menu-all" :class="{'add-ham-ani': scrollState, 'remove-ham-ani': !scrollState}" ref="hamMenu" v-if="scrollState == true">
-    <input id="ham-menu-switch" type="checkbox" width="300px" @click="hamSwitch" hidden>
-    <label for="ham-menu-switch" class="ham-menu">
-      <div class="line line-1"></div>
-      <div class="line line-2"></div>
-      <div class="line line-3"></div>
-    </label>
-  </nav> -->
-  <!-- <div class="ham-content" v-if="hamState"></div> -->
 
   <!-- 分頁內容 -->
   <main ref="webContent">
@@ -332,14 +329,26 @@ export default {
 
 //公版 nav
 header {
-  @apply flex justify-between items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
+  @apply lg:flex lg:justify-between lg:items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
 
+  .ham-menu-all{
+    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
+
+    .menu{
+      @apply text-[25px];
+    }
+    
+  }
   .LOGO {
-    @apply self-center ms-[30px];
+    @apply lg:ms-[30px] block;
+
+    img{
+      @apply md:w-[263px] w-[130px] mx-[auto];
+    }
   }
 
   nav {
-    @apply flex items-end me-[5px];
+    @apply lg:flex lg:w-full lg:items-end lg:me-[5px] lg:w-[auto] w-[50vh] h-0 duration-[2s];
 
     .navBar {
       @apply flex items-center h-[50px] me-[15px] xl:px-[30px] px-[20px] text-[1.2rem] text-[#fff] bg-[#024b06] rounded-t-lg shadow-[2px_0px_3px_#333];
@@ -347,10 +356,6 @@ header {
       &.active {
         @apply h-[70px] bg-[#838666];
       }
-
-      // img {
-      //   @apply w-[160px];
-      // }
     }
   }
 }
@@ -430,96 +435,6 @@ footer {
    md:pl-[calc(50%-208px)] lg:pl-[calc(50%-323px)] xl:pl-[calc(50%-425px)];
 }
 
-// animation
-// @keyframes hamShake {
-//   0% {
-//    height: 120px;
-//   }
 
-//   50% {
-//    height: 100px;
-//   }
 
-//   100% {
-//    height: 120px;
-//   }
-// }
-
-// @keyframes hamHide {
-//   0% {
-//     opacity: 1;
-//   }
-//   100% {
-//     opacity: 0;
-
-//   }
-// }
-
-// 漢堡條動畫
-// .ham-menu-all {
-//   @apply w-[120px] h-[120px] rounded-full fixed top-[20px] left-[20px] z-[2] bg-[#cca600] hover:opacity-[0.7];
-
-//   .ham-menu {
-//     @apply inline-block w-full h-full relative;
-
-//     &:after {
-//       content: 'MENU';
-//       font-weight: bold;
-//       position: absolute;
-//       top: 70%;
-//       left: 50%;
-//       transform: translate(-50%, -50%)
-//     }
-
-//     .line {
-//       @apply w-[50%] h-[3px] rounded-xl bg-[#000] absolute left-[50%] translate-x-[-50%] -translate-y-[-50%] duration-[0.7s];
-//     }
-
-//     .line-1 {
-//       @apply w-[20%] absolute top-[20%];
-//     }
-
-//     .line-2 {
-//       @apply w-[40%] absolute top-[30%];
-//     }
-
-//     .line-3 {
-//       @apply absolute top-[40%];
-//     }
-//   }
-
-//   #ham-menu-switch {
-//     display: none;
-//   }
-
-//   #ham-menu-switch:checked+.ham-menu:after {
-//     content: 'CLOSE';
-//   }
-
-//   #ham-menu-switch:checked+.ham-menu .line-1 {
-//     transform: translate(-50%, -50%) rotate(30deg);
-//     width: 50%;
-//     top: 40%;
-//   }
-
-//   #ham-menu-switch:checked+.ham-menu .line-2 {
-//     display: none;
-//   }
-
-//   #ham-menu-switch:checked+.ham-menu .line-3 {
-//     transform: translate(-50%, -50%) rotate(-30deg);
-//     top: 40%;
-//   }
-// }
-
-// 添加動畫
-// .add-ham-ani {
-//   animation: hamShake 0.2s 2;
-// }
-// .remove-ham-ani {
-//   animation: hamHide 0.8s 1 ease-in-out forwards;
-// }
-// .ham-content{
-//   @apply w-[100%] h-[100vh] bg-MainColorBG;
-// }
 </style>

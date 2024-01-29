@@ -325,7 +325,7 @@ main {
 
 
           .image {
-            @apply xl:translate-x-0 translate-x-[-60px] w-[380px] h-[380px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[2] duration-[1s];
+            @apply xl:translate-x-0 translate-x-[-60px] w-[380px] h-[380px] bg-no-repeat bg-cover opacity-[0.8] hover:scale-[1.25] duration-[1s];
             
           }
         }
