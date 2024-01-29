@@ -8,6 +8,12 @@
   src: url("@/assets/font/GenWanMin-L.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Castoro-Regular";
+  src: url("@/assets/font/Castoro-Regular.ttf") format("truetype");
+}
+
 /* body {
   font-family: "ChenYuluoyan";
 } */
+/* Castoro-Regular */
