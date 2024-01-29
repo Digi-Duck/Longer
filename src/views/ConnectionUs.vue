@@ -28,6 +28,9 @@ export default {
       ]
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     formatDetail(detail) {
       return detail.replace(/\n/g, '<br>');

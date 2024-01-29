@@ -24,13 +24,7 @@ export default {
   components: { HomeTitle },
   data() {
     return {
-      bigBg01,
-      bigBg02,
-      bigBg03,
-      smBg01,
-      smBg02,
-      smBg03,
-      smBg04,
+      
       bgImg: [
         {
           imgSrc:bg01,
@@ -118,6 +112,9 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 
 };

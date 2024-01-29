@@ -23,6 +23,9 @@ export default {
       Crayo: Crayo,
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     checkCollision() {
       console.log(1);

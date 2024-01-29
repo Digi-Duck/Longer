@@ -15,6 +15,9 @@ export default {
       // hookpic:hookpic,
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 
 };
 </script>

@@ -249,6 +249,9 @@ export default {
   },
 
   mounted() {
+    
+    window.scrollTo(0, 0);
+  
     lightbox.option({
       'resizeDuration': 500,
       'wrapAround': true
