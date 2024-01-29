@@ -36,6 +36,9 @@ export default {
       MobileImg2: MobileImg2,
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 <template>

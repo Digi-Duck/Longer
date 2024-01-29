@@ -39,6 +39,9 @@ export default {
     
     // 發送hakeBoxMobileFlag:false,
 
+    
+    window.scrollTo(0, 0);
+  
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
     // const maskElement = document.querySelector(".mask");

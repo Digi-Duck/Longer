@@ -19,7 +19,7 @@ export default {
       HelloWorld,
       activeLink: null,
       scrollBottom: false,
-      hamState: false,
+      isMenuOpen: false,
       colorBlockStyle: {
         left: "0",
         top: "0",
@@ -55,6 +55,7 @@ export default {
       this.colorBlockStyle.top = this.y + window.scrollY - 25;
     },
     setActiveLink(link) {
+      this.isMenuOpen = false;
       this.activeLink = link;
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
@@ -70,20 +71,10 @@ export default {
         this.scrollBottom = false;
       }
     },
-    // 操控漢堡條
-    // hamSwitch() {
-    //   const webHeader = this.$refs.webHeader;
-    //   const webFooter = this.$refs.webFooter;
-    //   this.hamState = !this.hamState;
-    //   console.log(this.hamState);
-    //   if (this.hamState == true) {
-    //     webHeader.style.display = "none";
-    //     webFooter.style.display = "none";
-    //   }else{
-    //     webHeader.style.display = "flex";
-    //     webFooter.style.display = "flex";
-    //   }
-    // }
+    closeMenu(e){
+      console.log(e.target);
+    }
+
   },
 };
 </script>
@@ -100,7 +91,7 @@ export default {
   ></div>
   <header class="" v-if="scrollBottom == false">
         <input type="checkbox" id="ham" hidden>
-        <label for="ham" class="ham-menu-all">
+        <label for="ham" class="ham-menu-all" @click="closeMenu">
           <div class="menu">
             選單
           </div>
@@ -252,58 +243,46 @@ export default {
 
     <ul class="footer-nav">
       <li>
-        <a
-          href="/about"
-          @click="setActiveLink('about')"
+        <RouterLink to="/about" @click="setActiveLink('about')"
           @mouseenter="changeGreen"
         >
           關於我們
-        </a>
+        </RouterLink>
       </li>
       <li>
-        <a
-          href="/teacher"
-          @click="setActiveLink('teacher')"
+        <RouterLink to="/teacher" @click="setActiveLink('teacher')"
           @mouseenter="changeGreen"
         >
           師資介紹
-        </a>
+        </RouterLink>
       </li>
       <li>
-        <a
-          href="/courseInformation"
-          @click="setActiveLink('courseInformation')"
+        <RouterLink to="/courseInformation" @click="setActiveLink('courseInformation')"
           @mouseenter="changeGreen"
         >
           課程資訊
-        </a>
+        </RouterLink>
       </li>
       <li>
-        <a
-          href="/studentWork"
-          @click="setActiveLink('studentWork')"
+        <RouterLink to="/studentWork" @click="setActiveLink('studentWork')"
           @mouseenter="changeGreen"
         >
           學生作品
-        </a>
+        </RouterLink>
       </li>
       <li>
-        <a
-          href="/admissionList"
-          @click="setActiveLink('admissionList')"
+        <RouterLink to="/admissionList" @click="setActiveLink('admissionList')"
           @mouseenter="changeGreen"
         >
           歷年榜單
-        </a>
+        </RouterLink>
       </li>
       <li>
-        <a
-          href="/connection"
-          @click="setActiveLink('connection')"
+        <RouterLink to="/connection" @click="setActiveLink('connection')"
           @mouseenter="changeGreen"
         >
           聯絡資訊
-        </a>
+        </RouterLink>
       </li>
     </ul>
     <section class="copy-right">
@@ -352,10 +331,10 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[50vh] h-0 bg-[#faa] duration-[2s] truncate;
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[375px] lg:h-full h-0 lg:bg-none lg:bg-[transparent] bg-[url('@/assets/img/generic/ham-menu-bg.png')] bg-no-repeat bg-bottom lg:duration-0 duration-200 truncate;
 
     .navBar {
-      @apply flex items-center h-[50px] me-[15px] xl:px-[30px] px-[20px] text-[1.2rem] text-[#fff] lg:bg-[#024b06] rounded-t-lg lg:shadow-[2px_0px_3px_#333];
+      @apply lg:flex items-center h-[50px] me-[15px] xl:px-[30px] lg:pt-0 pt-[60px] px-[20px] text-[1.2rem] text-[#fff] lg:bg-[#024b06] rounded-t-lg lg:shadow-[2px_0px_3px_#333] text-center block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
