@@ -1,14 +1,18 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import ShakeBox from "@/components/ShakeBox.vue";
+
 import HelloWorld from "./components/HelloWorld.vue";
+import ShakeBoxMobile from "./components/ShakeBoxMobile.vue"
+
+// 手機板-搖晃"關注我們"
 
 export default {
   // 元件宣告
   components: {
     RouterLink,
     RouterView,
-    ShakeBox,
+    ShakeBoxMobile,
+
   },
   data() {
     return {
@@ -175,9 +179,7 @@ export default {
   <section
     class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
   >
-    <!-- 動來動去盒子 -->
-    <ShakeBox></ShakeBox>
-
+  <ShakeBoxMobile></ShakeBoxMobile>
     <iframe
       src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
       class="iframe-area"
@@ -193,9 +195,7 @@ export default {
   </section>
 
   <!-- 公版頁尾 -->
-  <div class="ShakeMoreThanMobile">
-    <ShakeBox></ShakeBox>
-  </div>
+
 
   <footer class="">
     <section class="footer-l">
@@ -433,11 +433,7 @@ footer {
   }
 }
 
-// 動來動去的盒子
-.ShakeMoreThanMobile {
-  @apply bg-MainColorBG  bg-center hidden md:block  
-   md:pl-[calc(50%-208px)] lg:pl-[calc(50%-323px)] xl:pl-[calc(50%-425px)];
-}
+
 
 
 

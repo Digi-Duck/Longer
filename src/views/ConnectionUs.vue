@@ -1,6 +1,5 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import NavCurve from "@/components/NavCurve.vue"
 // import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
 // import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
 // import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";// import ContentCurve from "@/assets/img/homepage/BGpictures/curve2.svg"
@@ -76,15 +75,16 @@ export default {
             </div>
           </div>
         </div>
+       
       </div>
     </section>
     
-    <section class="Block3">
+    <!-- <section class="Block3">
       <div class="curve rotate-180 scale-x-[-1]"></div>
       <div class="bus">
         
       </div>
-    </section>
+    </section> -->
  
   </div>
 

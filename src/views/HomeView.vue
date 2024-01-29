@@ -6,6 +6,7 @@ import CourseInfo from "@/components/homepage/CourseInfo.vue";
 import AboutTeacher from "@/components/homepage/AboutTeacher.vue";
 import StudentWork from "@/components/homepage/StudentWork.vue";
 import RankingListTablet from "@/components/homepage/RankingListTablet.vue";
+import ShakeBox from "@/components/homepage/HomePageShakeBox.vue";
 // import blob1 from "@/assets/img/homepage/BGpictures/Vector1.svg";
 // import blob2 from "@/assets/img/homepage/BGpictures/Vector2.svg";
 // import blob3 from "@/assets/img/homepage/BGpictures/Vector3.svg";
@@ -24,7 +25,7 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet,
+    RankingListTablet,ShakeBox
   },
   data() {
     return {
@@ -32,6 +33,12 @@ export default {
     };
   },
   mounted() {
+    const ShakeBoxId = document.querySelector('#ShakeBoxId')
+    ShakeBoxId.style.display="none"
+   
+    
+    // 發送hakeBoxMobileFlag:false,
+
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
     // const maskElement = document.querySelector(".mask");
@@ -156,8 +163,13 @@ export default {
       <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
     </div>
+    <div class="ShakeBox">
+    <ShakeBox></ShakeBox>
+  </div>
   </section>
-  <section></section>
+  <section>
+ 
+  </section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -290,5 +302,10 @@ export default {
     -ms-transform: scale(0.9);
     transform: scale(0.9);
   }
+}
+// 動來動去的盒子
+.ShakeBox {
+  @apply bg-MainColorBG  bg-center 
+   flex justify-center;
 }
 </style>

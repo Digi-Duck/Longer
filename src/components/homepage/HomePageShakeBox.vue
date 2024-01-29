@@ -14,7 +14,7 @@
     @apply  w-[300px] md:w-[416px] lg:w-[646px] xl:w-[850px]
             h-[122px] md:h-[170px] lg:h-[249px] xl:h-[327px]
             text-[1.85rem] md:text-[3.25rem] lg:text-[5rem] xl:text-[6rem]
-            font-[ChenYuluoyan]
+            font-[ChenYuluoyan] text-[#FFFFFF]
             flex justify-center pt-[22px] md:pt-[40px]
     bg-[url("@/assets/img/Shake.svg")] bg-contain bg-no-repeat bg-center
 }

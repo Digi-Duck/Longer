@@ -125,7 +125,7 @@ export default {
 <template >
   <NavCurve class="md:block hidden"></NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
-  <!-- 課程資訊主要內容 -->
+  <!-- 課程資訊主要內容 --> 
   <main>
     <!-- 背景圖片 -->
     <img v-for="item in bgImg" :key="item.id" :src="item.imgSrc" :alt="item.imgAlt" :class="item.imgclass">
@@ -146,8 +146,9 @@ export default {
     </section>
     <!-- <div data-aos="fade-up" data-aos-duration="1000" class="aos">
             这是一个使用aos.js的动画效果
-        </div> -->
+        </div> -->   
   </main>
+
 </template>
 <style lang="scss" scoped>
 main {
