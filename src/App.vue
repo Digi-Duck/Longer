@@ -60,7 +60,10 @@ export default {
       // 關閉選單
       if (this.isMenuOpen) {
         this.$refs.navContent.style.height = '0px';
-        this.isMenuOpen = !this.isMenuOpen;
+        this.$refs.linkTop.classList.remove('ani-line-top');
+        this.$refs.linkCenter.classList.remove('ani-line-center');
+        this.$refs.linkBottom.classList.remove('ani-line-bottom');
+        this.isMenuOpen = !this.isMenuOpen
       }
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
@@ -81,8 +84,14 @@ export default {
       this.isMenuOpen = !this.isMenuOpen;
       if (this.isMenuOpen) {
         this.$refs.navContent.style.height = '561px';
+        this.$refs.linkTop.classList.add('ani-line-top');
+        this.$refs.linkCenter.classList.add('ani-line-center');
+        this.$refs.linkBottom.classList.add('ani-line-bottom');
       }else{
         this.$refs.navContent.style.height = '0px';
+        this.$refs.linkTop.classList.remove('ani-line-top');
+        this.$refs.linkCenter.classList.remove('ani-line-center');
+        this.$refs.linkBottom.classList.remove('ani-line-bottom');
       }
       console.log(this.isMenuOpen);
     },
@@ -176,6 +185,7 @@ export default {
       </RouterLink>
     </nav>
   </header>
+
 
   <!-- 分頁內容 -->
   <main ref="webContent">
@@ -344,21 +354,6 @@ header {
     
   }
 
-  // #ham:checked ~nav{
-  //   @apply h-[561px];
-  // }
-  .navHeight{
-    @apply h-[561px];
-  }
-  .link-top{
-    @apply top-[50%] rotate-[30deg];
-  }
-  .link-center{
-    @apply hidden;
-  }
-  .link-bottom{
-    @apply top-[50%] rotate-[-30deg];
-  }
 
 
   .LOGO {
@@ -448,6 +443,43 @@ footer {
 
   .copy-right {
     @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255,255,255,0.5)];
+  }
+}
+
+.ani-line-top{
+  animation: toCloseTop 0.2s linear 1 forwards;
+}
+.ani-line-center{
+  animation: toCloseCenter 0.1s linear 1 forwards;
+}
+
+.ani-line-bottom{
+  animation: toCloseBottom 0.2s linear 1 forwards;
+}
+
+// ham-menu animation
+@keyframes toCloseTop{
+  0%{
+    @apply top-[35%] rotate-0;
+  }
+  100%{
+    @apply top-[50%] rotate-[30deg];
+  }
+}
+@keyframes toCloseCenter{
+  0%{
+    @apply visible;
+  }
+  100%{
+    @apply invisible;
+  }
+}
+@keyframes toCloseBottom{
+  0%{
+    @apply top-[65%] rotate-0;
+  }
+  100%{
+    @apply top-[50%] rotate-[-30deg];
   }
 }
 
