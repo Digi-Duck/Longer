@@ -25,7 +25,8 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet,ShakeBox
+    RankingListTablet,
+    ShakeBox,
   },
   data() {
     return {
@@ -33,11 +34,11 @@ export default {
     };
   },
   mounted() {
-    const ShakeBoxId = document.querySelector('#ShakeBoxId')
-    ShakeBoxId.style.display="none"
+    const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    ShakeBoxId.style.display = "none";
     // 發送hakeBoxMobileFlag:false,
     window.scrollTo(0, 0);
-  
+
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
     // const maskElement = document.querySelector(".mask");
@@ -145,7 +146,7 @@ export default {
         <!-- <div class="mask" :style="{ width: `${WidthControl}% ` }"></div> -->
       </div>
 
-      <HomeTitle>學生作品</HomeTitle>
+      <HomeTitle class="pt-[30px]">學生作品</HomeTitle>
       <StudentWork></StudentWork>
     </div>
     <div class="Block4Buttom">
@@ -155,7 +156,9 @@ export default {
 
   <section>
     <div class="Block5">
-      <HomeTitle>歷年榜單</HomeTitle>
+      <HomeTitle class="xl:mt-[0px] lg:mt-[-160px] md:pb-[30px]"
+        >歷年榜單</HomeTitle
+      >
       <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
       <blob3 class="lg:top-[0px] lg:right-[-30px] md:hidden"></blob3>
 
@@ -163,12 +166,10 @@ export default {
       <RankingList></RankingList>
     </div>
     <div class="ShakeBox">
-    <ShakeBox></ShakeBox>
-  </div>
+      <ShakeBox></ShakeBox>
+    </div>
   </section>
-  <section>
- 
-  </section>
+  <section></section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -240,26 +241,22 @@ export default {
   @apply w-[100%] h-[289px] bg-MainColorBG;
 
   .Block4TopCurve {
-    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
+    @apply w-[100%] h-[100%]  bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
   }
 }
 
 .Block4Buttom {
-  @apply w-[100%] h-[450px] bg-MainColorBG;
+  @apply w-[100%] xl:h-[500px] lg:h-[400px] md:h-[250px] h-[150px] bg-MainColorBG;
 
   .Block4ButtomCurve {
-    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] bg-no-repeat bg-cover bg-center;
+    @apply w-[100%] h-[100%]  bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] 
+    bg-no-repeat bg-cover bg-top relative
+    top-[-1px];
   }
 }
 
 .Block4 {
-  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1600px] lg:h-[1438px] md:h-[1600px] h-[2096px];
-
-  // .pen {
-  //   @apply  bg-[url("@/assets/img/homepage/pen.png")] bg-contain  bg-no-repeat bg-center relative
-  //   xl:h-[527px] lg:h-[291px]
-  //   mb-[100px] mt-[100px] ;
-  // }
+  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1400px] lg:h-[1438px] md:h-[1440px] h-[1900px];
 }
 
 // GSAP
@@ -269,7 +266,7 @@ export default {
 }
 
 .Block5 {
-  @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
+  @apply w-[100%] xl:h-[1200px] lg:h-[1000px] md:h-[940px] h-[800px] bg-MainColorBG relative overflow-hidden;
 }
 // 呼吸since1994
 .breathing {

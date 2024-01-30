@@ -1,16 +1,21 @@
 <script>
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/effect-creative';
-
-
+import "swiper/css";
+import "swiper/css/effect-creative";
 
 // import required modules
-import { EffectCreative } from 'swiper/modules';
+import { EffectCreative } from "swiper/modules";
+
+import List1 from "@/assets/img/homepage/Swiper/list1.png";
+import List2 from "@/assets/img/homepage/Swiper/list2.png";
+import List3 from "@/assets/img/homepage/Swiper/list3.png";
+import List4 from "@/assets/img/homepage/Swiper/list4.png";
+import List5 from "@/assets/img/homepage/Swiper/list5.png";
+import List6 from "@/assets/img/homepage/Swiper/list6.png";
+import List7 from "@/assets/img/homepage/Swiper/list7.png";
 
 export default {
   components: {
@@ -20,12 +25,14 @@ export default {
   setup() {
     return {
       modules: [EffectCreative],
+      List: [List1, List2, List3, List4, List5, List6, List7],
     };
   },
 };
 </script>
-<template >
-    <div class=" md:hidden block"> <swiper 
+<template>
+  <div class="lg:hidden block">
+    <swiper
       :grabCursor="true"
       :effect="'creative'"
       :creativeEffect="{
@@ -40,17 +47,21 @@ export default {
       :modules="modules"
       class="mySwiper"
     >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide
+        v-for="item in List"
+        :key="item.id"
+        :style="{ backgroundImage: `url(${item})` }"
+        class="bg-contain"
+      >
+      </swiper-slide>
+      <!-- <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
       <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
-    </swiper></div>
-   
-   
+      <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide> -->
+    </swiper>
+  </div>
 </template>
- 
-  
+
 <style>
 /* #app { height: 100% }
 html, */
@@ -59,34 +70,15 @@ body {
   /* height: 100%; */
 }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
 .swiper {
   margin: 100px auto;
-  width: 95%;
-  height: 300px;
+  @apply md:w-[600px]  md:h-[600px]  w-[375px]  h-[375px];
 }
 
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   font-weight: bold;
   color: #fff;
 }
@@ -130,5 +122,4 @@ body {
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
 }
-
 </style>
