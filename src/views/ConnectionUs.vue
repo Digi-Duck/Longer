@@ -32,15 +32,7 @@ export default {
     const ShakeBoxId = document.querySelector('#ShakeBoxId');
     ShakeBoxId.style.display="block";
 
-    window.addEventListener('scroll', function () {
-  var element = document.querySelector('.fade-in');
-  var position = element.getBoundingClientRect().top;
-  var screenHeight = window.innerHeight;
-
-  if (position < screenHeight) {
-    element.classList.add('show');
-  }
-});
+   
   },
   methods: {
     formatDetail(detail) {
@@ -57,7 +49,7 @@ export default {
     <section class="Block1 ">
       <!-- 文字 + 圖片 -->
       <div class="ConInfo">
-        <div class="TextBox fade-in">
+        <div class="TextBox" v-fade-in-out>
           <p class="Text" v-for="(item,index) in ContactInfoList ">
           <h6 class="title">{{item.name}}</h6>
           <h6 class="content" v-html="formatDetail(item.detail)"></h6>
@@ -79,7 +71,7 @@ export default {
           <div class="TraffBox"> 
             <iframe class="GoogleMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7281.374658267901!2d120.68340395005671!3d24.147632202326992!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d694e74e9c3%3A0x927ec8b9a195fcd!2z6b6N5qC855Wr5a6k!5e0!3m2!1szh-TW!2stw!4v1705722612413!5m2!1szh-TW!2stw"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
             <div class="TraffContentBox">
-              <div class="TraffContent" v-for="(item,index) in TraffInfoList">
+              <div class="TraffContent" v-for="(item,index) in TraffInfoList" v-fade-in-out :key="item.id">
                 <div class="TitleBG2">
                   <div class="text">
                     {{item.name}}
@@ -106,16 +98,16 @@ export default {
 </template>
 <style lang="scss" scoped>
 // 漸入
-.fade-in {
-  opacity: 0; /* 初始透明度为0，即不可见 */
-  transform: translateY(-50px); /* 初始位置为向上偏移50px */
-  transition: opacity 1s ease, transform 1s ease; /* 设置过渡效果，1秒完成，缓动函数为ease */
-}
+// .fade-in {
+//   opacity: 0; /* 初始透明度为0，即不可见 */
+//   transform: translateY(-50px); /* 初始位置为向上偏移50px */
+//   transition: opacity 1s ease, transform 1s ease; /* 设置过渡效果，1秒完成，缓动函数为ease */
+// }
 
-.fade-in.show {
-  opacity: 1; /* 当添加show类时，透明度变为1，即可见 */
-  transform: translateY(0); /* 当添加show类时，位置变为原始位置，即不再偏移 */
-}
+// .fade-in.show {
+//   opacity: 1; /* 当添加show类时，透明度变为1，即可见 */
+//   transform: translateY(0); /* 当添加show类时，位置变为原始位置，即不再偏移 */
+// }
 // 
 
 .HomeTitle{
