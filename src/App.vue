@@ -59,7 +59,7 @@ export default {
       this.activeLink = link;
       // 關閉選單
       if (this.isMenuOpen) {
-        this.$refs.navContent.style.height = '0px';
+        this.$refs.navContent.style.width = '0px';
         this.$refs.linkTop.classList.remove('ani-line-top');
         this.$refs.linkCenter.classList.remove('ani-line-center');
         this.$refs.linkBottom.classList.remove('ani-line-bottom');
@@ -75,20 +75,26 @@ export default {
         scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
       if (isAtBottom) {
         this.scrollBottom = true;
+        this.isMenuOpen = false;
       } else {
         this.scrollBottom = false;
       }
     },
     openMenu(){
-
+      console.log(window.innerWidth);
       this.isMenuOpen = !this.isMenuOpen;
       if (this.isMenuOpen) {
-        this.$refs.navContent.style.height = '80vh';
+        
         this.$refs.linkTop.classList.add('ani-line-top');
         this.$refs.linkCenter.classList.add('ani-line-center');
         this.$refs.linkBottom.classList.add('ani-line-bottom');
+        if (window.innerWidth >= 768) {
+          this.$refs.navContent.style.width = '50vw';
+        }else{
+          this.$refs.navContent.style.width = '100vw';
+        }
       }else{
-        this.$refs.navContent.style.height = '0px';
+        this.$refs.navContent.style.width = '0px';
         this.$refs.linkTop.classList.remove('ani-line-top');
         this.$refs.linkCenter.classList.remove('ani-line-center');
         this.$refs.linkBottom.classList.remove('ani-line-bottom');
@@ -184,8 +190,7 @@ export default {
       </RouterLink>
     </nav>
   </header>
-
-
+  <div v-if="isMenuOpen" class="mask w-full h-[100%] bg-[#000] opacity-[0.8] absolute z-[3]"></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
     <RouterView />
@@ -336,7 +341,7 @@ export default {
 
 //公版 nav
 header {
-  @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_20px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[3] bg-EmphasizeColor;
+  @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_20px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
 
   .ham-menu-all{
     @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
@@ -370,11 +375,23 @@ header {
     }
   }
 
+  // nav {
+  //   @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:bg-[transparent] lg:overflow-visible w-[calc(100vw_17px)] h-0 bg-[url('@/assets/img/generic/ham-menu-md-bg.png')] bg-no-repeat md:bg-bottom bg-cover lg:duration-0 duration-200 overflow-hidden lg:drop-shadow-none drop-shadow-[0_10px_15px_#262626];
+
+  //   .navBar {
+  //     @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
+
+  //     &.active {
+  //       @apply lg:h-[70px] lg:bg-[#838666];
+  //     }
+  //   }
+  // }
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:bg-[transparent] lg:overflow-visible w-[calc(100vw_17px)] h-0 bg-[url('@/assets/img/generic/ham-menu-md-bg.png')] bg-no-repeat md:bg-bottom bg-cover lg:duration-0 duration-200 overflow-hidden lg:drop-shadow-none drop-shadow-[0_10px_15px_#262626];
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0
+    w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] pt-[80px] md:rounded-[0px_50px_0px_0px];
 
     .navBar {
-      @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
+      @apply  xl:px-[30px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] py-[8px] md:mt-[5px] mt-[8px] lg:px-[20px] md:text-[1.28rem] text-[1.5rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[#fff] block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
