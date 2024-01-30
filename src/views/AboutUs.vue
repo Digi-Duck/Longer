@@ -219,6 +219,9 @@ export default {
   .BlobG {
     @apply xl:right-[-5%] xl:bottom-[40%] lg:right-[-10%] lg:bottom-[48%] md:right-[-26%] md:bottom-[38%];
   }
+  .flower {
+    @apply md:hidden;
+  }
 }
 
 .bg-1 {
