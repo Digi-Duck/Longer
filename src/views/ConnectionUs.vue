@@ -31,6 +31,16 @@ export default {
     window.scrollTo(0, 0);
     const ShakeBoxId = document.querySelector('#ShakeBoxId');
     ShakeBoxId.style.display="block";
+
+    window.addEventListener('scroll', function () {
+  var element = document.querySelector('.fade-in');
+  var position = element.getBoundingClientRect().top;
+  var screenHeight = window.innerHeight;
+
+  if (position < screenHeight) {
+    element.classList.add('show');
+  }
+});
   },
   methods: {
     formatDetail(detail) {
@@ -42,12 +52,12 @@ export default {
 <template>
   <NavCurve class="md:block hidden"></NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
-  <div class="overflow-hidden" >
+  <div class="overflow-hidden " >
     <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:pb-[134px] md:pb-[96px] pb-[25px] bg-MainColorBG">聯絡資訊</HomeTitle>
-    <section class="Block1">
+    <section class="Block1 ">
       <!-- 文字 + 圖片 -->
       <div class="ConInfo">
-        <div class="TextBox">
+        <div class="TextBox fade-in">
           <p class="Text" v-for="(item,index) in ContactInfoList ">
           <h6 class="title">{{item.name}}</h6>
           <h6 class="content" v-html="formatDetail(item.detail)"></h6>
@@ -95,6 +105,19 @@ export default {
 
 </template>
 <style lang="scss" scoped>
+// 漸入
+.fade-in {
+  opacity: 0; /* 初始透明度为0，即不可见 */
+  transform: translateY(-50px); /* 初始位置为向上偏移50px */
+  transition: opacity 1s ease, transform 1s ease; /* 设置过渡效果，1秒完成，缓动函数为ease */
+}
+
+.fade-in.show {
+  opacity: 1; /* 当添加show类时，透明度变为1，即可见 */
+  transform: translateY(0); /* 当添加show类时，位置变为原始位置，即不再偏移 */
+}
+// 
+
 .HomeTitle{
   @apply xl:pl-[138px]
   xl:flex-none lg:pt-[calc(57px+34px)] 

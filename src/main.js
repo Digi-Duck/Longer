@@ -27,13 +27,18 @@ window.jQuery = $;
 
 AOS.init();
 
+// 新增全域組件
 app.component('NavCurve', NavCurve);
 app.component('NavMobile', NavMobile);
 
+// 進入頁面自動至頂
 window.scrollTo({
     top: 0,
 });
 console.log(document.documentElement.scrollTop);
+// 全域自定義指令
+
+
 
 app.use(router);
 
