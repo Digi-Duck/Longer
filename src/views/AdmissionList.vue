@@ -3,7 +3,9 @@ import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import pic1 from "@/assets/img/admission_list/pic-1.svg";
 import pic2 from "@/assets/img/admission_list/pic-2.svg";
 import pic3 from "@/assets/img/admission_list/pic-3.svg";
-// import phonePic3 from "@/assets/img/admission_list/phone-pic-3.svg";
+import phonePic1 from "@/assets/img/admission_list/phone-pic-1.svg";
+import phonePic2 from "@/assets/img/admission_list/phone-pic-2.svg";
+import phonePic3 from "@/assets/img/admission_list/phone-pic-3.svg";
 // import hookpic from "@/assets/img/admission_list/hook.svg"
 
 export default {
@@ -13,6 +15,9 @@ export default {
       pic1: pic1,
       pic2: pic2,
       pic3: pic3,
+      phonePic1: phonePic1,
+      phonePic2: phonePic2,
+      phonePic3: phonePic3,
       // hookpic:hookpic,
     };
   },
@@ -31,25 +36,31 @@ export default {
     <!-- <NavCurve></NavCurve> -->
     <div class="All">
       <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">歷年榜單</HomeTitle>
-      <div class="block">
+      <div class="block md:mb-[0px] mb-[140px]">
         <div class="ImgBox">
-          <div class="hook"></div>
+          <div class="hook md:block hidden"></div>
+          <div class="hook-phone md:hidden"></div>
           <div class="content">
-            <img :src="pic1" alt="" />
+            <img class="md:block hidden" :src="pic1" alt="" />
+            <img class="md:hidden" :src="phonePic1" alt="" />
             <div class="title">升大學優良榜單</div>
           </div>
         </div>
         <div class="ImgBox">
-          <div class="hook"></div>
+          <div class="hook md:block hidden"></div>
+          <div class="hook-phone md:hidden"></div>
           <div class="content">
-            <img :src="pic2" alt="" />
+            <img class="md:block hidden" :src="pic2" alt="" />
+            <img class="md:hidden" :src="phonePic2" alt="" />
             <div class="title">升高中優良榜單</div>
           </div>
         </div>
         <div class="ImgBox">
-          <div class="hook"></div>
+          <div class="hook md:block hidden"></div>
+          <div class="hook-phone md:hidden"></div>
           <div class="content">
-            <img :src="pic3" alt="" />
+            <img class="md:block hidden" :src="pic3" alt="" />
+            <img class="md:hidden" :src="phonePic3" alt="" />
             <div class="title">升國中優良榜單</div>
           </div>
         </div>
@@ -65,7 +76,10 @@ export default {
     .ImgBox {
       @apply flex flex-col items-center xl:w-[60%] lg:w-[70%] md:w-[85%] w-[95%] ;
       .hook {
-        @apply md:w-[500px] md:h-[114px] w-[500px] h-[70px]  bg-[url('@/assets/img/admission_list/hook.svg')] ;
+        @apply md:w-[500px] md:h-[114px] bg-[url('@/assets/img/admission_list/hook.svg')] ;
+      }
+      .hook-phone {
+        @apply  w-[170px] h-[36px] bg-no-repeat bg-[url('@/assets/img/admission_list/phone-hook.svg')];
       }
       .content {
         @apply  relative rounded-[24px] xl:border-[30px] lg:border-[24px] md:border-[16px] border-[10px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
