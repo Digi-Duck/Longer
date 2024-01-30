@@ -209,7 +209,7 @@ export default {
     }
 
     .content {
-      @apply xl:text-[3rem] xl:tracking-[10px] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
+      @apply xl:text-[3rem] xl:tracking-[4px] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
 
     }
   }
