@@ -1,45 +1,62 @@
 <script>
 import HomeTitle from "@/components/homepage/HomeTitle.vue";
-import Img1 from "@/assets/img/teacher_introduction/pic-1.svg";
-import Img2 from "@/assets/img/teacher_introduction/pic-2.svg";
-import BlobY from "@/assets/img/about_us_ph/blob-2.svg";
-import Blob1 from "@/assets/img/teacher_introduction/blob-1.svg";
-import Blob2 from "@/assets/img/teacher_introduction/blob-2.svg";
-import pen1 from "@/assets/img/teacher_introduction/pen-1.svg";
-import pen2 from "@/assets/img/teacher_introduction/pen-2.svg";
-import pen3 from "@/assets/img/teacher_introduction/pen-3.svg";
-import easel from "@/assets/img/teacher_introduction/easel.svg";
-import palette from "@/assets/img/teacher_introduction/palette.svg";
-import pigment from "@/assets/img/teacher_introduction/pigment.svg";
-import watercolor_pen from "@/assets/img/teacher_introduction/watercolor_pen.svg";
-import BG from "@/assets/img/teacher_introduction/bg.svg";
-import MobileImg1 from "@/assets/img/teacher_introduction/mobile_pic1.svg";
-import MobileImg2 from "@/assets/img/teacher_introduction/mobile_pic2.svg";
+// 圖片命名用首字大寫+IMG_
+// 老師的照片
+import IMG_TeacherPic1 from "@/assets/img/teacher_introduction/teacher_pic1.svg";
+import IMG_TeacherPic2 from "@/assets/img/teacher_introduction/teacher_pic2.svg";
+import IMG_TeacherPicMobile1 from "@/assets/img/teacher_introduction/teacher_pic_mobile1.svg";
+import IMG_TeacherPicMobile2 from "@/assets/img/teacher_introduction/teacher_pic_mobile2.svg";
+
+// 小電腦以下黃色泡泡背景
+import IMG_Background from "@/assets/img/teacher_introduction/background.svg";
+
+// 泡泡
+import IMG_BlobYellow1 from "@/assets/img/teacher_introduction/blob_yellow1.svg";
+import IMG_BlobGreen1 from "@/assets/img/teacher_introduction/blob_green_1.svg";
+import TabletBlobYellowNoMove from "@/assets/img/teacher_introduction/tablet_blob_yellow_no_move.svg";
+import TabletBlobGreenNoMove from "@/assets/img/teacher_introduction/tablet_blob_green_no_move.svg";
+
+// 裝飾物
+import IMG_Easel from "@/assets/img/teacher_introduction/easel.svg";
+import IMG_Palette from "@/assets/img/teacher_introduction/palette.svg";
+import IMG_PenAndEraser from "@/assets/img/teacher_introduction/pen_and_eraser.svg";
+import IMG_PenGreen from "@/assets/img/teacher_introduction/pen_green.svg";
+import IMG_PenPink from "@/assets/img/teacher_introduction/pen_pink.svg";
+import IMG_PenWatercolor from "@/assets/img/teacher_introduction/pen_watercolor.svg";
+
+// 紫色散開
+import IMG_Pigment from "@/assets/img/teacher_introduction/pigment.svg";
+
 export default {
-  components: { HomeTitle},
+  components: { HomeTitle },
   data() {
     return {
-      Img1: Img1,
-      Img2: Img2,
-      BlobY: BlobY,
-      Blob1: Blob1,
-      Blob2: Blob2,
-      pen1: pen1,
-      pen2: pen2,
-      pen3: pen3,
-      easel: easel,
-      palette: palette,
-      pigment: pigment,
-      watercolor_pen: watercolor_pen,
-      BG: BG,
-      MobileImg1: MobileImg1,
-      MobileImg2: MobileImg2,
+      // 照片
+      IMG_TeacherPic1: IMG_TeacherPic1,
+      IMG_TeacherPic2: IMG_TeacherPic2,
+      IMG_TeacherPicMobile1: IMG_TeacherPicMobile1,
+      IMG_TeacherPicMobile2: IMG_TeacherPicMobile2,
+      // 泡泡
+      IMG_Background: IMG_Background,
+      IMG_BlobYellow1: IMG_BlobYellow1,
+      IMG_BlobGreen1: IMG_BlobGreen1,
+      TabletBlobYellowNoMove: TabletBlobYellowNoMove,
+      TabletBlobGreenNoMove: TabletBlobGreenNoMove,
+      // 裝飾物
+      IMG_Easel: IMG_Easel,
+      IMG_Palette: IMG_Palette,
+      IMG_PenAndEraser: IMG_PenAndEraser,
+      IMG_Pigment: IMG_Pigment,
+      // pen
+      IMG_PenGreen: IMG_PenGreen,
+      IMG_PenPink: IMG_PenPink,
+      IMG_PenWatercolor: IMG_PenWatercolor,
     };
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector('#ShakeBoxId');
-    ShakeBoxId.style.display="block";
+    const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    ShakeBoxId.style.display = "block";
   },
 };
 </script>
@@ -47,47 +64,93 @@ export default {
   <NavCurve class="md:block hidden"></NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
   <div class="overflow-hidden">
+    <!-- 第一個黃色泡泡 -->
     <div
-      class="swing lg:right-[0%] lg:top-[-10%] md:left-[-40%] md:top-[90%] md:block hidden"
-    >
-      <img :src="Blob1" alt="" />
-    </div>
-    <!-- <div class="abc h-[1000px]"></div> -->
+      :style="{ backgroundImage: `url(${IMG_BlobYellow1})` }"
+      class="swing absolute right-[30px] top-[220px] xl:w-[400px] lg:w-[300px] xl:h-[400px] lg:h-[300px] lg:block hidden bg-no-repeat bg-contain"
+    ></div>
 
     <div class="TeacherItroBG overflow-hidden">
-      <HomeTitle class="xl:!justify-start xl:pl-[138px] md:pb-[0px] pb-[28px]">師資介紹</HomeTitle>
-
-      <img
-        :src="Blob2"
-        class="absolute xl:left-[-40%] lg:left-[-60%] lg:top-[10%] lg:block md:hidden hidden"
-        alt=""
-      />
-      <div
-        class="swing left-[-5%] bottom-[40%] lg:hidden hidden md:top-[61%] md:left-[-20%]"
+      <HomeTitle class="xl:!justify-start xl:pl-[138px] md:pb-[0px] pb-[28px]"
+        >師資介紹</HomeTitle
       >
-        <img :src="Blob2" alt="" />
-      </div>
+      <!-- 第一個不動綠色泡泡 -->
       <img
-        class="pen right-[0%] top-[5%] lg:block hidden md:block md:top-[65%]"
-        :src="pen1"
+        :src="IMG_BlobGreen1"
+        class="absolute xl:w-[1200px] lg:w-[1000px] xl:left-[-40%] lg:left-[-60%] xl:top-[10%] lg:top-[36%] lg:block md:hidden hidden"
         alt=""
       />
+      <!-- 第二個黃色泡泡 -->
+      <div
+        :style="{
+          backgroundImage: `url(${IMG_BlobYellow1})`,
+          rotate: '90deg',
+        }"
+        class="swing absolute bg-no-repeat bg-contain md:block hidden xl:left-[30px] xl:top-[2900px] lg:left-[30px] lg:top-[2800px] md:top-[96%] md:left-[10%] xl:w-[400px] xl:h-[400px] lg:w-[300px] lg:h-[300px] md:w-[200px] md:h-[200px]"
+      ></div>
+      <!-- 筆-綠色 -->
       <img
-        class="pen xl:left-[0%] xl:top-[40%] xl:block lg:hidden md:hidden hidden"
-        :src="pen2"
+        class="absolute xl:w-[300px] lg:w-[150px] md:w-[120px] lg:right-[0%] md:left-[6%] md:rotate-90 lg:top-[30%] lg:block hidden md:block md:top-[32%]"
+        :src="IMG_PenGreen"
         alt=""
       />
+      <!--  筆-粉色  -->
       <img
-        class="pen xl:right-[0%] lg:right-[-16%] top-[50%] w-[400px] lg:block md:hidden hidden"
-        :src="pen3"
+        class="absolute xl:left-[0%] md:right-[6%] xl:top-[42%] md:top-[60%] md:rotate-180 xl:block lg:hidden md:block md:w-[120px] hidden"
+        :src="IMG_PenPink"
         alt=""
       />
+      <!-- 筆+橡皮擦 -->
+      <img
+        class="absolute xl:right-[0%] lg:right-[-2%] xl:top-[43%] lg:top-[48%] xl:w-[600px] lg:w-[400px] lg:block md:hidden hidden"
+        :src="IMG_PenAndEraser"
+        alt=""
+      />
+      <!-- 調色盤 -->
+      <img
+        class="absolute lg:right-[0%] md:right-[0%] lg:top-[86%] md:top-[90%] xl:w-[400px] lg:w-[300px] md:w-[200px] md:block hidden"
+        :src="IMG_Palette"
+        alt=""
+      />
+      <!-- 水彩筆 -->
+      <img
+        class="absolute xl:right-[12%] lg:right-[-16%] xl:top-[68%] xl:w-[200px] lg:hidden hidden"
+        :src="IMG_PenWatercolor"
+        alt=""
+      />
+      <!-- 顏料塊 -->
+      <img
+        class="absolute xl:right-[12%] lg:left-[8%] xl:top-[76%] lg:top-[76%] xl:w-[300px] lg:w-[200px] lg:block md:hidden hidden"
+        :src="IMG_Pigment"
+        alt=""
+      />
+      <!-- 第一個不動黃色泡泡:平板 -->
+      <img
+        class="absolute lg:hidden md:block hidden md:right-[0%] md:top-[28%] md:w-[180px]"
+        :src="TabletBlobYellowNoMove"
+        alt=""
+      />
+      <!-- 第二個不動綠色泡泡:平板 -->
+      <img
+        class="absolute lg:hidden md:block hidden md:left-[0%] md:top-[58%] md:w-[260px]"
+        :src="TabletBlobGreenNoMove"
+        alt=""
+      />
+
+      <!-- 師資介紹 -->
       <div class="TeacherItro">
-        <div class="singleblock lg:pt-[203px] md:pt-[56px] flex-col">
-          <div class="bg"></div>
+        <div
+          class="singleblock lg:pt-[203px] md:pt-[56px] flex-col xl:md:flex-row lg:md:flex-row"
+        >
+          <div
+            class="bg top-[380px]"
+            :style="{
+              backgroundImage: `url(${IMG_Background})`,
+            }"
+          ></div>
           <div data-aos="zoom-in-right">
-            <img class="pic hidden md:block" :src="Img1" />
-            <img class="pic block md:hidden" :src="MobileImg1" />
+            <img class="pic hidden md:block" :src="IMG_TeacherPic1" />
+            <img class="pic block md:hidden" :src="IMG_TeacherPicMobile1" />
           </div>
 
           <div class="text">
@@ -104,7 +167,12 @@ export default {
         <div
           class="singleblock mt-[115px] xl:flex-row lg:flex-row-reverse flex-col-reverse"
         >
-          <div class="bg"></div>
+          <div
+            class="bg top-[1200px]"
+            :style="{
+              backgroundImage: `url(${IMG_Background})`,
+            }"
+          ></div>
           <div class="text xl:pl-[80px] lg:pl-[0px]">
             <h1>張桂苓 老師</h1>
             <div class="textblock">
@@ -116,14 +184,17 @@ export default {
             </div>
           </div>
           <div data-aos="zoom-in-left">
-            <img class="pic hidden md:block" :src="Img2" />
-            <img class="pic block md:hidden" :src="MobileImg2" />
+            <img class="pic hidden md:block" :src="IMG_TeacherPic2" />
+            <img class="pic block md:hidden" :src="IMG_TeacherPicMobile2" />
           </div>
         </div>
       </div>
 
       <div class="ClassInfo"></div>
-      <HomeTitle class="xl:!justify-start xl:pl-[138px]">課堂實況</HomeTitle>
+      <HomeTitle
+        class="xl:!justify-start xl:pl-[138px] xl:pt-[376px] lg:pt-[385px] md:pt-[237px]"
+        >課堂實況</HomeTitle
+      >
       <img
         :src="palette"
         class="absolute top-[88%] right-[4%] md:w-[250px] md:pt-[100px] md:block hidden"
@@ -136,7 +207,7 @@ export default {
       />
       <img
         :src="watercolor_pen"
-        class="xl:absolute top-[68%] right-[20%]   hidden"
+        class="xl:absolute top-[68%] right-[20%] hidden"
         alt=""
       />
       <div class="frame">
@@ -151,6 +222,7 @@ export default {
             allowfullscreen="true"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           ></iframe>
+          <!-- 第二個搖擺黃色泡泡 -->
           <div
             class="swing left-[-10%] bottom-[0%] md:w-[200px] md:block hidden"
           >
@@ -164,18 +236,18 @@ export default {
 <style lang="scss" scoped>
 // 一整個頁面
 .TeacherItroBG {
-  @apply flex flex-col items-center xl:h-[3600px]  w-[100%] bg-MainColorBG relative;
+  @apply flex flex-col items-center xl:h-[3100px] lg:h-[2962pxf] md:h-[3013px] h-[1800px] w-[100%] bg-MainColorBG relative;
 }
 // 師資介紹內容
 .TeacherItro {
   @apply flex flex-col 
 
-  xl:h-[1400px] lg:h-[1000px] 
+  xl:h-[1069px] lg:h-[790px] 
   md:w-[1290px] w-[280px]
     bg-MainColorBG;
   .singleblock {
-    @apply flex xl:justify-between items-center relative lg:justify-around 
-    xl:md:flex-row lg:md:flex-row 
+    @apply flex xl:justify-between items-center lg:justify-around 
+    
     xl:w-[100%];
     .textblock {
       @apply text-[1.5rem] xl:w-[100%] lg:w-[478px];
@@ -211,8 +283,7 @@ export default {
   xl:w-[1176px] lg:w-[976px] md:w-[659px] w-[307px] 
   lg:h-[862px] md:h-[500px] h-[311px]
   md:mb-[310px]
-
-     md:bg-[url('@/assets/img/teacher_introduction/easel.svg')] bg-contain bg-center bg-no-repeat;
+  md:bg-[url('@/assets/img/teacher_introduction/Easel.svg')] bg-contain bg-center bg-no-repeat;
 
   .FBvideo {
     @apply xl:w-[854px] lg:w-[708px] md:w-[500px] 
@@ -241,13 +312,9 @@ export default {
   }
 }
 
-.pen {
-  @apply absolute;
-}
 .bg {
-  @apply md:bg-[url('@/assets/img/teacher_introduction/bg.svg')]
-   w-[100%] h-[670px] absolute top-[0px] 
-  lg:hidden md:block;
+  @apply w-[100%] h-[670px] absolute bg-no-repeat 
+  lg:hidden md:block hidden;
 }
 
 // .title {
