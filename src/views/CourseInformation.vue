@@ -202,7 +202,7 @@ main {
   // md & sm背景圖定位
 
   .HomeTitle {
-    @apply xl:justify-start xl:pl-[138px] justify-center flex w-full;
+    @apply xl:justify-start xl:pl-[138px] pb-[168px] justify-center flex w-full;
   }
 
   section {

@@ -202,17 +202,6 @@ export default {
           ],
 
         },
-        // {
-        //   skill: '建築模型',
-        //   dataText: 'architectural',
-        //   img: [
-        //     architectural01,
-        //     architectural02,
-        //     architectural03,
-        //     architectural04,
-        //   ],
-
-        // },
         {
           skill: '兒童美術創意',
           dataText: 'childArt',
@@ -260,7 +249,6 @@ export default {
   </NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
   <main>
-    <!-- <img src="../assets/img/student_work/water_color_img/water_color_11.jpg" alt=""> -->
     <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">學生作品</HomeTitle>
     <!-- <blob2 class="top-[-5%] right-[-5%]"></blob2>
     <blob3 class="bottom-[0%] left-[-5%]"></blob3> -->
