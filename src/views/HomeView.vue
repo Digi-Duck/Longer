@@ -52,10 +52,8 @@ export default {
   },
   methods: {
     scrollToLonger() {
-      window.scrollTo({
-        top: 1000,
-        behavior: "smooth", // 添加平滑滚动效果
-      });
+      const slognElement = this.$refs.longerSlogn;
+      slognElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
     MaskMove() {
       // const windowBottom = window.scrollY + window.innerHeight;
@@ -95,40 +93,33 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source
-      media="(min-width:1800px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:1200px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:768px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:0px)"
-      srcset="@/assets/img/generic/banner-sm.png"
-    />
+    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container">
-    <div class="since1994 breathing" @click="scrollToLonger">since 1994</div>
+    <div class="since1994 breathing" @click="scrollToLonger">
+      <p>since 1994</p>
+      <i class="fa-solid fa-chevron-down text-[35px]"></i>
+
+    </div>
   </section>
   <section class="longer-bg bg-MainColorBG">
     <section class="longer-introduce">
-      <div class="longer-position">
+      <div class="longer-position" ref="longerSlogn">
         <p class="title">龍格畫室</p>
-        <p class="content">一間成立於1994年的小畫室</p>
-        <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
-        <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
+        <div>
+          <p class="content">一間成立於1994年的小畫室</p>
+          <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
+          <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
+        </div>
       </div>
       <!-- <blob2 class="top-[100%] left-[-10%]"></blob2> -->
     </section>
   </section>
 
-  <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
     <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
@@ -198,15 +189,9 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply z-[2] text-[#fff]
-    bg-EmphasizeColor opacity-[0.7] rounded-full absolute 
-    xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px]  w-[100px] h-[100px]
-    flex justify-center items-center 
-    lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem]
-    xl:top-[-85px] lg:top-[-57px] 
-    top-[-50px] 
-    xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)];
+    @apply z-[2] text-[#fff] font-[Castoro-Regular] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] w-[100px] h-[100px] flex justify-center items-center lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem] xl:top-[-85px] lg:top-[-57px] top-[-50px] xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)] flex flex-col gap-[5px];
     // translate-x-[-50%]
+
   }
 }
 
@@ -216,15 +201,16 @@ export default {
 
   .longer-position {
     // @apply absolute top-[0%] left-[60%];
-    @apply items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
+    @apply items-start pt-[130px] xl:pl-[230px] lg:pl-[100px] md:pl-[70px] pl-[50px];
     writing-mode: vertical-rl;
 
     .title {
-      @apply xl:text-[5rem] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[2];
+      @apply xl:text-[5rem] xl:tracking-[20px] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[3];
     }
 
     .content {
-      @apply xl:text-[3rem] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
+      @apply xl:text-[3rem] xl:tracking-[10px] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
+
     }
   }
 }
@@ -268,12 +254,14 @@ export default {
 .Block5 {
   @apply w-[100%] xl:h-[1200px] lg:h-[1000px] md:h-[940px] h-[800px] bg-MainColorBG relative overflow-hidden;
 }
+
 // 呼吸since1994
 .breathing {
   animation: breathing 3s ease-in-out infinite normal;
   border-radius: 2px;
   text-align: center;
 }
+
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -299,9 +287,9 @@ export default {
     transform: scale(0.9);
   }
 }
+
 // 動來動去的盒子
 .ShakeBox {
-  @apply bg-MainColorBG  bg-center 
-   flex justify-center;
+  @apply bg-MainColorBG bg-center flex justify-center;
 }
 </style>

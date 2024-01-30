@@ -242,7 +242,8 @@ export default {
           <div class="content-wrap">
             <p class="item">電話</p>
             <p class="content">
-              <a href="tel:0422258657">
+              <span class="md:inline-block hidden">(04)2225-8657&ensp;</span>
+              <a href="tel:0422258657" class="md:hidden inline-block">
                 (04)2225-8657&ensp;
               <i class="fa-solid fa-phone"></i>
               </a>
