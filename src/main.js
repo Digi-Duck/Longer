@@ -17,6 +17,8 @@ import $ from 'jquery';
 import 'lightbox2/dist/css/lightbox.css';
 import 'lightbox2/dist/js/lightbox.js';
 const app = createApp(App);
+// font-awesome
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 // jquery初始化

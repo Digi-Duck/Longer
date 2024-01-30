@@ -83,7 +83,7 @@ export default {
 
       this.isMenuOpen = !this.isMenuOpen;
       if (this.isMenuOpen) {
-        this.$refs.navContent.style.height = '561px';
+        this.$refs.navContent.style.height = '80vh';
         this.$refs.linkTop.classList.add('ani-line-top');
         this.$refs.linkCenter.classList.add('ani-line-center');
         this.$refs.linkBottom.classList.add('ani-line-bottom');
@@ -93,7 +93,6 @@ export default {
         this.$refs.linkCenter.classList.remove('ani-line-center');
         this.$refs.linkBottom.classList.remove('ani-line-bottom');
       }
-      console.log(this.isMenuOpen);
     },
 
   },
@@ -208,6 +207,7 @@ export default {
     >
     </iframe>
   </section>
+  <!-- <img src="" alt=""> -->
 
   <!-- 公版頁尾 -->
 
@@ -241,7 +241,12 @@ export default {
         <div class="container">
           <div class="content-wrap">
             <p class="item">電話</p>
-            <p class="content">(04)2225-8657</p>
+            <p class="content">
+              <a href="tel:0422258657">
+                (04)2225-8657&ensp;
+              <i class="fa-solid fa-phone"></i>
+              </a>
+            </p>
           </div>
           <div class="content-wrap">
             <p class="item">地址</p>
@@ -330,7 +335,7 @@ export default {
 
 //公版 nav
 header {
-  @apply lg:flex lg:justify-between lg:items-end w-[100%] md:h-[120px] h-[60px] fixed z-[3] lg:drop-shadow-[0_4px_20px_#262626] bg-EmphasizeColor;
+  @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_20px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[3] bg-EmphasizeColor;
 
   .ham-menu-all{
     @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
@@ -339,7 +344,7 @@ header {
       @apply w-full h-full text-[25px] relative;
 
       .link{
-        @apply w-[55%] md:h-[5px] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
+        @apply  md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
       }
       .link-1{
         @apply top-[35%];
@@ -365,10 +370,10 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[375px] h-0 lg:bg-[transparent] bg-[url('@/assets/img/generic/ham-menu-bg.png')] bg-no-repeat bg-bottom lg:duration-0 duration-200 lg:overflow-visible overflow-hidden;
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:bg-[transparent] lg:overflow-visible w-[calc(100vw_17px)] h-0 bg-[url('@/assets/img/generic/ham-menu-md-bg.png')] bg-no-repeat md:bg-bottom bg-cover lg:duration-0 duration-200 overflow-hidden lg:drop-shadow-none drop-shadow-[0_10px_15px_#262626];
 
     .navBar {
-      @apply  xl:px-[30px] lg:flex lg:pt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] items-center h-[50px] me-[15px] pt-[60px] px-[20px] text-[1.2rem] text-[#fff] rounded-t-lg text-center block;
+      @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] font-[ChenYuluoyan] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
@@ -384,7 +389,7 @@ main {
 // 公版頁尾
 // 雅芬有改 h-[60vh] --> h-[70vh]
 footer {
-  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[70vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-sm-bg.png')] bg-cover bg-no-repeat;
+  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[70vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
 
   .footer-l {
     @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
@@ -447,14 +452,14 @@ footer {
 }
 
 .ani-line-top{
-  animation: toCloseTop 0.2s linear 1 forwards;
+  animation: toCloseTop 0.2s 1 forwards;
 }
 .ani-line-center{
-  animation: toCloseCenter 0.1s linear 1 forwards;
+  animation: toCloseCenter 0.1s 1 forwards;
 }
 
 .ani-line-bottom{
-  animation: toCloseBottom 0.2s linear 1 forwards;
+  animation: toCloseBottom 0.2s 1 forwards;
 }
 
 // ham-menu animation
