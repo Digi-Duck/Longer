@@ -29,6 +29,8 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
+    const ShakeBoxId = document.querySelector('#ShakeBoxId');
+    ShakeBoxId.style.display="block";
   },
   methods: {
     formatDetail(detail) {
@@ -58,7 +60,7 @@ export default {
     <div class="curve  bg-MainColorBG  md:block hidden"></div>
     
     <section class="Block2">
-     <HomeTitle class="HomeTitle">交通資訊</HomeTitle> 
+     <HomeTitle class="HomeTitle lg:mt-[-260px] mt-[40px] md:mb-[0px] mb-[25px]">交通資訊</HomeTitle> 
      <!-- <blob2 class="right-[-30px]"></blob2>
      <blob3 class="bottom-[0px] left-[-30px] "></blob3> -->
       <div class="TrafficWay">
@@ -82,12 +84,12 @@ export default {
       </div>
     </section>
     
-    <!-- <section class="Block3">
-      <div class="curve rotate-180 scale-x-[-1]"></div>
+    <section class="Block3">
+      <div class="curve rotate-180 scale-x-[-1] "></div>
       <div class="bus">
         
       </div>
-    </section> -->
+    </section>
  
   </div>
 
@@ -186,7 +188,7 @@ export default {
 .Block3{
   @apply w-[100%]  bg-MainColorBG;
   .bus{
-  @apply w-[100px] h-[100px] bg-[black] mt-[85px] ;
+  @apply w-[100px] xl:h-[100px] lg:h-[60px] md:h-[30px]  mt-[85px] ;
 }
 }
 

@@ -25,8 +25,7 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet,
-    ShakeBox,
+    RankingListTablet,ShakeBox
   },
   data() {
     return {
@@ -34,11 +33,9 @@ export default {
     };
   },
   mounted() {
-    const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    ShakeBoxId.style.display = "none";
-    // 發送hakeBoxMobileFlag:false,
     window.scrollTo(0, 0);
-
+    const ShakeBoxId = document.querySelector('#ShakeBoxId')
+    ShakeBoxId.style.display="none"
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
     // const maskElement = document.querySelector(".mask");
@@ -52,8 +49,10 @@ export default {
   },
   methods: {
     scrollToLonger() {
-      const slognElement = this.$refs.longerSlogn;
-      slognElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollTo({
+        top: 1000,
+        behavior: "smooth", // 添加平滑滚动效果
+      });
     },
     MaskMove() {
       // const windowBottom = window.scrollY + window.innerHeight;
@@ -93,36 +92,43 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
+    <source
+      media="(min-width:1800px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:1200px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:768px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:0px)"
+      srcset="@/assets/img/generic/banner-sm.png"
+    />
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container">
-    <div class="since1994 breathing" @click="scrollToLonger">
-      <p>since 1994</p>
-      <i class="fa-solid fa-chevron-down text-[35px]"></i>
-
-    </div>
+    <div class="since1994 breathing" @click="scrollToLonger">since 1994</div>
   </section>
   <section class="longer-bg bg-MainColorBG">
     <section class="longer-introduce">
-      <div class="longer-position" ref="longerSlogn">
+      <div class="longer-position">
         <p class="title">龍格畫室</p>
-        <div>
-          <p class="content">一間成立於1994年的小畫室</p>
-          <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
-          <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
-        </div>
+        <p class="content">一間成立於1994年的小畫室</p>
+        <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
+        <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
       </div>
       <!-- <blob2 class="top-[100%] left-[-10%]"></blob2> -->
     </section>
   </section>
 
+  <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
-    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
+    <HomeTitle class="bg-MainColorBG ">關於龍格</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
 
@@ -131,13 +137,13 @@ export default {
       <div class="Block4TopCurve"></div>
     </div>
     <div class="Block4">
-      <HomeTitle>課程資訊</HomeTitle>
+      <HomeTitle class="xl:mt-[0px] lg:mt-[-200px]">課程資訊</HomeTitle>
       <CourseInfo></CourseInfo>
       <div ref="Mask" class="pen">
         <!-- <div class="mask" :style="{ width: `${WidthControl}% ` }"></div> -->
       </div>
 
-      <HomeTitle class="pt-[30px]">學生作品</HomeTitle>
+      <HomeTitle>學生作品</HomeTitle>
       <StudentWork></StudentWork>
     </div>
     <div class="Block4Buttom">
@@ -147,9 +153,7 @@ export default {
 
   <section>
     <div class="Block5">
-      <HomeTitle class="xl:mt-[0px] lg:mt-[-160px] md:pb-[30px]"
-        >歷年榜單</HomeTitle
-      >
+      <HomeTitle class="mt-[30px] md:mt-[0px]">歷年榜單</HomeTitle>
       <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
       <blob3 class="lg:top-[0px] lg:right-[-30px] md:hidden"></blob3>
 
@@ -157,10 +161,12 @@ export default {
       <RankingList></RankingList>
     </div>
     <div class="ShakeBox">
-      <ShakeBox></ShakeBox>
-    </div>
+    <ShakeBox></ShakeBox>
+  </div>
   </section>
-  <section></section>
+  <section>
+ 
+  </section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -189,9 +195,15 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply z-[2] text-[#fff] font-[Castoro-Regular] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] w-[100px] h-[100px] flex justify-center items-center lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem] xl:top-[-85px] lg:top-[-57px] top-[-50px] xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)] flex flex-col gap-[5px];
+    @apply z-[2] text-[#fff]
+    bg-EmphasizeColor opacity-[0.7] rounded-full absolute 
+    xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px]  w-[100px] h-[100px]
+    flex justify-center items-center 
+    lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem]
+    xl:top-[-85px] lg:top-[-57px] 
+    top-[-50px] 
+    xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)];
     // translate-x-[-50%]
-
   }
 }
 
@@ -201,16 +213,15 @@ export default {
 
   .longer-position {
     // @apply absolute top-[0%] left-[60%];
-    @apply items-start pt-[130px] xl:pl-[230px] lg:pl-[100px] md:pl-[70px] pl-[50px];
+    @apply items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
     writing-mode: vertical-rl;
 
     .title {
-      @apply xl:text-[5rem] xl:tracking-[20px] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[3];
+      @apply xl:text-[5rem] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[2];
     }
 
     .content {
-      @apply xl:text-[3rem] xl:tracking-[4px] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
-
+      @apply xl:text-[3rem] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
     }
   }
 }
@@ -227,22 +238,26 @@ export default {
   @apply w-[100%] h-[289px] bg-MainColorBG;
 
   .Block4TopCurve {
-    @apply w-[100%] h-[100%]  bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve1.svg")] bg-no-repeat bg-cover;
   }
 }
 
 .Block4Buttom {
-  @apply w-[100%] xl:h-[500px] lg:h-[400px] md:h-[250px] h-[150px] bg-MainColorBG;
+  @apply w-[100%] h-[450px] bg-MainColorBG;
 
   .Block4ButtomCurve {
-    @apply w-[100%] h-[100%]  bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] 
-    bg-no-repeat bg-cover bg-top relative
-    top-[-1px];
+    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] bg-no-repeat bg-cover bg-center;
   }
 }
 
 .Block4 {
-  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1400px] lg:h-[1438px] md:h-[1440px] h-[1900px];
+  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1600px] lg:h-[1438px] md:h-[1460px] h-[2096px];
+
+  // .pen {
+  //   @apply  bg-[url("@/assets/img/homepage/pen.png")] bg-contain  bg-no-repeat bg-center relative
+  //   xl:h-[527px] lg:h-[291px]
+  //   mb-[100px] mt-[100px] ;
+  // }
 }
 
 // GSAP
@@ -252,16 +267,14 @@ export default {
 }
 
 .Block5 {
-  @apply w-[100%] xl:h-[1200px] lg:h-[1000px] md:h-[940px] h-[800px] bg-MainColorBG relative overflow-hidden;
+  @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
-
 // 呼吸since1994
 .breathing {
   animation: breathing 3s ease-in-out infinite normal;
   border-radius: 2px;
   text-align: center;
 }
-
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -287,9 +300,9 @@ export default {
     transform: scale(0.9);
   }
 }
-
 // 動來動去的盒子
 .ShakeBox {
-  @apply bg-MainColorBG bg-center flex justify-center;
+  @apply bg-MainColorBG  bg-center 
+   flex justify-center;
 }
 </style>
