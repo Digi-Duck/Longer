@@ -64,6 +64,8 @@ export default {
         this.$refs.linkCenter.classList.remove('ani-line-center');
         this.$refs.linkBottom.classList.remove('ani-line-bottom');
         this.isMenuOpen = !this.isMenuOpen
+        document.documentElement.style.overflow = 'auto';
+
       }
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
@@ -84,7 +86,8 @@ export default {
       console.log(window.innerWidth);
       this.isMenuOpen = !this.isMenuOpen;
       if (this.isMenuOpen) {
-        
+        // 將卷軸隱藏
+        document.documentElement.style.overflow = 'hidden';
         this.$refs.linkTop.classList.add('ani-line-top');
         this.$refs.linkCenter.classList.add('ani-line-center');
         this.$refs.linkBottom.classList.add('ani-line-bottom');
@@ -94,6 +97,8 @@ export default {
           this.$refs.navContent.style.width = '100vw';
         }
       }else{
+        // 顯示卷軸
+        document.documentElement.style.overflow = 'auto';
         this.$refs.navContent.style.width = '0px';
         this.$refs.linkTop.classList.remove('ani-line-top');
         this.$refs.linkCenter.classList.remove('ani-line-center');
