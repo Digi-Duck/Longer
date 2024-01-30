@@ -3,6 +3,7 @@ import HomeTitle from "@/components/homepage/HomeTitle.vue";
 import pic1 from "@/assets/img/admission_list/pic-1.svg";
 import pic2 from "@/assets/img/admission_list/pic-2.svg";
 import pic3 from "@/assets/img/admission_list/pic-3.svg";
+// import phonePic3 from "@/assets/img/admission_list/phone-pic-3.svg";
 // import hookpic from "@/assets/img/admission_list/hook.svg"
 
 export default {
@@ -60,17 +61,17 @@ export default {
 .All {
   @apply flex flex-col  items-center bg-MainColorBG;
   .block {
-    @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[2060px] md:h-[1700px] h-[1000px] ;
+    @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[1920px] md:h-[1700px] h-[1000px] ;
     .ImgBox {
       @apply flex flex-col items-center xl:w-[60%] lg:w-[70%] md:w-[85%] w-[95%] ;
       .hook {
-        @apply md:w-[500px] md:h-[114px] w-[500px] h-[70px] bg-[url('@/assets/img/admission_list/hook.svg')];
+        @apply md:w-[500px] md:h-[114px] w-[500px] h-[70px]  bg-[url('@/assets/img/admission_list/hook.svg')] ;
       }
       .content {
-        @apply w-[100%] relative rounded-[24px] xl:border-[30px] lg:border-[24px] md:border-[16px] border-[10px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
+        @apply  relative rounded-[24px] xl:border-[30px] lg:border-[24px] md:border-[16px] border-[10px] border-[#500000] shadow-[#2f1f0e] shadow-xl overflow-hidden;
       }
       img {
-        @apply w-[100%];
+        @apply  xl:h-[470px] lg:h-[316.13px] md:h-[292.2px]  w-[100%];
       }
       .content:hover {
         border-color: #ffc700;
