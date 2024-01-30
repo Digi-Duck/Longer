@@ -374,7 +374,7 @@ header {
     @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:bg-[transparent] lg:overflow-visible w-[calc(100vw_17px)] h-0 bg-[url('@/assets/img/generic/ham-menu-md-bg.png')] bg-no-repeat md:bg-bottom bg-cover lg:duration-0 duration-200 overflow-hidden lg:drop-shadow-none drop-shadow-[0_10px_15px_#262626];
 
     .navBar {
-      @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] font-[ChenYuluoyan] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
+      @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
@@ -390,7 +390,7 @@ main {
 // 公版頁尾
 // 雅芬有改 h-[60vh] --> h-[70vh]
 footer {
-  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] lg:h-[70vh] h-[70vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
+  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full xl:h-[95vh] md:h-[70vh] h-[60vh] z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
 
   .footer-l {
     @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;

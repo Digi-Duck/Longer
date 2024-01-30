@@ -121,7 +121,7 @@ export default {
         <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
         <p class="content">至今已成為在地人口耳相傳的老字號畫室。</p>
       </div>
-      <!-- <blob2 class="top-[100%] left-[-10%]"></blob2> -->
+      <blob2 class="blob2"></blob2>
     </section>
   </section>
 
@@ -181,12 +181,10 @@ export default {
   }
 }
 
-// .banner {
-//   @apply w-[100%] h-[calc(100vh_-_120px)] bg-[url('@/assets/img/generic/banner.png')] bg-cover bg-no-repeat;
-// }
+
 .banner {
   img {
-    @apply lg:h-[calc(100vh_-_120px)] w-full;
+    @apply lg:h-[calc(100vh_-_120px)] md:h-auto h-[calc(100vh_-_60px)] w-full;
   }
 }
 
@@ -195,34 +193,32 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply z-[2] text-[#fff]
-    bg-EmphasizeColor opacity-[0.7] rounded-full absolute 
-    xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px]  w-[100px] h-[100px]
-    flex justify-center items-center 
-    lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem]
-    xl:top-[-85px] lg:top-[-57px] 
-    top-[-50px] 
-    xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)];
-    // translate-x-[-50%]
+    @apply z-[2] text-[#fff] font-[Castoro-Regular] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] w-[100px] h-[100px] flex justify-center items-center lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem] xl:top-[-85px] lg:top-[-57px] top-[-50px] xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)] flex-col gap-[5px] xl:tracking-[4px];
+
   }
 }
 
 // 龍格畫室直式文字
 .longer-introduce {
-  @apply xl:h-[150vh] lg:h-[100vh] md:h-[60vh] h-[65vh] w-full flex justify-center text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
+  @apply xl:h-[140vh] lg:h-[95vh] md:h-[60vh] h-[65vh] w-full flex justify-center relative text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
 
   .longer-position {
     // @apply absolute top-[0%] left-[60%];
-    @apply items-start pt-[130px] xl:pl-[150px] lg:pl-[100px] md:pl-[70px] pl-[50px];
+    @apply xl:pt-[160px] xl:pl-[320px] lg:pt-[100px] lg:pl-[190px] md:pt-[80px] md:pl-[120px] pt-[90px] pl-[100px];
     writing-mode: vertical-rl;
 
     .title {
-      @apply xl:text-[5rem] lg:text-[3rem] md:text-[2rem] text-[1.5rem] leading-[2];
+      @apply xl:text-[4rem] lg:text-[2.69rem] lg:tracking-[20px] md:text-[1.62rem] md:tracking-[10px] text-[1.25rem] tracking-[10px] leading-[5];
     }
 
     .content {
-      @apply xl:text-[3rem] lg:text-[2rem] md:text-[1rem] text-[1rem] leading-[2];
+      @apply xl:text-[2.5rem] xl:tracking-[6px] lg:text-[1.72rem] lg:tracking-[4px] md:text-[1rem] md:tracking-[2.8px] text-[0.87rem] tracking-[5px] leading-[2];
+
     }
+  }
+
+  .blob2{
+    @apply absolute xl:w-auto xl:top-[80vh] lg:w-[300px] lg:top-[50vh] md:w-[200px] md:top-[20vh] md:left-[-10vh] w-[0px];
   }
 }
 
