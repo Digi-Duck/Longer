@@ -64,11 +64,6 @@ import plaster03 from '@/assets/img/student_work/plaster_img/plaster_03.jpg';
 import plaster04 from '@/assets/img/student_work/plaster_img/plaster_04.jpg';
 import plaster05 from '@/assets/img/student_work/plaster_img/plaster_05.jpg';
 
-// 導入圖片-建築模型
-// import architectural01 from '@/assets/img/student_work/architectural_img/architectural_01.jpg';
-// import architectural02 from '@/assets/img/student_work/architectural_img/architectural_02.jpg';
-// import architectural03 from '@/assets/img/student_work/architectural_img/architectural_03.jpg';
-// import architectural04 from '@/assets/img/student_work/architectural_img/architectural_04.jpg';
 // 導入圖片-兒童美術
 import childArt01 from '@/assets/img/student_work/child_art_img/child_art_01.jpg';
 import childArt02 from '@/assets/img/student_work/child_art_img/child_art_02.jpg';

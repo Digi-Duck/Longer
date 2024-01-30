@@ -55,8 +55,13 @@ export default {
       this.colorBlockStyle.top = this.y + window.scrollY - 25;
     },
     setActiveLink(link) {
-      this.isMenuOpen = false;
+      // 紀錄順序
       this.activeLink = link;
+      // 關閉選單
+      if (this.isMenuOpen) {
+        this.$refs.navContent.style.height = '0px';
+        this.isMenuOpen = !this.isMenuOpen;
+      }
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
     scrollIng() {
@@ -71,9 +76,16 @@ export default {
         this.scrollBottom = false;
       }
     },
-    closeMenu(e){
-      console.log(e.target);
-    }
+    openMenu(){
+
+      this.isMenuOpen = !this.isMenuOpen;
+      if (this.isMenuOpen) {
+        this.$refs.navContent.style.height = '561px';
+      }else{
+        this.$refs.navContent.style.height = '0px';
+      }
+      console.log(this.isMenuOpen);
+    },
 
   },
 };
@@ -91,11 +103,11 @@ export default {
   ></div>
   <header class="" v-if="scrollBottom == false">
         <input type="checkbox" id="ham" hidden>
-        <label for="ham" class="ham-menu-all" @click="closeMenu">
+        <label for="ham" class="ham-menu-all" @click="openMenu">
           <div class="menu">
-           <div class="link link-1"></div>
-           <div class="link link-2"></div>
-           <div class="link link-3"></div>
+           <div class="link link-1" ref="linkTop"></div>
+           <div class="link link-2" ref="linkCenter"></div>
+           <div class="link link-3" ref="linkBottom"></div>
           </div>
         </label>
     <!-- LOGO -->
@@ -112,7 +124,7 @@ export default {
       />
     </RouterLink>
     <!-- nav Btn -->
-    <nav>
+    <nav ref="navContent">
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
       <RouterLink
         to="/about"
@@ -332,16 +344,19 @@ header {
     
   }
 
-  #ham:checked ~nav{
+  // #ham:checked ~nav{
+  //   @apply h-[561px];
+  // }
+  .navHeight{
     @apply h-[561px];
   }
-  #ham:checked +.ham-menu-all .link-1{
+  .link-top{
     @apply top-[50%] rotate-[30deg];
   }
-  #ham:checked +.ham-menu-all .link-2{
+  .link-center{
     @apply hidden;
   }
-  #ham:checked +.ham-menu-all .link-3{
+  .link-bottom{
     @apply top-[50%] rotate-[-30deg];
   }
 
@@ -355,10 +370,10 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[375px] lg:h-full h-0 lg:bg-none lg:bg-[transparent] bg-[url('@/assets/img/generic/ham-menu-bg.png')] bg-no-repeat bg-bottom lg:duration-0 duration-200 truncate;
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] w-[375px] h-0 lg:bg-[transparent] bg-[url('@/assets/img/generic/ham-menu-bg.png')] bg-no-repeat bg-bottom lg:duration-0 duration-200 lg:overflow-visible overflow-hidden;
 
     .navBar {
-      @apply lg:flex items-center h-[50px] me-[15px] xl:px-[30px] lg:pt-0 pt-[60px] px-[20px] text-[1.2rem] text-[#fff] lg:bg-[#024b06] rounded-t-lg lg:shadow-[2px_0px_3px_#333] text-center block;
+      @apply  xl:px-[30px] lg:flex lg:pt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] items-center h-[50px] me-[15px] pt-[60px] px-[20px] text-[1.2rem] text-[#fff] rounded-t-lg text-center block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
