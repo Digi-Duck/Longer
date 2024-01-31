@@ -16,8 +16,9 @@ import college05 from "@/assets/img/admission_list/college/college_5.png";
 import college06 from "@/assets/img/admission_list/college/college_6.png";
 import college07 from "@/assets/img/admission_list/college/college_7.png";
 // 導入榜單-高中
-// import high01 from "@/assets/img/admission_list/college/college_7.png";
-
+import high01 from "@/assets/img/admission_list/high_school/high_school_1.png";
+// 導入榜單-國中
+import junior01 from "@/assets/img/admission_list/junior_high/junior_high_1.png";
 
 export default {
   components: { HomeTitle },
@@ -34,6 +35,9 @@ export default {
       listImg:[
         {
           title:'升大學優良榜單',
+          dataName:'college',
+          mdsrc: pic1,
+          smsrc: phonePic1,
           imgPath:[
             college01,
             college02,
@@ -42,6 +46,24 @@ export default {
             college05,
             college06,
             college07,
+          ],
+        },
+        {
+          title:'升高中優良榜單',
+          dataName:'high',
+          mdsrc: pic2,
+          smsrc: phonePic2,
+          imgPath:[
+            high01,
+          ],
+        },
+        {
+          title:'升國中優良榜單',
+          dataName:'junior',
+          mdsrc: pic3,
+          smsrc: phonePic3,
+          imgPath:[
+            junior01,
           ],
         },
 
@@ -64,7 +86,7 @@ export default {
     <div class="All">
       <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">歷年榜單</HomeTitle>
       <div class="block md:mb-[0px] mb-[140px]">
-        <div class="ImgBox">
+        <!-- <div class="ImgBox">
           <div class="hook md:block hidden"></div>
           <div class="hook-phone md:hidden"></div>
           <div class="content">
@@ -89,6 +111,15 @@ export default {
             <img class="md:block hidden" :src="pic3" alt="" />
             <img class="md:hidden" :src="phonePic3" alt="" />
             <div class="title">升國中優良榜單</div>
+          </div>
+        </div> -->
+        <div v-for="item in listImg" :key="item.id" class="ImgBox">
+          <div class="hook md:block hidden"></div>
+          <div class="hook-phone md:hidden"></div>
+          <div class="content">
+            <img class="md:block hidden" :src="item.mdsrc" alt="" />
+            <img class="md:hidden" :src="item.smsrc" alt="" />
+            <div class="title">{{ item.title }}</div>
           </div>
         </div>
       </div>
