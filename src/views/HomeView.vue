@@ -35,9 +35,8 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    ShakeBoxId.style.display = "none";
-    window.addEventListener('scroll',this.scrollTest)
+    // const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    // ShakeBoxId.style.display = "none";
     // 發送hakeBoxMobileFlag:false,
 
     // 在組件掛載後添加 scroll 事件監聽
@@ -53,9 +52,9 @@ export default {
   },
   methods: {
     scrollToLonger() {
-      this.$refs.longerSlogn.scrollIntoView({ behavior: 'smooth' });
+      this.$refs.longerSlogn.scrollIntoView({ behavior: "smooth" });
     },
-    scrollTest(){
+    scrollTest() {
       console.log(this.$refs.longerSlogn.scrollTop);
     },
     MaskMove() {
@@ -174,6 +173,7 @@ export default {
 // .Ranking {
 //   @apply flex  align-center;
 // }
+
 .Ranking {
   @apply flex items-center h-[152px] w-[100%] bg-[MainColorBG];
 
@@ -297,5 +297,11 @@ export default {
 // 動來動去的盒子
 .ShakeBox {
   @apply bg-MainColorBG bg-center flex justify-center;
+}
+</style>
+
+<style>
+#ShakeBoxId {
+  display: none;
 }
 </style>

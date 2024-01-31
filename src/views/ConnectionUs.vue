@@ -29,8 +29,8 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector('#ShakeBoxId');
-    ShakeBoxId.style.display="block";
+    // const ShakeBoxId = document.querySelector('#ShakeBoxId');
+    // ShakeBoxId.style.display="block";
 
    
   },
@@ -218,4 +218,10 @@ export default {
 
 
 
+</style>
+<!-- 調整灰色抖抖得顯示 -->
+<style>
+#ShakeBoxId{
+  display: block;
+}
 </style>

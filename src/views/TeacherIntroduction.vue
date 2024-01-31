@@ -55,8 +55,8 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    ShakeBoxId.style.display = "block";
+    // const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    // ShakeBoxId.style.display = "block";
   },
 };
 </script>
@@ -90,13 +90,13 @@ export default {
       ></div>
       <!-- 筆-綠色 -->
       <img
-        class="absolute xl:w-[300px] lg:w-[150px] md:w-[120px] lg:right-[0%] md:left-[6%] md:rotate-90 lg:top-[30%] lg:block hidden md:block md:top-[32%]"
+        class="absolute xl:w-[300px] lg:w-[150px] md:w-[120px] lg:left-[90%] md:left-[6%] md:rotate-90 lg:top-[30%] lg:block hidden md:block md:top-[32%]"
         :src="IMG_PenGreen"
         alt=""
       />
       <!--  筆-粉色  -->
       <img
-        class="absolute xl:left-[0%] md:right-[6%] xl:top-[42%] md:top-[60%] md:rotate-180 xl:block lg:hidden md:block md:w-[120px] hidden"
+        class="absolute xl:left-[0%] md:right-[6%] xl:top-[42%] md:top-[60%] md:rotate-180 xl:hidden lg:hidden md:block md:w-[120px] hidden"
         :src="IMG_PenPink"
         alt=""
       />
@@ -253,12 +253,12 @@ export default {
       @apply text-[1.5rem] xl:w-[100%] lg:w-[478px];
       .title {
         @apply pt-[32px] pb-[32px] md:flex-none flex justify-center 
-        md:font-sans  font-[GenWanMin-L];
+        md:font-[GenWanMin-L] font-[GenWanMin-L];
       }
     }
     h1 {
       @apply md:text-[1.5rem] text-[2rem] 
-      md:font-sans font-[ChenYuluoyan] font-semibold
+      md:font-[GenWanMin-L] font-[ChenYuluoyan] font-semibold
        md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")] bg-no-repeat bg-bottom;
     }
   }
@@ -327,4 +327,10 @@ export default {
 // .pic {
 //   @apply w-[600px] h-[415px] bg-[gray];
 // }
+</style>
+<!-- 調整灰色抖抖得顯示 -->
+<style>
+#ShakeBoxId {
+  display: block;
+}
 </style>

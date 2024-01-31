@@ -26,15 +26,16 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    ShakeBoxId.style.display = "block";
-    // console.log("123", document.querySelector("#colorBlock"));
   },
   methods: {
     checkCollision() {
       console.log(1);
       this.isY = true;
     },
+    // shakebox_fn() {
+    //   const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    // ShakeBoxId.style.display = "block";
+    // },
   },
 };
 </script>
@@ -196,7 +197,7 @@ export default {
           @apply mb-[24px];
 
           .changeLine {
-            @apply  lg:font-[GenWanMin-L] font-[ChenYuluoyan] font-medium  xl:text-[1.75rem] text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
+            @apply lg:font-[GenWanMin-L] font-[ChenYuluoyan] font-medium  xl:text-[1.75rem] text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
           }
 
           .symbol {
@@ -264,5 +265,11 @@ export default {
 
 .crayo {
   @apply w-[512px] h-[512px] absolute right-[0%] bottom-[0%] md:block hidden xl:top-[2050px] lg:top-[2150px] lg:block md:hidden;
+}
+</style>
+<!-- 調整灰色抖抖得顯示 -->
+<style>
+#ShakeBoxId {
+  display: block;
 }
 </style>

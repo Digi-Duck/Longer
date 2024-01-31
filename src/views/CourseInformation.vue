@@ -19,67 +19,65 @@ import smBg02 from "@/assets/img/courseInformation/md_blob_sm_bg_02.svg";
 import smBg03 from "@/assets/img/courseInformation/md_blob_sm_bg_03.svg";
 import smBg04 from "@/assets/img/courseInformation/md_blob_sm_bg_04.svg";
 
-
 export default {
   components: { HomeTitle },
   data() {
     return {
-      
       bgImg: [
         {
-          imgSrc:bg01,
-          imgAlt:'background01',
-          imgclass:'lg-bg lg-bg01 ',
+          imgSrc: bg01,
+          imgAlt: "background01",
+          imgclass: "lg-bg lg-bg01 ",
         },
         {
-          imgSrc:bg02,
-          imgAlt:'background02',
-          imgclass:'lg-bg lg-bg02 ',
+          imgSrc: bg02,
+          imgAlt: "background02",
+          imgclass: "lg-bg lg-bg02 ",
         },
         {
-          imgSrc:bg03,
-          imgAlt:'background03',
-          imgclass:'lg-bg lg-bg03 ',
+          imgSrc: bg03,
+          imgAlt: "background03",
+          imgclass: "lg-bg lg-bg03 ",
         },
         {
-          imgSrc:bigBg01,
-          imgAlt:'big-blob-backgroundImg01',
-          imgclass:'md-bg big-bg01 ',
+          imgSrc: bigBg01,
+          imgAlt: "big-blob-backgroundImg01",
+          imgclass: "md-bg big-bg01 ",
         },
         {
-          imgSrc:bigBg02,
-          imgAlt:'big-blob-backgroundImg02',
-          imgclass:'md-bg big-bg02 ',
+          imgSrc: bigBg02,
+          imgAlt: "big-blob-backgroundImg02",
+          imgclass: "md-bg big-bg02 ",
         },
         {
-          imgSrc:bigBg03,
-          imgAlt:'big-blob-backgroundImg03',
-          imgclass:'md-bg big-bg03 ',
+          imgSrc: bigBg03,
+          imgAlt: "big-blob-backgroundImg03",
+          imgclass: "md-bg big-bg03 ",
         },
         {
-          imgSrc:bigBg04,
-          imgAlt:'big-blob-backgroundImg04',
-          imgclass:'md-bg big-bg04 ',
+          imgSrc: bigBg04,
+          imgAlt: "big-blob-backgroundImg04",
+          imgclass: "md-bg big-bg04 ",
         },
         {
-          imgSrc:smBg01,
-          imgAlt:'sm-blob-backgroundImg04',
-          imgclass:'md-bg-sm sm-bg01 ',
+          imgSrc: smBg01,
+          imgAlt: "sm-blob-backgroundImg04",
+          imgclass: "md-bg-sm sm-bg01 ",
         },
         {
-          imgSrc:smBg02,
-          imgAlt:'sm-blob-backgroundImg04',
-          imgclass:'md-bg-sm sm-bg02 ',
+          imgSrc: smBg02,
+          imgAlt: "sm-blob-backgroundImg04",
+          imgclass: "md-bg-sm sm-bg02 ",
         },
         {
-          imgSrc:smBg03,
-          imgAlt:'sm-blob-backgroundImg04',
-          imgclass:'md-bg-sm sm-bg03 ',
+          imgSrc: smBg03,
+          imgAlt: "sm-blob-backgroundImg04",
+          imgclass: "md-bg-sm sm-bg03 ",
         },
         {
-          imgSrc:smBg04,
-          imgAlt:'sm-blob-backgroundImg04',
-          imgclass:'md-bg-sm sm-bg04 ',
+          imgSrc: smBg04,
+          imgAlt: "sm-blob-backgroundImg04",
+          imgclass: "md-bg-sm sm-bg04 ",
         },
       ],
       courseContent: [
@@ -116,23 +114,36 @@ export default {
   mounted() {
     window.scrollTo(0, 0);
   },
-
 };
 </script>
-<template >
+<template>
   <NavCurve class="md:block hidden"></NavCurve>
   <NavMobile class="md:hidden block"></NavMobile>
-  <!-- 課程資訊主要內容 --> 
+  <!-- 課程資訊主要內容 -->
   <main>
     <!-- 背景圖片 -->
-    <img v-for="item in bgImg" :key="item.id" :src="item.imgSrc" :alt="item.imgAlt" :class="item.imgclass">
+    <img
+      v-for="item in bgImg"
+      :key="item.id"
+      :src="item.imgSrc"
+      :alt="item.imgAlt"
+      :class="item.imgclass"
+    />
     <HomeTitle class="HomeTitle">課程資訊</HomeTitle>
     <section>
       <div class="bg-1"></div>
       <section class="container" v-for="item in courseContent" :key="item.id">
-        <section class="img-area" :style="{ backgroundImage: `url(${item.imgPath})` }"></section>
+        <section
+          class="img-area"
+          :style="{ backgroundImage: `url(${item.imgPath})` }"
+        ></section>
         <section class="text-area">
-          <section data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="text-content">
+          <section
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            class="text-content"
+          >
             <p class="title">{{ item.title }}</p>
             <p class="introduce">{{ item.introduce }}</p>
             <p class="content">{{ item.content }}</p>
@@ -143,9 +154,8 @@ export default {
     </section>
     <!-- <div data-aos="fade-up" data-aos-duration="1000" class="aos">
             这是一个使用aos.js的动画效果
-        </div> -->   
+        </div> -->
   </main>
-
 </template>
 <style lang="scss" scoped>
 main {
@@ -168,35 +178,35 @@ main {
     @apply xl:bottom-[-5%] bottom-[-7%] left-0;
   }
   // md & sm背景圖片定位
-  .md-bg{
+  .md-bg {
     @apply lg:hidden md:h-[80vh] h-[50vh] w-full absolute right-0;
   }
-  .big-bg01{
-    @apply  md:top-[10%] top-[16%];
+  .big-bg01 {
+    @apply md:top-[10%] top-[16%];
   }
-  .big-bg02{
-    @apply  md:top-[35%] top-[38%];
+  .big-bg02 {
+    @apply md:top-[35%] top-[38%];
   }
-  .big-bg03{
-    @apply  md:top-[58%] top-[60%];
+  .big-bg03 {
+    @apply md:top-[58%] top-[60%];
   }
-  .big-bg04{
-    @apply  md:top-[80%] top-[85%];
+  .big-bg04 {
+    @apply md:top-[80%] top-[85%];
   }
-  .md-bg-sm{
+  .md-bg-sm {
     @apply lg:hidden md:inline-block hidden absolute;
   }
-  .sm-bg01{
-    @apply  top-[22%] right-0;
+  .sm-bg01 {
+    @apply top-[22%] right-0;
   }
-  .sm-bg02{
-    @apply  top-[50%] left-0;
+  .sm-bg02 {
+    @apply top-[50%] left-0;
   }
-  .sm-bg03{
-    @apply  top-[70%] right-0;
+  .sm-bg03 {
+    @apply top-[70%] right-0;
   }
-  .sm-bg04{
-    @apply  top-[92%] left-0;
+  .sm-bg04 {
+    @apply top-[92%] left-0;
   }
 
   // md & sm背景圖定位
@@ -208,13 +218,11 @@ main {
   section {
     @apply flex justify-center flex-wrap max-w-[1415px] mx-[auto] z-[1];
 
-
     .container {
       @apply xl:gap-[20px] xl:max-w-[1800px] lg:max-w-[910px] flex flex-wrap gap-0 w-full;
 
       &:nth-child(odd) {
         @apply flex-row-reverse;
-
 
         .text-area {
           @apply lg:justify-end;
@@ -258,4 +266,11 @@ main {
   .aos {
     @apply w-[200px] h-[200px];
   }
-}</style>
+}
+</style>
+<!-- 調整灰色抖抖得顯示 -->
+<style>
+#ShakeBoxId {
+  display: block;
+}
+</style>
