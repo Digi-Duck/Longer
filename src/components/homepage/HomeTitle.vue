@@ -21,10 +21,10 @@ export default {};
     md:bg-[url('@/assets/img/homepage/CommonIcon/YLdrawLaptop.svg')]
     bg-[url('@/assets/img/homepage/CommonIcon/YLdrawMobile.svg')]
     bg-contain bg-no-repeat bg-center 
+    xl:text-[4rem]
     lg:text-[3.25rem]
     md:text-[1.875rem]
-    text-[1.5rem]
-
+    text-[1.75rem];
   }
 }
 </style>

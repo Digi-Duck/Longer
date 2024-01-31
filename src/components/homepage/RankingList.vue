@@ -18,32 +18,6 @@ export default {
             { name: "陳O禧", school: "國立台北教育大學藝術與造形設計學系" },
             { name: "趙O萱", school: "國立台北教育大學藝術與造形設計學系" },
             { name: "林O廷", school: "國立嘉義大學視覺藝術學系" },
-            { name: "楊O慈", school: "國立雲林科技大學創意生活設計系" },
-            { name: "蘇O柔", school: "國立高雄應用科技大學文化創意產業系" },
-            { name: "謝O佑", school: "國立金門大學建築系" },
-            { name: "楊O萱", school: "銘傳大學商品設計系" },
-            { name: "何O萱", school: "銘傳大學數位媒體設計系" },
-            { name: "陳O嘉", school: "實踐大學建築系" },
-            { name: "劉O芳", school: "東海大學景觀系" },
-            { name: "蔡O弘", school: "東海大學工業設計系(轉學)" },
-            { name: "洪O鈞", school: "逢甲大學都市計畫與空間資訊組" },
-            { name: "林O君", school: "亞洲大學視覺傳達設計系企業形象設計組" },
-            { name: "楊O霖", school: "亞洲大學時尚設計學系精品設計組" },
-            { name: "陳O毓", school: "朝陽科技大學景觀及都市設計系" },
-            { name: "林O俞", school: "僑光科技大學電腦輔助工業設計系產品設計" },
-            { name: "詹O茹", school: "崑山科技大學視覺傳達設計系" },
-            { name: "廖O瑋", school: "崑山科技大學視覺傳達設計系" },
-            { name: "蔡O紋", school: "南開科技大學文化創意與設計系" },
-            { name: "賴O禎", school: "豐原高中美術班" },
-            { name: "施O綺", school: "五權國中美術班" },
-            { name: "廖O筑", school: "五權國中美術班" },
-            { name: "王O呈", school: "五權國中美術班" },
-            { name: "黃O靜", school: "五權國中美術班" },
-            { name: "何O芝", school: "五權國中美術班" },
-            { name: "徐O瑩", school: "五權國中美術班" },
-            { name: "魏O涵", school: "五權國中美術班" },
-            { name: "黃O淇", school: "至善國中美術班" },
-            { name: "游O蔚", school: "至善國中美術班" },
           ],
         },
         {
@@ -61,32 +35,7 @@ export default {
             { name: "林O晟", school: "國立台中科大室內設計系" },
             { name: "廖O敏", school: "大同大學工業設計系" },
             { name: "楊O樂", school: "銘傳大學商品設計學系" },
-            { name: "楊O綺", school: "亞洲大學時尚設計學系(時尚服裝設計組)" },
-            { name: "廖O媜", school: "亞洲大學時尚設計學系(時尚服裝設計組)" },
-            { name: "游O尹", school: "大葉大學工業設計系" },
-            { name: "柳O宜", school: "大葉大學工業設計系" },
-            { name: "米O蒨", school: "朝陽科大建築系室內設計組" },
-            { name: "江O雄", school: "朝陽科大視覺傳達設計系" },
-            { name: "吳O筳", school: "明志科大視覺傳達系" },
-            { name: "林O穎", school: "嶺東科大視覺傳達系" },
-            { name: "呂O泰", school: "嶺東科大數位媒體設計系" },
-            { name: "劉O伶", school: "嶺東科大創意產品設計系" },
-            { name: "邱O婷", school: "台南應用科大視覺傳達系" },
-            { name: "陳O吟", school: "台南應用科大商品設計系" },
-            { name: "廖O閔", school: "僑光科大多媒體與遊戲設計系" },
-            { name: "賴O湘", school: "僑光科大多媒體與遊戲設計系" },
-            { name: "蔡O穎", school: "東方設計學院遊戲動畫系" },
-            { name: "楊O翔", school: "實踐大學服裝設計與經營學系" },
-            { name: "鄭O晴", school: "國立豐原高中美術班" },
-            { name: "楊O伃", school: "國立竹山高中美術班" },
-            { name: "劉O沛", school: "國立竹山高中美術班" },
-            { name: "郭O嘉", school: "明道中學美工科(特招)" },
-            { name: "萬O孜", school: "僑泰中學多媒體動畫科(特招)" },
-            { name: "廖O汝", school: "五權國中美術班" },
-            { name: "孟O勖", school: "五權國中美術班" },
-            { name: "饒O甄", school: "五權國中美術班" },
-            { name: "余O萱", school: "大華國中美術班" },
-            { name: "羅O文", school: "五權國中美術班" },
+
             // ... (other data for year 105)
           ],
         },
@@ -133,110 +82,7 @@ export default {
               name: "葉O鈴",
               school: "朝陽科技大學 視覺傳達設計系",
             },
-            {
-              name: "邱O竣",
-              school: "台中教育大學美術系(轉學考)",
-            },
-            {
-              name: "許O慧",
-              school: "朝陽科技大學 工業設計系",
-            },
-            {
-              name: "賴O育",
-              school: "新竹教育大學藝術與設計系(轉學考)素描96分",
-            },
-            {
-              name: "林O筠",
-              school: "朝陽科技大學 景觀及都市設計系(插大)",
-            },
-            {
-              name: "宋O淇",
-              school: "台科大工商業設計系商業設計組(607分)",
-            },
-            {
-              name: "吳O昇",
-              school: "嶺東科技大學 數位媒體設計系",
-            },
-            {
-              name: "宋O瑄",
-              school: "北科大建築系",
-            },
-            {
-              name: "黃O晨",
-              school: "嶺東科技大學 時尚造形系",
-            },
-            {
-              name: "陳O勳",
-              school: "北科大互動設計系視覺傳達設計組",
-            },
-            {
-              name: "陳O芸",
-              school: "台南應用科技大學 時尚設計系",
-            },
-            {
-              name: "呂O翰",
-              school: "北科大互動設計系視覺傳達設計組",
-            },
-            {
-              name: "楊O涵",
-              school: "台南應用科技大學 商品設計系",
-            },
-            {
-              name: "廖O瑄",
-              school: "北科大文化事業發展系",
-            },
-            {
-              name: "陳O仁",
-              school: "台南應用科技大學 室內設計系",
-            },
-            {
-              name: "陳O昀",
-              school: "高雄第一科技大學創新設計工程系",
-            },
-            {
-              name: "張O輔",
-              school: "元智大學資訊傳播學系設計組",
-            },
-            {
-              name: "魏O儀",
-              school: "雲科大創意生活設計系",
-            },
-            {
-              name: "張O甄",
-              school: "南台科大創新產品設計系",
-            },
-            {
-              name: "葉O廷",
-              school: "虎尾科技大學多媒體互動系",
-            },
-            {
-              name: "石O雲",
-              school: "大葉大學工業設計系",
-            },
-            {
-              name: "林O希",
-              school: "實踐大學 服裝設計系",
-            },
-            {
-              name: "顧O維",
-              school: "大葉大學造型藝術學系 工藝文創組",
-            },
-            {
-              name: "陳O瑜",
-              school: "實踐大學 服裝設計系",
-            },
-            {
-              name: "陳O瑋",
-              school: "大葉大學視覺傳達設計學系",
-            },
-            {
-              name: "鍾O華",
-              school: "實踐大學 服裝設計與經營學系",
-            },
-            {
-              name: "朱O瑩",
-              school: "國立員林高中美術",
-            },
+
             // ... (other data for year 105)
           ],
         },
@@ -337,7 +183,7 @@ export default {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in RankNumber[0].details" :key="item.id">
+                    <tr v-for="item in RankNumber[1].details" :key="item.id">
                       <td>{{ item.name }}</td>
                       <td>{{ item.school }}</td>
                     </tr>
@@ -426,7 +272,6 @@ export default {
   }
 
   table {
-    font-family: "Oswald", sans-serif;
     border-collapse: collapse;
 
     th {
@@ -659,7 +504,6 @@ export default {
       position: absolute;
       bottom: var(--baseline);
       width: calc(100% - (var(--baseline) * 2));
-      font-family: var(--title);
       font-size: calc(var(--base-size) * 0.67);
       text-align: center;
     }

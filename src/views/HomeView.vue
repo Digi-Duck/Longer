@@ -25,7 +25,8 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet, ShakeBox
+    RankingListTablet,
+    ShakeBox,
   },
   data() {
     return {
@@ -34,10 +35,9 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector('#ShakeBoxId')
-    ShakeBoxId.style.display = "none"
+    const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    ShakeBoxId.style.display = "none";
     // 發送hakeBoxMobileFlag:false,
-
 
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
@@ -95,10 +95,22 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
+    <source
+      media="(min-width:1800px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:1200px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:768px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:0px)"
+      srcset="@/assets/img/generic/banner-sm.png"
+    />
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container">
@@ -119,7 +131,9 @@ export default {
   <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
-    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
+    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]"
+      >關於龍格</HomeTitle
+    >
     <AboutTeacher></AboutTeacher>
   </section>
 
@@ -134,7 +148,7 @@ export default {
         <!-- <div class="mask" :style="{ width: `${WidthControl}% ` }"></div> -->
       </div>
 
-      <HomeTitle>學生作品</HomeTitle>
+      <HomeTitle class="pt-[62px] md:pt-[0px]">學生作品</HomeTitle>
       <StudentWork></StudentWork>
     </div>
     <div class="Block4Buttom">
@@ -146,7 +160,7 @@ export default {
     <div class="Block5">
       <HomeTitle class="mt-[30px] md:mt-[0px]">歷年榜單</HomeTitle>
       <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
-      <blob3 class="lg:top-[0px] lg:right-[-30px] md:hidden"></blob3>
+      <blob3 class="lg:top-[0px] lg:right-[-30px] lg:block hidden"></blob3>
 
       <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
@@ -155,9 +169,7 @@ export default {
       <ShakeBox></ShakeBox>
     </div>
   </section>
-  <section>
-
-  </section>
+  <section></section>
 </template>
 <style lang="scss" scoped>
 // .Ranking {
@@ -171,7 +183,6 @@ export default {
     @apply flex items-center justify-center w-[300px] h-[72px] text-[3.25rem] bg-[url('@/assets/img/homepage/CommonIcon/YLdraw.svg')];
   }
 }
-
 
 .banner {
   img {
@@ -204,11 +215,10 @@ export default {
 
     .content {
       @apply xl:text-[2.5rem] xl:tracking-[6px] lg:text-[1.72rem] lg:tracking-[4px] md:text-[1rem] md:tracking-[2.8px] text-[0.87rem] tracking-[5px] leading-[2];
-
     }
   }
 
-  .blob2{
+  .blob2 {
     @apply absolute xl:w-auto xl:top-[80vh] lg:w-[300px] lg:top-[50vh] md:w-[200px] md:top-[20vh] md:left-[-10vh] w-[0px];
   }
 }
@@ -230,21 +240,16 @@ export default {
 }
 
 .Block4Buttom {
-  @apply w-[100%] h-[450px] bg-MainColorBG;
+  @apply w-[100%] xl:h-[450px]  md:h-[200px] h-[150px]  bg-MainColorBG;
 
   .Block4ButtomCurve {
-    @apply w-[100%] h-[100%] bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] bg-no-repeat bg-cover bg-center;
+    @apply w-[100%] h-[100%]  xl:bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")]  bg-[url("@/assets/img/homepage/BGpictures/curve2_laptop.svg")] 
+    bg-no-repeat bg-cover bg-center xl:mt-[-10px] lg:mt-[0px] md:mt-[-4px];
   }
 }
 
 .Block4 {
-  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1600px] lg:h-[1438px] md:h-[1460px] h-[2096px];
-
-  // .pen {
-  //   @apply  bg-[url("@/assets/img/homepage/pen.png")] bg-contain  bg-no-repeat bg-center relative
-  //   xl:h-[527px] lg:h-[291px]
-  //   mb-[100px] mt-[100px] ;
-  // }
+  @apply w-[100%] bg-MainColor overflow-hidden xl:h-[1375px] lg:h-[1260px] md:h-[1460px] h-[1905px];
 }
 
 // GSAP
@@ -254,7 +259,7 @@ export default {
 }
 
 .Block5 {
-  @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
+  @apply w-[100%] h-[600px] xl:h-[1200px] lg:h-[1300px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
 
 // 呼吸since1994

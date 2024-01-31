@@ -1,5 +1,4 @@
 <script>
-
 import img1 from "@/assets/img/homepage/CSInfo/pg-1.png";
 import img2 from "@/assets/img/homepage/CSInfo/pg-2.png";
 import img3 from "@/assets/img/homepage/CSInfo/pg-3.png";
@@ -24,29 +23,25 @@ export default {
     <div class="CourseInfo">
       <!-- <div class="LimitBox" v-for="(item, index) in IMG">
         <div class="zoom"> -->
-          
-          <div class="PicBox" v-for="(item, index) in IMG" >
-            <RouterLink to="/courseInformation">
-           
-            <div class="pic">
+
+      <div class="PicBox" v-for="(item, index) in IMG" v-fade-in-out>
+        <RouterLink to="/courseInformation">
+          <div class="pic">
             <div class="container">
-              <img :src="item.pic" alt="">
-             
+              <img :src="item.pic" alt="" />
             </div>
-            </div>
-         </RouterLink>
-            <div class="title">{{ item.title }}</div>
           </div>
-       
+        </RouterLink>
+        <div class="title">{{ item.title }}</div>
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-
 // 課程資訊
 .CourseInfoBG {
   @apply flex flex-col items-center  w-[100%] 
-          xl:h-[615px] lg:h-[400px] ;
+          xl:h-[615px] lg:h-[400px];
   // 大盒子
   .CourseInfo {
     @apply flex lg:flex-nowrap flex-wrap  md:justify-between justify-center 
@@ -54,22 +49,21 @@ export default {
     xl:h-[462px]  lg:h-[311px] md:h-[748px] h-[1402px] 
     xl:pt-[110px] lg:pt-[70px] md:pt-[49px] pt-[60px];
     // 一張圖片+文字
-    .PicBox{
-      @apply  flex flex-col justify-between items-center
+    .PicBox {
+      @apply flex flex-col justify-between items-center
               xl:w-[420px] lg:w-[282px] md:w-[290px] w-[290px] 
               xl:h-[502px] lg:h-[340px] md:h-[334px] h-[338px];
-              // 圖片大小
-              .container{
-            @apply xl:h-[367px] lg:h-[247px] h-[268px]
-                   xl:w-[421px] lg:w-[283px] w-[290px]
-                  
-                   
-          }
-      .title{@apply  flex justify-center items-center text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] mb-[20px]
+      // 圖片大小
+      .container {
+        @apply xl:h-[367px] lg:h-[247px] h-[268px]
+                   xl:w-[421px] lg:w-[283px] w-[290px];
+      }
+      .title {
+        @apply flex justify-center items-center text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] mb-[20px]
         xl:w-[337px] lg:w-[226px] w-[160px]
         xl:h-[66px] lg:h-[44px] h-[40px] 
-        xl:text-[1.625rem] text-[1rem];}
-     
+        xl:text-[1.625rem] text-[1rem];
+      }
     }
   }
 }
@@ -77,18 +71,18 @@ export default {
 // hover效果
 
 .container:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 .container img {
-	filter: grayscale(90%);
-	transition: filter 0.4s ease-in-out;
+  // 100%完全黑白
+  @apply md:sepia-[90%];
+  // filter: grayscale(90%);
+  transition: filter 0.4s ease-in-out;
 }
 
 .container:hover img {
-	filter: none;
+  @apply md:sepia-0;
 }
-
-
 
 // 搖擺圖
 // .contactIconBtn {
