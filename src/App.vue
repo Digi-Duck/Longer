@@ -358,7 +358,7 @@ export default {
 
 //公版 nav
 header {
-  @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_20px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
+  @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_15px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
 
   .ham-menu-all{
     @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
@@ -411,74 +411,11 @@ main {
 }
 
 // 公版頁尾
-// 雅芬有改 h-[60vh] --> h-[70vh]
-// footer {
-//   @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] flex flex-wrap w-full z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
-
-//   .footer-l {
-//     @apply lg:pb-0 md:pb-[30px] md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
-
-//     iframe {
-//       @apply xl:w-[500px] xl:h-[500px] lg:w-[336px] lg:h-[336px] md:w-[300px] md:h-[300px];
-//     }
-//   }
-
-//   .footer-r {
-//     @apply lg:max-w-full md:max-w-[400px] lg:pb-0 md:pb-[30px] md:w-[60%] flex flex-wrap justify-center items-end w-[100%] h-[80%];
-
-//     .all {
-//       @apply md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:px-[40px] md:pl-[80px] flex flex-col-reverse gap-[20px] w-[330px];
-//       // logoarea
-//       .logo {
-//         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
-
-//         .logo-img {
-//           @apply xl:w-[327px] lg:w-[220px] w-[143px];
-//         }
-
-//         .logo-slogn {
-//           .slogn-text {
-//             @apply md:inline-block md:ms-0 ms-[8px] block tracking-[1.2px];
-//           }
-//         }
-//       }
-//       // content area
-//       .container {
-//         @apply flex flex-wrap justify-center items-center;
-//         .content-wrap {
-//           @apply w-full flex flex-wrap justify-start mb-[10px] lg:tracking-[6px] tracking-[2px];
-
-//           .item {
-//             @apply w-[28%];
-//           }
-//           .content {
-//             @apply flex-1 text-justify;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .footer-nav {
-//     @apply xl:pt-[30px] lg:justify-end md:flex md:justify-center md:gap-[30px] md:items-center w-full h-[10%] pe-[48px] hidden;
-
-//     li {
-//       @apply relative;
-//     }
-//     li:not(:last-child):after {
-//       @apply content-['|'] absolute top-[-5%] right-[-18%];
-//     }
-//   }
-
-//   .copy-right {
-//     @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255,255,255,0.5)];
-//   }
-// }
 footer {
-  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] lg:pt-[150px] md:pt-[100px] pt-[85px]  flex flex-wrap w-full z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
+  @apply xl:text-[1.5rem] lg:text-[1.2rem] text-[0.87rem] lg:pt-[180px] md:pt-[100px] pt-[85px]  flex flex-wrap w-full z-[1] text-[#fff] md:tracking-[3px] md:leading-[2] leading-[2] md:bg-[url('@/assets/img/generic/footer-bg.png')] bg-[url('@/assets/img/generic/footer-md-bg.svg')] bg-cover bg-no-repeat;
 
   .footer-l {
-    @apply md:w-[40%] md:flex lg:justify-center justify-end items-end h-[80%] hidden;
+    @apply md:w-[40%] md:flex lg:justify-center justify-end items-center hidden;
 
     iframe {
       @apply xl:w-[500px] xl:h-[500px] lg:w-[336px] lg:h-[336px] md:w-[300px] md:h-[300px];
@@ -522,7 +459,7 @@ footer {
   }
 
   .footer-nav {
-    @apply xl:pt-[30px] lg:justify-end md:flex md:justify-center md:gap-[30px] md:items-center w-full h-[10%] pe-[48px] hidden;
+    @apply lg:pt-[30px] lg:justify-end md:flex md:justify-center md:gap-[30px] md:items-center w-full pe-[48px] hidden;
 
     li {
       @apply relative;
