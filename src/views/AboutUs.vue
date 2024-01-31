@@ -194,7 +194,7 @@ export default {
           @apply mb-[24px];
 
           .changeLine {
-            @apply font-[ChenYuluoyan] font-medium text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
+            @apply  lg:font-sans font-[ChenYuluoyan] font-medium text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
           }
 
           .symbol {

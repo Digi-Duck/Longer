@@ -28,6 +28,8 @@ export default {
       y: 0,
       isY: false,
       isG: false,
+      size: false,
+      correctionValue: 25,
     };
   },
   mounted() {
@@ -43,10 +45,12 @@ export default {
   methods: {
     changeYellow() {
       this.isY = true;
+      this.size = true;
     },
     changeGreen() {
       this.isG = true;
       this.isY = false;
+      this.size = true;
     },
     mouseMoveCursor(e) {
       this.x = e.clientX;
@@ -117,6 +121,8 @@ export default {
       left: `${colorBlockStyle.left}px`,
       top: `${colorBlockStyle.top}px`,
       backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
+      width: size ? '100px' : '60px',
+      height: size ? '100px' : '60px',
     }"
     id="color-block"
   ></div>
@@ -140,6 +146,7 @@ export default {
         src="./assets/img/generic/logoTop.png"
         alt="LOGO"
         @mouseenter="changeYellow"
+        @mouseleave = "size = false"
       />
     </RouterLink>
     <!-- nav Btn -->
@@ -150,6 +157,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'about' }"
         @click="setActiveLink('about')"
         @mouseenter="changeGreen"
+        @mouseleave = "size = false"
       >
         關於我們
       </RouterLink>
@@ -334,14 +342,7 @@ export default {
 
 <style lang="scss" scoped>
 #color-block {
-  position: absolute;
-  z-index: 4;
-  width: 60px;
-  height: 60px;
-  background-color: yellow;
-  border-radius: 50%;
-  pointer-events: none;
-  mix-blend-mode: exclusion;
+  @apply absolute z-[4] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
 }
 
 //公版 nav
