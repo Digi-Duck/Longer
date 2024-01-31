@@ -42,21 +42,25 @@ export default {
     }
   },
   methods: {
+    //變黃色
     changeYellow() {
       this.isY = true;
       this.size = true;
       this.correctionValue = 50;
     },
+    //變綠色
     changeGreen() {
       this.isG = true;
       this.isY = false;
       this.size = true;
       this.correctionValue = 50;
     },
-    mouseLeave() {
+    //屬標離開回原始
+    mouseLeave(){
       this.size = false;
       this.correctionValue = 25;
     },
+    //屬標移動位子
     mouseMoveCursor(e) {
       this.x = e.clientX;
       this.y = e.clientY;
@@ -79,8 +83,8 @@ export default {
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
     scrollIng() {
-      this.colorBlockStyle.left = window.scrollX + this.x;
-      this.colorBlockStyle.top = window.scrollY + this.y;
+      this.colorBlockStyle.left = window.scrollX + this.x - this.correctionValue;
+      this.colorBlockStyle.top = window.scrollY + this.y - this.correctionValue;
       const scrollNow = document.documentElement;
       const isAtBottom =
         scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;

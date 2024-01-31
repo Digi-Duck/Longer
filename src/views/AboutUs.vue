@@ -190,13 +190,13 @@ export default {
       @apply flex justify-center;
 
       .ct-text-2 {
-        @apply tracking-[.25rem] xl:mt-[120px] xl:w-[100%] xl:text-[1.75rem] lg:mt-[100px] lg:w-[100%] lg:text-[1.5rem] md:mt-[70px] md:text-[1.125rem] w-[70%] text-[.875rem] text-[GenWanMin-L];
+        @apply tracking-[.25rem] xl:mt-[120px] xl:w-[100%] xl:text-[1.75rem] lg:mt-[130px] lg:w-[100%] lg:text-[1.5rem] md:mt-[120px] md:text-[1.125rem] w-[70%] text-[.875rem] text-[GenWanMin-L];
 
         li {
           @apply mb-[24px];
 
           .changeLine {
-            @apply lg:font-sans font-[ChenYuluoyan] font-medium text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
+            @apply  lg:font-[GenWanMin-L] font-[ChenYuluoyan] font-medium  xl:text-[1.75rem] text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
           }
 
           .symbol {
