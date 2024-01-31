@@ -148,7 +148,7 @@ export default {
       @click="setActiveLink('')"
     >
       <img
-        src="./assets/img/generic/logoTop.png"
+        src="@/assets/img/generic/logoNew.svg"
         alt="LOGO"
         @mouseenter="changeYellow"
         @mouseleave="mouseLeave"

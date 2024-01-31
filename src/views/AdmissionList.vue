@@ -99,25 +99,6 @@ export default {
     </div>
   </div>
 
-  <!-- test -->
-  <a :href="pic1" data-lightbox="roadtrip">
-    <img src="../assets/img/admission_list/phone-pic-1.svg" alt="" />
-  </a>
-  <a :href="pic2" data-lightbox="roadtrip">
-    <!-- <img src="../assets/img/admission_list/phone-pic-2.svg" alt=""> -->
-  </a>
-  <a :href="pic3" data-lightbox="roadtrip">
-    <!-- <img src="../assets/img/admission_list/phone-pic-3.svg" alt=""> -->
-  </a>
-  <img
-    src="../assets/img/admission_list/high_school/high_school_1.png"
-    alt=""
-  />
-  <img
-    src="../assets/img/admission_list/junior_high/junior_high_1.png"
-    alt=""
-  />
-  <img :src="college01" alt="" />
 </template>
 <style lang="scss" scope>
 .All {

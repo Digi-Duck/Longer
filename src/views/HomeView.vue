@@ -113,12 +113,15 @@ export default {
     />
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
-  <section class="position-container">
-    <div class="since1994 breathing" @click="scrollToLonger">since 1994</div>
+  <section class="position-container cursor-pointer">
+    <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">
+      <p>since 1994</p>
+      <i class="fa-solid fa-chevron-down xl:text-[2.5rem] text-[1.25rem]"></i>
+    </div>
   </section>
   <section class="longer-bg bg-MainColorBG">
     <section class="longer-introduce">
-      <div class="longer-position" ref="longerSlogn">
+      <div class="longer-slogn" ref="longerSlogn">
         <p class="title">龍格畫室</p>
         <p class="content">一間成立於1994年的小畫室</p>
         <p class="content">位在三民路的小巷裡，由丁建中老師從零開始默默耕耘</p>
@@ -203,7 +206,7 @@ export default {
 .longer-introduce {
   @apply w-full flex justify-center relative text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
 
-  .longer-position {
+  .longer-slogn {
     // @apply absolute top-[0%] left-[60%];
     @apply xl:pt-[160px] xl:pl-[320px] lg:pt-[100px] lg:pl-[190px] md:pt-[80px] md:pl-[120px] pt-[90px] pl-[100px] xl:pb-[30px] pb-[60px];
     writing-mode: vertical-rl;
