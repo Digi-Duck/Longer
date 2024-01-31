@@ -24,12 +24,6 @@ export default {
   components: { HomeTitle },
   data() {
     return {
-      pic1: pic1,
-      pic2: pic2,
-      pic3: pic3,
-      phonePic1: phonePic1,
-      phonePic2: phonePic2,
-      phonePic3: phonePic3,
       college01,
       // hookpic:hookpic,
       listImg:[
@@ -86,59 +80,22 @@ export default {
     <div class="All">
       <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">歷年榜單</HomeTitle>
       <div class="block md:mb-[0px] mb-[140px]">
-        <!-- <div class="ImgBox">
-          <div class="hook md:block hidden"></div>
-          <div class="hook-phone md:hidden"></div>
-          <div class="content">
-            <img class="md:block hidden" :src="pic1" alt="" />
-            <img class="md:hidden" :src="phonePic1" alt="" />
-            <div class="title">升大學優良榜單</div>
-          </div>
-        </div>
-        <div class="ImgBox">
-          <div class="hook md:block hidden"></div>
-          <div class="hook-phone md:hidden"></div>
-          <div class="content">
-            <img class="md:block hidden" :src="pic2" alt="" />
-            <img class="md:hidden" :src="phonePic2" alt="" />
-            <div class="title">升高中優良榜單</div>
-          </div>
-        </div>
-        <div class="ImgBox">
-          <div class="hook md:block hidden"></div>
-          <div class="hook-phone md:hidden"></div>
-          <div class="content">
-            <img class="md:block hidden" :src="pic3" alt="" />
-            <img class="md:hidden" :src="phonePic3" alt="" />
-            <div class="title">升國中優良榜單</div>
-          </div>
-        </div> -->
         <div v-for="item in listImg" :key="item.id" class="ImgBox">
           <div class="hook md:block hidden"></div>
           <div class="hook-phone md:hidden"></div>
           <div class="content">
-            <img class="md:block hidden" :src="item.mdsrc" alt="" />
-            <img class="md:hidden" :src="item.smsrc" alt="" />
-            <div class="title">{{ item.title }}</div>
+            <a class="list-content" v-for="list in item.imgPath" :key="list.id" :href="list" :data-lightbox="item.dataName" :data-title="item.title">
+              <img class="md:block hidden" :src="item.mdsrc" alt="" />
+              <img class="md:hidden" :src="item.smsrc" alt="" />
+              <div class="title">{{ item.title }}</div>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- test -->
-<a :href="pic1" data-lightbox="roadtrip">
-  <img src="../assets/img/admission_list/phone-pic-1.svg" alt="">
-</a>
-<a :href="pic2" data-lightbox="roadtrip">
-  <!-- <img src="../assets/img/admission_list/phone-pic-2.svg" alt=""> -->
-</a>
-<a :href="pic3" data-lightbox="roadtrip">
-  <!-- <img src="../assets/img/admission_list/phone-pic-3.svg" alt=""> -->
-</a>
-<img src="../assets/img/admission_list/high_school/high_school_1.png" alt="">
-<img src="../assets/img/admission_list/junior_high/junior_high_1.png" alt="">
-<img :src="college01" alt="">
+
 </template>
 <style lang="scss" scope>
 .All {
@@ -147,6 +104,13 @@ export default {
     @apply flex flex-col items-center gap-20 w-[100%] xl:h-[2360px] lg:h-[1920px] md:h-[1700px] h-[1000px] ;
     .ImgBox {
       @apply flex flex-col items-center xl:w-[60%] lg:w-[70%] md:w-[85%] w-[95%] ;
+
+      .list-content{
+        // 除了第一筆資料以外都隱藏
+        &:not(:first-child){
+          @apply hidden;
+        }
+      }
       .hook {
         @apply md:w-[500px] md:h-[114px] bg-[url('@/assets/img/admission_list/hook.svg')] ;
       }
