@@ -37,6 +37,7 @@ export default {
     window.scrollTo(0, 0);
     const ShakeBoxId = document.querySelector("#ShakeBoxId");
     ShakeBoxId.style.display = "none";
+    window.addEventListener('scroll',this.scrollTest)
     // 發送hakeBoxMobileFlag:false,
 
     // 在組件掛載後添加 scroll 事件監聽
@@ -53,6 +54,9 @@ export default {
   methods: {
     scrollToLonger() {
       this.$refs.longerSlogn.scrollIntoView({ behavior: 'smooth' });
+    },
+    scrollTest(){
+      console.log(this.$refs.longerSlogn.scrollTop);
     },
     MaskMove() {
       // const windowBottom = window.scrollY + window.innerHeight;

@@ -32,6 +32,7 @@ export default {
     };
   },
   mounted() {
+    // test
     //mouse-block
     window.addEventListener("mousemove", this.mouseMoveCursor);
     window.addEventListener("scroll", this.scrollIng);
@@ -124,7 +125,7 @@ export default {
 
 <!-- 公版nav -->
 <template>
-  <div
+  <!-- <div
     :style="{
       left: `${colorBlockStyle.left}px`,
       top: `${colorBlockStyle.top}px`,
@@ -133,7 +134,7 @@ export default {
       height: size ? '100px' : '60px',
     }"
     id="color-block"
-  ></div>
+  ></div> -->
   <header class="" v-if="scrollBottom == false">
     <input type="checkbox" id="ham" hidden />
     <label for="ham" class="ham-menu-all" @click="openMenu">
