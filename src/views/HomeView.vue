@@ -125,8 +125,6 @@ export default {
     </section>
   </section>
 
-  <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
-
   <section>
     <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]"
       >關於龍格</HomeTitle
@@ -198,27 +196,6 @@ export default {
 }
 
 // 龍格畫室直式文字
-// .longer-introduce {
-//   @apply xl:h-[140vh] lg:h-[95vh] md:h-[60vh] h-[65vh] w-full flex justify-center relative text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
-
-//   .longer-position {
-//     // @apply absolute top-[0%] left-[60%];
-//     @apply xl:pt-[160px] xl:pl-[320px] lg:pt-[100px] lg:pl-[190px] md:pt-[80px] md:pl-[120px] pt-[90px] pl-[100px];
-//     writing-mode: vertical-rl;
-
-//     .title {
-//       @apply xl:text-[4rem] lg:text-[2.69rem] lg:tracking-[20px] md:text-[1.62rem] md:tracking-[10px] text-[1.25rem] tracking-[10px] leading-[5];
-//     }
-
-//     .content {
-//       @apply xl:text-[2.5rem] xl:tracking-[6px] lg:text-[1.72rem] lg:tracking-[4px] md:text-[1rem] md:tracking-[2.8px] text-[0.87rem] tracking-[5px] leading-[2];
-//     }
-//   }
-
-//   .blob2 {
-//     @apply absolute xl:w-auto xl:top-[80vh] lg:w-[300px] lg:top-[50vh] md:w-[200px] md:top-[20vh] md:left-[-10vh] w-[0px];
-//   }
-// }
 .longer-introduce {
   @apply w-full flex justify-center relative text-[#fff] lg:bg-[url("@/assets/img/generic/longer-slogn-bg.svg")] md:bg-[url("@/assets/img/generic/longer-slogn-LG.svg")] bg-[url("@/assets/img/generic/longer-slogn-MD.svg")] xl:bg-cover md:bg-bottom bg-cover bg-top bg-no-repeat;
 
@@ -237,7 +214,7 @@ export default {
   }
 
   .blob2 {
-    @apply absolute xl:w-auto xl:top-[80vh] lg:w-[300px] lg:top-[50vh] md:w-[200px] md:top-[20vh] md:left-[-10vh] w-[0px];
+    @apply absolute xl:w-auto xl:top-[60%] lg:w-[300px] lg:top-[50%] md:w-[200px] md:top-[30%] md:left-[-10vh] w-[0px];
   }
 }
 
