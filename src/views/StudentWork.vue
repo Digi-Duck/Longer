@@ -40,6 +40,9 @@ import coloredPencil05 from '@/assets/img/student_work/colored_pencils_img/color
 import coloredPencil06 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_06.jpg';
 import coloredPencil07 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_07.jpg';
 import coloredPencil08 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_08.jpg';
+import coloredPencil09 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_09.jpg';
+import coloredPencil10 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_10.jpg';
+import coloredPencil11 from '@/assets/img/student_work/colored_pencils_img/colored_pencils_11.jpg';
 // 導入圖片-麥克筆
 import marker01 from '@/assets/img/student_work/marker_img/marker_01.png';
 import marker02 from '@/assets/img/student_work/marker_img/marker_02.png';
@@ -57,6 +60,8 @@ import charcoal03 from '@/assets/img/student_work/charcoal_img/charcoal_03.jpg';
 import charcoal04 from '@/assets/img/student_work/charcoal_img/charcoal_04.jpg';
 import charcoal05 from '@/assets/img/student_work/charcoal_img/charcoal_05.jpg';
 import charcoal06 from '@/assets/img/student_work/charcoal_img/charcoal_06.jpg';
+import charcoal07 from '@/assets/img/student_work/charcoal_img/charcoal_07.jpg';
+import charcoal08 from '@/assets/img/student_work/charcoal_img/charcoal_08.jpg';
 // 導入圖片-石膏素描
 import plaster01 from '@/assets/img/student_work/plaster_img/plaster_01.jpg';
 import plaster02 from '@/assets/img/student_work/plaster_img/plaster_02.jpg';
@@ -157,6 +162,9 @@ export default {
             coloredPencil06,
             coloredPencil07,
             coloredPencil08,
+            coloredPencil09,
+            coloredPencil10,
+            coloredPencil11,
           ],
 
         },
@@ -187,6 +195,8 @@ export default {
             charcoal04,
             charcoal05,
             charcoal06,
+            charcoal07,
+            charcoal08,
           ],
 
         },
