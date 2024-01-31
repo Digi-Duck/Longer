@@ -283,7 +283,7 @@ export default {
   xl:w-[1176px] lg:w-[976px] md:w-[659px] w-[307px] 
   lg:h-[862px] md:h-[500px] h-[311px]
   md:mb-[310px]
-  md:bg-[url('@/assets/img/teacher_introduction/Easel.svg')] bg-contain bg-center bg-no-repeat;
+  md:bg-[url('@/assets/img/teacher_introduction/easel.svg')] bg-contain bg-center bg-no-repeat;
 
   .FBvideo {
     @apply xl:w-[854px] lg:w-[708px] md:w-[500px] 
