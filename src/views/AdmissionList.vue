@@ -7,6 +7,17 @@ import phonePic1 from "@/assets/img/admission_list/phone-pic-1.svg";
 import phonePic2 from "@/assets/img/admission_list/phone-pic-2.svg";
 import phonePic3 from "@/assets/img/admission_list/phone-pic-3.svg";
 // import hookpic from "@/assets/img/admission_list/hook.svg"
+// 導入榜單-大學
+import college01 from "@/assets/img/admission_list/college/college_1.png";
+import college02 from "@/assets/img/admission_list/college/college_2.png";
+import college03 from "@/assets/img/admission_list/college/college_3.png";
+import college04 from "@/assets/img/admission_list/college/college_4.png";
+import college05 from "@/assets/img/admission_list/college/college_5.png";
+import college06 from "@/assets/img/admission_list/college/college_6.png";
+import college07 from "@/assets/img/admission_list/college/college_7.png";
+// 導入榜單-高中
+// import high01 from "@/assets/img/admission_list/college/college_7.png";
+
 
 export default {
   components: { HomeTitle },
@@ -18,7 +29,23 @@ export default {
       phonePic1: phonePic1,
       phonePic2: phonePic2,
       phonePic3: phonePic3,
+      college01,
       // hookpic:hookpic,
+      listImg:[
+        {
+          title:'升大學優良榜單',
+          imgPath:[
+            college01,
+            college02,
+            college03,
+            college04,
+            college05,
+            college06,
+            college07,
+          ],
+        },
+
+      ],
     };
   },
   mounted() {
@@ -67,6 +94,20 @@ export default {
       </div>
     </div>
   </div>
+
+  <!-- test -->
+<a :href="pic1" data-lightbox="roadtrip">
+  <img src="../assets/img/admission_list/phone-pic-1.svg" alt="">
+</a>
+<a :href="pic2" data-lightbox="roadtrip">
+  <!-- <img src="../assets/img/admission_list/phone-pic-2.svg" alt=""> -->
+</a>
+<a :href="pic3" data-lightbox="roadtrip">
+  <!-- <img src="../assets/img/admission_list/phone-pic-3.svg" alt=""> -->
+</a>
+<img src="../assets/img/admission_list/high_school/high_school_1.png" alt="">
+<img src="../assets/img/admission_list/junior_high/junior_high_1.png" alt="">
+<img :src="college01" alt="">
 </template>
 <style lang="scss" scope>
 .All {
@@ -92,7 +133,7 @@ export default {
         transition: border-color 0.5s;
       }
       .title {
-        @apply flex justify-center  w-[100%] bg-[rgba(30,75,2,0.7)]  absolute bottom-[0px] text-[#FFFFFF] text-[40px];
+        @apply flex justify-center  w-[100%] bg-[rgba(30,75,2,0.7)]  absolute bottom-[0px] text-[#FFFFFF] text-[40px] font-sans;
       }
     }
   }

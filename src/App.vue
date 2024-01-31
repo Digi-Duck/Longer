@@ -410,7 +410,7 @@ header {
     w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] md:pt-[60px] md:rounded-[0px_50px_0px_0px];
 
     .navBar {
-      @apply xl:px-[30px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] py-[8px] md:mt-[5px] mt-[8px] lg:px-[20px] md:text-[1.28rem] text-[1.5rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[#fff] block;
+      @apply  xl:px-[45px] lg:px-[25px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:py-[8px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] py-[3px] md:mt-[5px] mt-[8px] md:text-[1.28rem] xl:text-[1.5rem] lg:text-[1.25rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[rgba(255,255,255,0.4)] block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];

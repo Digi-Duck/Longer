@@ -262,6 +262,7 @@ export default {
     <HomeTitle class="xl:!justify-start xl:pl-[138px] xl:mb-[134px] md:mb-[96px] mb-[87px]">學生作品</HomeTitle>
     <!-- <blob2 class="top-[-5%] right-[-5%]"></blob2>
     <blob3 class="bottom-[0%] left-[-5%]"></blob3> -->
+    <!-- 背景圖片 -->
     <img :src="bg01" alt="background01" class="bg bg01">
     <section>
       <section>
@@ -327,7 +328,7 @@ main {
         }
 
         .mask {
-          @apply w-full py-[10px] xl:text-[1.75rem] text-[1.25rem] text-center text-[#fff] bg-[#000] opacity-[0.8] absolute xl:top-[84%] top-[82%];
+          @apply w-full py-[10px] xl:text-[1.75rem] text-[1.25rem] text-center text-[#fff] font-sans bg-[#000] opacity-[0.8] absolute xl:top-[84%] top-[82%];
         }
 
 
