@@ -60,7 +60,11 @@ export default {
         :style="{ backgroundImage: `url(${Last})` }"
         class="bg-contain"
       >
-        <RouterLink to="/admissionList">更多優良榜單</RouterLink>
+        <RouterLink
+          to="/admissionList"
+          class="text-[1.5rem] bg-[#887c6c] w-[160px] h-[100px] text-center rounded-lg leading-[100px] font-[ChenYuluoyan] font-thin"
+          >更多優良榜單</RouterLink
+        >
       </swiper-slide>
       <!-- <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
@@ -92,6 +96,6 @@ body {
 }
 
 .swiper-slide:nth-child(8n) {
-  background-color: rgb(255, 255, 255);
+  background-color: #fef8dd;
 }
 </style>
