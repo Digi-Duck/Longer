@@ -46,17 +46,23 @@ export default {
     changeYellow() {
       this.isY = true;
       this.size = true;
+      this.correctionValue = 50;
     },
     changeGreen() {
       this.isG = true;
       this.isY = false;
       this.size = true;
+      this.correctionValue = 50;
+    },
+    mouseLeave(){
+      this.size = false;
+      this.correctionValue = 25;
     },
     mouseMoveCursor(e) {
       this.x = e.clientX;
       this.y = e.clientY;
-      this.colorBlockStyle.left = this.x + window.scrollX - 25;
-      this.colorBlockStyle.top = this.y + window.scrollY - 25;
+      this.colorBlockStyle.left = this.x + window.scrollX - this.correctionValue;
+      this.colorBlockStyle.top = this.y + window.scrollY - this.correctionValue;
     },
     setActiveLink(link) {
       // 紀錄順序
@@ -146,7 +152,7 @@ export default {
         src="./assets/img/generic/logoTop.png"
         alt="LOGO"
         @mouseenter="changeYellow"
-        @mouseleave = "size = false"
+        @mouseleave = "mouseLeave"
       />
     </RouterLink>
     <!-- nav Btn -->
@@ -157,7 +163,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'about' }"
         @click="setActiveLink('about')"
         @mouseenter="changeGreen"
-        @mouseleave = "size = false"
+        @mouseleave = "mouseLeave"
       >
         關於我們
       </RouterLink>
@@ -166,6 +172,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'teacher' }"
         @click="setActiveLink('teacher')"
         @mouseenter="changeGreen"
+        @mouseleave = "mouseLeave"
       >
         師資介紹
       </RouterLink>
@@ -174,6 +181,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'courseInformation' }"
         @click="setActiveLink('courseInformation')"
         @mouseenter="changeGreen"
+        @mouseleave = "mouseLeave"
       >
         課程資訊
       </RouterLink>
@@ -182,6 +190,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'studentWork' }"
         @click="setActiveLink('studentWork')"
         @mouseenter="changeGreen"
+        @mouseleave = "mouseLeave"
       >
         學生作品
       </RouterLink>
@@ -190,6 +199,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'admissionList' }"
         @click="setActiveLink('admissionList')"
         @mouseenter="changeGreen"
+        @mouseleave = "mouseLeave"
       >
         歷年榜單
       </RouterLink>
@@ -198,6 +208,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'connection' }"
         @click="setActiveLink('connection')"
         @mouseenter="changeGreen"
+        @mouseleave = "mouseLeave"
       >
         聯絡資訊
       </RouterLink>
@@ -342,7 +353,7 @@ export default {
 
 <style lang="scss" scoped>
 #color-block {
-  @apply absolute z-[4] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
+  @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden ;
 }
 
 //公版 nav
