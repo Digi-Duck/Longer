@@ -25,7 +25,7 @@ export default {
     blob1,
     blob2,
     blob3,
-    RankingListTablet,ShakeBox
+    RankingListTablet, ShakeBox
   },
   data() {
     return {
@@ -35,7 +35,10 @@ export default {
   mounted() {
     window.scrollTo(0, 0);
     const ShakeBoxId = document.querySelector('#ShakeBoxId')
-    ShakeBoxId.style.display="none"
+    ShakeBoxId.style.display = "none"
+    // 發送hakeBoxMobileFlag:false,
+
+
     // 在組件掛載後添加 scroll 事件監聽
     // window.addEventListener("scroll", this.MaskMove);
     // const maskElement = document.querySelector(".mask");
@@ -92,22 +95,10 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source
-      media="(min-width:1800px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:1200px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:768px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:0px)"
-      srcset="@/assets/img/generic/banner-sm.png"
-    />
+    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
     <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container">
@@ -128,7 +119,7 @@ export default {
   <!-- <img src="../assets/img/generic/longer-slogn-bg.svg" alt=""> -->
 
   <section>
-    <HomeTitle class="bg-MainColorBG ">關於龍格</HomeTitle>
+    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
 
@@ -161,11 +152,11 @@ export default {
       <RankingList></RankingList>
     </div>
     <div class="ShakeBox">
-    <ShakeBox></ShakeBox>
-  </div>
+      <ShakeBox></ShakeBox>
+    </div>
   </section>
   <section>
- 
+
   </section>
 </template>
 <style lang="scss" scoped>
@@ -193,8 +184,8 @@ export default {
   @apply relative;
 
   .since1994 {
-    @apply z-[2] text-[#fff] font-[Castoro-Regular] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] w-[100px] h-[100px] flex justify-center items-center lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem] xl:top-[-85px] lg:top-[-57px] top-[-50px] xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)] flex-col gap-[5px] xl:tracking-[4px];
-
+    @apply z-[2] text-[#fff] bg-EmphasizeColor opacity-[0.7] rounded-full absolute xl:w-[170px] xl:h-[170px] lg:w-[114px] lg:h-[114px] w-[100px] h-[100px] flex justify-center items-center lg:text-[1.25rem] xl:text-[1.5rem] text-[1rem] xl:top-[-85px] lg:top-[-57px] top-[-50px] xl:left-[calc(50%_-_85px)] lg:left-[calc(50%_-_72px)] left-[calc(50%_-_50px)];
+    // translate-x-[-50%]
   }
 }
 
@@ -265,12 +256,14 @@ export default {
 .Block5 {
   @apply w-[100%] h-[600px] lg:h-[1480px] md:h-[1000px] bg-MainColorBG relative overflow-hidden;
 }
+
 // 呼吸since1994
 .breathing {
   animation: breathing 3s ease-in-out infinite normal;
   border-radius: 2px;
   text-align: center;
 }
+
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -296,9 +289,9 @@ export default {
     transform: scale(0.9);
   }
 }
+
 // 動來動去的盒子
 .ShakeBox {
-  @apply bg-MainColorBG  bg-center 
-   flex justify-center;
+  @apply bg-MainColorBG bg-center flex justify-center;
 }
 </style>
