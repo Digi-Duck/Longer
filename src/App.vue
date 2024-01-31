@@ -501,7 +501,7 @@ footer {
     @apply top-[35%] rotate-0;
   }
   100% {
-    @apply top-[50%] rotate-[30deg];
+    @apply top-[50%] rotate-[45deg];
   }
 }
 @keyframes toCloseCenter {
@@ -517,7 +517,7 @@ footer {
     @apply top-[65%] rotate-0;
   }
   100% {
-    @apply top-[50%] rotate-[-30deg];
+    @apply top-[50%] rotate-[-45deg];
   }
 }
 </style>
