@@ -380,17 +380,6 @@ header {
     }
   }
 
-  // nav {
-  //   @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:bg-[transparent] lg:overflow-visible w-[calc(100vw_17px)] h-0 bg-[url('@/assets/img/generic/ham-menu-md-bg.png')] bg-no-repeat md:bg-bottom bg-cover lg:duration-0 duration-200 overflow-hidden lg:drop-shadow-none drop-shadow-[0_10px_15px_#262626];
-
-  //   .navBar {
-  //     @apply  xl:px-[30px] lg:flex lg:mt-0 lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] items-center h-[50px] me-[15px] mt-[40px] px-[20px] md:text-[3.5rem] text-[#fff] rounded-t-lg text-center block;
-
-  //     &.active {
-  //       @apply lg:h-[70px] lg:bg-[#838666];
-  //     }
-  //   }
-  // }
   nav {
     @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0
     w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] pt-[80px] md:rounded-[0px_50px_0px_0px];
