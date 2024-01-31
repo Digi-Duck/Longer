@@ -16,6 +16,7 @@ import List4 from "@/assets/img/homepage/Swiper/list4.png";
 import List5 from "@/assets/img/homepage/Swiper/list5.png";
 import List6 from "@/assets/img/homepage/Swiper/list6.png";
 import List7 from "@/assets/img/homepage/Swiper/list7.png";
+import Last from "@/assets/img/homepage/Swiper/Last.png";
 
 export default {
   components: {
@@ -26,6 +27,7 @@ export default {
     return {
       modules: [EffectCreative],
       List: [List1, List2, List3, List4, List5, List6, List7],
+      Last,
     };
   },
 };
@@ -53,6 +55,12 @@ export default {
         :style="{ backgroundImage: `url(${item})` }"
         class="bg-contain"
       >
+      </swiper-slide>
+      <swiper-slide
+        :style="{ backgroundImage: `url(${Last})` }"
+        class="bg-contain"
+      >
+        <RouterLink to="/admissionList">更多優良榜單</RouterLink>
       </swiper-slide>
       <!-- <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
@@ -83,43 +91,7 @@ body {
   color: #fff;
 }
 
-.swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
-}
-
-.swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
 .swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
+  background-color: rgb(255, 255, 255);
 }
 </style>

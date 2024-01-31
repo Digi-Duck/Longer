@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 
 import HelloWorld from "./components/HelloWorld.vue";
-import ShakeBoxMobile from "./components/ShakeBoxMobile.vue"
+import ShakeBoxMobile from "./components/ShakeBoxMobile.vue";
 
 // 手機板-搖晃"關注我們"
 
@@ -12,7 +12,6 @@ export default {
     RouterLink,
     RouterView,
     ShakeBoxMobile,
-
   },
   data() {
     return {
@@ -54,14 +53,15 @@ export default {
       this.size = true;
       this.correctionValue = 50;
     },
-    mouseLeave(){
+    mouseLeave() {
       this.size = false;
       this.correctionValue = 25;
     },
     mouseMoveCursor(e) {
       this.x = e.clientX;
       this.y = e.clientY;
-      this.colorBlockStyle.left = this.x + window.scrollX - this.correctionValue;
+      this.colorBlockStyle.left =
+        this.x + window.scrollX - this.correctionValue;
       this.colorBlockStyle.top = this.y + window.scrollY - this.correctionValue;
     },
     setActiveLink(link) {
@@ -69,13 +69,12 @@ export default {
       this.activeLink = link;
       // 關閉選單
       if (this.isMenuOpen) {
-        this.$refs.navContent.style.width = '0px';
-        this.$refs.linkTop.classList.remove('ani-line-top');
-        this.$refs.linkCenter.classList.remove('ani-line-center');
-        this.$refs.linkBottom.classList.remove('ani-line-bottom');
-        this.isMenuOpen = !this.isMenuOpen
-        document.documentElement.style.overflow = 'auto';
-
+        this.$refs.navContent.style.width = "0px";
+        this.$refs.linkTop.classList.remove("ani-line-top");
+        this.$refs.linkCenter.classList.remove("ani-line-center");
+        this.$refs.linkBottom.classList.remove("ani-line-bottom");
+        this.isMenuOpen = !this.isMenuOpen;
+        document.documentElement.style.overflow = "auto";
       }
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
@@ -92,30 +91,29 @@ export default {
         this.scrollBottom = false;
       }
     },
-    openMenu(){
+    openMenu() {
       console.log(window.innerWidth);
       this.isMenuOpen = !this.isMenuOpen;
       if (this.isMenuOpen) {
         // 將卷軸隱藏
-        document.documentElement.style.overflow = 'hidden';
-        this.$refs.linkTop.classList.add('ani-line-top');
-        this.$refs.linkCenter.classList.add('ani-line-center');
-        this.$refs.linkBottom.classList.add('ani-line-bottom');
+        document.documentElement.style.overflow = "hidden";
+        this.$refs.linkTop.classList.add("ani-line-top");
+        this.$refs.linkCenter.classList.add("ani-line-center");
+        this.$refs.linkBottom.classList.add("ani-line-bottom");
         if (window.innerWidth >= 768) {
-          this.$refs.navContent.style.width = '50%';
-        }else{
-          this.$refs.navContent.style.width = '100%';
+          this.$refs.navContent.style.width = "50vw";
+        } else {
+          this.$refs.navContent.style.width = "100vw";
         }
-      }else{
+      } else {
         // 顯示卷軸
-        document.documentElement.style.overflow = 'auto';
-        this.$refs.navContent.style.width = '0px';
-        this.$refs.linkTop.classList.remove('ani-line-top');
-        this.$refs.linkCenter.classList.remove('ani-line-center');
-        this.$refs.linkBottom.classList.remove('ani-line-bottom');
+        document.documentElement.style.overflow = "auto";
+        this.$refs.navContent.style.width = "0px";
+        this.$refs.linkTop.classList.remove("ani-line-top");
+        this.$refs.linkCenter.classList.remove("ani-line-center");
+        this.$refs.linkBottom.classList.remove("ani-line-bottom");
       }
     },
-
   },
 };
 </script>
@@ -133,14 +131,14 @@ export default {
     id="color-block"
   ></div>
   <header class="" v-if="scrollBottom == false">
-        <input type="checkbox" id="ham" hidden>
-        <label for="ham" class="ham-menu-all" @click="openMenu">
-          <div class="menu">
-           <div class="link link-1" ref="linkTop"></div>
-           <div class="link link-2" ref="linkCenter"></div>
-           <div class="link link-3" ref="linkBottom"></div>
-          </div>
-        </label>
+    <input type="checkbox" id="ham" hidden />
+    <label for="ham" class="ham-menu-all" @click="openMenu">
+      <div class="menu">
+        <div class="link link-1" ref="linkTop"></div>
+        <div class="link link-2" ref="linkCenter"></div>
+        <div class="link link-3" ref="linkBottom"></div>
+      </div>
+    </label>
     <!-- LOGO -->
     <RouterLink
       to="/"
@@ -152,7 +150,7 @@ export default {
         src="./assets/img/generic/logoTop.png"
         alt="LOGO"
         @mouseenter="changeYellow"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       />
     </RouterLink>
     <!-- nav Btn -->
@@ -163,7 +161,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'about' }"
         @click="setActiveLink('about')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         關於我們
       </RouterLink>
@@ -172,7 +170,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'teacher' }"
         @click="setActiveLink('teacher')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         師資介紹
       </RouterLink>
@@ -181,7 +179,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'courseInformation' }"
         @click="setActiveLink('courseInformation')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         課程資訊
       </RouterLink>
@@ -190,7 +188,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'studentWork' }"
         @click="setActiveLink('studentWork')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         學生作品
       </RouterLink>
@@ -199,7 +197,7 @@ export default {
         :class="{ navBar: true, active: activeLink === 'admissionList' }"
         @click="setActiveLink('admissionList')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         歷年榜單
       </RouterLink>
@@ -208,13 +206,16 @@ export default {
         :class="{ navBar: true, active: activeLink === 'connection' }"
         @click="setActiveLink('connection')"
         @mouseenter="changeGreen"
-        @mouseleave = "mouseLeave"
+        @mouseleave="mouseLeave"
       >
         聯絡資訊
       </RouterLink>
     </nav>
   </header>
-  <div v-if="isMenuOpen" class="mask w-full h-[100%] bg-[#000] opacity-[0.8] absolute z-[3]"></div>
+  <div
+    v-if="isMenuOpen"
+    class="mask w-full h-[100%] bg-[#000] opacity-[0.8] absolute z-[3]"
+  ></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
     <RouterView />
@@ -222,7 +223,7 @@ export default {
   <section
     class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
   >
-  <ShakeBoxMobile></ShakeBoxMobile>
+    <ShakeBoxMobile></ShakeBoxMobile>
     <iframe
       src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
       class="iframe-area"
@@ -239,7 +240,6 @@ export default {
   <!-- <img src="" alt=""> -->
 
   <!-- 公版頁尾 -->
-
 
   <footer class="">
     <section class="footer-l">
@@ -274,7 +274,7 @@ export default {
               <span class="md:inline-block hidden">(04)2225-8657&ensp;</span>
               <a href="tel:0422258657" class="md:hidden inline-block">
                 (04)2225-8657&ensp;
-              <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-phone"></i>
               </a>
             </p>
           </div>
@@ -302,42 +302,54 @@ export default {
 
     <ul class="footer-nav">
       <li>
-        <RouterLink to="/about" @click="setActiveLink('about')"
+        <RouterLink
+          to="/about"
+          @click="setActiveLink('about')"
           @mouseenter="changeGreen"
         >
           關於我們
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/teacher" @click="setActiveLink('teacher')"
+        <RouterLink
+          to="/teacher"
+          @click="setActiveLink('teacher')"
           @mouseenter="changeGreen"
         >
           師資介紹
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/courseInformation" @click="setActiveLink('courseInformation')"
+        <RouterLink
+          to="/courseInformation"
+          @click="setActiveLink('courseInformation')"
           @mouseenter="changeGreen"
         >
           課程資訊
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/studentWork" @click="setActiveLink('studentWork')"
+        <RouterLink
+          to="/studentWork"
+          @click="setActiveLink('studentWork')"
           @mouseenter="changeGreen"
         >
           學生作品
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/admissionList" @click="setActiveLink('admissionList')"
+        <RouterLink
+          to="/admissionList"
+          @click="setActiveLink('admissionList')"
           @mouseenter="changeGreen"
         >
           歷年榜單
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/connection" @click="setActiveLink('connection')"
+        <RouterLink
+          to="/connection"
+          @click="setActiveLink('connection')"
           @mouseenter="changeGreen"
         >
           聯絡資訊
@@ -353,41 +365,38 @@ export default {
 
 <style lang="scss" scoped>
 #color-block {
-  @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden ;
+  @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
 }
 
 //公版 nav
 header {
   @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_15px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
 
-  .ham-menu-all{
-    @apply  lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
+  .ham-menu-all {
+    @apply lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
 
-    .menu{
+    .menu {
       @apply w-full h-full text-[25px] relative;
 
-      .link{
-        @apply  md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
+      .link {
+        @apply md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
       }
-      .link-1{
+      .link-1 {
         @apply top-[35%];
       }
-      .link-2{
+      .link-2 {
         @apply top-[50%];
       }
-      .link-3{
+      .link-3 {
         @apply top-[65%];
       }
     }
-    
   }
-
-
 
   .LOGO {
     @apply lg:ms-[30px] h-full block;
 
-    img{
+    img {
       @apply md:w-[263px] w-[130px] mx-[auto];
     }
   }
@@ -397,11 +406,11 @@ header {
     w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] md:pt-[60px] md:rounded-[0px_50px_0px_0px];
 
     .navBar {
-      @apply  xl:px-[30px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:py-[8px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] py-[3px] md:mt-[5px] mt-[8px] lg:px-[20px] md:text-[1.28rem] text-[1.5rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[rgba(255,255,255,0.4)] block;
+      @apply xl:px-[30px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] lg:text-[1.2rem] py-[8px] md:mt-[5px] mt-[8px] lg:px-[20px] md:text-[1.28rem] text-[1.5rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[#fff] block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
-      } 
+      }
     }
   }
 }
@@ -474,45 +483,40 @@ footer {
   }
 }
 
-.ani-line-top{
+.ani-line-top {
   animation: toCloseTop 0.2s 1 forwards;
 }
-.ani-line-center{
+.ani-line-center {
   animation: toCloseCenter 0.1s 1 forwards;
 }
 
-.ani-line-bottom{
+.ani-line-bottom {
   animation: toCloseBottom 0.2s 1 forwards;
 }
 
 // ham-menu animation
-@keyframes toCloseTop{
-  0%{
+@keyframes toCloseTop {
+  0% {
     @apply top-[35%] rotate-0;
   }
-  100%{
-    @apply top-[50%] rotate-[45deg];
+  100% {
+    @apply top-[50%] rotate-[30deg];
   }
 }
-@keyframes toCloseCenter{
-  0%{
+@keyframes toCloseCenter {
+  0% {
     @apply visible;
   }
-  100%{
+  100% {
     @apply invisible;
   }
 }
-@keyframes toCloseBottom{
-  0%{
+@keyframes toCloseBottom {
+  0% {
     @apply top-[65%] rotate-0;
   }
-  100%{
-    @apply top-[50%] rotate-[-45deg];
+  100% {
+    @apply top-[50%] rotate-[-30deg];
   }
 }
-
-
-
-
-
 </style>

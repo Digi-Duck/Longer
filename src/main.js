@@ -47,8 +47,8 @@ app.directive("fade-in-out", {
     window.addEventListener("scroll", function () {
       var position = el.getBoundingClientRect().top;
       var screenHeight = window.innerHeight;
-    //   console.log(position, screenHeight);
-    //   觸發條件
+      //   console.log(position, screenHeight);
+      //   觸發條件
       if (position < screenHeight) {
         // console.log("這邊有執行");
         el.classList.remove("fade-in");
@@ -63,14 +63,24 @@ app.directive("fade-in-out", {
       el.classList.add("show");
     }
   },
-//   updated(el) {
-//     // 当文本更新时，重新触发淡入淡出效果
-//     el.style.opacity = "0";
-//     setTimeout(() => {
-//       el.style.opacity = "1";
-//     }, 100);
-//   },
+  //   updated(el) {
+  //     // 当文本更新时，重新触发淡入淡出效果
+  //     el.style.opacity = "0";
+  //     setTimeout(() => {
+  //       el.style.opacity = "1";
+  //     }, 100);
+  //   },
 });
+
+// app.directive("change-yellow", {
+//   mounted(el) {
+//     window.addEventListener("mouseenter", function () {
+//       let mouse = document.querySelector("#color-block");
+//       console.log(mouse);
+//       console.log("執行");
+//     });
+//   },
+// });
 
 app.use(router);
 

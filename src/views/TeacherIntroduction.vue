@@ -226,7 +226,7 @@ export default {
           <div
             class="swing left-[-10%] bottom-[0%] md:w-[200px] md:block hidden"
           >
-            <img :src="BlobY" alt="" />
+            <img :src="IMG_BlobYellow1" alt="" />
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import Crayo from "@/assets/img/about_us_ph/crayo.svg";
 import About2 from "@/assets/img/about_us_ph/About2.png";
 import About3 from "@/assets/img/about_us_ph/About3.png";
 import underLine from "@/assets/img/about_us_ph/underLine.png";
+import { document } from "postcss";
 export default {
   components: { HomeTitle },
   data() {
@@ -25,8 +26,9 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector('#ShakeBoxId')
-    ShakeBoxId.style.display="block"
+    const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    ShakeBoxId.style.display = "block";
+    // console.log("123", document.querySelector("#colorBlock"));
   },
   methods: {
     checkCollision() {
@@ -194,7 +196,7 @@ export default {
           @apply mb-[24px];
 
           .changeLine {
-            @apply  lg:font-sans font-[ChenYuluoyan] font-medium text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
+            @apply lg:font-sans font-[ChenYuluoyan] font-medium text-[1.5rem] lg:bg-none lg:inline bg-[url("@/assets/img//about_us_ph/underLine.png")] bg-no-repeat bg-left-bottom block;
           }
 
           .symbol {
