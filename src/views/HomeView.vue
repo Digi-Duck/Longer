@@ -97,6 +97,14 @@ export default {
       let dataToSend = "bYE";
       this.$emit("imageLeave", dataToSend);
     },
+    handleCanClickE(){
+      let dataToSend = 'bE';
+      this.$emit('handleCanClickE', dataToSend);
+    },
+    handleCanClickL(){
+      let dataToSend = 'bL';
+      this.$emit('handleCanClickL', dataToSend);
+    },
   },
 };
 </script>
@@ -130,10 +138,7 @@ export default {
     />
   </picture>
   <section class="position-container cursor-pointer">
-    <div
-      class="since1994 breathing flex flex-col gap-[10px]"
-      @click="scrollToLonger"
-    >
+    <div @mouseenter="handleCanClickE" @mouseleave="handleCanClickL" class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">
       <p>since 1994</p>
       <i class="fa-solid fa-chevron-down xl:text-[2.5rem] text-[1.25rem]"></i>
     </div>
@@ -181,7 +186,6 @@ export default {
       <HomeTitle class="mt-[30px] md:mt-[0px]">歷年榜單</HomeTitle>
       <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
       <blob3 class="lg:top-[0px] lg:right-[-30px] lg:block hidden"></blob3>
-
       <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
     </div>

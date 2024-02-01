@@ -49,17 +49,17 @@ export default {
     changeYellow() {
       this.isY = true;
       this.size = true;
-      this.correctionValue = 50;
+      this.correctionValue = 30;
     },
     changeGreen() {
       this.isG = true;
       this.isY = false;
       this.size = true;
-      this.correctionValue = 50;
+      this.correctionValue = 30;
     },
     mouseLeave() {
       this.size = false;
-      this.correctionValue = 25;
+      this.correctionValue = 50;
     },
     mouseMoveCursor(e) {
       this.x = e.clientX;
@@ -83,8 +83,8 @@ export default {
       sessionStorage.setItem("activeLink", JSON.stringify(this.activeLink));
     },
     scrollIng() {
-      this.colorBlockStyle.left = window.scrollX + this.x;
-      this.colorBlockStyle.top = window.scrollY + this.y;
+      this.colorBlockStyle.left = window.scrollX + this.x - this.correctionValue;
+      this.colorBlockStyle.top = window.scrollY + this.y - this.correctionValue;
       const scrollNow = document.documentElement;
       const isAtBottom =
         scrollNow.scrollTop + scrollNow.clientHeight >= scrollNow.scrollHeight;
@@ -131,24 +131,29 @@ export default {
       console.log("Received value from ShakeBoxMobile:", value);
       this.ShakeBoxMobile_flag = value;
     },
-  },
-};
+    handleCanClickE(d) {
+      console.log(d);
+      this.size = true;
+      this.correctionValue = 30;
+    },
+    handleCanClickL() {
+      this.size = false;
+      this.correctionValue = 50;
+    },
+  };
 </script>
 
 <!-- 公版nav -->
 <template>
-  <div
-    :style="{
-      left: `${colorBlockStyle.left}px`,
-      top: `${colorBlockStyle.top}px`,
-      backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
-      width: size ? '100px' : '60px',
-      height: size ? '100px' : '60px',
-      // border: circle ? '50%' : '0%',
-      borderRadius: circle ? '50%' : '0%',
-    }"
-    id="color-block"
-  ></div>
+  <div :style="{
+    left: `${colorBlockStyle.left}px`,
+    top: `${colorBlockStyle.top}px`,
+    backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
+    width: size ? '60px' : '100px',
+    height: size ? '60px' : '100px',
+    // border: circle ? '50%' : '0%',
+    borderRadius: circle ? '50%' : '0%',
+  }" id="color-block"></div>
   <header class="" v-if="scrollBottom == false">
     <input type="checkbox" id="ham" hidden />
     <label for="ham" class="ham-menu-all" @click="openMenu">
@@ -159,107 +164,56 @@ export default {
       </div>
     </label>
     <!-- LOGO -->
-    <RouterLink
-      to="/"
-      class="LOGO"
-      :class="{ navBar: true }"
-      @click="setActiveLink('')"
-    >
-      <img
-        src="@/assets/img/generic/logoNew.svg"
-        alt="LOGO"
-        @mouseenter="changeYellow"
-        @mouseleave="mouseLeave"
-      />
+    <RouterLink to="/" class="LOGO" :class="{ navBar: true }" @click="setActiveLink('')">
+      <img src="@/assets/img/generic/logoNew.svg" alt="LOGO" @mouseenter="changeYellow" @mouseleave="mouseLeave" />
     </RouterLink>
     <!-- nav Btn -->
     <nav ref="navContent">
       <!-- 預設navBar為true，點擊時會將activeLink賦值為指定的路徑字串，當activeLink等於指定的路徑字串時添加active的CSS -->
-      <RouterLink
-        to="/about"
-        :class="{ navBar: true, active: activeLink === 'about' }"
-        @click="setActiveLink('about')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/about" :class="{ navBar: true, active: activeLink === 'about' }" @click="setActiveLink('about')"
+        @mouseenter="changeGreen" @mouseleave="mouseLeave">
         關於我們
       </RouterLink>
-      <RouterLink
-        to="/teacher"
-        :class="{ navBar: true, active: activeLink === 'teacher' }"
-        @click="setActiveLink('teacher')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/teacher" :class="{ navBar: true, active: activeLink === 'teacher' }"
+        @click="setActiveLink('teacher')" @mouseenter="changeGreen" @mouseleave="mouseLeave">
         師資介紹
       </RouterLink>
-      <RouterLink
-        to="/courseInformation"
-        :class="{ navBar: true, active: activeLink === 'courseInformation' }"
-        @click="setActiveLink('courseInformation')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/courseInformation" :class="{ navBar: true, active: activeLink === 'courseInformation' }"
+        @click="setActiveLink('courseInformation')" @mouseenter="changeGreen" @mouseleave="mouseLeave">
         課程資訊
       </RouterLink>
-      <RouterLink
-        to="/studentWork"
-        :class="{ navBar: true, active: activeLink === 'studentWork' }"
-        @click="setActiveLink('studentWork')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/studentWork" :class="{ navBar: true, active: activeLink === 'studentWork' }"
+        @click="setActiveLink('studentWork')" @mouseenter="changeGreen" @mouseleave="mouseLeave">
         學生作品
       </RouterLink>
-      <RouterLink
-        to="/admissionList"
-        :class="{ navBar: true, active: activeLink === 'admissionList' }"
-        @click="setActiveLink('admissionList')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/admissionList" :class="{ navBar: true, active: activeLink === 'admissionList' }"
+        @click="setActiveLink('admissionList')" @mouseenter="changeGreen" @mouseleave="mouseLeave">
         歷年榜單
       </RouterLink>
-      <RouterLink
-        to="/connection"
-        :class="{ navBar: true, active: activeLink === 'connection' }"
-        @click="setActiveLink('connection')"
-        @mouseenter="changeGreen"
-        @mouseleave="mouseLeave"
-      >
+      <RouterLink to="/connection" :class="{ navBar: true, active: activeLink === 'connection' }"
+        @click="setActiveLink('connection')" @mouseenter="changeGreen" @mouseleave="mouseLeave">
         聯絡資訊
       </RouterLink>
     </nav>
   </header>
-  <div
-    v-if="isMenuOpen"
-    class="mask w-full h-[100%] bg-[#000] opacity-[0.8] absolute z-[3]"
-  ></div>
+  <div v-if="isMenuOpen" class="mask w-full h-[100%] bg-[#000] opacity-[0.8] absolute z-[3]"></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <RouterView
-      @imageEnter="handleImageEnter"
-      @imageLeave="handleImageLeave"
-      @ShakeBoxMobile_flagback="handleShakeBoxMobileFlagback"
-    />
+    <<<<<<< Updated upstream <RouterView @imageEnter="handleImageEnter" @imageLeave="handleImageLeave"
+      @ShakeBoxMobile_flagback="handleShakeBoxMobileFlagback" />
+    =======
+    <RouterView @imageEnter="handleImageEnter" @imageLeave="handleImageLeave" @handleCanClickL="handleCanClickL"
+      @handleCanClickE="handleCanClickE" />
+    >>>>>>> Stashed changes
   </main>
-  <section
-    class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
-  >
+  <section class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG">
     <!-- 灰色搖擺盒子 -->
     <ShakeBoxMobile v-if="ShakeBoxMobile_flag"></ShakeBoxMobile>
 
     <iframe
       src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-      class="iframe-area"
-      width="242"
-      height="242"
-      style="border: none; overflow: hidden"
-      scrolling="no"
-      frameborder="0"
-      allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-    >
+      class="iframe-area" width="242" height="242" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
+      allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
     </iframe>
   </section>
 
@@ -269,29 +223,16 @@ export default {
     <section class="footer-l">
       <iframe
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        class="iframe-area"
-        style="border: none; overflow: hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      >
+        class="iframe-area" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
       </iframe>
     </section>
     <section class="footer-r">
       <div class="all">
         <div class="logo">
-          <RouterLink
-          to="/" 
-          @click="setActiveLink('')"
-          @mouseenter="changeGreen"
-        >
-        <img
-            src="@/assets/img/generic/logo.png"
-            class="logo-img"
-            alt="LOGO"
-          />
-        </RouterLink>
+          <RouterLink to="/" @click="setActiveLink('')" @mouseenter="changeGreen">
+            <img src="@/assets/img/generic/logo.png" class="logo-img" alt="LOGO" />
+          </RouterLink>
 
           <div class="logo-slogn">
             <p class="slogn-text">在龍格&emsp;</p>
@@ -333,56 +274,32 @@ export default {
 
     <ul class="footer-nav">
       <li>
-        <RouterLink
-          to="/about"
-          @click="setActiveLink('about')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/about" @click="setActiveLink('about')" @mouseenter="changeGreen">
           關於我們
         </RouterLink>
       </li>
       <li>
-        <RouterLink
-          to="/teacher"
-          @click="setActiveLink('teacher')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/teacher" @click="setActiveLink('teacher')" @mouseenter="changeGreen">
           師資介紹
         </RouterLink>
       </li>
       <li>
-        <RouterLink
-          to="/courseInformation"
-          @click="setActiveLink('courseInformation')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/courseInformation" @click="setActiveLink('courseInformation')" @mouseenter="changeGreen">
           課程資訊
         </RouterLink>
       </li>
       <li>
-        <RouterLink
-          to="/studentWork"
-          @click="setActiveLink('studentWork')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/studentWork" @click="setActiveLink('studentWork')" @mouseenter="changeGreen">
           學生作品
         </RouterLink>
       </li>
       <li>
-        <RouterLink
-          to="/admissionList"
-          @click="setActiveLink('admissionList')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/admissionList" @click="setActiveLink('admissionList')" @mouseenter="changeGreen">
           歷年榜單
         </RouterLink>
       </li>
       <li>
-        <RouterLink
-          to="/connection"
-          @click="setActiveLink('connection')"
-          @mouseenter="changeGreen"
-        >
+        <RouterLink to="/connection" @click="setActiveLink('connection')" @mouseenter="changeGreen">
           聯絡資訊
         </RouterLink>
       </li>
@@ -397,6 +314,7 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
+  
 }
 
 //公版 nav
@@ -412,12 +330,15 @@ header {
       .link {
         @apply md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
       }
+
       .link-1 {
         @apply top-[35%];
       }
+
       .link-2 {
         @apply top-[50%];
       }
+
       .link-3 {
         @apply top-[65%];
       }
@@ -433,11 +354,10 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0
-    w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] md:pt-[60px] md:rounded-[0px_50px_0px_0px];
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0 w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover duration-200 overflow-hidden drop-shadow-[0_10px_15px_#262626] md:pt-[60px] md:rounded-[0px_50px_0px_0px];
 
     .navBar {
-      @apply xl:px-[45px] lg:px-[25px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:py-[8px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] py-[3px] md:mt-[5px] mt-[8px] md:text-[1.28rem] xl:text-[1.5rem] lg:text-[1.25rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[rgba(255,255,255,0.4)] block;
+      @apply xl:px-[45px] lg:px-[25px] lg:flex lg:items-center lg:mt-0 lg:me-[15px] lg:py-[8px] lg:bg-[#024b06] lg:shadow-[2px_0px_3px_#333] py-[3px] md:mt-[5px] mt-[8px] md:text-[1.28rem] xl:text-[1.5rem] lg:text-[1.25rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[rgba(255, 255, 255, 0.4)] block;
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
@@ -467,6 +387,7 @@ footer {
 
     .all {
       @apply md:flex-col md:gap-0 lg:w-[auto] md:w-[530px] lg:px-[40px] md:pl-[80px] flex flex-col-reverse gap-[20px] w-[330px];
+
       // logoarea
       .logo {
         @apply md:mb-[50px] flex md:justify-start justify-center items-end gap-[10px];
@@ -481,15 +402,18 @@ footer {
           }
         }
       }
+
       // content area
       .container {
         @apply flex flex-wrap justify-center items-center;
+
         .content-wrap {
           @apply w-full flex flex-wrap justify-start mb-[10px] lg:tracking-[6px] tracking-[2px];
 
           .item {
             @apply w-[28%];
           }
+
           .content {
             @apply flex-1 text-justify;
           }
@@ -504,19 +428,21 @@ footer {
     li {
       @apply relative;
     }
+
     li:not(:last-child):after {
       @apply content-['|'] absolute top-[-5%] right-[-18%];
     }
   }
 
   .copy-right {
-    @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255,255,255,0.5)];
+    @apply flex justify-center items-center w-full md:h-[10%] border-t-[1px] border-[rgba(255, 255, 255, 0.5)];
   }
 }
 
 .ani-line-top {
   animation: toCloseTop 0.2s 1 forwards;
 }
+
 .ani-line-center {
   animation: toCloseCenter 0.1s 1 forwards;
 }
@@ -530,22 +456,27 @@ footer {
   0% {
     @apply top-[35%] rotate-0;
   }
+
   100% {
     @apply top-[50%] rotate-[45deg];
   }
 }
+
 @keyframes toCloseCenter {
   0% {
     @apply visible;
   }
+
   100% {
     @apply invisible;
   }
 }
+
 @keyframes toCloseBottom {
   0% {
     @apply top-[65%] rotate-0;
   }
+
   100% {
     @apply top-[50%] rotate-[-45deg];
   }
