@@ -247,16 +247,17 @@ export default {
   ></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <RouterView
+    <!-- <RouterView
       @imageEnter="handleImageEnter"
       @imageLeave="handleImageLeave"
-      @ShakeBoxMobile_flagback="handleShakeBoxMobileFlagback"
-    />
+    
+    /> -->
     <RouterView
       @imageEnter="handleImageEnter"
       @imageLeave="handleImageLeave"
       @handleCanClickL="handleCanClickL"
       @handleCanClickE="handleCanClickE"
+      @ShakeBoxMobile_flagback="handleShakeBoxMobileFlagback"
     />
   </main>
   <section

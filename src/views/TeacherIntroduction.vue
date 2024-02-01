@@ -247,7 +247,7 @@ export default {
   md:w-[1290px] w-[280px]
     bg-MainColorBG;
   .singleblock {
-    @apply flex xl:justify-between items-center lg:justify-around 
+    @apply flex xl:justify-between   items-center lg:justify-around 
     
     xl:w-[100%];
     .textblock {
@@ -259,6 +259,7 @@ export default {
     }
     h1 {
       @apply md:text-[1.5rem] text-[2rem] 
+    
       md:font-[GenWanMin-L] font-[ChenYuluoyan] font-semibold
        md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")] bg-no-repeat bg-bottom;
     }
