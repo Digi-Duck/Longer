@@ -45,7 +45,7 @@ export default {
         <img :src="AboutUsPH[1]" class="md:hidden w-[255px]" alt="" />
       </div>
       <div class="ct-h lg:items-start items-center">
-        <div class="ct-text-1">
+        <div class="ct-text-1 " v-fade-in-out>
           <p class="content-font-setting">
             <span class="text"
               >一間成立於1994年的小畫室<span class="symbol">，</span></span
@@ -102,7 +102,7 @@ export default {
       <img :src="Sun" alt="" />
     </div>
     <section class="content z-[2]">
-      <div class="ct-a">
+      <div class="ct-a" v-fade-in-out>
         <ul class="ct-text-2 content-font-setting">
           <li>
             <span class="changeLine">一、程度鑑定</span

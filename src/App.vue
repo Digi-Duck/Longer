@@ -136,6 +136,8 @@ export default {
       console.log(d);
       this.size = true;
       this.correctionValue = 30;
+      this.isY = true;
+      this.isG = false;
     },
     handleCanClickL() {
       this.size = false;
