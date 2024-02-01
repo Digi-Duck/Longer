@@ -262,7 +262,6 @@ export default {
     >
     </iframe>
   </section>
-  <!-- <img src="" alt=""> -->
 
   <!-- 公版頁尾 -->
 
