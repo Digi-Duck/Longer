@@ -281,11 +281,18 @@ export default {
     <section class="footer-r">
       <div class="all">
         <div class="logo">
-          <img
+          <RouterLink
+          to="/" 
+          @click="setActiveLink('')"
+          @mouseenter="changeGreen"
+        >
+        <img
             src="@/assets/img/generic/logo.png"
             class="logo-img"
             alt="LOGO"
           />
+        </RouterLink>
+
           <div class="logo-slogn">
             <p class="slogn-text">在龍格&emsp;</p>
             <p class="slogn-text">為你的每個夢想填上顏色</p>

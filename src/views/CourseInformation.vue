@@ -153,9 +153,6 @@ export default {
         </section>
       </section>
     </section>
-    <!-- <div data-aos="fade-up" data-aos-duration="1000" class="aos">
-            这是一个使用aos.js的动画效果
-        </div> -->
   </main>
 </template>
 <style lang="scss" scoped>
@@ -248,20 +245,28 @@ main {
         .text-content {
           @apply xl:w-full xl:h-[390px] lg:w-[400px] lg:ms-[50px] md:w-[400px] md:h-[322px] w-[290px] flex flex-col justify-center items-start flex-wrap m-0 px-[30px] pb-[13px] text-justify leading-[2] bg-[#fff] rounded-[0px_25px_25px_0px] shadow-[3px_3px_5px_#aaa];
 
+  
           .title {
-            @apply md:text-[1.5rem] text-[1.25rem] mb-[20px] w-full;
+            @apply xl:text-[1.87rem] md:text-[1.5rem] text-[1.25rem] text-[#263238] font-sans font-[600] mb-[20px] w-full;
           }
 
           .introduce {
-            @apply md:text-[1.2rem] text-[0.87rem];
+            @apply xl:text-[1.5rem] md:text-[1.12rem] text-[0.87rem];
           }
 
           .content {
-            @apply xl:text-[1.2rem] md:text-[0.9rem] text-[0.87rem] indent-8;
+            @apply xl:text-[1.5rem] md:text-[1.12rem] text-[0.87rem] indent-8;
           }
         }
       }
     }
+    .container:last-child{
+        
+        .text-content{
+          @apply xl:h-[454px] md:h-[346px] h-[290px];
+        }
+        
+      }
   }
 
   .aos {
