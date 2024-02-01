@@ -53,7 +53,6 @@ export default {
     handleCanClickE() {
       let dataToSend = "bE";
       this.$emit("handleCanClickE", dataToSend);
-      console.log(1);
     },
     handleCanClickL() {
       let dataToSend = "bL";
