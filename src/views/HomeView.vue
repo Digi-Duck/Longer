@@ -87,9 +87,13 @@ export default {
       //   this.WidthControl--;
       // }
     },
-    handleImageClick(){
-      const dataToSend = 'Hi';
-      this.$emit('imageClicked', dataToSend);
+    handleImageEnter(){
+      let dataToSend = 'Hi';
+      this.$emit('imageEnter', dataToSend);
+    },
+    handleImageLeave(){
+      let dataToSend = 'bYE';
+      this.$emit('imageLeave', dataToSend);
     }
   },
 };
@@ -104,7 +108,7 @@ export default {
     <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
     <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
     <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
-    <img @click="handleImageClick" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
+    <img @mouseenter="handleImageEnter" @mouseleave="handleImageLeave" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container cursor-pointer">
     <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">

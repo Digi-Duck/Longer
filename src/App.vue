@@ -29,6 +29,7 @@ export default {
       isG: false,
       size: false,
       correctionValue: 25,
+      circle: false,
     };
   },
   mounted() {
@@ -115,8 +116,13 @@ export default {
         this.$refs.linkBottom.classList.remove("ani-line-bottom");
       }
     },
-    handleImageClicked(dataFromChild) {
-      console.log("Data from child", dataFromChild);
+    handleImageEnter(dataFromChild) {
+      console.log(dataFromChild);
+      this.circle = false;
+    },
+    handleImageLeave(dataFromChild) {
+      console.log(dataFromChild);
+      this.circle = true;
     },
   },
 };
@@ -131,6 +137,8 @@ export default {
       backgroundColor: isY ? 'yellow' : isG ? 'green' : 'red',
       width: size ? '100px' : '60px',
       height: size ? '100px' : '60px',
+      // border: circle ? '50%' : '0%',
+      borderRadius: circle ? '50%' : '0%',
     }"
     id="color-block"
   ></div> 
@@ -222,7 +230,7 @@ export default {
   ></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <RouterView @imageClicked="handleImageClicked" />
+    <RouterView @imageEnter="handleImageEnter" @imageLeave="handleImageLeave"/>
   </main>
   <section
     class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
@@ -370,12 +378,13 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
+  
 }
 
 //公版 nav
 header {
   @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_15px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
-
+  
   .ham-menu-all {
     @apply lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
 
