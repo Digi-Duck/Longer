@@ -59,7 +59,7 @@ export default {
           class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5"
           v-fade-in-out
         >
-          <h1 class="xl:m-0 m-auto">丁老師</h1>
+          <h1 class="xl:m-0 m-auto">丁建中 老師</h1>
           <p>
             富有教學熱忱的丁老師，創立畫室的初衷，是希望幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一座指引前方的燈塔。
           </p>
@@ -72,7 +72,7 @@ export default {
           class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5"
           v-fade-in-out
         >
-          <h1 class="xl:m-0 m-auto">集中訓練</h1>
+          <h1 class="xl:m-0 m-auto">升學集訓班</h1>
           <p>
             升學集訓班將會集中編排程度相近的學生，課堂中親自示範與解題，使學生共同練習，透過同儕良性切磋相互學習。
           </p>
