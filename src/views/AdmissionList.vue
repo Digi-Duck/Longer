@@ -133,7 +133,7 @@ export default {
         transition: border-color 0.5s;
       }
       .title {
-        @apply flex justify-center  w-[100%] bg-[rgba(30,75,2,0.7)]  absolute bottom-[0px] text-[#FFFFFF] text-[40px] font-sans;
+        @apply flex justify-center  w-[100%] bg-[rgba(30,75,2,0.7)]  absolute bottom-[0px] text-[#FFFFFF] md:text-[40px] text-[1.5rem] font-sans;
       }
     }
   }

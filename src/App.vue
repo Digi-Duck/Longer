@@ -538,7 +538,7 @@ footer {
 }
 
 .ani-line-top {
-  animation: toCloseTop 0.2s 1 forwards;
+  animation: toCloseTop 0.3s 1 forwards;
 }
 
 .ani-line-center {
@@ -546,7 +546,7 @@ footer {
 }
 
 .ani-line-bottom {
-  animation: toCloseBottom 0.2s 1 forwards;
+  animation: toCloseBottom 0.3s 1 forwards;
 }
 
 // ham-menu animation
