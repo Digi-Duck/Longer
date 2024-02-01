@@ -152,7 +152,7 @@ export default {
     </div>
   </section>
 
-  <section>
+  <section class="bg-MainColorBG">
     <div class="Block5">
       <HomeTitle class="mt-[30px] md:mt-[0px]">歷年榜單</HomeTitle>
       <blob2 class="top-[1100px] left-[-30px] md:hidden"></blob2>
@@ -161,7 +161,7 @@ export default {
       <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
     </div>
-    <div class="ShakeBox">
+    <div class="ShakeBox md:visible invisible">
       <ShakeBox></ShakeBox>
     </div>
   </section>
