@@ -16,6 +16,16 @@ export default {
       ],
     };
   },
+  methods: {
+    handleCourseCanClickE() {
+      let dataToSend = "bE";
+      this.$emit("handleCourseCanClickE", dataToSend);
+    },
+    handleCourseCanClickL() {
+      let dataToSend = "bL";
+      this.$emit("handleCourseCanClickL", dataToSend);
+    },
+  },
 };
 </script>
 <template>
@@ -24,11 +34,11 @@ export default {
       <!-- <div class="LimitBox" v-for="(item, index) in IMG">
         <div class="zoom"> -->
 
-      <div class="PicBox" v-for="(item, index) in IMG" v-fade-in-out>
+      <div class="PicBox" v-for="(item, index) in IMG" :key="item.id" v-fade-in-out>
         <RouterLink to="/courseInformation">
           <div class="pic">
             <div class="container">
-              <img :src="item.pic" alt="" />
+              <img @mouseenter="handleCourseCanClickE" @mouseleave="handleCourseCanClickL" :src="item.pic" alt="" />
             </div>
           </div>
         </RouterLink>

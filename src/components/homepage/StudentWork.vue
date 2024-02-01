@@ -27,6 +27,12 @@ export default {
         piece2,
         piece3,
         piece4,
+        piece5,
+        piece6,
+        piece7,
+        piece8,
+        piece9,
+        piece10,
       ],
     };
   },
@@ -63,6 +69,6 @@ export default {
   margin: 0;
   padding-inline: 0;
   list-style: none;
-  animation: scroll 70s linear infinite;
+  animation: scroll 80s linear infinite;
 }
 </style>

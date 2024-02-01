@@ -297,6 +297,7 @@ export default {
             to="/"
             @click="setActiveLink('')"
             @mouseenter="changeGreen"
+            @mouseleave="mouseLeave"
           >
             <img
               src="@/assets/img/generic/logo.png"
@@ -349,6 +350,7 @@ export default {
           to="/about"
           @click="setActiveLink('about')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           關於我們
         </RouterLink>
@@ -358,6 +360,7 @@ export default {
           to="/teacher"
           @click="setActiveLink('teacher')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           師資介紹
         </RouterLink>
@@ -367,6 +370,7 @@ export default {
           to="/courseInformation"
           @click="setActiveLink('courseInformation')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           課程資訊
         </RouterLink>
@@ -376,6 +380,7 @@ export default {
           to="/studentWork"
           @click="setActiveLink('studentWork')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           學生作品
         </RouterLink>
@@ -385,6 +390,7 @@ export default {
           to="/admissionList"
           @click="setActiveLink('admissionList')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           歷年榜單
         </RouterLink>
@@ -394,6 +400,7 @@ export default {
           to="/connection"
           @click="setActiveLink('connection')"
           @mouseenter="changeGreen"
+          @mouseleave="mouseLeave"
         >
           聯絡資訊
         </RouterLink>

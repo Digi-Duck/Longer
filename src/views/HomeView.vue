@@ -53,12 +53,13 @@ export default {
     handleCanClickE() {
       let dataToSend = "bE";
       this.$emit("handleCanClickE", dataToSend);
+      console.log(1);
     },
     handleCanClickL() {
       let dataToSend = "bL";
       this.$emit("handleCanClickL", dataToSend);
     },
-    
+
     // scrollTest() {
     //   console.log(this.$refs.longerSlogn.scrollTop);
     // },
@@ -130,7 +131,10 @@ export default {
     </div>
     <div class="Block4">
       <HomeTitle class="xl:mt-[0px] lg:mt-[-200px]">課程資訊</HomeTitle>
-      <CourseInfo></CourseInfo>
+      <CourseInfo
+        @handleCourseCanClickE="handleCanClickE"
+        @handleCourseCanClickL="handleCanClickL"
+      ></CourseInfo>
       <div ref="Mask" class="pen">
         <!-- <div class="mask" :style="{ width: `${WidthControl}% ` }"></div> -->
       </div>
