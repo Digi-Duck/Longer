@@ -180,7 +180,7 @@ export default {
               <p class="title">國立藝術專科 美工科</p>
               <p class="content]">
                 授課項目：<br />
-                兒童美術、基礎素描、基礎水彩、蠟筆、色鉛筆技法
+                兒童美術、基礎素描、基礎水彩、蠟筆、色鉛筆技法。
               </p>
             </div>
           </div>
@@ -260,7 +260,7 @@ export default {
     h1 {
       @apply lg:text-[2rem]  md:text-[1.5rem] text-[2rem] 
     text-[#263238] md:text-[#000000]
-      md:font-[GenWanMin-L] font-[ChenYuluoyan] font-semibold
+      md:font-[GenWanMin-L] font-[ChenYuluoyan] 
        md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")] bg-no-repeat bg-bottom;
     }
   }

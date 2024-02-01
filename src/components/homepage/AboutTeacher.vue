@@ -20,10 +20,20 @@ export default {
   },
   methods: {
     handleScroll() {
-      // console.log(this.imgTops);
+      // 內部高度window.innerHeight
+      // 視窗的底部所在的垂直位置  windowBottom
       let windowBottom = window.scrollY + window.innerHeight;
+      console.log(
+        "滾輪高度 : ",
+        window.scrollY,
+        "視窗高度 : ",
+        window.innerHeight,
+        "頁面頂部至目前瀏覽介面底部位置 : ",
+        windowBottom
+      );
       // let imgTop = this.$refs.img1.offsetTop;
       this.imgTops.forEach((img) => {
+        // 圖片位置+圖片一半高度
         let imgDisplay = img.offsetTop + img.height / 2;
         if (windowBottom > imgDisplay) {
           img.classList.add("active");
