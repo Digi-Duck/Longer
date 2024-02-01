@@ -31,14 +31,13 @@ export default {
     };
   },
   mounted() {
-    console.log(this.stPiece);
+    // console.log(this.stPiece);
   },
 };
 </script>
 <template>
   <!-- <h1 class="text-center ">Infinite Scroll Animation</h1> -->
   <div>
-    <!-- 雅芬0121 補一個pt-[96px]為了排版首頁 -->
     <div
       class="m-auto overflow-hidden scroll md:pt-[110px] pt-[60px]"
       v-fade-in-out

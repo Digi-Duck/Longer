@@ -22,7 +22,6 @@ export default {
     AboutTeacher,
     CourseInfo,
     StudentWork,
-    blob1,
     blob2,
     blob3,
     RankingListTablet,
@@ -35,60 +34,14 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    // const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    // ShakeBoxId.style.display = "none";
-    // window.addEventListener('scroll', this.scrollTest)
     this.$emit("ShakeBoxMobile_flagback", false);
-
-    // 發送hakeBoxMobileFlag:false,
-
-    // 在組件掛載後添加 scroll 事件監聽
-    // window.addEventListener("scroll", this.MaskMove);
-    // const maskElement = document.querySelector(".mask");
-    // const maskWidth = Number(
-    //   getComputedStyle(maskElement)
-    //     .getPropertyValue("--mask-width")
-    //     .trim()
-    //     .replace("%", "")
-    // );
-    // this.WidthControl = maskWidth;
   },
   methods: {
+    // since1998
     scrollToLonger() {
       this.$refs.longerSlogn.scrollIntoView({ behavior: "smooth" });
     },
-    scrollTest() {
-      console.log(this.$refs.longerSlogn.scrollTop);
-    },
-    MaskMove() {
-      // const windowBottom = window.scrollY + window.innerHeight;
-      // const maskOffsetTop = this.$refs.Mask.offsetTop;
-      // const maskHeight = this.$refs.Mask.offsetHeight;
-      // const startPosition = maskOffsetTop + maskOffsetTop / 3;
-      // console.log(maskHeight);
-      // if(windowBottom > startPosition){
-      //   this.WidthControl--;
-      // }
-      //  捲動百分比
-      // const scrollPercentage = Math.floor(
-      //   (window.scrollY /
-      //     (document.documentElement.scrollHeight - window.innerHeight)) *
-      //   100
-      // );
-      // console.log(scrollPercentage);
-      // 获取 .mask 元素的当前位置
-      // const maskOffsetTop = this.$refs.Mask.offsetTop;
-      // 计算相对于整个文档高度的百分比
-      // const relativeHeightPercentage = Math.floor(
-      //   (maskOffsetTop / document.documentElement.scrollHeight) * 100 - 20
-      //   // 再剪掉一些百分比
-      // );
-      // // console.log(relativeHeightPercentage);
-      // if (scrollPercentage > relativeHeightPercentage) {
-      //   // 減少百分比
-      //   this.WidthControl--;
-      // }
-    },
+
     handleImageEnter() {
       let dataToSend = "Hi";
       this.$emit("imageEnter", dataToSend);
@@ -105,6 +58,10 @@ export default {
       let dataToSend = "bL";
       this.$emit("handleCanClickL", dataToSend);
     },
+    
+    // scrollTest() {
+    //   console.log(this.$refs.longerSlogn.scrollTop);
+    // },
   },
 };
 </script>

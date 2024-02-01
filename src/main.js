@@ -30,16 +30,15 @@ app.component("NavCurve", NavCurve);
 app.component("NavMobile", NavMobile);
 
 // 進入頁面自動至頂
-window.scrollTo({
-  top: 0,
-});
-console.log(document.documentElement.scrollTop);
+// window.scrollTo({
+//   top: 0,
+// });
+window.scrollTo(0, 0);
+// console.log(document.documentElement.scrollTop);
 
 // 全域自定義指令-文字自動淡入
 app.directive("fade-in-out", {
   beforeMount(el) {
-    // el.style.transition = "opacity 1s";
-    // el.style.opacity = "0";
     el.classList.add("fade-in");
   },
   mounted(el) {
@@ -50,7 +49,6 @@ app.directive("fade-in-out", {
       //   console.log(position, screenHeight);
       //   觸發條件
       if (position < screenHeight) {
-        // console.log("這邊有執行");
         el.classList.remove("fade-in");
         el.classList.add("show");
       }

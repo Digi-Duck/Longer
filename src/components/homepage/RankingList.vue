@@ -91,7 +91,6 @@ export default {
   },
   mounted() {},
   methods: {
-    // 如果class="PageTurn" 被check，after會消失一段時間
     VanishShadow() {
       console.log("翻書了");
 

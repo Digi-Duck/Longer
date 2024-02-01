@@ -241,7 +241,7 @@ export default {
 }
 // 師資介紹內容
 .TeacherItro {
-  @apply flex flex-col 
+  @apply flex flex-col
 
   xl:h-[1069px] lg:h-[790px] 
   md:w-[1290px] w-[280px]
@@ -253,13 +253,13 @@ export default {
     .textblock {
       @apply text-[1.5rem] xl:w-[100%] lg:w-[478px];
       .title {
-        @apply pt-[32px] pb-[32px] md:flex-none flex xl:justify-start  justify-center 
-        md:font-[GenWanMin-L] font-[GenWanMin-L];
+        @apply pt-[32px] pb-[32px]  md:flex-none flex xl:justify-start  md:justify-start justify-center 
+         font-[GenWanMin-L];
       }
     }
     h1 {
-      @apply md:text-[1.5rem] text-[2rem] 
-    
+      @apply lg:text-[2rem]  md:text-[1.5rem] text-[2rem] 
+    text-[#263238] md:text-[#000000]
       md:font-[GenWanMin-L] font-[ChenYuluoyan] font-semibold
        md:bg-none bg-[url("@/assets/img/teacher_introduction/underLine.svg")] bg-no-repeat bg-bottom;
     }
@@ -274,10 +274,7 @@ export default {
     @apply xl:w-[600px] lg:w-[478px] md:w-[471px]
       md:pt-[72px]
       md:flex-none
-      flex flex-col  items-center;
-    h1 {
-      @apply text-[2rem];
-    }
+      flex flex-col  items-center md:items-start xl:items-start;
   }
 }
 .frame {

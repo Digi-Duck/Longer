@@ -62,7 +62,8 @@ export default {
         @apply flex justify-center items-center text-[#FFFFFF]  bg-[rgba(0,0,0,0.45)] mb-[20px]
         xl:w-[337px] lg:w-[226px] w-[160px]
         xl:h-[66px] lg:h-[44px] h-[40px] 
-        xl:text-[1.625rem] text-[1rem];
+        xl:text-[1.625rem] text-[1rem]
+        font-sans;
       }
     }
   }
