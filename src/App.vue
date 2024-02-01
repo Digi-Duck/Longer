@@ -431,7 +431,7 @@ header {
       @apply w-full h-full text-[25px] relative;
 
       .link {
-        @apply md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-100;
+        @apply md:h-[4.5px] w-[55%] h-[3px] rounded-lg bg-[#000] absolute left-[50%] translate-x-[-50%] translate-y-[-50%] duration-[2s];
       }
 
       .link-1 {
@@ -457,17 +457,13 @@ header {
   }
 
   nav {
-    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0 w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover overflow-hidden md:pt-[60px] md:rounded-[0px_50px_0px_0px];
+    @apply lg:flex lg:items-end lg:me-[5px] lg:w-[auto] lg:h-0 lg:bg-none lg:overflow-visible lg:duration-0 lg:drop-shadow-none lg:pt-0 w-[0] md:h-[calc(100vh_-_120px)] md:bg-[url('@/assets/img/generic/ham-menu-md-bg.svg')] h-[calc(100vh_-_60px)] bg-[url('@/assets/img/generic/ham-menu-sm-bg.svg')] bg-no-repeat md:bg-bottom bg-cover overflow-hidden md:pt-[60px] md:rounded-[0px_50px_0px_0px] duration-200;
 
     .navBar {
-      @apply xl:px-[45px] lg:px-[20px] lg:flex lg:items-center lg:mt-0 lg:me-[10px] lg:py-[8px] lg:bg-[#024b06] py-[3px] md:mt-[5px] mt-[8px] xl:text-[1.5rem] lg:text-[1.25rem]  md:text-[1.28rem] text-[1rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[#fff] bg-opacity-40 block tracking-[2px] relative;
+      @apply xl:px-[40px] lg:px-[20px] lg:flex lg:items-center lg:mt-0 lg:me-[10px] lg:py-[8px] lg:bg-[#024b06] py-[3px] md:mt-[5px] mt-[8px] xl:text-[1.5rem] lg:text-[1.25rem]  md:text-[1.28rem] text-[1rem] lg:text-[#fff] text-[#000] lg:rounded-t-lg text-center bg-[#fff] bg-opacity-40 block tracking-[2px] xl:hover:h-[60px] lg:hover:h-[55px];
 
       &.active {
         @apply lg:h-[70px] lg:bg-[#838666];
-      }
-      // navBar hover
-      &::before{
-        @apply content-[""] absolute right-[50%] left-[50%] bottom-[20%] h-[2px] bg-[#fff] bg-opacity-50 transition-all ease-in-out duration-[0.3s] xl:hover:right-[20%] xl:hover:left-[20%] lg:hover:right-[10%] lg:hover:left-[10%]; 
       }
     }
   }
