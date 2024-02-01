@@ -30,6 +30,8 @@ export default {
       size: false,
       correctionValue: 25,
       circle: false,
+      // 灰色搖擺盒子控制
+      ShakeBoxMobile_flag: false,
     };
   },
   mounted() {
@@ -124,6 +126,11 @@ export default {
       console.log(dataFromChild);
       this.circle = true;
     },
+    handleShakeBoxMobileFlagback(value) {
+      // 处理从子组件传递过来的值
+      console.log("Received value from ShakeBoxMobile:", value);
+      this.ShakeBoxMobile_flag = value;
+    },
   },
 };
 </script>
@@ -141,7 +148,7 @@ export default {
       borderRadius: circle ? '50%' : '0%',
     }"
     id="color-block"
-  ></div> 
+  ></div>
   <header class="" v-if="scrollBottom == false">
     <input type="checkbox" id="ham" hidden />
     <label for="ham" class="ham-menu-all" @click="openMenu">
@@ -230,12 +237,18 @@ export default {
   ></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <RouterView @imageEnter="handleImageEnter" @imageLeave="handleImageLeave"/>
+    <RouterView
+      @imageEnter="handleImageEnter"
+      @imageLeave="handleImageLeave"
+      @ShakeBoxMobile_flagback="handleShakeBoxMobileFlagback"
+    />
   </main>
   <section
     class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
   >
-    <ShakeBoxMobile></ShakeBoxMobile>
+    <!-- 灰色搖擺盒子 -->
+    <ShakeBoxMobile v-if="ShakeBoxMobile_flag"></ShakeBoxMobile>
+
     <iframe
       src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100064163762139&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
       class="iframe-area"
@@ -378,13 +391,12 @@ export default {
 <style lang="scss" scoped>
 #color-block {
   @apply absolute z-[5] w-[60px] h-[60px] bg-[yellow] rounded-[50%] pointer-events-none mix-blend-exclusion lg:block hidden;
-  
 }
 
 //公版 nav
 header {
   @apply lg:flex lg:justify-between lg:items-end lg:drop-shadow-[0_4px_15px_#262626] md:h-[120px] w-[100%] h-[60px] fixed z-[4] bg-EmphasizeColor;
-  
+
   .ham-menu-all {
     @apply lg:hidden md:w-[120px] md:h-[120px] w-[60px] h-[60px] absolute;
 

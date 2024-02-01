@@ -61,6 +61,7 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
+    this.$emit("ShakeBoxMobile_flagback", true);
     // const ShakeBoxId = document.querySelector('#ShakeBoxId')
     // ShakeBoxId.style.display="block"
   },
@@ -98,7 +99,6 @@ export default {
       </div>
     </div>
   </div>
-
 </template>
 <style lang="scss" scope>
 .All {

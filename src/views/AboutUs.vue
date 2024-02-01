@@ -9,7 +9,7 @@ import Crayo from "@/assets/img/about_us_ph/crayo.svg";
 import About2 from "@/assets/img/about_us_ph/About2.png";
 import About3 from "@/assets/img/about_us_ph/About3.png";
 import underLine from "@/assets/img/about_us_ph/underLine.png";
-import { document } from "postcss";
+// import { document } from "postcss";
 export default {
   components: { HomeTitle },
   data() {
@@ -23,6 +23,9 @@ export default {
       BlobY: BlobY,
       Crayo: Crayo,
     };
+  },
+  mounted() {
+    this.$emit("ShakeBoxMobile_flagback", true);
   },
 };
 </script>

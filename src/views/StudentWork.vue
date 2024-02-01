@@ -212,6 +212,7 @@ export default {
       resizeDuration: 500,
       wrapAround: true,
     });
+    this.$emit("ShakeBoxMobile_flagback", true);
   },
 };
 </script>

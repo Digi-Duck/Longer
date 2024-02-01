@@ -35,9 +35,11 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    ShakeBoxId.style.display = "none";
-    window.addEventListener('scroll', this.scrollTest)
+    // const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    // ShakeBoxId.style.display = "none";
+    // window.addEventListener('scroll', this.scrollTest)
+    this.$emit("ShakeBoxMobile_flagback", false);
+
     // 發送hakeBoxMobileFlag:false,
 
     // 在組件掛載後添加 scroll 事件監聽
@@ -87,14 +89,14 @@ export default {
       //   this.WidthControl--;
       // }
     },
-    handleImageEnter(){
-      let dataToSend = 'Hi';
-      this.$emit('imageEnter', dataToSend);
+    handleImageEnter() {
+      let dataToSend = "Hi";
+      this.$emit("imageEnter", dataToSend);
     },
-    handleImageLeave(){
-      let dataToSend = 'bYE';
-      this.$emit('imageLeave', dataToSend);
-    }
+    handleImageLeave() {
+      let dataToSend = "bYE";
+      this.$emit("imageLeave", dataToSend);
+    },
   },
 };
 </script>
@@ -104,14 +106,34 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
-    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
-    <img @mouseenter="handleImageEnter" @mouseleave="handleImageLeave" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
+    <source
+      media="(min-width:1800px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:1200px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:768px)"
+      srcset="@/assets/img/generic/banner-xl.png"
+    />
+    <source
+      media="(min-width:0px)"
+      srcset="@/assets/img/generic/banner-sm.png"
+    />
+    <img
+      @mouseenter="handleImageEnter"
+      @mouseleave="handleImageLeave"
+      src="@/assets/img/generic/banner-sm.png"
+      alt="Weather"
+    />
   </picture>
   <section class="position-container cursor-pointer">
-    <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">
+    <div
+      class="since1994 breathing flex flex-col gap-[10px]"
+      @click="scrollToLonger"
+    >
       <p>since 1994</p>
       <i class="fa-solid fa-chevron-down xl:text-[2.5rem] text-[1.25rem]"></i>
     </div>
@@ -129,7 +151,9 @@ export default {
   </section>
 
   <section>
-    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
+    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]"
+      >關於龍格</HomeTitle
+    >
     <AboutTeacher></AboutTeacher>
   </section>
 
