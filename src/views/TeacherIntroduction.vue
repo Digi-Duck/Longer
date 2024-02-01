@@ -253,7 +253,7 @@ export default {
     .textblock {
       @apply text-[1.5rem] xl:w-[100%] lg:w-[478px];
       .title {
-        @apply pt-[32px] pb-[32px] md:flex-none flex justify-center 
+        @apply pt-[32px] pb-[32px] md:flex-none flex xl:justify-start  justify-center 
         md:font-[GenWanMin-L] font-[GenWanMin-L];
       }
     }
