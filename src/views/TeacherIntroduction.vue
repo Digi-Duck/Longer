@@ -155,8 +155,8 @@ export default {
           </div>
 
           <div class="text">
-            <h1 class="">丁建中 老師</h1>
-            <div class="textblock">
+            <h1 v-fade-in-out class="">丁建中 老師</h1>
+            <div v-fade-in-out class="textblock">
               <p class="title">文化大學美術系設計組</p>
               <p class="content">
                 授課項目：<br />
@@ -175,8 +175,8 @@ export default {
             }"
           ></div>
           <div class="text xl:pl-[80px] lg:pl-[0px]">
-            <h1>張桂苓 老師</h1>
-            <div class="textblock">
+            <h1 v-fade-in-out>張桂苓 老師</h1>
+            <div v-fade-in-out class="textblock">
               <p class="title">國立藝術專科 美工科</p>
               <p class="content]">
                 授課項目：<br />
