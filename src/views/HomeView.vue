@@ -35,8 +35,9 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    // const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    // ShakeBoxId.style.display = "none";
+    const ShakeBoxId = document.querySelector("#ShakeBoxId");
+    ShakeBoxId.style.display = "none";
+    window.addEventListener('scroll', this.scrollTest)
     // 發送hakeBoxMobileFlag:false,
 
     // 在組件掛載後添加 scroll 事件監聽
@@ -56,6 +57,9 @@ export default {
     },
     scrollTest() {
       console.log(this.$refs.longerSlogn.scrollTop);
+    },
+    homeViewValue() {
+      this.$emit('childEvent', '這是從子元件傳來的值');
     },
     MaskMove() {
       // const windowBottom = window.scrollY + window.innerHeight;
@@ -99,23 +103,11 @@ export default {
   <main></main>
   <!-- banner -->
   <picture class="banner">
-    <source
-      media="(min-width:1800px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:1200px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:768px)"
-      srcset="@/assets/img/generic/banner-xl.png"
-    />
-    <source
-      media="(min-width:0px)"
-      srcset="@/assets/img/generic/banner-sm.png"
-    />
-    <img src="@/assets/img/generic/banner-sm.png" alt="Weather" @click="handleImageClick" />
+    <source media="(min-width:1800px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
+    <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
+    <img @click="homeViewValue" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container cursor-pointer">
     <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">
@@ -136,9 +128,7 @@ export default {
   </section>
 
   <section>
-    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]"
-      >關於龍格</HomeTitle
-    >
+    <HomeTitle class="bg-MainColorBG xl:pt-[60px] lg:pt-0 pt-[40px]">關於龍格</HomeTitle>
     <AboutTeacher></AboutTeacher>
   </section>
 
@@ -246,11 +236,10 @@ export default {
 }
 
 .Block4Buttom {
-  @apply w-[100%] xl:h-[450px]  md:h-[200px] h-[150px]  bg-MainColorBG;
+  @apply w-[100%] xl:h-[450px] md:h-[200px] h-[150px] bg-MainColorBG;
 
   .Block4ButtomCurve {
-    @apply w-[100%] h-[100%]  xl:bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")]  bg-[url("@/assets/img/homepage/BGpictures/curve2_laptop.svg")] 
-    bg-no-repeat bg-cover bg-center xl:mt-[-10px] lg:mt-[0px] md:mt-[-4px];
+    @apply w-[100%] h-[100%] xl:bg-[url("@/assets/img/homepage/BGpictures/curve2.svg")] bg-[url("@/assets/img/homepage/BGpictures/curve2_laptop.svg")] bg-no-repeat bg-cover bg-center xl:mt-[-10px] lg:mt-[0px] md:mt-[-4px];
   }
 }
 

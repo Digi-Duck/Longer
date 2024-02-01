@@ -24,19 +24,6 @@ export default {
       Crayo: Crayo,
     };
   },
-  mounted() {
-    window.scrollTo(0, 0);
-  },
-  methods: {
-    checkCollision() {
-      console.log(1);
-      this.isY = true;
-    },
-    // shakebox_fn() {
-    //   const ShakeBoxId = document.querySelector("#ShakeBoxId");
-    // ShakeBoxId.style.display = "block";
-    // },
-  },
 };
 </script>
 <template>
