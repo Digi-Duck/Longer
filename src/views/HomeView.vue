@@ -86,6 +86,10 @@ export default {
       //   this.WidthControl--;
       // }
     },
+    handleImageClick(){
+      const dataToSend = 'Hi';
+      this.$emit('imageClicked', dataToSend);
+    }
   },
 };
 </script>
@@ -111,7 +115,7 @@ export default {
       media="(min-width:0px)"
       srcset="@/assets/img/generic/banner-sm.png"
     />
-    <img src="@/assets/img/generic/banner-sm.png" alt="Weather" />
+    <img src="@/assets/img/generic/banner-sm.png" alt="Weather" @click="handleImageClick" />
   </picture>
   <section class="position-container cursor-pointer">
     <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">

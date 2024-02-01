@@ -115,6 +115,9 @@ export default {
         this.$refs.linkBottom.classList.remove("ani-line-bottom");
       }
     },
+    handleImageClicked(dataFromChild) {
+      console.log("Data from child", dataFromChild);
+    },
   },
 };
 </script>
@@ -219,7 +222,7 @@ export default {
   ></div>
   <!-- 分頁內容 -->
   <main ref="webContent">
-    <RouterView />
+    <RouterView @imageClicked="handleImageClicked" />
   </main>
   <section
     class="sm-iframe md:hidden flex flex-col justify-center items-center bg-MainColorBG"
