@@ -58,9 +58,6 @@ export default {
     scrollTest() {
       console.log(this.$refs.longerSlogn.scrollTop);
     },
-    homeViewValue() {
-      this.$emit('childEvent', '這是從子元件傳來的值');
-    },
     MaskMove() {
       // const windowBottom = window.scrollY + window.innerHeight;
       // const maskOffsetTop = this.$refs.Mask.offsetTop;
@@ -107,7 +104,7 @@ export default {
     <source media="(min-width:1200px)" srcset="@/assets/img/generic/banner-xl.png" />
     <source media="(min-width:768px)" srcset="@/assets/img/generic/banner-xl.png" />
     <source media="(min-width:0px)" srcset="@/assets/img/generic/banner-sm.png" />
-    <img @click="homeViewValue" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
+    <img @click="handleImageClick" src="@/assets/img/generic/banner-sm.png" alt="Weather" />
   </picture>
   <section class="position-container cursor-pointer">
     <div class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">

@@ -149,7 +149,6 @@ export default {
       class="LOGO"
       :class="{ navBar: true }"
       @click="setActiveLink('')"
-      @childEvent="console.log(1)"
     >
       <img
         src="@/assets/img/generic/logoNew.svg"
