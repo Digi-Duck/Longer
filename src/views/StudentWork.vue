@@ -230,7 +230,12 @@ export default {
     <img :src="bg01" alt="background01" class="bg bg01" />
     <section>
       <section>
-        <div class="box" v-for="item in studentWorks" :key="item.id">
+        <div
+          class="box"
+          v-for="item in studentWorks"
+          :key="item.id"
+          v-fade-in-out
+        >
           <a
             class="image-link"
             v-for="imgItem in item.img"

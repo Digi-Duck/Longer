@@ -97,13 +97,13 @@ export default {
       let dataToSend = "bYE";
       this.$emit("imageLeave", dataToSend);
     },
-    handleCanClickE(){
-      let dataToSend = 'bE';
-      this.$emit('handleCanClickE', dataToSend);
+    handleCanClickE() {
+      let dataToSend = "bE";
+      this.$emit("handleCanClickE", dataToSend);
     },
-    handleCanClickL(){
-      let dataToSend = 'bL';
-      this.$emit('handleCanClickL', dataToSend);
+    handleCanClickL() {
+      let dataToSend = "bL";
+      this.$emit("handleCanClickL", dataToSend);
     },
   },
 };
@@ -138,7 +138,12 @@ export default {
     />
   </picture>
   <section class="position-container cursor-pointer">
-    <div @mouseenter="handleCanClickE" @mouseleave="handleCanClickL" class="since1994 breathing flex flex-col gap-[10px]" @click="scrollToLonger">
+    <div
+      @mouseenter="handleCanClickE"
+      @mouseleave="handleCanClickL"
+      class="since1994 breathing flex flex-col gap-[10px]"
+      @click="scrollToLonger"
+    >
       <p>since 1994</p>
       <i class="fa-solid fa-chevron-down xl:text-[2.5rem] text-[1.25rem]"></i>
     </div>
@@ -189,7 +194,7 @@ export default {
       <RankingListTablet class="flex justify-center"></RankingListTablet>
       <RankingList></RankingList>
     </div>
-    <div class="ShakeBox md:visible invisible">
+    <div class="ShakeBox">
       <ShakeBox></ShakeBox>
     </div>
   </section>

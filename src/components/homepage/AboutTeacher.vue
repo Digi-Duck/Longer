@@ -45,17 +45,27 @@ export default {
         <img class="align-left slide-in" :src="teacherAbout[0]" alt="" />
       </div>
       <div class="th-text lg:mb-0 mb-[40px]">
-        <div class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5">
+        <div
+          class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5"
+          v-fade-in-out
+        >
           <h1 class="xl:m-0 m-auto">丁建中 老師</h1>
-          <p >富有教學熱忱的丁老師，創立畫室的初衷，是希望幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一座指引前方的燈塔。</p>
+          <p>
+            富有教學熱忱的丁老師，創立畫室的初衷，是希望幫助每個對夢想懷抱憧憬的孩子，成為他們在追尋理想的人生道路上，一座指引前方的燈塔。
+          </p>
         </div>
       </div>
     </div>
     <div class="about-r">
       <div class="th-text th-r lg:mb-0 mb-[40px]">
-        <div class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5">
+        <div
+          class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5"
+          v-fade-in-out
+        >
           <h1 class="xl:m-0 m-auto">丁建中 老師</h1>
-           <p>升學集訓班將會集中編排程度相近的學生，課堂中親自示範與解題，使學生共同練習，透過同儕良性切磋相互學習。</p>
+          <p>
+            升學集訓班將會集中編排程度相近的學生，課堂中親自示範與解題，使學生共同練習，透過同儕良性切磋相互學習。
+          </p>
         </div>
       </div>
       <div class="th-ph">
@@ -64,12 +74,16 @@ export default {
     </div>
     <div class="about-l">
       <div class="th-ph th-r">
-        <img class="align-left slide-in " :src="teacherAbout[2]" alt="" />
+        <img class="align-left slide-in" :src="teacherAbout[2]" alt="" />
       </div>
       <div class="th-text">
-        <div class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5">
+        <div
+          class="lg:w-[465px] md:w-[380px] w-[90%] flex flex-col lg:gap-10 md:gap-5"
+        >
           <h1 class="xl:m-0 m-auto">丁建中 老師</h1>
-          <p>掌控同一時段的授課人數，顧及每位學生的進度，讓來到龍格的學生，都能擁有良好的教學品質。</p>
+          <p>
+            掌控同一時段的授課人數，顧及每位學生的進度，讓來到龍格的學生，都能擁有良好的教學品質。
+          </p>
         </div>
       </div>
     </div>
@@ -89,7 +103,7 @@ export default {
     }
     .th-ph {
       @apply lg:w-[55%] md:w-[56%] w-[100%] flex justify-center;
-      img{
+      img {
         @apply xl:w-[847px] lg:w-[635px] md:w-[425px] w-[360px];
       }
       .slide-in {
@@ -112,7 +126,7 @@ export default {
     }
     .th-ph {
       @apply w-[100%] xl:w-[55%] lg:w-[55%] md:w-[70%];
-      img{
+      img {
         @apply xl:w-[847px] lg:w-[635px] md:w-[425px] w-[360px];
       }
       .slide-in {
